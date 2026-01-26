@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /Components/
+Disallow: /*.json$
+Disallow: /*.js$
+
+Sitemap: https://drlumban.netlify.app/sitemap.xml
+Sitemap: https://drlumban.netlify.app/sitemap.xml
