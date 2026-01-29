@@ -151,9 +151,12 @@ export default function ApneaSuenoPage() {
             El Dr. Lumbán puede realizar una evaluación completa y recomendar el
             tratamiento más adecuado para su caso específico.
           </p>
-          <button className="px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition">
-            SOLICITAR EVALUACIÓN
-          </button>
+          <a
+            href="/contacto"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
+          >
+            SOLICITA TU CONSULTA
+          </a>
         </div>
 
         {/* PERFIL */}
@@ -168,9 +171,12 @@ export default function ApneaSuenoPage() {
               amable.
             </p>
           </div>
-          <button className="px-6 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition">
+          <a
+            href="/perfil"
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
             VER PERFIL COMPLETO
-          </button>
+          </a>
         </div>
 
         {/* OTROS PADECIMIENTOS */}

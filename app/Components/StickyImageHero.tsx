@@ -8,6 +8,10 @@ interface StickyImageHeroProps {
   alt?: string;
   title: string;
   subtitle?: string;
+  textClassName?: string;
+  titleClassName?: string;
+  subtitleClassName?: string;
+  imageClassName?: string;
 }
 
 export default function StickyImageHero({
@@ -15,6 +19,10 @@ export default function StickyImageHero({
   alt,
   title,
   subtitle,
+  textClassName,
+  titleClassName,
+  subtitleClassName,
+  imageClassName,
 }: StickyImageHeroProps) {
   const [progress, setProgress] = useState(0);
 
@@ -54,17 +62,27 @@ export default function StickyImageHero({
         <div className="relative w-full max-w-6xl px-6">
           {/* ---------------- TEXTOS ---------------- */}
           <div
-            className="absolute left-1/2 w-full text-center"
+            className={`absolute left-1/2 w-full text-center z-20 ${
+              textClassName ?? ""
+            }`}
             style={{
               opacity: textOpacity,
               transform: `translate(-50%, ${textTranslateY}px)`,
             }}
           >
-            <h1 className="text-black text-3xl md:text-8xl font-bold tracking-wide mb-6">
+            <h1
+              className={`text-black text-3xl md:text-8xl font-bold tracking-wide mb-6 ${
+                titleClassName ?? ""
+              }`}
+            >
               {title}
             </h1>
             {subtitle && (
-              <h2 className="text-blue-500 text-2xl md:text-4xl font-medium">
+              <h2
+                className={`text-blue-500 text-2xl md:text-4xl font-medium ${
+                  subtitleClassName ?? ""
+                }`}
+              >
                 {subtitle}
               </h2>
             )}
@@ -72,7 +90,9 @@ export default function StickyImageHero({
 
           {/* ---------------- IMAGEN ---------------- */}
           <div
-            className="relative mx-auto overflow-hidden shadow-2xl"
+            className={`relative mx-auto overflow-hidden shadow-2xl z-10 ${
+              imageClassName ?? ""
+            }`}
             style={{
               transform: `translateY(${translateY}px) scale(${scale})`,
               borderRadius: `${borderRadius}px`,

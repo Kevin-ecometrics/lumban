@@ -2,6 +2,7 @@
 
 import Hero from "@/app/Components/StickyImageHero";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const sintomas = [
   {
@@ -176,17 +177,40 @@ export default function EarConditionsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="max-w-3xl mx-auto px-6 py-20 text-center">
-        <h3 className="text-3xl font-bold text-gray-900 mb-6">
-          ¿Experimenta problemas de equilibrio o vértigo?
-        </h3>
-        <p className="text-gray-700 text-lg mb-8">
-          Agenda una cita con el Dr. Lumbán para una evaluación completa
-        </p>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold transition">
-          Solicitar Consulta
-        </button>
+      <section className="max-w-6xl mx-auto px-6 py-20 space-y-20">
+        {/* CTA */}
+        <div className="bg-gray-50 rounded-2xl p-10 text-center space-y-6">
+          <h2 className="text-2xl font-semibold">¿Tiene alguna duda?</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede
+            contactarlo por teléfono, correo electrónico o agendar una cita.
+          </p>
+          <a
+            href="/contacto"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
+          >
+            SOLICITA TU CONSULTA
+          </a>
+        </div>
+
+        {/* PERFIL */}
+        <div className="border-t pt-12 flex flex-col md:flex-row justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-semibold">
+              Conozca sobre el Dr. Lumbán
+            </h3>
+            <p className="text-gray-600 max-w-xl">
+              El Dr. Lumbán cuenta con 23 años de experiencia en
+              otorrinolaringología, especializado en Cirugía Estética de Nariz.
+            </p>
+          </div>
+          <a
+            href="/perfil"
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
+            VER PERFIL COMPLETO
+          </a>
+        </div>
       </section>
 
       {/* OTROS PADECIMIENTOS */}

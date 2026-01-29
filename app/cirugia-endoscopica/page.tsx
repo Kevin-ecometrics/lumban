@@ -151,9 +151,12 @@ export default function CirugiaEndoscopicaSinusitisPage() {
             Puede contactar al Dr. Lumbán por medio de su número telefónico o
             por correo electrónico para concertar una cita y aclarar sus dudas.
           </p>
-          <button className="px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition">
-            CONTACTE AL DR. LUMBÁN
-          </button>
+          <a
+            href="/contacto"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
+          >
+            SOLICITA TU CONSULTA
+          </a>
         </div>
 
         {/* SINUSITIS INFO */}
@@ -165,9 +168,12 @@ export default function CirugiaEndoscopicaSinusitisPage() {
             sobre este padecimiento y sus síntomas, da clic en Ver Más
             Información.
           </p>
-          <button className="px-6 py-3 rounded-full border border-gray-300 hover:bg-gray-100 transition">
+          <a
+            href="/sinusitis"
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
             VER MÁS INFORMACIÓN
-          </button>
+          </a>
         </div>
 
         {/* PERFIL */}
@@ -182,9 +188,12 @@ export default function CirugiaEndoscopicaSinusitisPage() {
               amable.
             </p>
           </div>
-          <button className="px-6 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition">
+          <a
+            href="/perfil"
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
             VER PERFIL COMPLETO
-          </button>
+          </a>
         </div>
 
         {/* OTROS PROCEDIMIENTOS */}

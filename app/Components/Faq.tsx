@@ -149,7 +149,7 @@ const FAQSection: React.FC = () => {
           <p className="text-gray-600 text-lg font-light">
             ¿Tiene más preguntas o necesita más información?{" "}
             <a
-              href="#contact"
+              href="/contacto"
               className="text-gray-900 underline hover:no-underline transition-colors duration-200"
             >
               Contáctenos aquí.

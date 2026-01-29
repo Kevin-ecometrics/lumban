@@ -179,12 +179,15 @@ export default function FooterBase() {
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
                 Contacto
               </h3>
-              <a
-                href="mailto:contacto@drlumban.com"
-                className="text-base md:text-lg text-black hover:text-azul"
-              >
-                contacto@drlumban.com
-              </a>
+
+              <div className="space-y-2">
+                <a
+                  href="mailto:contacto@drlumban.com"
+                  className="block text-base md:text-lg text-black hover:text-azul"
+                >
+                  contacto@drlumban.com
+                </a>
+              </div>
             </div>
           </div>
         </div>

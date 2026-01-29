@@ -187,9 +187,12 @@ export default function CongestionNasalPage() {
             El Dr. Lumbán le agendará una cita para realizar un diagnóstico y
             brindarle el mejor tratamiento para su problema.
           </p>
-          <button className="px-8 py-3 rounded-full bg-white text-neutral-950 font-medium hover:scale-105 transition">
+          <a
+            href="/contacto"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-neutral-950 font-medium hover:scale-105 transition"
+          >
             SOLICITAR UNA CITA
-          </button>
+          </a>
         </div>
 
         {/* PERFIL */}
@@ -204,9 +207,12 @@ export default function CongestionNasalPage() {
               amable.
             </p>
           </div>
-          <button className="px-6 py-3 rounded-full border border-neutral-600 hover:bg-neutral-800 transition">
+          <a
+            href="/perfil"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-neutral-600 hover:bg-neutral-800 transition"
+          >
             VER PERFIL COMPLETO
-          </button>
+          </a>
         </div>
 
         {/* OTROS PADECIMIENTOS */}

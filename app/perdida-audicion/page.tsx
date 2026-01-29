@@ -2,6 +2,7 @@
 
 import Hero from "@/app/Components/StickyImageHero";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const signos = [
   "No entiende algunas palabras durante la conversación",
@@ -108,36 +109,40 @@ export default function HearingLossPage() {
         </motion.div>
       </section>
 
-      {/* EVALUACIÓN */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-6">
-          <h3 className="text-3xl font-bold text-gray-900">
-            Sea evaluado por un especialista
-          </h3>
-          <p className="text-gray-700 text-lg">
-            ¿Cuenta con algunos de los síntomas? Usted debe ser evaluado por un
-            especialista. El Dr. Lumbán tiene la habilidad y la formación para
-            entender completamente el tipo, la causa y la magnitud de su pérdida
-            auditiva.
+      <section className="max-w-6xl mx-auto px-6 py-20 space-y-20">
+        {/* CTA */}
+        <div className="bg-gray-50 rounded-2xl p-10 text-center space-y-6">
+          <h2 className="text-2xl font-semibold">¿Tiene alguna duda?</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede
+            contactarlo por teléfono, correo electrónico o agendar una cita.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold transition">
+          <a
+            href="/contacto"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
+          >
             SOLICITA TU CONSULTA
-          </button>
+          </a>
         </div>
-      </section>
 
-      {/* PERFIL */}
-      <section className="max-w-3xl mx-auto px-6 py-20 text-center space-y-6">
-        <h3 className="text-3xl font-bold text-gray-900">
-          Conozca sobre el Dr. Lumbán
-        </h3>
-        <p className="text-gray-700 text-lg">
-          El Dr. Lumbán tiene años de experiencia dentro del campo de la
-          otorrinolaringología, prestando un servicio de calidad y trato amable.
-        </p>
-        <button className="border border-gray-900 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition">
-          VER PERFIL COMPLETO
-        </button>
+        {/* PERFIL */}
+        <div className="border-t pt-12 flex flex-col md:flex-row justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-semibold">
+              Conozca sobre el Dr. Lumbán
+            </h3>
+            <p className="text-gray-600 max-w-xl">
+              El Dr. Lumbán cuenta con 23 años de experiencia en
+              otorrinolaringología, especializado en Cirugía Estética de Nariz.
+            </p>
+          </div>
+          <Link
+            href="/perfil"
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
+            VER PERFIL COMPLETO
+          </Link>
+        </div>
       </section>
 
       {/* OTROS PADECIMIENTOS */}

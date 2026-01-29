@@ -228,16 +228,42 @@ export default function OtorrinoPediatria() {
           correctamente a su hijo.
         </p>
       </div>
+        {/* CTA */}
+        <div className="bg-gray-50 rounded-2xl p-10 text-center space-y-6">
+          <h2 className="text-2xl font-semibold">
+            ¿Dudas sobre el procedimiento?
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Puede contactar al Dr. Lumbán por medio de su número telefónico o
+            por correo electrónico para concertar una cita y aclarar sus dudas.
+          </p>
+          <a
+            href="/contacto"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
+          >
+            SOLICITA TU CONSULTA
+          </a>
+        </div>
 
-      <div className="mt-10">
-        <h2 className="text-2xl font-semibold mb-2">
-          Conozca sobre el Dr. Lumbán
-        </h2>
-        <p>
-          El Dr. Lumbán tiene años de experiencia dentro del campo de la
-          otorrinolaringología, prestando un servicio de calidad y trato amable.
-        </p>
-      </div>
+        {/* PERFIL */}
+        <div className="border-t pt-12 flex flex-col md:flex-row justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-semibold">
+              Conozca sobre el Dr. Lumbán
+            </h3>
+            <p className="text-gray-600 max-w-xl">
+              El Dr. Lumbán tiene años de experiencia dentro del campo de la
+              otorrinolaringología, prestando un servicio de calidad y trato
+              amable.
+            </p>
+          </div>
+          <a
+            href="/perfil"
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
+            VER PERFIL COMPLETO
+          </a>
+        </div>
     </div>
   );
 }

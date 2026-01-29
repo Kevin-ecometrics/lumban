@@ -7,20 +7,20 @@ import { GoArrowUpRight } from "react-icons/go";
 const CASES = [
   {
     title: "Rinoplastia Estética",
-    href: "/project/hola-hurghada",
+    href: "/project/rinoplastia-estetica",
     image:
       "/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png",
     tag: "Coming soon",
   },
   {
     title: "Cirugía de Sinusitis",
-    href: "/project/jve-studio",
+    href: "/project/cirugia-sinusitis",
     image:
       "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
   },
   {
     title: "Tratamiento de Otitis",
-    href: "/project/symbol-study",
+    href: "/project/tratamientos-otitis",
     image:
       "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
   },

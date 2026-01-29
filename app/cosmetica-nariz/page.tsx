@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 const pacientes = Array.from({ length: 15 }, (_, i) => ({
@@ -143,9 +144,12 @@ export default function RinoplastiaPage() {
             El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede
             contactarlo por teléfono, correo electrónico o agendar una cita.
           </p>
-          <button className="px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition">
+          <a
+            href="/contacto"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
+          >
             SOLICITA TU CONSULTA
-          </button>
+          </a>
         </div>
 
         {/* PERFIL */}
@@ -159,9 +163,12 @@ export default function RinoplastiaPage() {
               otorrinolaringología, especializado en Cirugía Estética de Nariz.
             </p>
           </div>
-          <button className="px-6 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition">
+          <a
+            href="/perfil"
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
             VER PERFIL COMPLETO
-          </button>
+          </a>
         </div>
       </div>
 
