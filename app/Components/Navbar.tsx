@@ -10,6 +10,13 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import {
+  getLocalizedPath,
+  getRouteByKey,
+  Lang,
+} from "../i18n/routeMap";
 
 interface SubLink {
   title: string;
@@ -23,80 +30,138 @@ interface LinkItem {
   subItems?: SubLink[];
 }
 
-const menuItems: LinkItem[] = [
-  {
-    title: "Inicio",
-    href: "/",
-  },
-  {
-    title: "Acerca de",
-    subItems: [
-      { title: "Perfil del Dr. Lumban", href: "/perfil/" },
-      { title: "Certificaciones", href: "/certificaciones/" },
-      { title: "Instalaciones", href: "/instalaciones/" },
-    ],
-  },
-  {
-    title: "Padecimientos",
-    subItems: [
-      {
-        title: "Oído",
-        href: "/oido/",
-        subItems: [
-          { title: "Vértigo y Mareo", href: "/vertigo-mareo/" },
-          { title: "Pérdida de Audición", href: "/perdida-audicion/" },
-        ],
-      },
-      {
-        title: "Nariz",
-        href: "/nariz/",
-        subItems: [
-          { title: "Septoplastia", href: "/septoplastia/" },
-          { title: "Sinusitis", href: "/sinusitis/" },
-          { title: "Congestión Nasal", href: "/congestion-nasal/" },
-          { title: "Obstrucción Nasal", href: "/obstruccion-nasal/" },
-          { title: "Alergias", href: "/alergias/" },
-        ],
-      },
-      {
-        title: "Garganta",
-        href: "/garganta/",
-        subItems: [
-          { title: "Problemas de la Garganta", href: "/problemas-garganta/" },
-          { title: "Ronquidos", href: "/ronquidos/" },
-          { title: "Apnea del Sueño", href: "/apnea-sueno/" },
-          { title: "Trastornos de la Voz", href: "/trastornos-voz/" },
-        ],
-      },
-      { title: "Otorrinopediatría", href: "/otorrinopediatria/" },
-    ],
-  },
-  {
-    title: "Procedimientos",
-    subItems: [
-      { title: "Endoscopia para Sinusitis", href: "/cirugia-endoscopica/" },
-      { title: "Cirugía Antirronquido", href: "/cirugia-antirronquido/" },
-      {
-        title: "Cirugía Microscópica de Laringe",
-        href: "/cirugia-microscopica/",
-      },
-    ],
-  },
-  {
-    title: "Rinoplastia",
-    href: "/cosmetica-nariz/",
-  },
-  {
-    title: "Contacto",
-    href: "/contacto/",
-  },
-];
-
 const Navbar: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubMenu, setMobileSubMenu] = useState<string | null>(null);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+
+  const menuItems: LinkItem[] = [
+    {
+      title: t("Inicio"),
+      href: getRouteByKey("home", currentLang),
+    },
+    {
+      title: t("Acerca de"),
+      subItems: [
+        {
+          title: t("Perfil del Dr. Lumban"),
+          href: getRouteByKey("profile", currentLang),
+        },
+        {
+          title: t("Certificaciones"),
+          href: getRouteByKey("certifications", currentLang),
+        },
+        {
+          title: t("Instalaciones"),
+          href: getRouteByKey("facilities", currentLang),
+        },
+      ],
+    },
+    {
+      title: t("Padecimientos"),
+      subItems: [
+        {
+          title: t("Oído"),
+          href: getRouteByKey("ear", currentLang),
+          subItems: [
+            {
+              title: t("Vértigo y Mareo"),
+              href: getRouteByKey("vertigo-dizziness", currentLang),
+            },
+            {
+              title: t("Pérdida de Audición"),
+              href: getRouteByKey("hearing-loss", currentLang),
+            },
+          ],
+        },
+        {
+          title: t("Nariz"),
+          href: getRouteByKey("nose", currentLang),
+          subItems: [
+            {
+              title: t("Septoplastia"),
+              href: getRouteByKey("septoplasty", currentLang),
+            },
+            {
+              title: t("Sinusitis"),
+              href: getRouteByKey("sinusitis", currentLang),
+            },
+            {
+              title: t("Congestión Nasal"),
+              href: getRouteByKey("nasal-congestion", currentLang),
+            },
+            {
+              title: t("Obstrucción Nasal"),
+              href: getRouteByKey("nasal-obstruction", currentLang),
+            },
+            { title: t("Alergias"), href: getRouteByKey("allergies", currentLang) },
+          ],
+        },
+        {
+          title: t("Garganta"),
+          href: getRouteByKey("throat", currentLang),
+          subItems: [
+            {
+              title: t("Problemas de la Garganta"),
+              href: getRouteByKey("throat-problems", currentLang),
+            },
+            { title: t("Ronquidos"), href: getRouteByKey("snoring", currentLang) },
+            {
+              title: t("Apnea del Sueño"),
+              href: getRouteByKey("sleep-apnea", currentLang),
+            },
+            {
+              title: t("Trastornos de la Voz"),
+              href: getRouteByKey("voice-disorders", currentLang),
+            },
+          ],
+        },
+        {
+          title: t("Otorrinopediatría"),
+          href: getRouteByKey("pediatric-ent", currentLang),
+        },
+      ],
+    },
+    {
+      title: t("Procedimientos"),
+      subItems: [
+        {
+          title: t("Endoscopia para Sinusitis"),
+          href: getRouteByKey("endoscopic-surgery", currentLang),
+        },
+        {
+          title: t("Cirugía Antirronquido"),
+          href: getRouteByKey("anti-snoring-surgery", currentLang),
+        },
+        {
+          title: t("Cirugía Microscópica de Laringe"),
+          href: getRouteByKey("microscopic-surgery", currentLang),
+        },
+      ],
+    },
+    {
+      title: t("Rinoplastia"),
+      href: getRouteByKey("aesthetic-nose", currentLang),
+    },
+    {
+      title: t("Contacto"),
+      href: getRouteByKey("contact", currentLang),
+    },
+  ];
+
+  const handleLanguageChange = (lang: Lang) => {
+    i18n.changeLanguage(lang);
+    const nextPath = getLocalizedPath(pathname ?? "/", lang);
+    if (nextPath && nextPath !== pathname) {
+      router.push(nextPath);
+    }
+  };
 
   const toggleMenu = (title: string) => {
     setOpenMenu(openMenu === title ? null : title);
@@ -120,7 +185,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href={getRouteByKey("home", currentLang)} className="flex items-center space-x-2">
           <img
             src="https://drlumban.com/logo.png"
             alt="Logo Doctor Lumban"
@@ -215,6 +280,30 @@ const Navbar: React.FC = () => {
               </AnimatePresence>
             </div>
           ))}
+          <div className="flex items-center gap-2 pl-2 border-l border-gray-200">
+            <button
+              onClick={() => handleLanguageChange("es")}
+              className={`px-2 py-1 text-xs font-semibold rounded-full transition-colors ${
+                currentLang === "es"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-600 hover:text-blue-600"
+              }`}
+              aria-label={t("Cambiar idioma a español")}
+            >
+              ES
+            </button>
+            <button
+              onClick={() => handleLanguageChange("en")}
+              className={`px-2 py-1 text-xs font-semibold rounded-full transition-colors ${
+                currentLang === "en"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-600 hover:text-blue-600"
+              }`}
+              aria-label={t("Cambiar idioma a inglés")}
+            >
+              EN
+            </button>
+          </div>
         </div>
 
         {/* Mobile button */}
@@ -255,13 +344,13 @@ const Navbar: React.FC = () => {
             <div className="px-6 py-4 border-b bg-gray-50">
               <div className="space-y-2 text-sm text-gray-600">
                 <p className="flex items-center gap-2">
-                  <span>📍</span> Tijuana, Baja California
+                  <span>📍</span> {t("Tijuana, Baja California")}
                 </p>
                 <p className="flex items-center gap-2">
-                  <span>🕒</span> Lun–Vie · 9:00 – 18:00
+                  <span>🕒</span> {t("Lun–Vie · 9:00 – 18:00")}
                 </p>
                 <p className="flex items-center gap-2">
-                  <span>☎</span> (664) 123 4567
+                  <span>☎</span> {t("(664) 123 4567")}
                 </p>
               </div>
             </div>
@@ -367,7 +456,7 @@ const Navbar: React.FC = () => {
 
             {/* REDES */}
             <div className="px-6 py-4 border-t">
-              <p className="text-sm text-gray-500 mb-3">Síguenos</p>
+              <p className="text-sm text-gray-500 mb-3">{t("Síguenos")}</p>
               <div className="flex gap-4 text-lg text-gray-600">
                 <a
                   href="#"
@@ -394,13 +483,37 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* CTA FIJO */}
-            <div className="border-t px-6 py-4 bg-white">
+            <div className="border-t px-6 py-4 bg-white space-y-4">
+              <div className="flex items-center justify-center gap-3">
+                <button
+                  onClick={() => handleLanguageChange("es")}
+                  className={`px-3 py-1 text-xs font-semibold rounded-full transition-colors ${
+                    currentLang === "es"
+                      ? "bg-blue-600 text-white"
+                      : "text-gray-600 hover:text-blue-600"
+                  }`}
+                  aria-label={t("Cambiar idioma a español")}
+                >
+                  ES
+                </button>
+                <button
+                  onClick={() => handleLanguageChange("en")}
+                  className={`px-3 py-1 text-xs font-semibold rounded-full transition-colors ${
+                    currentLang === "en"
+                      ? "bg-blue-600 text-white"
+                      : "text-gray-600 hover:text-blue-600"
+                  }`}
+                  aria-label={t("Cambiar idioma a inglés")}
+                >
+                  EN
+                </button>
+              </div>
               <Link
-                href="/contacto"
+                href={getRouteByKey("contact", currentLang)}
                 onClick={closeMobileMenu}
                 className="block w-full text-center bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition-colors"
               >
-                Agendar cita
+                {t("Agendar cita")}
               </Link>
             </div>
           </motion.div>

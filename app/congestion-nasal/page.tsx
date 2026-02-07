@@ -1,256 +1,345 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import Hero from "@/app/Components/StickyImageHero";
+import { useTranslation } from "react-i18next";
+import { getRouteByKey } from "../i18n/routeMap";
 
 export default function CongestionNasalPage() {
-  const [openImage, setOpenImage] = useState<string | null>(null);
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+  const [openCauseIndex, setOpenCauseIndex] = React.useState<number | null>(null);
+  const [openTreatmentIndex, setOpenTreatmentIndex] = React.useState<number | null>(null);
+  const [openPreventionIndex, setOpenPreventionIndex] = React.useState<number | null>(null);
+  const causeItems = [
+    {
+      title: t("Infecciones"),
+      text: t(
+        "La gripa o sinusitis aguda secundaria a un resfriado común son causadas por una infección viral. Estos virus se transmiten por el aire y provocan inflamación de los tejidos nasales."
+      ),
+      extra: t(
+        "Cuando la mucosa nasal se vuelve amarilla o verde, puede indicar infección bacteriana. También se presentan dolor de cabeza, garganta irritada, tos y malestar general."
+      ),
+    },
+    {
+      title: t("Anomalías Estructurales"),
+      text: t(
+        "Incluyen desviación del septum nasal, deformidades congénitas o secundarias a traumatismos."
+      ),
+      extra: t(
+        "Otras causas: cornetes crecidos, pólipos nasales, colapso de la válvula nasal, nariz torcida y adenoides obstructivas en niños."
+      ),
+    },
+    {
+      title: t("Alergias"),
+      text: t(
+        "Se producen por la respuesta inflamatoria a alérgenos como polen, ácaros del polvo, caspa de animales y humo del tabaco."
+      ),
+      extra: t("Estos alérgenos liberan histamina, causando congestión y exceso de moco nasal."),
+    },
+    {
+      title: t("Rinitis Vasomotora"),
+      text: t(
+        "Condición no alérgica causada por una reacción anormal de los nervios de los vasos sanguíneos nasales."
+      ),
+      extra: t(
+        "Factores: cambios de temperatura, humedad, olores fuertes, humo del tabaco y estrés psicológico."
+      ),
+    },
+  ];
+  const treatmentItems = [
+    {
+      title: t("Tratamiento Médico"),
+      items: [
+        t("Descongestionantes nasales"),
+        t("Antihistamínicos"),
+        t("Corticoesteroides nasales"),
+        t("Antibióticos para infecciones bacterianas"),
+        t("Inmunoterapia para alergias severas"),
+      ],
+    },
+    {
+      title: t("Tratamiento Quirúrgico"),
+      items: [
+        t("Septoplastía"),
+        t("Reducción de cornetes"),
+        t("Cirugía endoscópica de senos paranasales"),
+        t("Extracción de pólipos nasales"),
+        t("Adenoidectomía en niños"),
+      ],
+    },
+  ];
+  const preventionItems = [
+    {
+      title: t("Medidas Generales"),
+      items: [
+        t("Mantener buena higiene nasal"),
+        t("Usar humidificador en ambientes secos"),
+        t("Evitar alérgenos conocidos"),
+        t("No fumar ni exponerse al humo"),
+      ],
+    },
+    {
+      title: t("En Casa"),
+      items: [
+        t("Lavados nasales con solución salina"),
+        t("Mantener la cabeza elevada al dormir"),
+        t("Beber abundantes líquidos"),
+        t("Uso de vapor para descongestionar"),
+      ],
+    },
+  ];
 
   return (
-    <section className="relative bg-neutral-950 text-neutral-100">
-      <div className="max-w-6xl mx-auto px-6 py-20 space-y-24">
-        {/* HERO */}
-        <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-            Acerca de la Congestión Nasal
-          </h1>
-          <p className="text-lg text-neutral-300 max-w-3xl">
-            Tratamiento especializado para nariz tapada y problemas
-            respiratorios
-          </p>
-        </div>
+    <main className="bg-white text-gray-900">
+      {/* HERO */}
+      <Hero
+        title={t("Acerca de la Congestión Nasal")}
+        subtitle={t("Tratamiento especializado para nariz tapada y problemas respiratorios")}
+        src="/congestion-nasal.jpg"
+        alt={t("Acerca de la Congestión Nasal")}
+      />
 
+      <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">
         {/* DESCRIPCIÓN */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="space-y-6 text-neutral-300 leading-relaxed">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">
             <p>
-              La congestión nasal se refiere a la nariz tapada; es uno de los
-              problemas de salud más comunes. Se produce cuando el interior de
-              la nariz se hincha debido a los vasos sanguíneos inflamados.
+              {t(
+                "La congestión nasal se refiere a la nariz tapada; es uno de los problemas de salud más comunes. Se produce cuando el interior de la nariz se hincha debido a los vasos sanguíneos inflamados."
+              )}
             </p>
-
-            <p className="text-neutral-200 font-medium">Importante:</p>
-            <p>
-              Si la congestión nasal no es tratada puede conducir a problemas
-              auditivos, fatiga crónica, insomnio, dolores de cabeza. También
-              puede elevar la frecuencia y volumen de los ronquidos, hasta
-              llegar a una Apnea del Sueño.
-            </p>
+            <div className="rounded-2xl bg-slate-50 p-4 text-sm text-gray-600">
+              <span className="font-semibold">{t("Importante:")}</span>{" "}
+              {t(
+                "Si la congestión nasal no es tratada puede conducir a problemas auditivos, fatiga crónica, insomnio, dolores de cabeza. También puede elevar la frecuencia y volumen de los ronquidos, hasta llegar a una Apnea del Sueño."
+              )}
+            </div>
           </div>
 
-          {/* IMAGEN */}
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="cursor-pointer overflow-hidden rounded-2xl"
-            onClick={() => setOpenImage("/images/congestion-nasal.jpg")}
-          >
-            <img
-              src="/images/congestion-nasal.jpg"
-              alt="Congestión nasal"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+            <h2 className="text-2xl font-semibold">
+              {t("Diagnóstico")}
+            </h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <li>{t("Historia clínica detallada")}</li>
+              <li>{t("Examen físico completo de nariz y garganta")}</li>
+              <li>{t("Endoscopia nasal")}</li>
+              <li>{t("Evaluación de posibles alergias")}</li>
+              <li>{t("Estudios de imagen cuando son necesarios")}</li>
+              <li>{t("Análisis de patrones de sueño en casos de sospecha de apnea")}</li>
+            </ul>
+          </div>
         </div>
 
         {/* CAUSAS */}
-        <div className="space-y-12">
-          <h2 className="text-3xl font-semibold">
-            Causas de la Congestión Nasal
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium">Infecciones</h3>
-              <p className="text-neutral-300">
-                La gripa o sinusitis aguda secundaria a un resfriado común son
-                causadas por una infección viral. Estos virus se transmiten por
-                el aire y provocan inflamación de los tejidos nasales.
-              </p>
-              <p className="text-neutral-300">
-                Cuando la mucosa nasal se vuelve amarilla o verde, puede indicar
-                infección bacteriana. También se presentan dolor de cabeza,
-                garganta irritada, tos y malestar general.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium">Anomalías Estructurales</h3>
-              <p className="text-neutral-300">
-                Incluyen desviación del septum nasal, deformidades congénitas o
-                secundarias a traumatismos.
-              </p>
-              <p className="text-neutral-300">
-                Otras causas: cornetes crecidos, pólipos nasales, colapso de la
-                válvula nasal, nariz torcida y adenoides obstructivas en niños.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium">Alergias</h3>
-              <p className="text-neutral-300">
-                Se producen por la respuesta inflamatoria a alérgenos como
-                polen, ácaros del polvo, caspa de animales y humo del tabaco.
-              </p>
-              <p className="text-neutral-300">
-                Estos alérgenos liberan histamina, causando congestión y exceso
-                de moco nasal.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium">Rinitis Vasomotora</h3>
-              <p className="text-neutral-300">
-                Condición no alérgica causada por una reacción anormal de los
-                nervios de los vasos sanguíneos nasales.
-              </p>
-              <p className="text-neutral-300">
-                Factores: cambios de temperatura, humedad, olores fuertes, humo
-                del tabaco y estrés psicológico.
-              </p>
-            </div>
+        <div className="space-y-6">
+          <h2 className="text-3xl font-semibold">{t("Causas de la Congestión Nasal")}</h2>
+          <div className="space-y-4">
+            {causeItems.map((item, index) => (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-gray-200 bg-white shadow-sm p-6"
+              >
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOpenCauseIndex(openCauseIndex === index ? null : index)
+                  }
+                  className="flex w-full items-center justify-between gap-4 text-left"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-indigo-400" />
+                    <span className="text-lg font-medium text-gray-900">
+                      {item.title}
+                    </span>
+                  </span>
+                  <span
+                    className={`text-gray-400 transition ${
+                      openCauseIndex === index ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    openCauseIndex === index
+                      ? "grid-rows-[1fr] opacity-100 mt-4"
+                      : "grid-rows-[0fr] opacity-0 mt-0"
+                  }`}
+                >
+                  <div className="overflow-hidden space-y-3 text-gray-700">
+                    <p>{item.text}</p>
+                    <p className="text-gray-600">{item.extra}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* DIAGNÓSTICO */}
-        <div className="space-y-6">
-          <h2 className="text-3xl font-semibold">Diagnóstico</h2>
-          <ul className="grid md:grid-cols-2 gap-4 text-neutral-300 list-disc list-inside">
-            <li>Historia clínica detallada</li>
-            <li>Examen físico completo de nariz y garganta</li>
-            <li>Endoscopia nasal</li>
-            <li>Evaluación de posibles alergias</li>
-            <li>Estudios de imagen cuando son necesarios</li>
-            <li>Análisis de patrones de sueño en casos de sospecha de apnea</li>
-          </ul>
-        </div>
-
         {/* TRATAMIENTO */}
-        <div className="space-y-12">
-          <h2 className="text-3xl font-semibold">Tratamiento</h2>
-
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium">Tratamiento Médico</h3>
-              <ul className="list-disc list-inside text-neutral-300 space-y-2">
-                <li>Descongestionantes nasales</li>
-                <li>Antihistamínicos</li>
-                <li>Corticoesteroides nasales</li>
-                <li>Antibióticos para infecciones bacterianas</li>
-                <li>Inmunoterapia para alergias severas</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium">Tratamiento Quirúrgico</h3>
-              <ul className="list-disc list-inside text-neutral-300 space-y-2">
-                <li>Septoplastía</li>
-                <li>Reducción de cornetes</li>
-                <li>Cirugía endoscópica de senos paranasales</li>
-                <li>Extracción de pólipos nasales</li>
-                <li>Adenoidectomía en niños</li>
-              </ul>
-            </div>
+        <div className="space-y-6">
+          <h2 className="text-3xl font-semibold">{t("Tratamiento")}</h2>
+          <div className="space-y-4">
+            {treatmentItems.map((item, index) => (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-gray-200 bg-white shadow-sm p-6"
+              >
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOpenTreatmentIndex(openTreatmentIndex === index ? null : index)
+                  }
+                  className="flex w-full items-center justify-between gap-4 text-left"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-indigo-400" />
+                    <span className="text-lg font-medium text-gray-900">
+                      {item.title}
+                    </span>
+                  </span>
+                  <span
+                    className={`text-gray-400 transition ${
+                      openTreatmentIndex === index ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    openTreatmentIndex === index
+                      ? "grid-rows-[1fr] opacity-100 mt-4"
+                      : "grid-rows-[0fr] opacity-0 mt-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <ul className="space-y-1 text-gray-700">
+                      {item.items.map((entry) => (
+                        <li key={entry} className="flex items-start gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gray-400" />
+                          <span>{entry}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* PREVENCIÓN */}
-        <div className="space-y-10">
-          <h2 className="text-3xl font-semibold">Prevención</h2>
-
-          <div className="grid md:grid-cols-2 gap-10">
-            <div>
-              <h3 className="text-xl font-medium mb-4">Medidas Generales</h3>
-              <ul className="list-disc list-inside text-neutral-300 space-y-2">
-                <li>Mantener buena higiene nasal</li>
-                <li>Usar humidificador en ambientes secos</li>
-                <li>Evitar alérgenos conocidos</li>
-                <li>No fumar ni exponerse al humo</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-medium mb-4">En Casa</h3>
-              <ul className="list-disc list-inside text-neutral-300 space-y-2">
-                <li>Lavados nasales con solución salina</li>
-                <li>Mantener la cabeza elevada al dormir</li>
-                <li>Beber abundantes líquidos</li>
-                <li>Uso de vapor para descongestionar</li>
-              </ul>
-            </div>
+        <div className="space-y-6">
+          <h2 className="text-3xl font-semibold">{t("Prevención")}</h2>
+          <div className="space-y-4">
+            {preventionItems.map((item, index) => (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-gray-200 bg-white shadow-sm p-6"
+              >
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOpenPreventionIndex(openPreventionIndex === index ? null : index)
+                  }
+                  className="flex w-full items-center justify-between gap-4 text-left"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-indigo-400" />
+                    <span className="text-lg font-medium text-gray-900">
+                      {item.title}
+                    </span>
+                  </span>
+                  <span
+                    className={`text-gray-400 transition ${
+                      openPreventionIndex === index ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    openPreventionIndex === index
+                      ? "grid-rows-[1fr] opacity-100 mt-4"
+                      : "grid-rows-[0fr] opacity-0 mt-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <ul className="space-y-1 text-gray-700">
+                      {item.items.map((entry) => (
+                        <li key={entry} className="flex items-start gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gray-400" />
+                          <span>{entry}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="rounded-2xl bg-neutral-900 p-10 text-center space-y-6">
-          <h2 className="text-2xl font-semibold">¿Necesita una evaluación?</h2>
-          <p className="text-neutral-300 max-w-2xl mx-auto">
-            El Dr. Lumbán le agendará una cita para realizar un diagnóstico y
-            brindarle el mejor tratamiento para su problema.
-          </p>
-          <a
-            href="/contacto"
-            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-neutral-950 font-medium hover:scale-105 transition"
-          >
-            SOLICITAR UNA CITA
-          </a>
-        </div>
-
-        {/* PERFIL */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-neutral-800 pt-12">
-          <div>
-            <h3 className="text-xl font-semibold">
-              Conozca sobre el Dr. Lumbán
-            </h3>
-            <p className="text-neutral-300 max-w-xl">
-              El Dr. Lumbán tiene años de experiencia dentro del campo de la
-              otorrinolaringología, prestando un servicio de calidad y trato
-              amable.
+        {/* CTA + PERFIL */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-10 text-center space-y-6 shadow-sm">
+            <h2 className="text-2xl font-semibold">{t("¿Necesita una evaluación?")}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {t(
+                "El Dr. Lumbán le agendará una cita para realizar un diagnóstico y brindarle el mejor tratamiento para su problema."
+              )}
             </p>
+            <a
+              href={getRouteByKey("contact", currentLang)}
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
+            >
+              {t("SOLICITAR UNA CITA")}
+            </a>
           </div>
-          <a
-            href="/perfil"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-neutral-600 hover:bg-neutral-800 transition"
-          >
-            VER PERFIL COMPLETO
-          </a>
+
+          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+            <h3 className="text-xl font-semibold">{t("Conozca sobre el Dr. Lumbán")}</h3>
+            <p className="text-gray-600 max-w-xl">
+              {t(
+                "El Dr. Lumbán tiene años de experiencia dentro del campo de la otorrinolaringología, prestando un servicio de calidad y trato amable."
+              )}
+            </p>
+            <a
+              href={getRouteByKey("profile", currentLang)}
+              className="inline-flex items-center justify-center text-center px-5 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+            >
+              {t("VER PERFIL COMPLETO")}
+            </a>
+          </div>
         </div>
 
         {/* OTROS PADECIMIENTOS */}
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">
-            Otros Padecimientos de Nariz
-          </h3>
-          <ul className="text-neutral-300 space-y-1">
-            <li>➢ Septoplastía</li>
-            <li>➢ Sinusitis</li>
-            <li>➢ Congestión Nasal</li>
-            <li>➢ Obstrucción Nasal</li>
-            <li>➢ Alergias</li>
-          </ul>
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">{t("Otros Padecimientos de Nariz")}</h3>
+          <div className="flex flex-wrap gap-3 text-gray-700">
+            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+              {t("Septoplastía")}
+            </span>
+            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+              {t("Sinusitis")}
+            </span>
+            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+              {t("Congestión Nasal")}
+            </span>
+            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+              {t("Obstrucción Nasal")}
+            </span>
+            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+              {t("Alergias")}
+            </span>
+          </div>
         </div>
       </div>
-
-      {/* MODAL IMAGEN */}
-      <AnimatePresence>
-        {openImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
-            onClick={() => setOpenImage(null)}
-          >
-            <motion.img
-              src={openImage}
-              alt="Imagen ampliada"
-              initial={{ scale: 0.85 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.85 }}
-              className="max-w-[90%] max-h-[90%] rounded-2xl"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </section>
+    </main>
   );
 }

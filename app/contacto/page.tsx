@@ -1,33 +1,51 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { z } from "zod";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-
-// Esquema de validación con Zod
-const contactSchema = z.object({
-  nombre: z.string().min(1, "El nombre es requerido"),
-  email: z.string().email("Correo electrónico inválido"),
-  telefono: z.string().optional(),
-  especialidad: z.enum(["nariz", "oido", "garganta", "general"]),
-  conocePadecimiento: z
-    .enum([
-      "no",
-      "sinusitis",
-      "ronquidos",
-      "apnea del sueno",
-      "transtornos de la voz",
-      "congestion nasal",
-      "veertigo y mareo",
-      "perdida de audicion",
-    ])
-    .optional(),
-  mensaje: z.string().min(1, "El mensaje es requerido"),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { useTranslation } from "react-i18next";
+type ContactFormData = {
+  nombre: string;
+  email: string;
+  telefono?: string;
+  especialidad: "nariz" | "oido" | "garganta" | "general";
+  conocePadecimiento?:
+    | "no"
+    | "sinusitis"
+    | "ronquidos"
+    | "apnea del sueno"
+    | "transtornos de la voz"
+    | "congestion nasal"
+    | "veertigo y mareo"
+    | "perdida de audicion";
+  mensaje: string;
+};
 
 export default function ContactPage() {
+  const { t, i18n } = useTranslation();
+  const contactSchema = useMemo(
+    () =>
+      z.object({
+        nombre: z.string().min(1, t("El nombre es requerido")),
+        email: z.string().email(t("Correo electrónico inválido")),
+        telefono: z.string().optional(),
+        especialidad: z.enum(["nariz", "oido", "garganta", "general"]),
+        conocePadecimiento: z
+          .enum([
+            "no",
+            "sinusitis",
+            "ronquidos",
+            "apnea del sueno",
+            "transtornos de la voz",
+            "congestion nasal",
+            "veertigo y mareo",
+            "perdida de audicion",
+          ])
+          .optional(),
+        mensaje: z.string().min(1, t("El mensaje es requerido")),
+      }),
+    [i18n.language, t]
+  );
   const [formData, setFormData] = useState<ContactFormData>({
     nombre: "",
     email: "",
@@ -72,31 +90,31 @@ export default function ContactPage() {
     const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
 
     if (!formData.nombre.trim()) {
-      newErrors.nombre = "El nombre es requerido";
+      newErrors.nombre = t("El nombre es requerido");
       hasError = true;
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "El correo electrónico es requerido";
+      newErrors.email = t("El correo electrónico es requerido");
       hasError = true;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Correo electrónico inválido";
+      newErrors.email = t("Correo electrónico inválido");
       hasError = true;
     }
 
     if (!formData.especialidad) {
-      newErrors.especialidad = "Por favor selecciona una especialidad";
+      newErrors.especialidad = t("Por favor selecciona una especialidad");
       hasError = true;
     }
 
     if (!formData.mensaje.trim()) {
-      newErrors.mensaje = "El mensaje es requerido";
+      newErrors.mensaje = t("El mensaje es requerido");
       hasError = true;
     }
 
     if (hasError) {
       setErrors(newErrors);
-      toast.error("Por favor, corrige los errores en el formulario.");
+      toast.error(t("Por favor, corrige los errores en el formulario."));
       setIsSubmitting(false);
       return; // Detener el envío si hay errores
     }
@@ -132,7 +150,9 @@ export default function ContactPage() {
 
       // Mostrar toast de éxito
       toast.success(
-        "Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto."
+        t(
+          "Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto."
+        )
       );
 
       // Resetear formulario
@@ -151,20 +171,20 @@ export default function ContactPage() {
         // Este error no debería ocurrir si la validación manual fue exitosa
         console.error("Error de validación Zod inesperado:", error);
         toast.error(
-          "Error en la validación de datos. Por favor, intenta nuevamente."
+          t("Error en la validación de datos. Por favor, intenta nuevamente.")
         );
       } else if (axios.isAxiosError(error)) {
         // Manejar errores de Axios
         console.error("Error al enviar el formulario:", error);
         toast.error(
           error.response?.data?.message ||
-            "Error al enviar el mensaje. Por favor, intenta nuevamente."
+            t("Error al enviar el mensaje. Por favor, intenta nuevamente.")
         );
       } else {
         // Manejar otros errores
         console.error("Error inesperado:", error);
         toast.error(
-          "Ocurrió un error inesperado. Por favor, intenta nuevamente."
+          t("Ocurrió un error inesperado. Por favor, intenta nuevamente.")
         );
       }
     } finally {
@@ -177,9 +197,11 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">Contáctanos</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            {t("Contáctanos")}
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Agenda tu cita con el Dr. Lumbán o envíanos tus dudas
+            {t("Agenda tu cita con el Dr. Lumbán o envíanos tus dudas")}
           </p>
         </div>
 
@@ -207,16 +229,16 @@ export default function ContactPage() {
                   RIO MEDICA
                 </h3>
                 <p className="text-sm text-gray-600 mb-2">
-                  Leona Vicario 1451, Zona Urbana Rio Tijuana
+                  {t("Leona Vicario 1451, Zona Urbana Rio Tijuana")}
                   <br />
-                  22010 Tijuana, B.C.
+                  {t("22010 Tijuana, B.C.")}
                 </p>
                 <div className="flex items-center gap-2">
                   <div className="flex text-yellow-400 text-sm">
                     ★★★★<span className="text-gray-300">★</span>
                   </div>
                   <span className="text-xs text-gray-500">
-                    4.6 (86 opiniones)
+                    {t("4.6 (86 opiniones)")}
                   </span>
                 </div>
               </div>
@@ -227,11 +249,12 @@ export default function ContactPage() {
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                Agenda tu Cita
+                {t("Agenda tu Cita")}
               </h2>
               <p className="text-gray-600 mb-8">
-                Completa el formulario y nos pondremos en contacto contigo a la
-                brevedad
+                {t(
+                  "Completa el formulario y nos pondremos en contacto contigo a la brevedad"
+                )}
               </p>
 
               <div className="space-y-6">
@@ -242,7 +265,7 @@ export default function ContactPage() {
                       htmlFor="nombre"
                       className="block text-sm font-semibold text-gray-700 mb-2"
                     >
-                      Nombre completo <span className="text-azul">*</span>
+                      {t("Nombre completo")} <span className="text-azul">*</span>
                     </label>
                     <input
                       type="text"
@@ -254,7 +277,7 @@ export default function ContactPage() {
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent ${
                         errors.nombre ? "border-azul" : "border-gray-300"
                       }`}
-                      placeholder="Escribe tu nombre completo"
+                      placeholder={t("Escribe tu nombre completo")}
                     />
                     {errors.nombre && (
                       <p className="text-red-500 text-sm mt-1">
@@ -268,7 +291,7 @@ export default function ContactPage() {
                       htmlFor="email"
                       className="block text-sm font-semibold text-gray-700 mb-2"
                     >
-                      Correo electrónico <span className="text-azul">*</span>
+                      {t("Correo electrónico")} <span className="text-azul">*</span>
                     </label>
                     <input
                       type="email"
@@ -280,7 +303,7 @@ export default function ContactPage() {
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent ${
                         errors.email ? "border-azul" : "border-gray-300"
                       }`}
-                      placeholder="Ingresa tu correo electrónico"
+                      placeholder={t("Ingresa tu correo electrónico")}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1">
@@ -296,7 +319,7 @@ export default function ContactPage() {
                     htmlFor="telefono"
                     className="block text-sm font-semibold text-gray-700 mb-2"
                   >
-                    Teléfono
+                    {t("Teléfono")}
                   </label>
                   <input
                     type="tel"
@@ -305,7 +328,7 @@ export default function ContactPage() {
                     value={formData.telefono}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent"
-                    placeholder="Ej: +52 664 123 4567"
+                    placeholder={t("Ej: +52 664 123 4567")}
                   />
                 </div>
 
@@ -316,7 +339,7 @@ export default function ContactPage() {
                       htmlFor="especialidad"
                       className="block text-sm font-semibold text-gray-700 mb-2"
                     >
-                      Deseo atenderme de <span className="text-azul">*</span>
+                      {t("Deseo atenderme de")} <span className="text-azul">*</span>
                     </label>
                     <select
                       id="especialidad"
@@ -328,11 +351,11 @@ export default function ContactPage() {
                         errors.especialidad ? "border-azul" : "border-gray-300"
                       }`}
                     >
-                      <option value="">Selecciona una opción</option>
-                      <option value="nariz">Nariz</option>
-                      <option value="oido">Oído</option>
-                      <option value="garganta">Garganta</option>
-                      <option value="general">Consulta general</option>
+                      <option value="">{t("Selecciona una opción")}</option>
+                      <option value="nariz">{t("Nariz")}</option>
+                      <option value="oido">{t("Oído")}</option>
+                      <option value="garganta">{t("Garganta")}</option>
+                      <option value="general">{t("Consulta general")}</option>
                     </select>
                     {errors.especialidad && (
                       <p className="text-red-500 text-sm mt-1">
@@ -346,7 +369,7 @@ export default function ContactPage() {
                       htmlFor="conocePadecimiento"
                       className="block text-sm font-semibold text-gray-700 mb-2"
                     >
-                      ¿Conoce su padecimiento?
+                      {t("¿Conoce su padecimiento?")}
                     </label>
                     <select
                       id="conocePadecimiento"
@@ -355,20 +378,20 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent"
                     >
-                      <option value="">Selecciona una opción</option>
-                      <option value="no">No lo conozco</option>
-                      <option value="sinusitis">Sinusitis</option>
-                      <option value="ronquidos">Ronquidos</option>
-                      <option value="apnea del sueno">Apnea del sueño</option>
+                      <option value="">{t("Selecciona una opción")}</option>
+                      <option value="no">{t("No lo conozco")}</option>
+                      <option value="sinusitis">{t("Sinusitis")}</option>
+                      <option value="ronquidos">{t("Ronquidos")}</option>
+                      <option value="apnea del sueno">{t("Apnea del sueño")}</option>
                       <option value="transtornos de la voz">
-                        Trastornos de la voz
+                        {t("Trastornos de la voz")}
                       </option>
-                      <option value="congestion nasal">Congestión nasal</option>
-                      <option value="veertigo y mareo">Vértigo y mareo</option>
+                      <option value="congestion nasal">{t("Congestión nasal")}</option>
+                      <option value="veertigo y mareo">{t("Vértigo y mareo")}</option>
                       <option value="perdida de audicion">
-                        Pérdida de audición
+                        {t("Pérdida de audición")}
                       </option>
-                      <option value="rinoplastia">Rinoplastia</option>
+                      <option value="rinoplastia">{t("Rinoplastia")}</option>
                     </select>
                   </div>
                 </div>
@@ -379,7 +402,7 @@ export default function ContactPage() {
                     htmlFor="mensaje"
                     className="block text-sm font-semibold text-gray-700 mb-2"
                   >
-                    Mensaje <span className="text-azul">*</span>
+                    {t("Mensaje")} <span className="text-azul">*</span>
                   </label>
                   <textarea
                     id="mensaje"
@@ -391,7 +414,9 @@ export default function ContactPage() {
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent resize-none ${
                       errors.mensaje ? "border-azul" : "border-gray-300"
                     }`}
-                    placeholder="Describa brevemente el motivo de su consulta o cualquier información adicional que considere importante"
+                    placeholder={t(
+                      "Describa brevemente el motivo de su consulta o cualquier información adicional que considere importante"
+                    )}
                   />
                   {errors.mensaje && (
                     <p className="text-red-500 text-sm mt-1">
@@ -411,10 +436,10 @@ export default function ContactPage() {
                         : "hover:bg-azul/90"
                     }`}
                   >
-                    {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+                    {isSubmitting ? t("Enviando...") : t("Enviar mensaje")}
                   </button>
                   <p className="text-xs text-gray-500">
-                    <span className="text-azul">*</span> Campos requeridos
+                    <span className="text-azul">*</span> {t("Campos requeridos")}
                   </p>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import FooterBase from "./Components/FooterReveal";
 import Navbar from "./Components/Navbar";
+import Providers from "./Providers";
 
 export const metadata: Metadata = {
   title: "Dr. Jaime Lumbán — Otorrinolaringólogo en Tijuana",
@@ -65,9 +66,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <Navbar />
-        {children}
-        <FooterBase />
+        <Providers>
+          <Navbar />
+          {children}
+          <FooterBase />
+        </Providers>
       </body>
     </html>
   );

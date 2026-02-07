@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import StickyImageHero from "../Components/StickyImageHero";
+import { useTranslation } from "react-i18next";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -29,6 +30,7 @@ const itemVariants: Variants = {
 };
 
 export default function InstalacionesPage() {
+  const { t } = useTranslation();
   const certifications = [
     "https://drlumban.com/instalacion1.jpg",
     "https://drlumban.com/instalacion2.jpg",
@@ -45,11 +47,8 @@ export default function InstalacionesPage() {
   return (
     <main className="bg-white">
       <StickyImageHero
-        title="Instalaciones
-"
-        subtitle="Conoce las nuevas instalaciones del consultorio del Dr. Lumbán
-
-"
+        title={t("Instalaciones")}
+        subtitle={t("Conoce las nuevas instalaciones del consultorio del Dr. Lumbán")}
       />
 
       <section className="max-w-7xl mx-auto px-6 py-20">
@@ -61,7 +60,7 @@ export default function InstalacionesPage() {
           className="text-center mb-16"
         >
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Edificio RÍO MÉDICA
+            {t("Edificio RÍO MÉDICA")}
           </h1>
         </motion.header>
 
@@ -82,7 +81,7 @@ export default function InstalacionesPage() {
               <div className="flex items-center justify-center h-[340px] p-6 bg-gray-50">
                 <motion.img
                   src={certification}
-                  alt={`Certificación ${index + 1}`}
+                  alt={`${t("Instalación")} ${index + 1}`}
                   className="max-h-full max-w-full object-contain"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.4 }}
@@ -105,7 +104,7 @@ export default function InstalacionesPage() {
           >
             <motion.img
               src={selectedImage}
-              alt="Certificación grande"
+              alt={t("Imagen ampliada")}
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}

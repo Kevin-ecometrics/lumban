@@ -24,7 +24,16 @@ export default function StickyImageHero({
   subtitleClassName,
   imageClassName,
 }: StickyImageHeroProps) {
+  const fallbackSrc =
+    "/pose%20de%20Doctor%20Jaime%20lumban%20otorrino%20con%20brazos%20cruzados%20y%20traje%20azul.png";
+  const resolvedSrc = src ?? fallbackSrc;
+  const resolvedAlt = alt ?? title;
   const [progress, setProgress] = useState(0);
+  const [imageSrc, setImageSrc] = useState(resolvedSrc);
+
+  useEffect(() => {
+    setImageSrc(resolvedSrc);
+  }, [resolvedSrc]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,8 +62,9 @@ export default function StickyImageHero({
   const borderRadius = 28 - progress * 28; // 28px → 0
 
   // Texto
-  const textOpacity = Math.max(0, 1 - progress * 1.2);
-  const textTranslateY = progress * -50;
+  const textOpacity = Math.max(0, 1 - progress * 1.4);
+  const textTranslateY = -40 + progress * -30;
+  const textBlur = progress * 6;
 
   return (
     <section className="relative h-[240vh] bg-white">
@@ -62,12 +72,13 @@ export default function StickyImageHero({
         <div className="relative w-full max-w-6xl px-6">
           {/* ---------------- TEXTOS ---------------- */}
           <div
-            className={`absolute left-1/2 w-full text-center z-20 ${
+            className={`absolute left-1/2 top-[6%] w-full text-center z-20 ${
               textClassName ?? ""
             }`}
             style={{
               opacity: textOpacity,
-              transform: `translate(-50%, ${textTranslateY}px)`,
+              filter: `blur(${textBlur}px)`,
+              transform: `translate(-50%, ${textTranslateY}px)`
             }}
           >
             <h1
@@ -90,7 +101,7 @@ export default function StickyImageHero({
 
           {/* ---------------- IMAGEN ---------------- */}
           <div
-            className={`relative mx-auto overflow-hidden shadow-2xl z-10 ${
+            className={`relative mx-auto mt-24 overflow-hidden shadow-2xl z-10 ${
               imageClassName ?? ""
             }`}
             style={{
@@ -99,7 +110,16 @@ export default function StickyImageHero({
               transition: "transform 0.12s linear, border-radius 0.12s linear",
             }}
           >
-            <img src={src} alt={alt} className="w-full h-[70vh] object-cover" />
+            <img
+              src={imageSrc}
+              alt={resolvedAlt}
+              className="w-full h-[70vh] object-cover"
+              onError={() => {
+                if (imageSrc !== fallbackSrc) {
+                  setImageSrc(fallbackSrc);
+                }
+              }}
+            />
           </div>
         </div>
       </div>

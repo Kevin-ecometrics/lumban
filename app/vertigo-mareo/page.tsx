@@ -3,6 +3,8 @@
 import Hero from "@/app/Components/StickyImageHero";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { getRouteByKey } from "../i18n/routeMap";
 
 const sintomas = [
   {
@@ -47,12 +49,16 @@ const tratamientos = [
 ];
 
 export default function EarConditionsPage() {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
   return (
     <main className="bg-white">
       {/* HERO */}
       <Hero
-        title="PADECIMIENTOS DEL OÍDO"
-        subtitle="Conozca acerca de los padecimientos relacionados con el oído"
+        title={t("Padecimientos del Oído")}
+        subtitle={t("Conozca acerca de los padecimientos relacionados con el oído")}
+        src="/mareo.png"
+        alt={t("Vértigo y Mareo")}
       />
 
       {/* EQUILIBRIO */}
@@ -65,27 +71,22 @@ export default function EarConditionsPage() {
           className="space-y-6"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Trastornos del Equilibrio: Vértigo y Mareo
+            {t("Trastornos del Equilibrio: Vértigo y Mareo")}
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
-            Nuestro equilibrio es una interacción compleja que requiere una
-            comunicación sólida entre nuestras orejas, los ojos, y el sentido
-            del tacto según la percepción de nuestros pies, los músculos y las
-            articulaciones. A fin de mantener nuestro centro de gravedad,
-            nuestro sistema nervioso central debe recibir estas tres señales y
-            luego, correctamente, transmitirlas al cerebro.
+            {t(
+              "Nuestro equilibrio es una interacción compleja que requiere una comunicación sólida entre nuestras orejas, los ojos, y el sentido del tacto según la percepción de nuestros pies, los músculos y las articulaciones. A fin de mantener nuestro centro de gravedad, nuestro sistema nervioso central debe recibir estas tres señales y luego, correctamente, transmitirlas al cerebro."
+            )}
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
-            Cuando las señales de nuestros sentidos no llegan al cerebelo, o
-            llegan a él con el mensaje equivocado, experimentamos esta falta de
-            comunicación como una pérdida del equilibrio, un mareo.
+            {t(
+              "Cuando las señales de nuestros sentidos no llegan al cerebelo, o llegan a él con el mensaje equivocado, experimentamos esta falta de comunicación como una pérdida del equilibrio, un mareo."
+            )}
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
-            Un trastorno del equilibrio a veces puede ser un síntoma de otras
-            condiciones médicas. La atención médica adecuada, incluyendo una
-            historia médica completa y evaluación del sistema de equilibrio es
-            importante para identificar la causa y dar las opciones de
-            tratamiento adecuadas.
+            {t(
+              "Un trastorno del equilibrio a veces puede ser un síntoma de otras condiciones médicas. La atención médica adecuada, incluyendo una historia médica completa y evaluación del sistema de equilibrio es importante para identificar la causa y dar las opciones de tratamiento adecuadas."
+            )}
           </p>
         </motion.div>
       </section>
@@ -94,7 +95,7 @@ export default function EarConditionsPage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-12">
-            Síntomas y Definiciones
+            {t("Síntomas y Definiciones")}
           </h3>
           <div className="grid md:grid-cols-2 gap-10">
             {sintomas.map((s, idx) => (
@@ -107,9 +108,9 @@ export default function EarConditionsPage() {
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
               >
                 <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                  {s.title}
+                  {t(s.title)}
                 </h4>
-                <p className="text-gray-600">{s.description}</p>
+                <p className="text-gray-600">{t(s.description)}</p>
               </motion.div>
             ))}
           </div>
@@ -119,7 +120,7 @@ export default function EarConditionsPage() {
       {/* CAUSAS */}
       <section className="max-w-4xl mx-auto px-6 py-20">
         <h3 className="text-3xl font-bold text-gray-900 text-center mb-10">
-          Causas del Mareo
+          {t("Causas del Mareo")}
         </h3>
         <ul className="grid sm:grid-cols-2 gap-4 list-disc list-inside text-gray-700 text-lg">
           {causas.map((c, idx) => (
@@ -130,7 +131,7 @@ export default function EarConditionsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              {c}
+              {t(c)}
             </motion.li>
           ))}
         </ul>
@@ -140,13 +141,12 @@ export default function EarConditionsPage() {
       <section className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            Evaluación de Equilibrio
+            {t("Evaluación de Equilibrio")}
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
-            Si tiene problemas de equilibrio o mareos, vamos a completar una
-            evaluación exhaustiva. Nuestro laboratorio de equilibrio puede
-            realizar una serie de pruebas para ayudar en el diagnóstico y el
-            tratamiento de su problema.
+            {t(
+              "Si tiene problemas de equilibrio o mareos, vamos a completar una evaluación exhaustiva. Nuestro laboratorio de equilibrio puede realizar una serie de pruebas para ayudar en el diagnóstico y el tratamiento de su problema."
+            )}
           </p>
         </div>
       </section>
@@ -155,10 +155,10 @@ export default function EarConditionsPage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto px-6">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Tratamientos de Equilibrio
+            {t("Tratamientos de Equilibrio")}
           </h3>
           <div className="space-y-8">
-            {tratamientos.map((t, idx) => (
+            {tratamientos.map((tratamiento, idx) => (
               <motion.div
                 key={idx}
                 className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
@@ -168,9 +168,9 @@ export default function EarConditionsPage() {
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
               >
                 <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                  {t.title}
+                  {t(tratamiento.title)}
                 </h4>
-                <p className="text-gray-600">{t.description}</p>
+                <p className="text-gray-600">{t(tratamiento.description)}</p>
               </motion.div>
             ))}
           </div>
@@ -180,16 +180,17 @@ export default function EarConditionsPage() {
       <section className="max-w-6xl mx-auto px-6 py-20 space-y-20">
         {/* CTA */}
         <div className="bg-gray-50 rounded-2xl p-10 text-center space-y-6">
-          <h2 className="text-2xl font-semibold">¿Tiene alguna duda?</h2>
+          <h2 className="text-2xl font-semibold">{t("¿Tiene alguna duda?")}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede
-            contactarlo por teléfono, correo electrónico o agendar una cita.
+            {t(
+              "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita."
+            )}
           </p>
           <a
-            href="/contacto"
+            href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            SOLICITA TU CONSULTA
+            {t("SOLICITA TU CONSULTA")}
           </a>
         </div>
 
@@ -197,18 +198,19 @@ export default function EarConditionsPage() {
         <div className="border-t pt-12 flex flex-col md:flex-row justify-between gap-6">
           <div>
             <h3 className="text-xl font-semibold">
-              Conozca sobre el Dr. Lumbán
+              {t("Conozca sobre el Dr. Lumbán")}
             </h3>
             <p className="text-gray-600 max-w-xl">
-              El Dr. Lumbán cuenta con 23 años de experiencia en
-              otorrinolaringología, especializado en Cirugía Estética de Nariz.
+              {t(
+                "El Dr. Lumbán cuenta con 23 años de experiencia en otorrinolaringología, especializado en Cirugía Estética de Nariz."
+              )}
             </p>
           </div>
           <a
-            href="/perfil"
+            href={getRouteByKey("profile", currentLang)}
             className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
           >
-            VER PERFIL COMPLETO
+            {t("VER PERFIL COMPLETO")}
           </a>
         </div>
       </section>
@@ -217,9 +219,9 @@ export default function EarConditionsPage() {
       <section className="bg-gray-100 py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            Otros Padecimientos de Oído
+            {t("Otros Padecimientos de Oído")}
           </h3>
-          <p className="text-gray-700 text-lg">➢ Pérdida de Audición</p>
+          <p className="text-gray-700 text-lg">➢ {t("Pérdida de Audición")}</p>
         </div>
       </section>
     </main>

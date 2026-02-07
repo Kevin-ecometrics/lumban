@@ -2,10 +2,11 @@
 
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 /* ---------------- TEXT CONFIG ---------------- */
 
-const TEXT = [
+const TEXT_ES = [
   { word: "EL", emphasis: false },
   { word: "DR.", emphasis: false },
   { word: "JAIME", emphasis: true },
@@ -27,6 +28,31 @@ const TEXT = [
   { word: "mexicana", emphasis: false },
   { word: "de", emphasis: false },
   { word: "Rinología.", emphasis: true },
+];
+
+const TEXT_EN = [
+  { word: "DR.", emphasis: false },
+  { word: "JAIME", emphasis: true },
+  { word: "LUMBÁN", emphasis: true },
+  { word: "is", emphasis: false },
+  { word: "a", emphasis: false },
+  { word: "specialist", emphasis: false },
+  { word: "dedicated", emphasis: false },
+  { word: "to", emphasis: false },
+  { word: "the", emphasis: false },
+  { word: "treatment", emphasis: false },
+  { word: "of", emphasis: false },
+  { word: "EARS,", emphasis: true },
+  { word: "NOSE", emphasis: true },
+  { word: "and", emphasis: false },
+  { word: "THROAT.", emphasis: true },
+  { word: "Member", emphasis: false },
+  { word: "of", emphasis: false },
+  { word: "the", emphasis: false },
+  { word: "Mexican", emphasis: false },
+  { word: "Society", emphasis: false },
+  { word: "of", emphasis: false },
+  { word: "Rhinology.", emphasis: true },
 ];
 
 /* ---------------- WORD COMPONENT (INTERNAL) ---------------- */
@@ -79,7 +105,9 @@ function RevealWord({
 /* ---------------- MAIN COMPONENT ---------------- */
 
 export default function ScrollRevealText() {
+  const { i18n } = useTranslation();
   const ref = useRef<HTMLParagraphElement>(null);
+  const TEXT = i18n.language?.startsWith("en") ? TEXT_EN : TEXT_ES;
 
   const { scrollYProgress } = useScroll({
     target: ref,

@@ -2,47 +2,54 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface MissionItem {
   title: string;
   content: string;
 }
 
-const missions: MissionItem[] = [
-  {
-    title: "Excelencia médica",
-    content:
-      "Exceder las expectativas del paciente proporcionando un servicio incomparable, atención al detalle y los más altos estándares de excelencia médica.",
-  },
-  {
-    title: "Tecnología de vanguardia",
-    content:
-      "Brindar atención de la más alta calidad utilizando tecnología médica moderna y procedimientos de diagnóstico avanzados.",
-  },
-  {
-    title: "Atención personalizada",
-    content:
-      "Dedicar el tiempo necesario a cada paciente para comprender plenamente sus inquietudes, objetivos y necesidades médicas.",
-  },
-  {
-    title: "Disponibilidad inmediata",
-    content:
-      "Estar siempre disponible para atender consultas oportunamente, valorando el tiempo y la tranquilidad del paciente.",
-  },
-  {
-    title: "Actualización constante",
-    content:
-      "Mantenerse actualizado con las técnicas más innovadoras y avances de vanguardia en la otorrinolaringología.",
-  },
-  {
-    title: "Experiencia positiva",
-    content:
-      "Asegurar que cada paciente tenga una experiencia médica agradable, humana y satisfactoria.",
-  },
-];
-
 export default function MissionAccordion() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const { t } = useTranslation();
+  const missions: MissionItem[] = [
+    {
+      title: t("Excelencia médica"),
+      content: t(
+        "Exceder las expectativas del paciente proporcionando un servicio incomparable, atención al detalle y los más altos estándares de excelencia médica."
+      ),
+    },
+    {
+      title: t("Tecnología de vanguardia"),
+      content: t(
+        "Brindar atención de la más alta calidad utilizando tecnología médica moderna y procedimientos de diagnóstico avanzados."
+      ),
+    },
+    {
+      title: t("Atención personalizada"),
+      content: t(
+        "Dedicar el tiempo necesario a cada paciente para comprender plenamente sus inquietudes, objetivos y necesidades médicas."
+      ),
+    },
+    {
+      title: t("Disponibilidad inmediata"),
+      content: t(
+        "Estar siempre disponible para atender consultas oportunamente, valorando el tiempo y la tranquilidad del paciente."
+      ),
+    },
+    {
+      title: t("Actualización constante"),
+      content: t(
+        "Mantenerse actualizado con las técnicas más innovadoras y avances de vanguardia en la otorrinolaringología."
+      ),
+    },
+    {
+      title: t("Experiencia positiva"),
+      content: t(
+        "Asegurar que cada paciente tenga una experiencia médica agradable, humana y satisfactoria."
+      ),
+    },
+  ];
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <div className="max-w-3xl mx-auto space-y-4">

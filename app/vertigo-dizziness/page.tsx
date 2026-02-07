@@ -1,0 +1,1 @@
+export { default } from "../vertigo-mareo/page";

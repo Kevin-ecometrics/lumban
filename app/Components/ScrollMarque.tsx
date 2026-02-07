@@ -9,16 +9,17 @@ import {
   useVelocity,
   useSpring,
 } from "framer-motion";
-
-const WORDS = [
-  "Otorrinolaringología",
-  "Experiencia",
-  "Excelencia",
-  "Innovación",
-  "Atención Médica",
-];
+import { useTranslation } from "react-i18next";
 
 export default function ScrollMarquee() {
+  const { t } = useTranslation();
+  const WORDS = [
+    t("Otorrinolaringología"),
+    t("Experiencia"),
+    t("Excelencia"),
+    t("Innovación"),
+    t("Atención Médica"),
+  ];
   const baseX = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -136,8 +137,8 @@ export default function ScrollMarquee() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <MarqueeText ref={contentRef} />
-          <MarqueeText />
+          <MarqueeText ref={contentRef} words={WORDS} />
+          <MarqueeText words={WORDS} />
         </motion.div>
 
         {/* Gradientes para suavizar los bordes */}
@@ -150,13 +151,18 @@ export default function ScrollMarquee() {
 
 /* ---------- TEXTO ---------- */
 
-const MarqueeText = React.forwardRef<HTMLDivElement>((_, ref) => {
+const MarqueeText = React.forwardRef<
+  HTMLDivElement,
+  {
+    words: string[];
+  }
+>(({ words }, ref) => {
   return (
     <div
       ref={ref}
       className="flex items-center text-[clamp(2rem,6vw,5rem)] font-light px-10"
     >
-      {WORDS.map((word, i) => (
+      {words.map((word, i) => (
         <React.Fragment key={i}>
           <span className="inline-block px-4 transition-all duration-300 hover:scale-105 hover:text-gray-800 cursor-default">
             {word}

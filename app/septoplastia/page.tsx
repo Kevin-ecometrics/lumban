@@ -3,6 +3,8 @@
 import Hero from "@/app/Components/StickyImageHero";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { getRouteByKey } from "../i18n/routeMap";
 
 const beneficios = [
   {
@@ -55,12 +57,16 @@ const procedimiento = [
 ];
 
 export default function SeptoplastiaPage() {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
   return (
     <main className="bg-white">
       {/* HERO */}
       <Hero
-        title="Acerca de la Septoplastía"
-        subtitle="Corrección del tabique nasal para mejorar la respiración"
+        title={t("Acerca de la Septoplastía")}
+        subtitle={t("Corrección del tabique nasal para mejorar la respiración")}
+        src="/septoplastia.jpg"
+        alt={t("Acerca de la Septoplastía")}
       />
 
       {/* INTRO */}
@@ -73,15 +79,9 @@ export default function SeptoplastiaPage() {
           className="space-y-6"
         >
           <p className="text-gray-700 text-lg leading-relaxed">
-            La corrección del tabique nasal (septoplastía) es uno de los
-            procedimientos más comunes en otorrinolaringología. La desviación
-            del septum nasal (tabique) puede ser de nacimiento o puede ser
-            causado por un golpe que hizo que se doblara, del centro hacia un
-            lado. A menudo, las lesiones aparentemente menores durante los años
-            de crecimiento, pueden conducir a la desviación más grave conforme
-            la nariz madura y se desarrolla. Esto puede resultar en la
-            disminución del paso del aire por la nariz y dar la sensación de
-            obstrucción nasal.
+            {t(
+              "La corrección del tabique nasal (septoplastía) es uno de los procedimientos más comunes en otorrinolaringología. La desviación del septum nasal (tabique) puede ser de nacimiento o puede ser causado por un golpe que hizo que se doblara, del centro hacia un lado. A menudo, las lesiones aparentemente menores durante los años de crecimiento, pueden conducir a la desviación más grave conforme la nariz madura y se desarrolla. Esto puede resultar en la disminución del paso del aire por la nariz y dar la sensación de obstrucción nasal."
+            )}
           </p>
         </motion.div>
       </section>
@@ -90,7 +90,7 @@ export default function SeptoplastiaPage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-12">
-            Beneficios de la Corrección Quirúrgica
+            {t("Beneficios de la Corrección Quirúrgica")}
           </h3>
           <div className="grid md:grid-cols-2 gap-10">
             {beneficios.map((b, idx) => (
@@ -103,9 +103,9 @@ export default function SeptoplastiaPage() {
                 className="bg-white rounded-xl shadow-lg p-6 text-left"
               >
                 <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                  {b.title}
+                  {t(b.title)}
                 </h4>
-                <p className="text-gray-600">{b.description}</p>
+                <p className="text-gray-600">{t(b.description)}</p>
               </motion.div>
             ))}
           </div>
@@ -115,7 +115,7 @@ export default function SeptoplastiaPage() {
       {/* PROCEDIMIENTO */}
       <section className="max-w-5xl mx-auto px-6 py-24">
         <h3 className="text-3xl font-bold text-gray-900 text-center mb-14">
-          Detalles del Procedimiento
+          {t("Detalles del Procedimiento")}
         </h3>
         <div className="grid md:grid-cols-2 gap-12">
           {procedimiento.map((p, idx) => (
@@ -130,9 +130,9 @@ export default function SeptoplastiaPage() {
               <div className="text-4xl font-bold text-blue-600">{p.step}</div>
               <div>
                 <h4 className="text-xl font-semibold text-gray-800 mb-1">
-                  {p.title}
+                  {t(p.title)}
                 </h4>
-                <p className="text-gray-600">{p.description}</p>
+                <p className="text-gray-600">{t(p.description)}</p>
               </div>
             </motion.div>
           ))}
@@ -143,12 +143,12 @@ export default function SeptoplastiaPage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center space-y-6">
           <h3 className="text-3xl font-bold text-gray-900">
-            Técnica Avanzada del Dr. Lumbán
+            {t("Técnica Avanzada del Dr. Lumbán")}
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
-            El Dr. Lumbán no utiliza taponamientos nasales que bloquean el paso
-            del aire después de la cirugía; por lo que sale del hospital
-            respirando por su nariz y no por su boca.
+            {t(
+              "El Dr. Lumbán no utiliza taponamientos nasales que bloquean el paso del aire después de la cirugía; por lo que sale del hospital respirando por su nariz y no por su boca."
+            )}
           </p>
         </div>
       </section>
@@ -156,16 +156,17 @@ export default function SeptoplastiaPage() {
       <section className="max-w-6xl mx-auto px-6 py-20 space-y-20">
         {/* CTA */}
         <div className="bg-gray-50 rounded-2xl p-10 text-center space-y-6">
-          <h2 className="text-2xl font-semibold">¿Tiene alguna duda?</h2>
+          <h2 className="text-2xl font-semibold">{t("¿Tiene alguna duda?")}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede
-            contactarlo por teléfono, correo electrónico o agendar una cita.
+            {t(
+              "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita."
+            )}
           </p>
           <a
-            href="/contacto"
+            href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            SOLICITA TU CONSULTA
+            {t("SOLICITA TU CONSULTA")}
           </a>
         </div>
 
@@ -173,18 +174,19 @@ export default function SeptoplastiaPage() {
         <div className="border-t pt-12 flex flex-col md:flex-row justify-between gap-6">
           <div>
             <h3 className="text-xl font-semibold">
-              Conozca sobre el Dr. Lumbán
+              {t("Conozca sobre el Dr. Lumbán")}
             </h3>
             <p className="text-gray-600 max-w-xl">
-              El Dr. Lumbán cuenta con 23 años de experiencia en
-              otorrinolaringología, especializado en Cirugía Estética de Nariz.
+              {t(
+                "El Dr. Lumbán cuenta con 23 años de experiencia en otorrinolaringología, especializado en Cirugía Estética de Nariz."
+              )}
             </p>
           </div>
           <Link
-            href="/perfil"
+            href={getRouteByKey("profile", currentLang)}
             className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
           >
-            VER PERFIL COMPLETO
+            {t("VER PERFIL COMPLETO")}
           </Link>
         </div>
       </section>
@@ -193,13 +195,13 @@ export default function SeptoplastiaPage() {
       <section className="bg-gray-100 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center space-y-3">
           <h3 className="text-3xl font-bold text-gray-900">
-            Otros Padecimientos de Nariz
+            {t("Otros Padecimientos de Nariz")}
           </h3>
-          <p className="text-gray-700 text-lg">➢ Septoplastía</p>
-          <p className="text-gray-700 text-lg">➢ Sinusitis</p>
-          <p className="text-gray-700 text-lg">➢ Congestión Nasal</p>
-          <p className="text-gray-700 text-lg">➢ Obstrucción Nasal</p>
-          <p className="text-gray-700 text-lg">➢ Alergias</p>
+          <p className="text-gray-700 text-lg">➢ {t("Septoplastía")}</p>
+          <p className="text-gray-700 text-lg">➢ {t("Sinusitis")}</p>
+          <p className="text-gray-700 text-lg">➢ {t("Congestión Nasal")}</p>
+          <p className="text-gray-700 text-lg">➢ {t("Obstrucción Nasal")}</p>
+          <p className="text-gray-700 text-lg">➢ {t("Alergias")}</p>
         </div>
       </section>
     </main>

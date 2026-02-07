@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 import StickyImageHero from "../Components/StickyImageHero";
+import { useTranslation } from "react-i18next";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -29,6 +30,7 @@ const itemVariants: Variants = {
 };
 
 export default function CertificacionesPage() {
+  const { t } = useTranslation();
   const certifications = [
     "https://drlumban.com/certificado1.png",
     "https://drlumban.com/certificado2.png",
@@ -41,8 +43,8 @@ export default function CertificacionesPage() {
   return (
     <main className="bg-white">
       <StickyImageHero
-        title="Certificaciones"
-        subtitle="Especialista certificado en oídos, nariz y garganta"
+        title={t("Certificaciones")}
+        subtitle={t("Especialista certificado en oídos, nariz y garganta")}
       />
 
       <section className="max-w-7xl mx-auto px-6 py-20">
@@ -54,11 +56,12 @@ export default function CertificacionesPage() {
           className="text-center mb-16"
         >
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Certificaciones y Reconocimientos
+            {t("Certificaciones y Reconocimientos")}
           </h1>
           <p className="mt-5 text-gray-600 max-w-2xl mx-auto">
-            Formación académica y certificaciones que respaldan la trayectoria
-            profesional.
+            {t(
+              "Formación académica y certificaciones que respaldan la trayectoria profesional."
+            )}
           </p>
         </motion.header>
 
@@ -79,7 +82,7 @@ export default function CertificacionesPage() {
               <div className="flex items-center justify-center h-[340px] p-6 bg-gray-50">
                 <motion.img
                   src={certification}
-                  alt={`Certificación ${index + 1}`}
+                  alt={`${t("Certificación")} ${index + 1}`}
                   className="max-h-full max-w-full object-contain"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.4 }}
@@ -102,7 +105,7 @@ export default function CertificacionesPage() {
           >
             <motion.img
               src={selectedImage}
-              alt="Certificación grande"
+              alt={t("Imagen ampliada")}
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}

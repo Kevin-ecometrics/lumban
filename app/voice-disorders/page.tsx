@@ -1,0 +1,1 @@
+export { default } from "../trastornos-voz/page";

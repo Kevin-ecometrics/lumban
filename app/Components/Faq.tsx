@@ -4,53 +4,52 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+import { getRouteByKey } from "../i18n/routeMap";
 
 interface FAQItem {
   id: number;
   question: string;
   answer: string;
-  isOpen: boolean;
 }
 
 const FAQSection: React.FC = () => {
-  const [faqs, setFaqs] = useState<FAQItem[]>([
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+  const [openId, setOpenId] = useState<number | null>(null);
+  const faqs: FAQItem[] = [
     {
       id: 1,
-      question: "Exceder sus expectativas",
-      answer:
-        "Proporcionando un servicio incomparable, gran atención al detalle y lograr los más altos estándares de excelencia.",
-      isOpen: false,
+      question: t("Exceder sus expectativas"),
+      answer: t(
+        "Proporcionando un servicio incomparable, gran atención al detalle y lograr los más altos estándares de excelencia."
+      ),
     },
     {
       id: 2,
-      question: "Proporcionar la máxima calidad de atención",
-      answer:
-        "Con la mejor tecnología actual y pasar el tiempo necesario con cada paciente para entender realmente sus preocupaciones y metas.",
-      isOpen: false,
+      question: t("Proporcionar la máxima calidad de atención"),
+      answer: t(
+        "Con la mejor tecnología actual y pasar el tiempo necesario con cada paciente para entender realmente sus preocupaciones y metas."
+      ),
     },
     {
       id: 3,
-      question: "Disponibilidad y actualización constante",
-      answer:
-        "Siempre estar disponible inmediatamente a su consulta y mantenerse actualizado con las técnicas más avanzadas e innovaciones de vanguardia.",
-      isOpen: false,
+      question: t("Disponibilidad y actualización constante"),
+      answer: t(
+        "Siempre estar disponible inmediatamente a su consulta y mantenerse actualizado con las técnicas más avanzadas e innovaciones de vanguardia."
+      ),
     },
     {
       id: 4,
-      question: "Experiencia agradable y satisfactoria",
-      answer:
-        "Ver a cada paciente oportunamente, reconociendo que su tiempo es valioso y asegurar que su experiencia sea agradable y satisfactoria.",
-      isOpen: true,
+      question: t("Experiencia agradable y satisfactoria"),
+      answer: t(
+        "Ver a cada paciente oportunamente, reconociendo que su tiempo es valioso y asegurar que su experiencia sea agradable y satisfactoria."
+      ),
     },
-  ]);
+  ];
 
   const toggleFAQ = (id: number) => {
-    setFaqs(
-      faqs.map((faq) => ({
-        ...faq,
-        isOpen: faq.id === id ? !faq.isOpen : false,
-      }))
-    );
+    setOpenId(openId === id ? null : id);
   };
 
   return (
@@ -63,12 +62,14 @@ const FAQSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-12 md:mb-16"
         >
-          Por qué elegir al Dr. Jaime Lumban
+          {t("Por qué elegir al Dr. Jaime Lumban")}
         </motion.h1>
 
         {/* Lista de FAQs */}
         <div className="space-y-2">
-          {faqs.map((faq, index) => (
+          {faqs.map((faq, index) => {
+            const isOpen = openId === faq.id;
+            return (
             <motion.div
               key={faq.id}
               initial={{ opacity: 0, y: 20 }}
@@ -98,11 +99,11 @@ const FAQSection: React.FC = () => {
 
                   {/* Icono + o - */}
                   <motion.div
-                    animate={{ rotate: faq.isOpen ? 0 : 0 }}
+                    animate={{ rotate: isOpen ? 0 : 0 }}
                     transition={{ duration: 0.3 }}
                     className="text-gray-900 ml-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
                   >
-                    {faq.isOpen ? (
+                    {isOpen ? (
                       <FiMinus className="w-6 h-6 md:w-7 md:h-7" />
                     ) : (
                       <FiPlus className="w-6 h-6 md:w-7 md:h-7" />
@@ -112,7 +113,7 @@ const FAQSection: React.FC = () => {
 
                 {/* Contenido de la respuesta */}
                 <AnimatePresence>
-                  {faq.isOpen && (
+                  {isOpen && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
@@ -135,7 +136,8 @@ const FAQSection: React.FC = () => {
                 <div className="border-t border-gray-300 my-2"></div>
               )}
             </motion.div>
-          ))}
+          );
+          })}
         </div>
 
         {/* Elementos decorativos */}
@@ -147,12 +149,12 @@ const FAQSection: React.FC = () => {
         >
           <div className="h-px w-16 bg-gray-900 mb-8"></div>
           <p className="text-gray-600 text-lg font-light">
-            ¿Tiene más preguntas o necesita más información?{" "}
+            {t("¿Tiene más preguntas o necesita más información?")}{" "}
             <a
-              href="/contacto"
+              href={getRouteByKey("contact", currentLang)}
               className="text-gray-900 underline hover:no-underline transition-colors duration-200"
             >
-              Contáctenos aquí.
+              {t("Contáctenos aquí.")}
             </a>
           </p>
         </motion.div>

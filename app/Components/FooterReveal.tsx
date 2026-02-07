@@ -9,19 +9,10 @@ import {
   MotionValue,
   useSpring,
 } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { getRouteByKey, normalizePath } from "../i18n/routeMap";
 
 const WORD = "DR LUMBAN";
-
-const MENU_ITEMS = [
-  { label: "Inicio", href: "/" },
-  { label: "Perfil", href: "/perfil/" },
-  { label: "Certificaciones", href: "/certificaciones/" },
-  { label: "Instalaciones", href: "/instalaciones/" },
-  { label: "Contacto", href: "/contacto/" },
-  { label: "Rinoplastia", href: "/cosmetica-nariz/" },
-  { label: "Apnea del Sueño", href: "/apnea-sueno/" },
-  { label: "Otorrinopediatría", href: "/otorrinopediatria/" },
-] as const;
 
 const SOCIAL_ITEMS = [
   { label: "LinkedIn", href: "https://linkedin.com" },
@@ -107,8 +98,24 @@ const NavItem = ({
    Footer
 ====================================================== */
 export default function FooterBase() {
+  const { t, i18n } = useTranslation();
   const footerRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
+  const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+
+  const MENU_ITEMS = [
+    { label: t("Inicio"), href: getRouteByKey("home", currentLang) },
+    { label: t("Perfil"), href: getRouteByKey("profile", currentLang) },
+    {
+      label: t("Certificaciones"),
+      href: getRouteByKey("certifications", currentLang),
+    },
+    { label: t("Instalaciones"), href: getRouteByKey("facilities", currentLang) },
+    { label: t("Contacto"), href: getRouteByKey("contact", currentLang) },
+    { label: t("Rinoplastia"), href: getRouteByKey("aesthetic-nose", currentLang) },
+    { label: t("Apnea del Sueño"), href: getRouteByKey("sleep-apnea", currentLang) },
+    { label: t("Otorrinopediatría"), href: getRouteByKey("pediatric-ent", currentLang) },
+  ] as const;
 
   const { scrollYProgress } = useScroll({
     target: footerRef,
@@ -146,7 +153,7 @@ export default function FooterBase() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                Menu
+                {t("Menu")}
               </h3>
               <ul className="space-y-2">
                 {MENU_ITEMS.map((item) => (
@@ -154,7 +161,9 @@ export default function FooterBase() {
                     key={item.href}
                     label={item.label}
                     href={item.href}
-                    isActive={pathname === item.href}
+                    isActive={
+                      normalizePath(pathname ?? "/") === normalizePath(item.href)
+                    }
                   />
                 ))}
               </ul>
@@ -162,7 +171,7 @@ export default function FooterBase() {
 
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                Socials
+                {t("Socials")}
               </h3>
               <ul className="space-y-2">
                 {SOCIAL_ITEMS.map((item) => (
@@ -177,7 +186,7 @@ export default function FooterBase() {
 
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                Contacto
+                {t("Contacto")}
               </h3>
 
               <div className="space-y-2">
@@ -211,8 +220,9 @@ export default function FooterBase() {
 
         <div className="pt-4 border-t border-gray-100">
           <p className="text-gray-500 text-xs sm:text-sm font-medium">
-            &copy; {new Date().getFullYear()} Dr. Jaime Lumbán Gutierrez.
-            Especialista en Otorrinolaringología.
+            {t("&copy; {{year}} Dr. Jaime Lumbán Gutierrez. Especialista en Otorrinolaringología.", {
+              year: new Date().getFullYear(),
+            })}
           </p>
         </div>
       </motion.div>

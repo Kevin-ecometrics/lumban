@@ -3,40 +3,41 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
-
-const CASES = [
-  {
-    title: "Rinoplastia Estética",
-    href: "/project/rinoplastia-estetica",
-    image:
-      "/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png",
-    tag: "Coming soon",
-  },
-  {
-    title: "Cirugía de Sinusitis",
-    href: "/project/cirugia-sinusitis",
-    image:
-      "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
-  },
-  {
-    title: "Tratamiento de Otitis",
-    href: "/project/tratamientos-otitis",
-    image:
-      "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
-  },
-  {
-    title: "Desviación de Tabique",
-    href: "/project/tech-repair",
-    image:
-      "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function CasesGrid() {
+  const { t } = useTranslation();
+  const CASES = [
+    {
+      title: t("Rinoplastia Estética"),
+      href: "/project/rinoplastia-estetica",
+      image:
+        "/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png",
+      tag: t("Coming soon"),
+    },
+    {
+      title: t("Cirugía de Sinusitis"),
+      href: "/project/cirugia-sinusitis",
+      image:
+        "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
+    },
+    {
+      title: t("Tratamiento de Otitis"),
+      href: "/project/tratamientos-otitis",
+      image:
+        "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
+    },
+    {
+      title: t("Desviación de Tabique"),
+      href: "/project/tech-repair",
+      image:
+        "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
+    },
+  ];
   return (
     <section className="px-6 py-20">
       <h2 className="text-4xl md:text-5xl font-light mb-12">
-        Casos Destacados
+        {t("Casos Destacados")}
       </h2>
 
       <div className="grid grid-cols-12 gap-6">
