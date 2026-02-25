@@ -4,6 +4,7 @@ const path = require("path");
 // Configuración
 const SITE_URL = "https://drlumban.netlify.app";
 const OUTPUT_FILE = path.join(__dirname, "..", "public", "sitemap.xml");
+const OUTPUT_CSV_FILE = path.join(__dirname, "..", "public", "sitemap.csv");
 const CURRENT_DATE = new Date().toISOString().split("T")[0];
 
 // Todas las rutas de tu sitio con sus prioridades
@@ -78,6 +79,30 @@ function generateSitemap() {
   console.log(`🔗 URL del sitemap: ${SITE_URL}/sitemap.xml`);
 }
 
+// Generar CSV compatible con Excel a partir del sitemap
+function generateSitemapCsv() {
+  console.log("📊 Generando sitemap.csv (compatible con Excel)...");
+
+  const publicDir = path.dirname(OUTPUT_CSV_FILE);
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
+
+  const header = "loc,lastmod,changefreq,priority\n";
+
+  const rows = ROUTES.map((route) => {
+    const fullUrl = `${SITE_URL}${route.path}`;
+    return [fullUrl, CURRENT_DATE, route.changefreq, route.priority].join(",");
+  });
+
+  const csvContent = header + rows.join("\n");
+
+  fs.writeFileSync(OUTPUT_CSV_FILE, csvContent);
+
+  console.log("✅ sitemap.csv generado exitosamente!");
+  console.log(`📁 Archivo: ${OUTPUT_CSV_FILE}`);
+}
+
 // Generar robots.txt automáticamente
 function generateRobotsTxt() {
   const robotsPath = path.join(__dirname, "..", "public", "robots.txt");
@@ -95,6 +120,7 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
   console.log("🤖 robots.txt generado exitosamente!");
 }
 
-// Ejecutar ambas funciones
+// Ejecutar generación de sitemap, CSV y robots.txt
 generateSitemap();
+generateSitemapCsv();
 generateRobotsTxt();
