@@ -57,9 +57,9 @@ export default function StickyImageHero({
   /* ---------------- INTERPOLACIONES ---------------- */
 
   // Imagen (balance editorial)
-  const scale = 0.65 + progress * 0.55; // 0.65 → 1.2
-  const translateY = 100 - progress * 160; // 🔥 visible pero centrado
-  const borderRadius = 28 - progress * 28; // 28px → 0
+  const scale = 0.65 + progress * 0.55; 
+  const translateY = 100 - progress * 160; 
+  const borderRadius = 28 - progress * 28; 
 
   // Texto
   const textOpacity = Math.max(0, 1 - progress * 1.4);

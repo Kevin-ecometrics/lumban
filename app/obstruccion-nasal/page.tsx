@@ -2,154 +2,355 @@
 
 import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import CTASection from "@/app/Components/CTASection";
 
 export default function ObstruccionNasalPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
 
+  const causasItems = [
+    {
+      numero: "01",
+      titulo: t("obstruccion-nasal.causas.adenoides.nombre"),
+      descripcion: t("obstruccion-nasal.causas.adenoides.desc")
+    },
+    {
+      numero: "02",
+      titulo: t("obstruccion-nasal.causas.rinitis.nombre"),
+      descripcion: t("obstruccion-nasal.causas.rinitis.desc")
+    },
+    {
+      numero: "03",
+      titulo: t("obstruccion-nasal.causas.tabique.nombre"),
+      descripcion: t("obstruccion-nasal.causas.tabique.desc"),
+      extra: t("obstruccion-nasal.causas.tabique.solucion")
+    },
+    {
+      numero: "04",
+      titulo: t("obstruccion-nasal.causas.polipos.nombre"),
+      descripcion: t("obstruccion-nasal.causas.polipos.desc")
+    },
+    {
+      numero: "05",
+      titulo: t("obstruccion-nasal.causas.cornetes.nombre"),
+      descripcion: t("obstruccion-nasal.causas.cornetes.desc")
+    },
+    {
+      numero: "06",
+      titulo: t("obstruccion-nasal.causas.valvula.nombre"),
+      descripcion: t("obstruccion-nasal.causas.valvula.desc")
+    },
+    {
+      numero: "07",
+      titulo: t("obstruccion-nasal.causas.coanas.nombre"),
+      descripcion: t("obstruccion-nasal.causas.coanas.desc")
+    }
+  ];
+
+  const tratamientoItems = [
+    {
+      numero: "01",
+      titulo: t("obstruccion-nasal.tratamiento.no-invasivo.titulo"),
+      items: [
+        t("congestion-nasal.tratamiento.medico.descongestionantes"),
+        t("congestion-nasal.tratamiento.medico.corticoesteroides"),
+        t("obstruccion-nasal.tratamiento.no-invasivo.antihistaminicos"),
+        t("congestion-nasal.prevencion.casa.lavados"),
+        t("obstruccion-nasal.tratamiento.no-invasivo.inmunoterapia")
+      ]
+    },
+    {
+      numero: "02",
+      titulo: t("obstruccion-nasal.tratamiento.quirurgico.titulo"),
+      items: [
+        t("obstruccion-nasal.tratamiento.quirurgico.septoplastia"),
+        t("obstruccion-nasal.tratamiento.quirurgico.turbinoplastia"),
+        t("obstruccion-nasal.tratamiento.quirurgico.endoscopica")
+      ]
+    }
+  ];
+
+  const signosAlarma = [
+    t("obstruccion-nasal.signos.respirar"),
+    t("obstruccion-nasal.signos.sueno"),
+    t("obstruccion-nasal.signos.ninos"),
+    t("obstruccion-nasal.signos.dolor"),
+    t("obstruccion-nasal.signos.vision")
+  ];
+
   return (
-    <main className="bg-white text-gray-900">
+    <main className="bg-white">
       {/* HERO */}
       <Hero
-        title={t("Acerca de la Obstrucción Nasal")}
-        subtitle={t("Soluciones especializadas para problemas de flujo de aire nasal")}
+        title={t("obstruccion-nasal.titulo")}
+        subtitle={t("obstruccion-nasal.subtitulo")}
         src="/obstruccion-nasal.png"
-        alt={t("Acerca de la Obstrucción Nasal")}
+        alt={t("obstruccion-nasal.titulo")}
       />
 
-      <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">
-        {/* DESCRIPCIÓN + ANATOMÍA */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              {t(
-                "La obstrucción nasal es básicamente debido a problemas con una de las dos áreas: el tabique nasal o los cornetes inferiores (o ambos)."
-              )}
-            </p>
-            <p>
-              {t(
-                "Un tabique desviado es una obstrucción fija que sólo se puede corregir con cirugía. La hipertrofia de cornetes inferiores, frecuentemente relacionada con alérgenos u otros irritantes en el aire, puede mejorar significativamente con medicamentos o tratamiento de alergias."
-              )}
-            </p>
+      {/* INTRO */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-6 sm:space-y-8 text-base sm:text-lg text-gray-600 leading-relaxed"
+        >
+          {/* Frase destacada con comillas */}
+          <div className="relative">
+            <div className="absolute -top-4 sm:-top-6 left-0 text-5xl sm:text-6xl text-blue-200 font-serif opacity-50">
+              "
+            </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 text-center px-4 sm:px-8 relative z-10">
+              {t("obstruccion-nasal.titulo_completo")}
+            </h1>
+            <div className="absolute -bottom-6 sm:-bottom-10 right-0 text-5xl sm:text-6xl text-blue-200 font-serif opacity-50 rotate-180">
+              "
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700">
-            <h2 className="text-2xl font-semibold">{t("Anatomía Nasal y Obstrucción")}</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-medium">{t("Tabique Nasal")}</h3>
-                <p className="text-gray-700">
-                  {t(
-                    "El tabique nasal es la estructura que divide las fosas nasales en el lado derecho e izquierdo. Un tabique desviado se refiere a un tabique que está torcido."
-                  )}
-                </p>
-                <p className="text-gray-600 font-medium">
-                  {t(
-                    "Obstrucción fija que solo se puede corregir con cirugía (septoplastía)."
-                  )}
+          <p className="text-gray-700 text-base sm:text-base md:text-lg">
+            {t("obstruccion-nasal.descripcion1")}
+          </p>
+
+          <p className="text-gray-700 text-base sm:text-base md:text-lg">
+            {t("obstruccion-nasal.descripcion2")}
+          </p>
+        </motion.div>
+      </section>
+
+      {/* ANATOMÍA */}
+      <section className="bg-gray-50 py-12 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              {t("obstruccion-nasal.anatomia.titulo")}
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Tabique */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-1 h-8 bg-blue-500 rounded-full"></div>
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-800">{t("obstruccion-nasal.anatomia.tabique.nombre")}</h3>
+              </div>
+              <p className="text-gray-600 text-base sm:text-base mb-4">
+                {t("obstruccion-nasal.anatomia.tabique.desc")}
+              </p>
+              <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                <p className="text-gray-700 font-medium">
+                  {t("obstruccion-nasal.anatomia.tabique.fijo")}
                 </p>
               </div>
-              <div>
-                <h3 className="text-xl font-medium">{t("Cornetes Inferiores")}</h3>
-                <p className="text-gray-700">
-                  {t(
-                    "Los cornetes están cerca del septum, pero normalmente existe espacio suficiente entre el tabique y los cornetes para permitir el paso del aire."
-                  )}
+            </motion.div>
+
+            {/* Cornetes */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-1 h-8 bg-blue-500 rounded-full"></div>
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-800">{t("obstruccion-nasal.anatomia.cornetes.nombre")}</h3>
+              </div>
+              <p className="text-gray-600 text-base sm:text-base mb-4">
+                {t("obstruccion-nasal.anatomia.cornetes.desc")}
+              </p>
+              <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                <p className="text-gray-700 font-medium">
+                  {t("obstruccion-nasal.anatomia.cornetes.mejora")}
                 </p>
-                <p className="text-gray-600 font-medium">
-                  {t("Puede mejorar con medicamentos o tratamiento de alergias.")}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CAUSAS */}
+      <section className="py-12 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              {t("obstruccion-nasal.causas.titulo")}
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {causasItems.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                className="bg-white rounded-xl border border-gray-200 p-5 sm:p-6 shadow-sm hover:border-blue-200 transition-colors h-full flex flex-col"
+              >
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-blue-50 rounded-full flex items-center justify-center">
+                    <span className="text-blue-600 font-medium text-sm">{item.numero}</span>
+                  </div>
+                  <h3 className="text-lg sm:text-lg font-semibold text-gray-800">{item.titulo}</h3>
+                </div>
+                <p className="text-gray-600 text-base sm:text-sm flex-grow">
+                  {item.descripcion}
                 </p>
+                {item.extra && (
+                  <p className="text-gray-500 text-base sm:text-sm mt-3 pl-11 border-l-2 border-blue-200 pl-3 ml-8">
+                    {item.extra}
+                  </p>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TRATAMIENTO */}
+      <section className="bg-gray-50 py-12 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              {t("obstruccion-nasal.opciones.titulo")}
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {tratamientoItems.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="bg-blue-50 px-5 py-4 border-b border-blue-100">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl font-bold text-blue-600">{item.numero}</span>
+                    <h3 className="text-lg sm:text-xl font-semibold text-blue-900">{item.titulo}</h3>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <ul className="space-y-2">
+                    {item.items.map((entry, entryIdx) => (
+                      <li key={entryIdx} className="flex items-start gap-2">
+                        <span className="text-blue-500 font-bold text-sm">•</span>
+                        <span className="text-gray-600 text-base sm:text-sm">{entry}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Nota sobre cuándo acudir al especialista */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-8 p-5 bg-blue-50 rounded-lg border-l-4 border-blue-500"
+          >
+            <p className="text-gray-700 text-base sm:text-base">
+              <span className="font-semibold">{t("obstruccion-nasal.signos.titulo")}:</span> {t("obstruccion-nasal.signos.descripcion")}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SIGNOS DE ALARMA */}
+      <section className="py-12 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              {t("obstruccion-nasal.consulta.titulo")}
+            </h2>
+            <p className="text-gray-600 text-lg sm:text-lg max-w-2xl mx-auto">
+              {t("obstruccion-nasal.consulta.descripcion")}
+            </p>
+          </motion.div>
+
+          <div className="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+            <div className="bg-blue-50 px-6 py-4 border-b border-blue-100">
+              <h3 className="text-xl font-semibold text-blue-900">
+                {t("obstruccion-nasal.signos.lista.titulo")}
+              </h3>
+            </div>
+            <div className="p-6">
+              <div className="grid md:grid-cols-2 gap-4">
+                {signosAlarma.map((signo, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="flex items-start gap-3 p-2 hover:bg-blue-50 rounded-lg transition-colors"
+                  >
+                    <span className="text-blue-500 font-bold text-lg">•</span>
+                    <span className="text-gray-700 text-base sm:text-base">{signo}</span>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
 
-        {/* CAUSAS Y SOLUCIONES */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
-            <h2 className="text-3xl font-semibold">{t("Causas y Soluciones")}</h2>
-            <h3 className="text-xl font-medium">{t("Tabique Desviado")}</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>{t("Estructura nasal torcida o desplazada")}</li>
-              <li>{t("Obstrucción mecánica fija")}</li>
-              <li>{t("No responde a medicamentos")}</li>
-              <li>{t("Solución: Septoplastía quirúrgica")}</li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
-            <h3 className="text-xl font-medium">{t("Hipertrofia de Cornetes")}</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>{t("Cornetes inferiores demasiado grandes")}</li>
-              <li>{t("Relacionado con alergias e irritantes")}</li>
-              <li>{t("Puede mejorar con tratamiento médico")}</li>
-              <li>{t("Solución: Medicamentos o reducción quirúrgica")}</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* TRATAMIENTO */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
-            <h2 className="text-3xl font-semibold">{t("Opciones de Tratamiento")}</h2>
-            <h3 className="text-xl font-medium">{t("Tratamiento Médico")}</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>{t("Descongestionantes nasales")}</li>
-              <li>{t("Corticoesteroides nasales")}</li>
-              <li>{t("Antihistamínicos para alergias")}</li>
-              <li>{t("Lavados nasales con solución salina")}</li>
-              <li>{t("Inmunoterapia para alergias")}</li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
-            <h3 className="text-xl font-medium">{t("Tratamiento Quirúrgico")}</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>{t("Septoplastía (corrección del tabique)")}</li>
-              <li>{t("Reducción de cornetes inferiores")}</li>
-              <li>{t("Cirugía endoscópica nasal")}</li>
-              <li>{t("Procedimientos ambulatorios")}</li>
-              <li>{t("Recuperación rápida")}</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* CTA + PERFIL */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-10 text-center space-y-6 shadow-sm">
-            <h2 className="text-2xl font-semibold">{t("¿Quisieras mejorar tu imagen?")}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t(
-                "El Dr. Lumbán es especialista en la Cirugía Estética de Nariz. Infórmate acerca de este procedimiento que puede mejorar tu salud y tu imagen."
-              )}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-6 p-5 bg-blue-50 rounded-lg border-l-4 border-blue-500 text-center"
+          >
+            <p className="text-gray-700 text-lg font-medium">
+              {t("obstruccion-nasal.consulta.frase")}
             </p>
-            <a
-              href={getRouteByKey("contact", currentLang)}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
-            >
-              {t("VER MÁS INFORMACIÓN")}
-            </a>
-          </div>
-
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
-            <h3 className="text-xl font-semibold">{t("Conozca sobre el Dr. Lumbán")}</h3>
-            <p className="text-gray-600 max-w-xl">
-              {t(
-                "El Dr. Lumbán tiene años de experiencia dentro del campo de la otorrinolaringología, prestando un servicio de calidad y trato amable."
-              )}
-            </p>
-            <a
-              href={getRouteByKey("profile", currentLang)}
-              className="inline-flex items-center justify-center text-center px-5 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition"
-            >
-              {t("VER PERFIL COMPLETO")}
-            </a>
-          </div>
+          </motion.div>
         </div>
+      </section>
 
-      </div>
+      {/* CTA SECTION */}
+      <CTASection />
     </main>
   );
 }

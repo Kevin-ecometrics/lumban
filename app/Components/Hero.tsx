@@ -12,10 +12,19 @@ const REMOVE_DELAY = 5000;
 const MAX_IMAGES = 12;
 
 const IMAGES = [
-  "/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png",
-  "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
-  "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
-  "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
+  "/hero1.jpg",
+  "/hero2.jpg",
+  "/hero4.jpg",
+  "/hero5.jpg",
+  "/hero6.jpg",
+  "/hero7.jpg",
+  "/hero8.jpg",
+  "/hero9.jpg",
+  "/hero10.jpg",
+  "/hero11.jpg",
+  "/hero12.jpg",
+  "/hero13.jpg",
+  
 ];
 
 interface TrailImage {
@@ -130,7 +139,7 @@ export default function OurWaveHero() {
       {/* ---------------- TEXT LAYER (TOP) ---------------- */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
         <h1 className="mt-12 text-white text-6xl md:text-8xl tracking-tight font-black">
-          DR. LUMBAN
+          DR. LUMBÁN
         </h1>
       </div>
     </section>

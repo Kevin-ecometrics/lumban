@@ -43,114 +43,120 @@ const Navbar: React.FC = () => {
 
   const menuItems: LinkItem[] = [
     {
-      title: t("Inicio"),
+      title: t("nav.inicio"),
       href: getRouteByKey("home", currentLang),
     },
     {
-      title: t("Acerca de"),
+      title: t("nav.acerca-de"),
       subItems: [
         {
-          title: t("Perfil del Dr. Lumban"),
+          title: t("nav.perfil-doctor"),
           href: getRouteByKey("profile", currentLang),
         },
         {
-          title: t("Certificaciones"),
+          title: t("nav.certificaciones"),
           href: getRouteByKey("certifications", currentLang),
         },
         {
-          title: t("Instalaciones"),
+          title: t("nav.instalaciones"),
           href: getRouteByKey("facilities", currentLang),
         },
       ],
     },
     {
-      title: t("Padecimientos"),
+      title: t("nav.padecimientos"),
       subItems: [
         {
-          title: t("Oído"),
+          title: t("nav.oido"),
           href: getRouteByKey("ear", currentLang),
           subItems: [
             {
-              title: t("Vértigo y Mareo"),
+              title: t("nav.vertigo-mareo"),
               href: getRouteByKey("vertigo-dizziness", currentLang),
             },
             {
-              title: t("Pérdida de Audición"),
+              title: t("nav.perdida-audicion"),
               href: getRouteByKey("hearing-loss", currentLang),
             },
           ],
         },
         {
-          title: t("Nariz"),
+          title: t("nav.nariz"),
           href: getRouteByKey("nose", currentLang),
           subItems: [
             {
-              title: t("Septoplastia"),
+              title: t("nav.septoplastia"),
               href: getRouteByKey("septoplasty", currentLang),
             },
             {
-              title: t("Sinusitis"),
+              title: t("nav.sinusitis"),
               href: getRouteByKey("sinusitis", currentLang),
             },
             {
-              title: t("Congestión Nasal"),
+              title: t("form.padecimiento.congestion"),
               href: getRouteByKey("nasal-congestion", currentLang),
             },
             {
-              title: t("Obstrucción Nasal"),
+              title: t("padecimientos.nariz.obstruccion"),
               href: getRouteByKey("nasal-obstruction", currentLang),
             },
-            { title: t("Alergias"), href: getRouteByKey("allergies", currentLang) },
+            { 
+              title: t("padecimientos.nariz.alergias"), 
+              href: getRouteByKey("allergies", currentLang) 
+            },
           ],
         },
         {
-          title: t("Garganta"),
+          title: t("nav.garganta"),
           href: getRouteByKey("throat", currentLang),
           subItems: [
             {
-              title: t("Problemas de la Garganta"),
+              title: t("padecimientos.garganta.problemas"),
               href: getRouteByKey("throat-problems", currentLang),
             },
-            { title: t("Ronquidos"), href: getRouteByKey("snoring", currentLang) },
+            { 
+              title: t("padecimientos.garganta.ronquidos"), 
+              href: getRouteByKey("snoring", currentLang) 
+            },
             {
-              title: t("Apnea del Sueño"),
+              title: t("padecimientos.garganta.apnea"),
               href: getRouteByKey("sleep-apnea", currentLang),
             },
             {
-              title: t("Trastornos de la Voz"),
+              title: t("padecimientos.garganta.trastornos-voz"),
               href: getRouteByKey("voice-disorders", currentLang),
             },
           ],
         },
         {
-          title: t("Otorrinopediatría"),
+          title: t("nav.otorrinopediatria"),
           href: getRouteByKey("pediatric-ent", currentLang),
         },
       ],
     },
     {
-      title: t("Procedimientos"),
+      title: t("nav.procedimientos"),
       subItems: [
         {
-          title: t("Endoscopia para Sinusitis"),
+          title: t("procedimientos.endoscopia-sinusitis"),
           href: getRouteByKey("endoscopic-surgery", currentLang),
         },
         {
-          title: t("Cirugía Antirronquido"),
+          title: t("procedimientos.antirronquido"),
           href: getRouteByKey("anti-snoring-surgery", currentLang),
         },
         {
-          title: t("Cirugía Microscópica de Laringe"),
+          title: t("procedimientos.microscopica-laringe"),
           href: getRouteByKey("microscopic-surgery", currentLang),
         },
       ],
     },
     {
-      title: t("Rinoplastia"),
+      title: t("nav.rinoplastia"),
       href: getRouteByKey("aesthetic-nose", currentLang),
     },
     {
-      title: t("Contacto"),
+      title: t("nav.contacto"),
       href: getRouteByKey("contact", currentLang),
     },
   ];
@@ -288,7 +294,7 @@ const Navbar: React.FC = () => {
                   ? "bg-blue-600 text-white"
                   : "text-gray-600 hover:text-blue-600"
               }`}
-              aria-label={t("Cambiar idioma a español")}
+              aria-label={t("idioma.cambiar-espanol")}
             >
               ES
             </button>
@@ -299,7 +305,7 @@ const Navbar: React.FC = () => {
                   ? "bg-blue-600 text-white"
                   : "text-gray-600 hover:text-blue-600"
               }`}
-              aria-label={t("Cambiar idioma a inglés")}
+              aria-label={t("idioma.cambiar-ingles")}
             >
               EN
             </button>
@@ -344,13 +350,13 @@ const Navbar: React.FC = () => {
             <div className="px-6 py-4 border-b bg-gray-50">
               <div className="space-y-2 text-sm text-gray-600">
                 <p className="flex items-center gap-2">
-                  <span>📍</span> {t("Tijuana, Baja California")}
+                  <span>📍</span> {t("contacto.direccion.ciudad")}
                 </p>
                 <p className="flex items-center gap-2">
-                  <span>🕒</span> {t("Lun–Vie · 9:00 – 18:00")}
+                  <span>🕒</span> {t("contacto.horario")}
                 </p>
                 <p className="flex items-center gap-2">
-                  <span>☎</span> {t("(664) 123 4567")}
+                  <span>☎</span> {t("contacto.telefono")}
                 </p>
               </div>
             </div>
@@ -456,7 +462,7 @@ const Navbar: React.FC = () => {
 
             {/* REDES */}
             <div className="px-6 py-4 border-t">
-              <p className="text-sm text-gray-500 mb-3">{t("Síguenos")}</p>
+              <p className="text-sm text-gray-500 mb-3">{t("contacto.siguenos")}</p>
               <div className="flex gap-4 text-lg text-gray-600">
                 <a
                   href="#"
@@ -492,7 +498,7 @@ const Navbar: React.FC = () => {
                       ? "bg-blue-600 text-white"
                       : "text-gray-600 hover:text-blue-600"
                   }`}
-                  aria-label={t("Cambiar idioma a español")}
+                  aria-label={t("idioma.cambiar-espanol")}
                 >
                   ES
                 </button>
@@ -503,7 +509,7 @@ const Navbar: React.FC = () => {
                       ? "bg-blue-600 text-white"
                       : "text-gray-600 hover:text-blue-600"
                   }`}
-                  aria-label={t("Cambiar idioma a inglés")}
+                  aria-label={t("idioma.cambiar-ingles")}
                 >
                   EN
                 </button>
@@ -513,7 +519,7 @@ const Navbar: React.FC = () => {
                 onClick={closeMobileMenu}
                 className="block w-full text-center bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition-colors"
               >
-                {t("Agendar cita")}
+                {t("contacto.boton.agendar")}
               </Link>
             </div>
           </motion.div>

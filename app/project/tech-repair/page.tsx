@@ -10,9 +10,9 @@ export default function TechRepairProjectPage() {
       {/* HERO */}
       <Hero
         src="/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png"
-        alt={t("Proyecto de instalación de taquetes")}
-        title={t("Instalación de Taquetes")}
-        subtitle={t("Soluciones de fijación segura con acabado limpio")}
+        alt={t("instalacion-taquetes.titulo")}
+        title={t("instalacion-taquetes.nombre")}
+        subtitle={t("instalacion-taquetes.subtitulo")}
         textClassName="max-w-3xl mx-auto px-4"
         titleClassName="text-5xl sm:text-4xl md:text-6xl"
         subtitleClassName="text-2lg sm:text-xl md:text-2xl -mt-2"
@@ -22,26 +22,20 @@ export default function TechRepairProjectPage() {
       {/* INTRO */}
       <section className="max-w-4xl mx-auto px-6 py-24 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-          {t("Proyecto de instalación y refuerzo con taquetes")}
+          {t("instalacion-taquetes.desc.1")}
         </h1>
 
         <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
           <p>
-            {t(
-              "Este proyecto se centró en la instalación de taquetes para fijación de mobiliario y elementos pesados, garantizando seguridad y durabilidad en cada anclaje."
-            )}
+            {t("instalacion-taquetes.desc.2")}
           </p>
 
           <p>
-            {t(
-              "Aplicamos un diagnóstico previo del material base y seleccionamos el taquete adecuado para cada carga, logrando un acabado limpio y resistente."
-            )}
+            {t("instalacion-taquetes.desc.3")}
           </p>
 
           <p>
-            {t(
-              "La intervención fue precisa, rápida y con mínimo impacto en las áreas de uso diario."
-            )}
+            {t("instalacion-taquetes.desc.4")}
           </p>
         </div>
       </section>

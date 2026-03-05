@@ -2,183 +2,274 @@
 
 import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import CTASection from "@/app/Components/CTASection"; // Importa el nuevo componente
 
 export default function SinusitisPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+
+  const sintomasPrincipales = [
+    "sinusitis.sintomas.congestion",
+    "sinusitis.sintomas.secrecion",
+    "sinusitis.sintomas.goteo",
+    "sinusitis.sintomas.postnasal",
+    "sinusitis.sintomas.dolor"
+  ];
+
+  const sintomasRelacionados = [
+    "sinusitis.sintomas.oido",
+    "sinusitis.sintomas.tos",
+    "sinusitis.sintomas.halitosis",
+    "sinusitis.sintomas.cansancio"
+  ];
+
   return (
-    <main className="bg-white text-gray-900">
+    <main className="bg-white">
       {/* HERO */}
       <Hero
-        title={t("Acerca de la Sinusitis")}
-        subtitle={t("Tratamiento especializado para sinusitis aguda y crónica")}
+        title={t("sinusitis.titulo")}
+        subtitle={t("sinusitis.subtitulo")}
         src="/sinusitis.jpg"
-        alt={t("Acerca de la Sinusitis")}
+        alt={t("sinusitis.titulo")}
       />
 
-      <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">
-        {/* INTRO + SÍNTOMAS */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
-          <div className="space-y-6 text-gray-700 leading-relaxed">
-            <p>
-              {t(
-                "La sinusitis es una de las condiciones médicas más comunes que requieren tratamiento anualmente en los Estados Unidos. En términos generales, la sinusitis se refiere a una inflamación de las cavidades de los senos, y se clasifica en la sinusitis aguda (síntomas de corta duración, en cualquier lugar de 1-12 semanas) y sinusitis crónica (síntomas de mayor duración, 12 semanas y más)."
-              )}
-            </p>
-            <p>
-              {t(
-                "Mientras que la inflamación del seno se piensa con mayor frecuencia de lo infecciosa (viral y bacteriana), la inflamación también puede ocurrir debido a procesos no infecciosos, como la alergia, tabaco o irritantes ambientales."
-              )}
-            </p>
-            <p>
-              {t(
-                "El resfriado común es en realidad una rinosinusitis viral (nasal e inflamación sinusal), que los propios mecanismos inmunes del cuerpo típicamente resuelven en 7-10 días."
-              )}
-            </p>
+      {/* INTRO */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-6 sm:space-y-8 text-base sm:text-lg text-gray-600 leading-relaxed"
+        >
+          {/* Frase destacada con comillas */}
+          <div className="relative">
+            <div className="absolute -top-4 sm:-top-6 left-0 text-5xl sm:text-6xl text-blue-200 font-serif opacity-50">
+              "
+            </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 text-center px-4 sm:px-8 relative z-10">
+              {t("sinusitis.titulo_completo")}
+            </h1>
+            <div className="absolute -bottom-6 sm:-bottom-10 right-0 text-5xl sm:text-6xl text-blue-200 font-serif opacity-50 rotate-180">
+              "
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-6 space-y-4">
-            <h2 className="text-2xl font-semibold">{t("Síntomas de la Sinusitis")}</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>{t("Congestión Nasal")}</li>
-              <li>{t("Secreción purulenta (amarillo o verde)")}</li>
-              <li>{t("Congestión")}</li>
-              <li>{t("Drenaje nasal")}</li>
-              <li>{t("Goteo post-nasal")}</li>
-              <li>{t("Tos")}</li>
-              <li>{t("Dolor de garganta")}</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* DIAGNÓSTICO */}
-        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">
-          <h2 className="text-3xl font-semibold">{t("Diagnóstico y Evaluación")}</h2>
-          <p>
-            {t(
-              "La gran mayoría (98%) de la enfermedad rinosinusitis aguda es viral. El único indicador preciso de la transición de la rinosinusitis viral a una enfermedad bacteriana, es la duración de los síntomas. Como regla general, si los síntomas de la rinosinusitis son ni mejor ni peor después de 10-14 días, la infección bacteriana es más probable y los antibióticos están indicados."
-            )}
+          <p className="text-gray-700 text-base sm:text-base md:text-lg">
+            {t("sinusitis.descripcion1")}
           </p>
-          <p>
-            {t(
-              "El Dr. Lumbán llevará a cabo una evaluación integral, que incluye una historia clínica detallada, examen ORL, y la endoscopia nasal. Este procedimiento se realiza fácilmente en el consultorio, con las mínimas molestias, y proporciona a nuestros médicos una evaluación detallada de la anatomía en la nariz, y el estado de inflamación."
-            )}
-          </p>
-        </div>
 
-        {/* OPCIONES DE TRATAMIENTO */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700">
-            <h2 className="text-3xl font-semibold">{t("Opciones de Tratamiento")}</h2>
-            <h3 className="text-xl font-semibold">{t("Tratamiento Médico")}</h3>
-            <p>
-              {t(
-                "Cuando la inflamación sinusal no se borra por los propios mecanismos del cuerpo, o incluso con terapia antibiótica adecuada, entonces los síntomas persistirán y la terapia más intensiva puede ser indicada. Esto podría incluir cursos más largos de antibióticos, el uso concomitante de descongestionantes y mucolíticos, o posiblemente incluso esteroides anti-inflamatorios."
-              )}
-            </p>
-            <h3 className="text-xl font-semibold">{t("Evaluación Anatómica")}</h3>
-            <p>
-              {t(
-                "Pueden detectarse anomalías anatómicas, como una desviación del tabique, pólipos nasales o sinusales, hinchazón o secreciones anormales. Estos hallazgos pueden ayudar a guiar la terapia y la respuesta al tratamiento. Imágenes TC se utilizan con criterio para evaluar completamente los senos, proporcionando información acerca de la magnitud y distribución de la inflamación en los senos nasales."
-              )}
+          <div className="bg-gradient-to-r from-blue-50 to-white p-4 sm:p-6 rounded-lg border-l-4 border-blue-500 my-4">
+            <p className="text-gray-700 text-base sm:text-base md:text-lg">
+              {t("sinusitis.descripcion2")}
             </p>
           </div>
+        </motion.div>
+      </section>
 
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700">
-            <h3 className="text-xl font-semibold">{t("Cirugía Endoscópica de Senos")}</h3>
-            <p>
-              {t(
-                "Para los pacientes cuya inflamación es refractaria y tiene poca respuesta al tratamiento médico, o que tienen una obstrucción significativa de la nariz y/o anormalidades anatómicas de los senos, la cirugía puede ser considerada. La cirugía de senos se realiza por vía endoscópica, dando prioridad a la preservación de la función del seno mientras se restaura el drenaje adecuado, conocida como Endoscopia Sinusal Funcional (CENS)."
-              )}
-            </p>
-            <p>
-              {t(
-                "Se realiza con más frecuencia bajo anestesia general, de forma ambulatoria (es decir, cirugía el mismo día). En algunos casos, se utilizan imágenes de TC en tecnología de orientación de imagen, lo que permite el seguimiento en tiempo real de los instrumentos quirúrgicos durante el procedimiento."
-              )}
-            </p>
-          </div>
-        </div>
-
-        {/* FACTORES DE RIESGO */}
-        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700">
-          <h2 className="text-3xl font-semibold">{t("Factores de Riesgo Importantes")}</h2>
-          <p>
-            {t(
-              "Si usted sufre de infecciones sinusales repetidas frecuentes, o si tiene síntomas verdaderamente crónicos que no responden a los tratamientos, por favor, haga una cita con el Dr. Lumbán para una evaluación completa. Se llevará a cabo una historia completa, una evaluación de la anatomía de la nariz y los senos paranasales, y se identificarán otros factores que pueden necesitar tratamiento, tales como:"
-            )}
-          </p>
-          <ul className="list-disc list-inside space-y-2">
-            <li>{t("Alergias")}</li>
-            <li>{t("Factores ambientales")}</li>
-            <li>{t("Deficiencia inmune")}</li>
-            <li>{t("Consumo de tabaco")}</li>
-          </ul>
-          <p>
-            {t(
-              "Los efectos nocivos del consumo de tabaco en las membranas nasales y senos paranasales no pueden ser exagerados."
-            )}
-          </p>
-        </div>
-
-        {/* CTA + PERFIL */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-8 space-y-4 text-gray-700">
-            <h2 className="text-3xl font-semibold">
-              {t("¿Diagnosticado con Sinusitis Crónica?")}
+      {/* PRINCIPALES CAUSAS */}
+      <section className="bg-gray-50 py-12 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              {t("sinusitis.causas.titulo")}
             </h2>
-            <p>
-              {t(
-                "Por medio de la cirugía endoscópica, el Dr. Lumbán puede ayudarle a mejorar su salud con el mínimo de dolor."
-              )}
-            </p>
-            <a
-              href={getRouteByKey("contact", currentLang)}
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition"
-            >
-              {t("VER MÁS INFORMACIÓN")}
-            </a>
-          </div>
+          </motion.div>
 
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
-            <h2 className="text-3xl font-semibold">{t("Conozca sobre el Dr. Lumbán")}</h2>
-            <p className="text-gray-700">
-              {t(
-                "El Dr. Lumbán tiene años de experiencia dentro del campo de la otorrinolaringología, prestando un servicio de calidad y trato amable."
-              )}
-            </p>
-            <a
-              href={getRouteByKey("profile", currentLang)}
-              className="inline-flex items-center justify-center text-center px-5 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white p-5 sm:p-6 rounded-xl border border-gray-200 shadow-sm border-l-4 border-blue-500 hover:shadow-md transition-shadow"
             >
-              {t("VER PERFIL COMPLETO")}
-            </a>
+              <p className="text-gray-700 text-base sm:text-base">{t("sinusitis.causas.infecciones")}</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white p-5 sm:p-6 rounded-xl border border-gray-200 shadow-sm border-l-4 border-blue-500 hover:shadow-md transition-shadow"
+            >
+              <p className="text-gray-700 text-base sm:text-base">{t("sinusitis.causas.anatomicas")}</p>
+            </motion.div>
           </div>
         </div>
+      </section>
 
-        {/* OTROS PADECIMIENTOS */}
-        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
-          <h3 className="text-xl font-semibold">{t("Otros Padecimientos de Nariz")}</h3>
-          <div className="flex flex-wrap gap-3 text-gray-700">
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
-              {t("Septoplastía")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
-              {t("Sinusitis")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
-              {t("Congestión Nasal")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
-              {t("Obstrucción Nasal")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
-              {t("Alergias")}
-            </span>
+      {/* SÍNTOMAS */}
+      <section className="py-12 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              {t("sinusitis.sintomas.titulo")}
+            </h2>
+          </motion.div>
+
+          <div className="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+            <div className="bg-blue-50 px-4 sm:px-6 py-3 sm:py-4 border-b border-blue-100">
+              <h3 className="text-lg sm:text-xl font-semibold text-blue-900">
+                {t("sinusitis.sintomas.principales")}
+              </h3>
+            </div>
+            <div className="p-4 sm:p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                {sintomasPrincipales.map((sintoma, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="flex items-start gap-2 sm:gap-3 p-1 sm:p-2 hover:bg-blue-50 rounded-lg transition-colors"
+                  >
+                    <span className="text-blue-500 font-bold text-base sm:text-lg">•</span>
+                    <span className="text-gray-700 text-sm sm:text-base">{t(sintoma)}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-50 px-4 sm:px-6 py-3 sm:py-4 border-t border-b border-gray-200">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
+                {t("sinusitis.sintomas.relacionados")}
+              </h3>
+            </div>
+            <div className="p-4 sm:p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                {sintomasRelacionados.map((sintoma, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                    className="flex items-start gap-2 sm:gap-3 p-1 sm:p-2 hover:bg-blue-50 rounded-lg transition-colors"
+                  >
+                    <span className="text-blue-500 font-bold text-base sm:text-lg">•</span>
+                    <span className="text-gray-700 text-sm sm:text-base">{t(sintoma)}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* DIAGNÓSTICO Y EVALUACIÓN */}
+      <section className="bg-gray-50 py-12 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden"
+          >
+            <div className="bg-blue-50 px-4 sm:px-6 py-3 sm:py-4 border-b border-blue-100">
+              <h2 className="text-xl sm:text-2xl font-bold text-blue-900">
+                {t("sinusitis.diagnostico.titulo")}
+              </h2>
+            </div>
+            <div className="p-5 sm:p-8">
+              <p className="text-gray-700 text-base sm:text-base leading-relaxed">
+                {t("sinusitis.diagnostico.descripcion")}
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* OPCIONES DE TRATAMIENTO */}
+      <section className="py-12 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-6 sm:mb-8"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+              {t("sinusitis.tratamiento.titulo")}
+            </h2>
+            
+            {/* Texto de tratamiento inicial - AHORA AQUÍ, debajo del título */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="max-w-3xl mx-auto"
+            >
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+                {t("sinusitis.tratamiento.convencional")}
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <div className="space-y-4 sm:space-y-6 mt-8 sm:mt-10">
+            {/* Sinuplastia con balón */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white p-5 sm:p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-lg sm:text-xl font-semibold text-blue-700 mb-3 sm:mb-4 flex items-center">
+                <span className="w-1 h-5 sm:h-6 bg-blue-500 rounded-full mr-2 sm:mr-3"></span>
+                {t("sinusitis.tratamiento.sinuplastia.titulo")}
+              </h3>
+              <p className="text-gray-600 text-base sm:text-base leading-relaxed">
+                {t("sinusitis.tratamiento.sinuplastia.descripcion")}
+              </p>
+            </motion.div>
+
+            {/* Cirugía Endoscópica */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white p-5 sm:p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-lg sm:text-xl font-semibold text-blue-700 mb-3 sm:mb-4 flex items-center">
+                <span className="w-1 h-5 sm:h-6 bg-blue-500 rounded-full mr-2 sm:mr-3"></span>
+                {t("sinusitis.tratamiento.cens.titulo")}
+              </h3>
+              <p className="text-gray-600 text-base sm:text-base leading-relaxed mb-3 sm:mb-4">
+                {t("sinusitis.tratamiento.cens.descripcion1")}
+              </p>
+              <p className="text-gray-600 text-base sm:text-base leading-relaxed">
+                {t("sinusitis.tratamiento.cens.descripcion2")}
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CALL TO ACTION - Usando el componente reutilizable */}
+      <CTASection translationKey="sinusitis" />
     </main>
   );
 }

@@ -10,40 +10,86 @@ import { getRouteByKey } from "../i18n/routeMap";
 interface FAQItem {
   id: number;
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 const FAQSection: React.FC = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
   const [openId, setOpenId] = useState<number | null>(null);
+
   const faqs: FAQItem[] = [
     {
       id: 1,
-      question: t("Exceder sus expectativas"),
-      answer: t(
-        "Proporcionando un servicio incomparable, gran atención al detalle y lograr los más altos estándares de excelencia."
+      question: t("faq.otorrino.cuando.titulo"),
+      answer: (
+        <div>
+          <p className="mb-2">{t("faq.otorrino.cuando.descripcion") || "Es recomendable acudir cuando presentas:"}</p>
+          <ul className="list-disc list-inside space-y-1 mb-4">
+            <li>{t("faq.sintomas.obstruccion")}</li>
+            <li>{t("faq.sintomas.ronquidos")}</li>
+            <li>{t("faq.sintomas.sinusitis")}</li>
+            <li>{t("faq.sintomas.dolor-garganta")}</li>
+            <li>{t("faq.sintomas.cambios-voz")}</li>
+            <li>{t("faq.sintomas.mareos")}</li>
+            <li>{t("faq.sintomas.inflamacion")}</li>
+          </ul>
+        </div>
       ),
     },
     {
       id: 2,
-      question: t("Proporcionar la máxima calidad de atención"),
-      answer: t(
-        "Con la mejor tecnología actual y pasar el tiempo necesario con cada paciente para entender realmente sus preocupaciones y metas."
+      question: t("faq.otorrino.consulta.titulo"),
+      answer: (
+        <div>
+          <p className="mb-2">{t("faq.otorrino.consulta.descripcion") || "La consulta inicia con una entrevista clínica detallada, donde se evalúan:"}</p>
+          <ul className="list-disc list-inside space-y-1 mb-4">
+            <li>{t("faq.consulta.sintomas")}</li>
+            <li>{t("faq.consulta.antecedentes")}</li>
+            <li>{t("faq.consulta.alergias")}</li>
+            <li>{t("faq.consulta.habitos")}</li>
+            <li>{t("faq.consulta.historia")}</li>
+          </ul>
+          <p className="mb-2">{t("faq.consulta.exploracion")}</p>
+          <p className="mb-2">{t("faq.consulta.estudios")}</p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>{t("faq.consulta.imagen")}</li>
+            <li>{t("faq.consulta.pruebas-alergia")}</li>
+            <li>{t("faq.consulta.auditivos")}</li>
+            <li>{t("faq.consulta.cultivos")}</li>
+          </ul>
+        </div>
       ),
     },
     {
       id: 3,
-      question: t("Disponibilidad y actualización constante"),
-      answer: t(
-        "Siempre estar disponible inmediatamente a su consulta y mantenerse actualizado con las técnicas más avanzadas e innovaciones de vanguardia."
+      question: t("faq.rinoplastia.valoracion.titulo"),
+      answer: (
+        <div>
+          <p className="mb-2">{t("faq.valoracion.titulo")}</p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>{t("faq.valoracion.analisis")}</li>
+            <li>{t("faq.valoracion.respiracion")}</li>
+            <li>{t("faq.valoracion.tabique")}</li>
+            <li>{t("faq.valoracion.fotos")}</li>
+            <li>{t("faq.valoracion.explicacion")}</li>
+          </ul>
+        </div>
       ),
     },
     {
       id: 4,
-      question: t("Experiencia agradable y satisfactoria"),
-      answer: t(
-        "Ver a cada paciente oportunamente, reconociendo que su tiempo es valioso y asegurar que su experiencia sea agradable y satisfactoria."
+      question: t("faq.rinoplastia.resultados.titulo"),
+      answer: (
+        <div>
+          <p className="mb-2">{t("faq.resultados.visible")}</p>
+          <p className="mb-2">{t("faq.resultados.sin-embargo")}</p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>{t("faq.resultados.inflamacion")}</li>
+            <li>{t("faq.resultados.refinado")}</li>
+            <li>{t("faq.resultados.paciencia")}</li>
+          </ul>
+        </div>
       ),
     },
   ];
@@ -62,7 +108,7 @@ const FAQSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-12 md:mb-16"
         >
-          {t("Por qué elegir al Dr. Jaime Lumban")}
+          {t("doctor.por-que-elegir")}
         </motion.h1>
 
         {/* Lista de FAQs */}
@@ -70,73 +116,73 @@ const FAQSection: React.FC = () => {
           {faqs.map((faq, index) => {
             const isOpen = openId === faq.id;
             return (
-            <motion.div
-              key={faq.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              {/* FAQ Item */}
-              <div
-                className={`border-t ${
-                  index === faqs.length - 1 ? "border-b" : ""
-                } border-gray-200 py-6 md:py-8`}
+              <motion.div
+                key={faq.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                {/* Encabezado de la FAQ */}
-                <button
-                  onClick={() => toggleFAQ(faq.id)}
-                  className="w-full flex justify-between items-start text-left group hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-300 focus:rounded"
+                {/* FAQ Item */}
+                <div
+                  className={`border-t ${
+                    index === faqs.length - 1 ? "border-b" : ""
+                  } border-gray-200 py-6 md:py-8`}
                 >
-                  {/* Número y pregunta */}
-                  <div className="flex items-start space-x-4 md:space-x-6">
-                    <span className="text-gray-400 font-mono text-sm md:text-base tracking-tight mt-1">
-                      {faq.id < 10 ? `0${faq.id}` : faq.id}.
-                    </span>
-                    <h3 className="text-xl md:text-2xl font-serif font-normal text-gray-900 group-hover:text-gray-700 transition-colors duration-200">
-                      {faq.question}
-                    </h3>
-                  </div>
-
-                  {/* Icono + o - */}
-                  <motion.div
-                    animate={{ rotate: isOpen ? 0 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-gray-900 ml-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
+                  {/* Encabezado de la FAQ */}
+                  <button
+                    onClick={() => toggleFAQ(faq.id)}
+                    className="w-full flex justify-between items-start text-left group hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-300 focus:rounded"
                   >
-                    {isOpen ? (
-                      <FiMinus className="w-6 h-6 md:w-7 md:h-7" />
-                    ) : (
-                      <FiPlus className="w-6 h-6 md:w-7 md:h-7" />
-                    )}
-                  </motion.div>
-                </button>
+                    {/* Número y pregunta */}
+                    <div className="flex items-start space-x-4 md:space-x-6">
+                      <span className="text-gray-400 font-mono text-sm md:text-base tracking-tight mt-1">
+                        {faq.id < 10 ? `0${faq.id}` : faq.id}.
+                      </span>
+                      <h3 className="text-xl md:text-2xl font-serif font-normal text-gray-900 group-hover:text-gray-700 transition-colors duration-200">
+                        {faq.question}
+                      </h3>
+                    </div>
 
-                {/* Contenido de la respuesta */}
-                <AnimatePresence>
-                  {isOpen && (
+                    {/* Icono + o - */}
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="overflow-hidden"
+                      animate={{ rotate: isOpen ? 0 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-gray-900 ml-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
                     >
-                      <div className="mt-4 md:mt-6 ml-10 md:ml-14 pr-4">
-                        <p className="text-gray-700 text-lg md:text-xl leading-relaxed font-light">
-                          {faq.answer}
-                        </p>
-                      </div>
+                      {isOpen ? (
+                        <FiMinus className="w-6 h-6 md:w-7 md:h-7" />
+                      ) : (
+                        <FiPlus className="w-6 h-6 md:w-7 md:h-7" />
+                      )}
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                  </button>
 
-              {/* Línea divisoria especial después del tercer item */}
-              {index === 2 && (
-                <div className="border-t border-gray-300 my-2"></div>
-              )}
-            </motion.div>
-          );
+                  {/* Contenido de la respuesta */}
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="mt-4 md:mt-6 ml-10 md:ml-14 pr-4">
+                          <div className="text-gray-700 text-lg md:text-xl leading-relaxed font-light">
+                            {faq.answer}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Línea divisoria especial después del tercer item */}
+                {index === 2 && (
+                  <div className="border-t border-gray-300 my-2"></div>
+                )}
+              </motion.div>
+            );
           })}
         </div>
 
@@ -149,12 +195,12 @@ const FAQSection: React.FC = () => {
         >
           <div className="h-px w-16 bg-gray-900 mb-8"></div>
           <p className="text-gray-600 text-lg font-light">
-            {t("¿Tiene más preguntas o necesita más información?")}{" "}
+            {t("global.pregunta-info")}{" "}
             <a
               href={getRouteByKey("contact", currentLang)}
               className="text-gray-900 underline hover:no-underline transition-colors duration-200"
             >
-              {t("Contáctenos aquí.")}
+              {t("global.contacto-aqui")}
             </a>
           </p>
         </motion.div>

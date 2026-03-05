@@ -14,11 +14,9 @@ import { useTranslation } from "react-i18next";
 export default function ScrollMarquee() {
   const { t } = useTranslation();
   const WORDS = [
-    t("Otorrinolaringología"),
-    t("Experiencia"),
-    t("Excelencia"),
-    t("Innovación"),
-    t("Atención Médica"),
+    t("doctor.valores.experiencia"),
+    t("doctor.valores.excelencia"),
+    t("doctor.valores.innovacion"),
   ];
   const baseX = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);

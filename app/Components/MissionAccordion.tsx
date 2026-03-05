@@ -13,40 +13,28 @@ export default function MissionAccordion() {
   const { t } = useTranslation();
   const missions: MissionItem[] = [
     {
-      title: t("Excelencia médica"),
-      content: t(
-        "Exceder las expectativas del paciente proporcionando un servicio incomparable, atención al detalle y los más altos estándares de excelencia médica."
-      ),
+      title: t("valores.excelencia.nombre"),
+      content: t("valores.excelencia.desc"),
     },
     {
-      title: t("Tecnología de vanguardia"),
-      content: t(
-        "Brindar atención de la más alta calidad utilizando tecnología médica moderna y procedimientos de diagnóstico avanzados."
-      ),
+      title: t("valores.tecnologia.nombre"),
+      content: t("valores.tecnologia.desc"),
     },
     {
-      title: t("Atención personalizada"),
-      content: t(
-        "Dedicar el tiempo necesario a cada paciente para comprender plenamente sus inquietudes, objetivos y necesidades médicas."
-      ),
+      title: t("valores.atencion.nombre"),
+      content: t("valores.atencion.desc"),
     },
     {
-      title: t("Disponibilidad inmediata"),
-      content: t(
-        "Estar siempre disponible para atender consultas oportunamente, valorando el tiempo y la tranquilidad del paciente."
-      ),
+      title: t("valores.disponibilidad.nombre"),
+      content: t("valores.disponibilidad.desc"),
     },
     {
-      title: t("Actualización constante"),
-      content: t(
-        "Mantenerse actualizado con las técnicas más innovadoras y avances de vanguardia en la otorrinolaringología."
-      ),
+      title: t("valores.actualizacion.nombre"),
+      content: t("valores.actualizacion.desc"),
     },
     {
-      title: t("Experiencia positiva"),
-      content: t(
-        "Asegurar que cada paciente tenga una experiencia médica agradable, humana y satisfactoria."
-      ),
+      title: t("valores.experiencia.nombre"),
+      content: t("valores.experiencia.desc"),
     },
   ];
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

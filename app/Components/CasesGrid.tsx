@@ -9,26 +9,26 @@ export default function CasesGrid() {
   const { t } = useTranslation();
   const CASES = [
     {
-      title: t("Rinoplastia Estética"),
+      title: t("casos.rinoplastia"),
       href: "/project/rinoplastia-estetica",
       image:
         "/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png",
-      tag: t("Coming soon"),
+      tag: t("global.coming-soon"),
     },
     {
-      title: t("Cirugía de Sinusitis"),
+      title: t("casos.sinusitis"),
       href: "/project/cirugia-sinusitis",
       image:
         "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
     },
     {
-      title: t("Tratamiento de Otitis"),
+      title: t("casos.otitis"),
       href: "/project/tratamientos-otitis",
       image:
         "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
     },
     {
-      title: t("Desviación de Tabique"),
+      title: t("casos.tabique"),
       href: "/project/tech-repair",
       image:
         "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
@@ -37,7 +37,7 @@ export default function CasesGrid() {
   return (
     <section className="px-6 py-20">
       <h2 className="text-4xl md:text-5xl font-light mb-12">
-        {t("Casos Destacados")}
+        {t("casos.titulo")}
       </h2>
 
       <div className="grid grid-cols-12 gap-6">

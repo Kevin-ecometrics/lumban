@@ -104,17 +104,17 @@ export default function FooterBase() {
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
 
   const MENU_ITEMS = [
-    { label: t("Inicio"), href: getRouteByKey("home", currentLang) },
-    { label: t("Perfil"), href: getRouteByKey("profile", currentLang) },
+    { label: t("nav.inicio"), href: getRouteByKey("home", currentLang) },
+    { label: t("nav.perfil"), href: getRouteByKey("profile", currentLang) },
     {
-      label: t("Certificaciones"),
+      label: t("nav.certificaciones"),
       href: getRouteByKey("certifications", currentLang),
     },
-    { label: t("Instalaciones"), href: getRouteByKey("facilities", currentLang) },
-    { label: t("Contacto"), href: getRouteByKey("contact", currentLang) },
-    { label: t("Rinoplastia"), href: getRouteByKey("aesthetic-nose", currentLang) },
-    { label: t("Apnea del Sueño"), href: getRouteByKey("sleep-apnea", currentLang) },
-    { label: t("Otorrinopediatría"), href: getRouteByKey("pediatric-ent", currentLang) },
+    { label: t("nav.instalaciones"), href: getRouteByKey("facilities", currentLang) },
+    { label: t("nav.contacto"), href: getRouteByKey("contact", currentLang) },
+    { label: t("nav.rinoplastia"), href: getRouteByKey("aesthetic-nose", currentLang) },
+    { label: t("padecimientos.garganta.apnea"), href: getRouteByKey("sleep-apnea", currentLang) },
+    { label: t("nav.otorrinopediatria"), href: getRouteByKey("pediatric-ent", currentLang) },
   ] as const;
 
   const { scrollYProgress } = useScroll({
@@ -153,7 +153,7 @@ export default function FooterBase() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                {t("Menu")}
+                {t("nav.menu")}
               </h3>
               <ul className="space-y-2">
                 {MENU_ITEMS.map((item) => (
@@ -171,7 +171,7 @@ export default function FooterBase() {
 
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                {t("Socials")}
+                {t("nav.socials")}
               </h3>
               <ul className="space-y-2">
                 {SOCIAL_ITEMS.map((item) => (
@@ -186,7 +186,7 @@ export default function FooterBase() {
 
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                {t("Contacto")}
+                {t("nav.contacto")}
               </h3>
 
               <div className="space-y-2">
@@ -220,7 +220,7 @@ export default function FooterBase() {
 
         <div className="pt-4 border-t border-gray-100">
           <p className="text-gray-500 text-xs sm:text-sm font-medium">
-            {t("&copy; {{year}} Dr. Jaime Lumbán Gutierrez. Especialista en Otorrinolaringología.", {
+            {t("footer.copyright", {
               year: new Date().getFullYear(),
             })}
           </p>

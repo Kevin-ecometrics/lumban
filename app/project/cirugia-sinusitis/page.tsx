@@ -10,9 +10,9 @@ export default function CirugiaSinusitisPage() {
       {/* HERO */}
       <Hero
         src="/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png"
-        alt={t("Cirugía de sinusitis")}
-        title={t("Cirugía de Sinusitis")}
-        subtitle={t("Respiración libre y alivio duradero")}
+        alt={t("cirugia-sinusitis.titulo")}
+        title={t("casos.sinusitis")}
+        subtitle={t("cirugia-sinusitis.subtitulo")}
         textClassName="max-w-3xl mx-auto px-4 -mt-8 md:-mt-4"
         titleClassName="text-5xl sm:text-4xl md:text-6xl"
         subtitleClassName="text-2lg sm:text-xl md:text-2xl -mt-2"
@@ -22,24 +22,18 @@ export default function CirugiaSinusitisPage() {
       {/* INTRO */}
       <section className="max-w-4xl mx-auto px-6 py-24 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-          {t("Tratamiento quirúrgico para sinusitis crónica")}
+          {t("cirugia-sinusitis.desc.1")}
         </h1>
 
         <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
           <p>
-            {t(
-              "La cirugía de sinusitis busca restaurar la ventilación natural de los senos paranasales cuando el tratamiento médico no es suficiente."
-            )}
+            {t("cirugia-sinusitis.desc.2")}
           </p>
           <p>
-            {t(
-              "Empleamos técnicas endoscópicas mínimamente invasivas para reducir inflamación, mejorar el drenaje y minimizar molestias."
-            )}
+            {t("cirugia-sinusitis.desc.3")}
           </p>
           <p>
-            {t(
-              "Cada paciente recibe un plan quirúrgico personalizado y un esquema de seguimiento para consolidar resultados."
-            )}
+            {t("cirugia-sinusitis.desc.4")}
           </p>
         </div>
       </section>

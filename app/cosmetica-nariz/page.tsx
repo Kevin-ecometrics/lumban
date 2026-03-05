@@ -17,34 +17,24 @@ export default function RinoplastiaPage() {
 
   const infoItems = [
     {
-      title: t("¿Es la Rinoplastía para usted?"),
-      content: t(
-        "Una valoración médica ayuda a definir si es candidato ideal según su anatomía y expectativas. Se revisan antecedentes médicos, salud general y objetivos estéticos o funcionales. El Dr. Lumbán explicará qué cambios son posibles y cuáles son las limitaciones. Así podrá decidir con claridad y confianza."
-      ),
+      title: t("rinoplastia.mas-info.para-ti"),
+      content: t("rinoplastia.proceso.valoracion"),
     },
     {
-      title: t("Tomar la decisión para la Rinoplastía"),
-      content: t(
-        "Analice beneficios, tiempos de recuperación y objetivos estéticos antes de programar la cirugía. Se recomienda planear su agenda, resolver dudas y preparar un entorno cómodo para la recuperación. Además, se entrega una guía de cuidados para antes y después del procedimiento. La decisión debe ser informada y sin presión."
-      ),
+      title: t("rinoplastia.mas-info.decision"),
+      content: t("rinoplastia.proceso.planificacion"),
     },
     {
-      title: t("Qué esperar después de la cirugía"),
-      content: t(
-        "Habrá inflamación temporal y controles médicos; los resultados finales se aprecian progresivamente. En los primeros días puede haber moretones y congestión nasal. Se realizan revisiones para vigilar la evolución y ajustar cuidados. La forma final se define con el tiempo mientras la inflamación disminuye."
-      ),
+      title: t("rinoplastia.mas-info.expectativas"),
+      content: t("rinoplastia.proceso.recuperacion"),
     },
     {
-      title: t("Comprensión de la cirugía"),
-      content: t(
-        "El procedimiento se personaliza para lograr armonía facial y mantener una respiración funcional. Se corrigen detalles del dorso, punta o tabique según el caso. La meta es un resultado equilibrado con el resto del rostro. Se explican las técnicas utilizadas y los cambios esperados."
-      ),
+      title: t("rinoplastia.mas-info.comprension"),
+      content: t("rinoplastia.proceso.personalizacion"),
     },
     {
-      title: t("Candidatos ideales para remodelación de nariz"),
-      content: t(
-        "Pacientes con expectativas realistas, buena salud general y objetivos claros suelen ser los mejores candidatos. También es importante contar con estabilidad emocional y comprensión del proceso. Los mejores resultados se logran cuando hay una comunicación clara con el cirujano. La valoración médica determina la idoneidad de cada caso."
-      ),
+      title: t("rinoplastia.mas-info.candidatos"),
+      content: t("rinoplastia.proceso.candidato"),
     },
   ];
 
@@ -57,28 +47,26 @@ export default function RinoplastiaPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
             <div className="space-y-6">
               <span className="inline-flex w-fit items-center rounded-full border border-gray-200 bg-white/80 px-4 py-1 text-xs font-medium uppercase tracking-widest text-gray-600 shadow-sm">
-                {t("Rinoplastía")}
+                {t("nav.rinoplastia")}
               </span>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                {t("Cirugía Estética de Nariz")}
+                {t("rinoplastia.seo.titulo")}
               </h1>
               <p className="text-lg text-gray-600 max-w-2xl">
-                {t(
-                  "Aquí encontrará toda la información sobre la cirugía de rinoplastía o estética de nariz"
-                )}
+                {t("rinoplastia.seo.desc")}
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
                   href={getRouteByKey("contact", currentLang)}
                   className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition"
                 >
-                  {t("SOLICITA TU CONSULTA")}
+                  {t("global.boton.solicitar-consulta")}
                 </a>
                 <a
                   href={getRouteByKey("profile", currentLang)}
                   className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition"
                 >
-                  {t("VER PERFIL COMPLETO")}
+                  {t("doctor.boton.perfil")}
                 </a>
               </div>
             </div>
@@ -86,7 +74,7 @@ export default function RinoplastiaPage() {
             <div className="rounded-3xl border border-gray-200 bg-white/90 backdrop-blur shadow-sm p-4">
               <img
                 src="/rino1.jpg"
-                alt={t("Rinoplastía")}
+                alt={t("nav.rinoplastia")}
                 className="w-full h-auto rounded-2xl object-cover"
               />
             </div>
@@ -99,59 +87,47 @@ export default function RinoplastiaPage() {
         {/* INTRO */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
           <div className="space-y-6 text-gray-700 leading-relaxed">
-            <h2 className="text-3xl font-semibold">{t("¿Qué es la Rinoplastía?")}</h2>
+            <h2 className="text-3xl font-semibold">{t("rinoplastia.que-es.titulo")}</h2>
 
             <p>
-              {t(
-                "La cirugía plástica de la nariz es uno de los procedimientos cosméticos más realizados y también uno de los más desafiantes. El tipo de operación depende de los cambios que el paciente busca, ya que las variaciones anatómicas de la nariz son innumerables."
-              )}
+              {t("rinoplastia.que-es.desc.1")}
             </p>
 
             <p>
-              {t(
-                "Usted puede sentir que su nariz es demasiado grande, pequeña, ancha, estrecha, puntiaguda, colgante, sobreproyectada o simplemente poco atractiva."
-              )}
+              {t("rinoplastia.que-es.desc.2")}
             </p>
 
             <p>
-              {t(
-                "Algunos pacientes buscan modificar rasgos étnicos, otros corregir secuelas de accidentes o mejorar resultados de cirugías previas."
-              )}
+              {t("rinoplastia.que-es.desc.3")}
             </p>
 
             <p>
-              {t(
-                "El Dr. Lumbán comprende profundamente el impacto emocional que puede generar la inconformidad con los rasgos faciales y considera la rinoplastía como una herramienta poderosa para mejorar la confianza personal."
-              )}
+              {t("rinoplastia.que-es.desc.4")}
             </p>
 
             <p>
-              {t(
-                "La nariz es una estructura compleja formada por cartílago, hueso y piel. Su equilibrio requiere la experiencia de un cirujano especializado."
-              )}
+              {t("rinoplastia.que-es.desc.5")}
             </p>
 
             <p>
-              {t(
-                "Con más de 20 años de experiencia, el Dr. Lumbán es reconocido como uno de los mejores cirujanos de nariz en México, utilizando técnicas modernas tanto en cirugías primarias como de revisión."
-              )}
+              {t("rinoplastia.que-es.desc.6")}
             </p>
           </div>
 
           <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-5">
-            <h3 className="text-lg font-semibold">{t("Beneficios clave")}</h3>
+            <h3 className="text-lg font-semibold">{t("rinoplastia.beneficios.titulo")}</h3>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex gap-3">
                 <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-sky-400" />
-                {t("Mejora la armonía facial")}
+                {t("rinoplastia.beneficios.armonia")}
               </li>
               <li className="flex gap-3">
                 <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-sky-400" />
-                {t("Refuerza la confianza personal")}
+                {t("rinoplastia.beneficios.confianza")}
               </li>
               <li className="flex gap-3">
                 <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-sky-400" />
-                {t("Resultados naturales y personalizados")}
+                {t("rinoplastia.beneficios.naturales")}
               </li>
             </ul>
             <div className="flex justify-center">
@@ -159,7 +135,7 @@ export default function RinoplastiaPage() {
                 href={getRouteByKey("contact", currentLang)}
                 className="inline-flex items-center justify-center rounded-full bg-gray-900 px-5 py-3 text-sm font-medium text-white hover:bg-gray-800 transition"
               >
-                {t("AGENDA TU VALORACIÓN")}
+                {t("rinoplastia.boton.valoracion")}
               </a>
             </div>
           </div>
@@ -167,33 +143,27 @@ export default function RinoplastiaPage() {
 
         {/* TIPOS */}
         <div className="space-y-8 text-gray-700">
-          <h2 className="text-3xl font-semibold">{t("Tipos de cirugía de nariz")}</h2>
+          <h2 className="text-3xl font-semibold">{t("rinoplastia.tipos.titulo")}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-medium">{t("Rinoplastía Funcional")}</h3>
+              <h3 className="text-xl font-medium">{t("rinoplastia.tipos.funcional.nombre")}</h3>
               <p className="mt-3 text-sm text-gray-600">
-                {t(
-                  "Indicada en pacientes con problemas respiratorios por desviación del tabique, deformidades óseas o alergias. Mejora la respiración y también la estética nasal."
-                )}
+                {t("rinoplastia.tipos.funcional.desc")}
               </p>
             </div>
 
             <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-medium">{t("Rinoplastía Estética")}</h3>
+              <h3 className="text-xl font-medium">{t("rinoplastia.tipos.estetica.nombre")}</h3>
               <p className="mt-3 text-sm text-gray-600">
-                {t(
-                  "Enfocada en mejorar la forma de la nariz, cuidando siempre que la función respiratoria no se vea comprometida."
-                )}
+                {t("rinoplastia.tipos.estetica.desc")}
               </p>
             </div>
 
             <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-medium">{t("Rinoplastía de Revisión")}</h3>
+              <h3 className="text-xl font-medium">{t("rinoplastia.tipos.revision.nombre")}</h3>
               <p className="mt-3 text-sm text-gray-600">
-                {t(
-                  "Para pacientes que han tenido cirugías previas con resultados insatisfactorios. Son casos complejos que requieren un especialista en rinoplastía."
-                )}
+                {t("rinoplastia.tipos.revision.desc")}
               </p>
             </div>
           </div>
@@ -204,12 +174,12 @@ export default function RinoplastiaPage() {
           <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-4">
             <img
               src="/rino1.jpg"
-              alt={t("Rinoplastía")}
+              alt={t("nav.rinoplastia")}
               className="w-full h-auto rounded-2xl object-cover"
             />
           </div>
           <div>
-            <h2 className="text-3xl font-semibold">{t("Más Información")}</h2>
+            <h2 className="text-3xl font-semibold">{t("rinoplastia.mas-info")}</h2>
             <div className="mt-4 space-y-4">
               {infoItems.map((item, index) => {
                 const isOpen = openInfoIndex === index;
@@ -255,7 +225,7 @@ export default function RinoplastiaPage() {
 
         {/* GALERÍA */}
         <div className="space-y-10">
-          <h2 className="text-3xl font-semibold">{t("Pacientes de Rinoplastía")}</h2>
+          <h2 className="text-3xl font-semibold">{t("rinoplastia.pacientes")}</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {pacientes.map((p) => (
@@ -267,13 +237,13 @@ export default function RinoplastiaPage() {
                 <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
                   <img
                     src={p.src}
-                    alt={`${t("Paciente")} ${p.id} ${t("de rinoplastía")}`}
+                    alt={`${t("rinoplastia.paciente")} ${p.id} ${t("rinoplastia.de")}`}
                     className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition" />
                 </div>
                 <p className="mt-2 text-sm text-gray-600 text-center">
-                  {t("Paciente")} {p.id} {t("de rinoplastía")}
+                  {t("rinoplastia.paciente")} {p.id} {t("rinoplastia.de")}
                 </p>
               </div>
             ))}
@@ -282,17 +252,15 @@ export default function RinoplastiaPage() {
 
         {/* CTA */}
         <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-10 text-center space-y-6 shadow-sm">
-          <h2 className="text-2xl font-semibold">{t("¿Tiene alguna duda?")}</h2>
+          <h2 className="text-2xl font-semibold">{t("global.pregunta")}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            {t(
-              "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita."
-            )}
+            {t("global.contacto.desc")}
           </p>
           <a
             href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            {t("SOLICITA TU CONSULTA")}
+            {t("global.boton.solicitar-consulta")}
           </a>
         </div>
 
@@ -300,19 +268,17 @@ export default function RinoplastiaPage() {
         <div className="border-t border-gray-200 pt-12 flex flex-col md:flex-row justify-between gap-6">
           <div>
             <h3 className="text-xl font-semibold">
-              {t("Conozca sobre el Dr. Lumbán")}
+              {t("doctor.preview.titulo")}
             </h3>
             <p className="text-gray-600 max-w-xl">
-              {t(
-                "El Dr. Lumbán cuenta con 23 años de experiencia en otorrinolaringología, especializado en Cirugía Estética de Nariz."
-              )}
+              {t("doctor.experiencia")}
             </p>
           </div>
           <a
             href={getRouteByKey("profile", currentLang)}
             className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
           >
-            {t("VER PERFIL COMPLETO")}
+            {t("doctor.boton.perfil")}
           </a>
         </div>
       </div>
@@ -332,11 +298,11 @@ export default function RinoplastiaPage() {
               onClick={() => setSelectedImage(null)}
               className="absolute -top-10 right-0 text-white/80 hover:text-white text-sm"
             >
-              {t("Cerrar")}
+              {t("global.cerrar")}
             </button>
             <img
               src={selectedImage}
-              alt={t("Paciente rinoplastía")}
+              alt={t("rinoplastia.paciente-titulo")}
               className="w-full rounded-2xl shadow-2xl"
             />
           </div>

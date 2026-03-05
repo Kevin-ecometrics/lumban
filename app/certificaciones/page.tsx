@@ -43,8 +43,9 @@ export default function CertificacionesPage() {
   return (
     <main className="bg-white">
       <StickyImageHero
-        title={t("Certificaciones")}
-        subtitle={t("Especialista certificado en oídos, nariz y garganta")}
+        src="/hero3.jpg"
+        title={t("nav.certificaciones")}
+        subtitle={t("doctor.titulo")}
       />
 
       <section className="max-w-7xl mx-auto px-6 py-20">
@@ -56,12 +57,13 @@ export default function CertificacionesPage() {
           className="text-center mb-16"
         >
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            {t("Certificaciones y Reconocimientos")}
+            {t("certificaciones.titulo")}
           </h1>
           <p className="mt-5 text-gray-600 max-w-2xl mx-auto">
-            {t(
-              "Formación académica y certificaciones que respaldan la trayectoria profesional."
-            )}
+            {t("certificaciones.desc")}
+          </p>
+          <p className="mt-5 text-gray-600 max-w-2xl mx-auto">
+            {t("certificaciones.desc2")}                                                                    
           </p>
         </motion.header>
 
@@ -70,7 +72,7 @@ export default function CertificacionesPage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 mb-12"
         >
           {certifications.map((certification, index) => (
             <motion.figure
@@ -82,7 +84,7 @@ export default function CertificacionesPage() {
               <div className="flex items-center justify-center h-[340px] p-6 bg-gray-50">
                 <motion.img
                   src={certification}
-                  alt={`${t("Certificación")} ${index + 1}`}
+                  alt={`${t("global.certificacion")} ${index + 1}`}
                   className="max-h-full max-w-full object-contain"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.4 }}
@@ -91,6 +93,17 @@ export default function CertificacionesPage() {
             </motion.figure>
           ))}
         </motion.div>
+
+        {/* Texto inferior corregido */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center text-lg md:text-xl text-gray-600 font-medium max-w-3xl mx-auto border-t border-gray-200 pt-12"
+        >
+          {t("certificaciones.bot")}
+        </motion.p>
       </section>
 
       <AnimatePresence>
@@ -105,7 +118,7 @@ export default function CertificacionesPage() {
           >
             <motion.img
               src={selectedImage}
-              alt={t("Imagen ampliada")}
+              alt={t("global.imagen-ampliada")}
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}

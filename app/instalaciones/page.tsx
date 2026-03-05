@@ -47,8 +47,8 @@ export default function InstalacionesPage() {
   return (
     <main className="bg-white">
       <StickyImageHero
-        title={t("Instalaciones")}
-        subtitle={t("Conoce las nuevas instalaciones del consultorio del Dr. Lumbán")}
+        title={t("nav.instalaciones")}
+        subtitle={t("instalaciones.desc")}
       />
 
       <section className="max-w-7xl mx-auto px-6 py-20">
@@ -60,7 +60,7 @@ export default function InstalacionesPage() {
           className="text-center mb-16"
         >
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            {t("Edificio RÍO MÉDICA")}
+            {t("instalaciones.edificio")}
           </h1>
         </motion.header>
 
@@ -81,7 +81,7 @@ export default function InstalacionesPage() {
               <div className="flex items-center justify-center h-[340px] p-6 bg-gray-50">
                 <motion.img
                   src={certification}
-                  alt={`${t("Instalación")} ${index + 1}`}
+                  alt={`${t("instalaciones.titulo")} ${index + 1}`}
                   className="max-h-full max-w-full object-contain"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.4 }}
@@ -104,7 +104,7 @@ export default function InstalacionesPage() {
           >
             <motion.img
               src={selectedImage}
-              alt={t("Imagen ampliada")}
+              alt={t("global.imagen-ampliada")}
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
