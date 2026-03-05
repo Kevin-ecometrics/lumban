@@ -12,7 +12,7 @@ export default function HearingLossPage() {
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
 
   // Datos para la tabla de grados de pérdida auditiva
-  const gradosPerdida = t("perdida-audicion.grados.tabla", { returnObjects: true });
+  const gradosPerdida = t("perdida-audicion.grados.tabla", { returnObjects: true }) as Array<{ grado: string; escala: string }>;
   
   // Datos para estadísticas por edad
   const estadisticasEdad = t("perdida-audicion.envejecimiento.estadisticas", { returnObjects: true });
@@ -129,7 +129,7 @@ export default function HearingLossPage() {
                 </div>
                 
                 <ul className="space-y-2">
-                  {t("perdida-audicion.tipos.conductiva.lista", { returnObjects: true }).map((item, idx) => (
+                  {(t("perdida-audicion.tipos.conductiva.lista", { returnObjects: true }) as string[]).map((item: string, idx: number) => (
                     <li key={idx} className="text-gray-600 text-sm flex items-start gap-2">
                       <span className="text-blue-500 text-xs mt-1">●</span>
                       <span>{item}</span>
@@ -174,7 +174,7 @@ export default function HearingLossPage() {
                 </div>
                 
                 <ul className="space-y-2">
-                  {t("perdida-audicion.tipos.neurosensorial.lista", { returnObjects: true }).map((item, idx) => (
+                  {(t("perdida-audicion.tipos.neurosensorial.lista", { returnObjects: true }) as string[]).map((item: string, idx: number) => (
                     <li key={idx} className="text-gray-600 text-sm flex items-start gap-2">
                       <span className="text-blue-500 text-xs mt-1">●</span>
                       <span>{item}</span>
@@ -324,7 +324,7 @@ export default function HearingLossPage() {
               {t("perdida-audicion.signos.subtitulo")}
             </p>
             <ul className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-              {t("perdida-audicion.signos.lista", { returnObjects: true }).map((signo, idx) => (
+              {(t("perdida-audicion.signos.lista", { returnObjects: true }) as string[]).map((signo: string, idx: number) => (
                 <motion.li
                   key={idx}
                   initial={{ opacity: 0, x: -10 }}
@@ -384,7 +384,7 @@ export default function HearingLossPage() {
 
           {/* Cuerpo de la tabla */}
           <div className="divide-y divide-gray-100">
-            {gradosPerdida.map((item, idx) => (
+            {gradosPerdida.map((item: { grado: string; escala: string }, idx: number) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0 }}
@@ -450,7 +450,7 @@ export default function HearingLossPage() {
             </p>
             
             <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              {t("perdida-audicion.prevencion.lista", { returnObjects: true }).map((item, idx) => (
+              {(t("perdida-audicion.prevencion.lista", { returnObjects: true }) as string[]).map((item: string, idx: number) => (
                 <li key={idx}>{item}</li>
               ))}
             </ul>
