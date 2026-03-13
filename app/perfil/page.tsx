@@ -27,19 +27,19 @@ export default function AboutPage() {
           <p>
             {t(
               "El Dr. Jaime Lumbán es médico Otorrinolaringólogo, especialista en oído, nariz y garganta, con más de {{years}} años de experiencia clínica.",
-              { years: year }
+              { years: year },
             )}
           </p>
 
           <p>
             {t(
-              "Atiende pacientes de México, Estados Unidos y otros países, ofreciendo una atención médica basada en la honestidad, integridad y excelencia profesional."
+              "Atiende pacientes de México, Estados Unidos y otros países, ofreciendo una atención médica basada en la honestidad, integridad y excelencia profesional.",
             )}
           </p>
 
           <p>
             {t(
-              "Su práctica se distingue por el uso de tecnología avanzada, atención personalizada y una comunicación clara que genera confianza y tranquilidad en cada paciente."
+              "Su práctica se distingue por el uso de tecnología avanzada, atención personalizada y una comunicación clara que genera confianza y tranquilidad en cada paciente.",
             )}
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function AboutPage() {
           <ul className="space-y-4 text-lg text-gray-700">
             <li>
               {t(
-                "Academia Americana de Otorrinolaringología y Cirugía de Cabeza y Cuello"
+                "Academia Americana de Otorrinolaringología y Cirugía de Cabeza y Cuello",
               )}
             </li>
             <li>{t("Consejo Mexicano de Otorrinolaringología")}</li>

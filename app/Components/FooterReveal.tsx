@@ -12,7 +12,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { getRouteByKey, normalizePath } from "../i18n/routeMap";
 
-const WORD = "DR LUMBAN";
+const WORD = "DR LUMBÁN";
 
 const SOCIAL_ITEMS = [
   { label: "LinkedIn", href: "https://linkedin.com" },
@@ -110,11 +110,23 @@ export default function FooterBase() {
       label: t("Certificaciones"),
       href: getRouteByKey("certifications", currentLang),
     },
-    { label: t("Instalaciones"), href: getRouteByKey("facilities", currentLang) },
+    {
+      label: t("Instalaciones"),
+      href: getRouteByKey("facilities", currentLang),
+    },
     { label: t("Contacto"), href: getRouteByKey("contact", currentLang) },
-    { label: t("Rinoplastia"), href: getRouteByKey("aesthetic-nose", currentLang) },
-    { label: t("Apnea del Sueño"), href: getRouteByKey("sleep-apnea", currentLang) },
-    { label: t("Otorrinopediatría"), href: getRouteByKey("pediatric-ent", currentLang) },
+    {
+      label: t("Rinoplastia"),
+      href: getRouteByKey("aesthetic-nose", currentLang),
+    },
+    {
+      label: t("Apnea del Sueño"),
+      href: getRouteByKey("sleep-apnea", currentLang),
+    },
+    {
+      label: t("Otorrinopediatría"),
+      href: getRouteByKey("pediatric-ent", currentLang),
+    },
   ] as const;
 
   const { scrollYProgress } = useScroll({
@@ -129,13 +141,13 @@ export default function FooterBase() {
   const contentOpacity = useTransform(
     scrollYProgress,
     [0, 0.15, 0.85, 1],
-    [0, 1, 1, 1]
+    [0, 1, 1, 1],
   );
 
   const letters = WORD.split("");
   const centerIndex = Math.floor(letters.length / 2);
   const maxDistance = Math.max(
-    ...letters.map((_, i) => Math.abs(i - centerIndex))
+    ...letters.map((_, i) => Math.abs(i - centerIndex)),
   );
 
   return (
@@ -162,7 +174,8 @@ export default function FooterBase() {
                     label={item.label}
                     href={item.href}
                     isActive={
-                      normalizePath(pathname ?? "/") === normalizePath(item.href)
+                      normalizePath(pathname ?? "/") ===
+                      normalizePath(item.href)
                     }
                   />
                 ))}
@@ -220,9 +233,10 @@ export default function FooterBase() {
 
         <div className="pt-4 border-t border-gray-100">
           <p className="text-gray-500 text-xs sm:text-sm font-medium">
-            {t("&copy; {{year}} Dr. Jaime Lumbán Gutierrez. Especialista en Otorrinolaringología.", {
-              year: new Date().getFullYear(),
-            })}
+            &copy; {new Date().getFullYear()}{" "}
+            {t(
+              "Dr. Jaime Lumbán Gutierrez. Especialista en Otorrinolaringología.",
+            )}
           </p>
         </div>
       </motion.div>

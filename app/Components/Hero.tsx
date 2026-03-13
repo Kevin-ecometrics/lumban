@@ -130,7 +130,7 @@ export default function OurWaveHero() {
       {/* ---------------- TEXT LAYER (TOP) ---------------- */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
         <h1 className="mt-12 text-white text-6xl md:text-8xl tracking-tight font-black">
-          DR. LUMBAN
+          DR. LUMBÁN
         </h1>
       </div>
     </section>

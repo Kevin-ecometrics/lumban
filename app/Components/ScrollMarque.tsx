@@ -14,11 +14,9 @@ import { useTranslation } from "react-i18next";
 export default function ScrollMarquee() {
   const { t } = useTranslation();
   const WORDS = [
-    t("Otorrinolaringología"),
-    t("Experiencia"),
-    t("Excelencia"),
-    t("Innovación"),
-    t("Atención Médica"),
+    t("Seguridad y Acreditación"),
+    t("Atención de Élite"),
+    t("Compromiso con la Excelencia"),
   ];
   const baseX = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -164,7 +162,7 @@ const MarqueeText = React.forwardRef<
     >
       {words.map((word, i) => (
         <React.Fragment key={i}>
-          <span className="inline-block px-4 transition-all duration-300 hover:scale-105 hover:text-gray-800 cursor-default">
+          <span className="inline-block px-4 transition-all duration-300 hover:scale-105 hover:text-gray-800 cursor-default font-semibold">
             {word}
           </span>
           <span className="mx-4 text-black/30 transition-opacity duration-300 hover:opacity-100">
