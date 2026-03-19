@@ -159,7 +159,7 @@ export default function FooterBase() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div>
-            <img src="https://drlumban.com/logo.png" alt="Dr Lumban" />
+            <img src="/logo.png" alt="Dr Lumban" />
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">

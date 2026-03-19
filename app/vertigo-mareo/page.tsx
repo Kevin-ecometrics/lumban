@@ -56,7 +56,9 @@ export default function EarConditionsPage() {
       {/* HERO */}
       <Hero
         title={t("Padecimientos del Oído")}
-        subtitle={t("Conozca acerca de los padecimientos relacionados con el oído")}
+        subtitle={t(
+          "Conozca acerca de los padecimientos relacionados con el oído",
+        )}
         src="/mareo.png"
         alt={t("Vértigo y Mareo")}
       />
@@ -75,17 +77,17 @@ export default function EarConditionsPage() {
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
             {t(
-              "Nuestro equilibrio es una interacción compleja que requiere una comunicación sólida entre nuestras orejas, los ojos, y el sentido del tacto según la percepción de nuestros pies, los músculos y las articulaciones. A fin de mantener nuestro centro de gravedad, nuestro sistema nervioso central debe recibir estas tres señales y luego, correctamente, transmitirlas al cerebro."
+              "Nuestro equilibrio es una interacción compleja que requiere una comunicación sólida entre nuestras orejas, los ojos, y el sentido del tacto según la percepción de nuestros pies, los músculos y las articulaciones. A fin de mantener nuestro centro de gravedad, nuestro sistema nervioso central debe recibir estas tres señales y luego, correctamente, transmitirlas al cerebro.",
             )}
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
             {t(
-              "Cuando las señales de nuestros sentidos no llegan al cerebelo, o llegan a él con el mensaje equivocado, experimentamos esta falta de comunicación como una pérdida del equilibrio, un mareo."
+              "Cuando las señales de nuestros sentidos no llegan al cerebelo, o llegan a él con el mensaje equivocado, experimentamos esta falta de comunicación como una pérdida del equilibrio, un mareo.",
             )}
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
             {t(
-              "Un trastorno del equilibrio a veces puede ser un síntoma de otras condiciones médicas. La atención médica adecuada, incluyendo una historia médica completa y evaluación del sistema de equilibrio es importante para identificar la causa y dar las opciones de tratamiento adecuadas."
+              "Un trastorno del equilibrio a veces puede ser un síntoma de otras condiciones médicas. La atención médica adecuada, incluyendo una historia médica completa y evaluación del sistema de equilibrio es importante para identificar la causa y dar las opciones de tratamiento adecuadas.",
             )}
           </p>
         </motion.div>
@@ -145,7 +147,7 @@ export default function EarConditionsPage() {
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
             {t(
-              "Si tiene problemas de equilibrio o mareos, vamos a completar una evaluación exhaustiva. Nuestro laboratorio de equilibrio puede realizar una serie de pruebas para ayudar en el diagnóstico y el tratamiento de su problema."
+              "Si tiene problemas de equilibrio o mareos, vamos a completar una evaluación exhaustiva. Nuestro laboratorio de equilibrio puede realizar una serie de pruebas para ayudar en el diagnóstico y el tratamiento de su problema.",
             )}
           </p>
         </div>
@@ -183,7 +185,7 @@ export default function EarConditionsPage() {
           <h2 className="text-2xl font-semibold">{t("¿Tiene alguna duda?")}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             {t(
-              "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita."
+              "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita.",
             )}
           </p>
           <a
@@ -202,7 +204,7 @@ export default function EarConditionsPage() {
             </h3>
             <p className="text-gray-600 max-w-xl">
               {t(
-                "El Dr. Lumbán cuenta con 23 años de experiencia en otorrinolaringología, especializado en Cirugía Estética de Nariz."
+                "El Dr. Lumbán cuenta con 23 años de experiencia en otorrinolaringología, especializado en Cirugía Estética de Nariz.",
               )}
             </p>
           </div>

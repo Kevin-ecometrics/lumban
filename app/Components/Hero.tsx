@@ -16,6 +16,9 @@ const IMAGES = [
   "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
   "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
   "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
+  "/boca.png",
+  "/oreja.png",
+  "/nariz.png",
 ];
 
 interface TrailImage {
@@ -94,6 +97,11 @@ export default function OurWaveHero() {
           {images.map((img, index) => {
             const depth = index / Math.max(images.length - 1, 1);
 
+            const isLastThree =
+              img.src === IMAGES[IMAGES.length - 1] ||
+              img.src === IMAGES[IMAGES.length - 2] ||
+              img.src === IMAGES[IMAGES.length - 3];
+
             return (
               <motion.div
                 key={img.id}
@@ -113,21 +121,33 @@ export default function OurWaveHero() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <img
-                  src={img.src}
-                  width={IMAGE_SIZE}
-                  height={IMAGE_SIZE}
-                  className="rounded-2xl object-cover shadow-2xl"
-                  style={{ mixBlendMode: "normal" }}
-                  alt=""
-                />
+                <div
+                  className={`shadow-2xl ${
+                    isLastThree
+                      ? "bg-white p-4 rounded-2xl border border-gray-200"
+                      : ""
+                  }`}
+                >
+                  <img
+                    src={img.src}
+                    width={IMAGE_SIZE}
+                    height={IMAGE_SIZE}
+                    className={`${
+                      isLastThree
+                        ? "object-contain rounded-xl"
+                        : "object-cover rounded-2xl"
+                    }`}
+                    style={{ mixBlendMode: "normal" }}
+                    alt=""
+                  />
+                </div>
               </motion.div>
             );
           })}
         </AnimatePresence>
       </div>
 
-      {/* ---------------- TEXT LAYER (TOP) ---------------- */}
+      {/* ---------------- TEXT LAYER ---------------- */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
         <h1 className="mt-12 text-white text-6xl md:text-8xl tracking-tight font-black">
           DR. LUMBÁN

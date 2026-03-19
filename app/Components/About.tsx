@@ -32,8 +32,8 @@ const YourwareStory: React.FC = () => {
                       <span className="text-green-600 mr-3">✓</span>
                       <span>
                         {t(
-                          "Seguridad y Acreditación:preparación continua y atención al detalle aseguran la máxima integridad y los más altos estándares de excelencia",
-                        )}
+                          "Seguridad y Acreditación preparación continua y atención al detalle aseguran la máxima integridad y los más altos estándares de excelencia",
+                        )}{" "}
                       </span>
                     </li>
                     <li className="flex items-start">
