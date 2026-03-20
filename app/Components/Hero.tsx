@@ -12,16 +12,14 @@ const REMOVE_DELAY = 5000;
 const MAX_IMAGES = 12;
 
 const IMAGES = [
-  "/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png",
-  "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
-  "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
-  "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
-  "/Dr Jaime.webp",
-  "/Dr Jaime 2.webp",
-  "Dr. Jaime Lumban instalaciones.webp",
-  "/boca.png",
-  "/oreja.png",
-  "/nariz.png",
+  "/Dr. jaime lumban en su consultorio.jpg",
+  "/lumban realizando una cirugia.jpg",
+  "/lumban paciente.jpg",
+  "/lumban paciente 2.jpg",
+  "/lumban paciente 3.jpg",
+  "/lumban cara.jpg",
+  "/lumban oido.jpg",
+  "/lumban nariz.jpg",
 ];
 
 interface TrailImage {
@@ -100,10 +98,10 @@ export default function OurWaveHero() {
           {images.map((img, index) => {
             const depth = index / Math.max(images.length - 1, 1);
 
-            const isLastThree =
-              img.src === IMAGES[IMAGES.length - 1] ||
-              img.src === IMAGES[IMAGES.length - 2] ||
-              img.src === IMAGES[IMAGES.length - 3];
+            // const isLastThree =
+            //   img.src === IMAGES[IMAGES.length - 1] ||
+            //   img.src === IMAGES[IMAGES.length - 2] ||
+            //   img.src === IMAGES[IMAGES.length - 3];
 
             return (
               <motion.div
@@ -124,22 +122,13 @@ export default function OurWaveHero() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <div
-                  className={`shadow-2xl ${
-                    isLastThree
-                      ? "bg-white p-4 rounded-2xl border border-gray-200"
-                      : ""
-                  }`}
-                >
+                <div className="shadow-2xl">
                   <img
                     src={img.src}
                     width={IMAGE_SIZE}
                     height={IMAGE_SIZE}
-                    className={`${
-                      isLastThree
-                        ? "object-contain rounded-xl"
-                        : "object-cover rounded-2xl"
-                    }`}
+                    className="
+                      object-cover rounded-2xl"
                     style={{ mixBlendMode: "normal" }}
                     alt=""
                   />
@@ -152,7 +141,7 @@ export default function OurWaveHero() {
 
       {/* ---------------- TEXT LAYER ---------------- */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
-        <h1 className="mt-12 capitalize text-black text-6xl md:text-8xl tracking-tight font-black">
+        <h1 className="mt-12 capitalize text-azul text-6xl md:text-8xl tracking-tight font-black">
           Dr. Lumbán
         </h1>
       </div>

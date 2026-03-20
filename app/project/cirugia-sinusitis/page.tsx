@@ -28,17 +28,17 @@ export default function CirugiaSinusitisPage() {
         <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
           <p>
             {t(
-              "La cirugía de sinusitis busca restaurar la ventilación natural de los senos paranasales cuando el tratamiento médico no es suficiente."
+              "La cirugía de sinusitis busca restaurar la ventilación natural de los senos paranasales cuando el tratamiento médico no es suficiente.",
             )}
           </p>
           <p>
             {t(
-              "Empleamos técnicas endoscópicas mínimamente invasivas para reducir inflamación, mejorar el drenaje y minimizar molestias."
+              "Empleamos técnicas endoscópicas mínimamente invasivas para reducir inflamación, mejorar el drenaje y minimizar molestias.",
             )}
           </p>
           <p>
             {t(
-              "Cada paciente recibe un plan quirúrgico personalizado y un esquema de seguimiento para consolidar resultados."
+              "Cada paciente recibe un plan quirúrgico personalizado y un esquema de seguimiento para consolidar resultados.",
             )}
           </p>
         </div>
