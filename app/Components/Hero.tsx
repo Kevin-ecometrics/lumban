@@ -16,6 +16,9 @@ const IMAGES = [
   "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
   "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
   "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
+  "/Dr Jaime.webp",
+  "/Dr Jaime 2.webp",
+  "Dr. Jaime Lumban instalaciones.webp",
   "/boca.png",
   "/oreja.png",
   "/nariz.png",
@@ -89,7 +92,7 @@ export default function OurWaveHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate h-screen overflow-hidden bg-[#0a0a0a]"
+      className="relative isolate h-screen overflow-hidden bg-white"
     >
       {/* ---------------- IMAGE LAYER ---------------- */}
       <div className="absolute inset-0 z-10 pointer-events-none">
@@ -149,8 +152,8 @@ export default function OurWaveHero() {
 
       {/* ---------------- TEXT LAYER ---------------- */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
-        <h1 className="mt-12 text-white text-6xl md:text-8xl tracking-tight font-black">
-          DR. LUMBÁN
+        <h1 className="mt-12 capitalize text-black text-6xl md:text-8xl tracking-tight font-black">
+          Dr. Lumbán
         </h1>
       </div>
     </section>

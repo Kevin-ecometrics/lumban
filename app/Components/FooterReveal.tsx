@@ -159,7 +159,7 @@ export default function FooterBase() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div>
-            <img src="/logo.png" alt="Dr Lumban" />
+            <img src="/logo.png" alt="Dr Lumban" className="h-48" />
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -218,7 +218,7 @@ export default function FooterBase() {
 
         {/* Logo animado (INTOCABLE) */}
         <div className="w-full py-16 flex justify-center">
-          <div className="text-6xl md:text-8xl font-black tracking-tighter flex">
+          <div className="text-6xl md:text-[200px] font-black tracking-tighter flex">
             {letters.map((letter, index) => (
               <AnimatedLetter
                 key={`${letter}-${index}`}

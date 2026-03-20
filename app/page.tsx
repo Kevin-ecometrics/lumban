@@ -11,7 +11,7 @@ function page() {
     <>
       <Hero />
       <ScrollRevealText />
-      {/* <CasesGrid /> */}
+      <CasesGrid />
       <ScrollMarquee />
       <About />
       <Faq />

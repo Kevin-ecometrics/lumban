@@ -7,33 +7,38 @@ import { useTranslation } from "react-i18next";
 
 export default function CasesGrid() {
   const { t } = useTranslation();
+
   const CASES = [
     {
       title: t("Rinoplastia Estética"),
       href: "/project/rinoplastia-estetica",
       image:
         "/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png",
+      type: "image",
       tag: t("Coming soon"),
     },
     {
       title: t("Cirugía de Sinusitis"),
       href: "/project/cirugia-sinusitis",
-      image:
-        "/Dr Lumban en consulta mostrando un antes y despues de una cirugia de nariz Rinoplastia.png",
+      image: "/dr lumban about.webm",
+      type: "video",
     },
     {
       title: t("Tratamiento de Otitis"),
       href: "/project/tratamientos-otitis",
       image:
         "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
+      type: "image",
     },
     {
       title: t("Desviación de Tabique"),
       href: "/project/tech-repair",
       image:
         "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
+      type: "image",
     },
   ];
+
   return (
     <section className="px-6 py-20">
       <h2 className="text-4xl md:text-5xl font-light mb-12">
@@ -50,8 +55,8 @@ export default function CasesGrid() {
               ? "col-span-12 md:col-span-7"
               : "col-span-12 md:col-span-5"
             : isFirstInRow
-            ? "col-span-12 md:col-span-5"
-            : "col-span-12 md:col-span-7";
+              ? "col-span-12 md:col-span-5"
+              : "col-span-12 md:col-span-7";
 
           return (
             <Link
@@ -65,17 +70,39 @@ export default function CasesGrid() {
                 whileHover="hover"
                 animate="rest"
               >
-                {/* IMAGE */}
-                <motion.img
-                  src={item.image}
-                  alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  variants={{
-                    rest: { scale: 1, filter: "blur(0px)" },
-                    hover: { scale: 1.06 },
-                  }}
-                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                />
+                {/* MEDIA */}
+                {item.type === "video" ? (
+                  <motion.video
+                    src={item.image}
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onMouseEnter={(e) => {
+                      e.currentTarget.play();
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.pause();
+                      e.currentTarget.currentTime = 0;
+                    }}
+                    variants={{
+                      rest: { scale: 1 },
+                      hover: { scale: 1.06 },
+                    }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                ) : (
+                  <motion.img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    variants={{
+                      rest: { scale: 1, filter: "blur(0px)" },
+                      hover: { scale: 1.06 },
+                    }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                )}
 
                 {/* OVERLAY */}
                 <motion.div

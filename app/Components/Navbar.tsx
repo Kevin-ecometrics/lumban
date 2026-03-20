@@ -83,9 +83,68 @@ const Navbar: React.FC = () => {
               title: t("Sinusitis"),
               href: getRouteByKey("sinusitis", currentLang),
             },
+            {
+              title: t("Congestión Nasal"),
+              href: getRouteByKey("nasal-congestion", currentLang),
+            },
+            {
+              title: t("Obstrucción Nasal"),
+              href: getRouteByKey("nasal-obstruction", currentLang),
+            },
+            {
+              title: t("Alergias"),
+              href: getRouteByKey("allergies", currentLang),
+            },
           ],
         },
+        {
+          title: t("Garganta"),
+          href: getRouteByKey("throat", currentLang),
+          subItems: [
+            {
+              title: t("Problemas de la Garganta"),
+              href: getRouteByKey("throat-problems", currentLang),
+            },
+            {
+              title: t("Ronquidos"),
+              href: getRouteByKey("snoring", currentLang),
+            },
+            {
+              title: t("Apnea del Sueño"),
+              href: getRouteByKey("sleep-apnea", currentLang),
+            },
+            {
+              title: t("Trastornos de la Voz"),
+              href: getRouteByKey("voice-disorders", currentLang),
+            },
+          ],
+        },
+        {
+          title: t("Otorrinopediatría"),
+          href: getRouteByKey("pediatric-ent", currentLang),
+        },
       ],
+    },
+    {
+      title: t("Procedimientos"),
+      subItems: [
+        {
+          title: t("Endoscopia para Sinusitis"),
+          href: getRouteByKey("endoscopic-surgery", currentLang),
+        },
+        {
+          title: t("Cirugía Antirronquido"),
+          href: getRouteByKey("anti-snoring-surgery", currentLang),
+        },
+        {
+          title: t("Cirugía Microscópica de Laringe"),
+          href: getRouteByKey("microscopic-surgery", currentLang),
+        },
+      ],
+    },
+    {
+      title: t("Rinoplastia"),
+      href: getRouteByKey("aesthetic-nose", currentLang),
     },
     {
       title: t("Contacto"),
@@ -107,11 +166,14 @@ const Navbar: React.FC = () => {
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5">
         {/* LOGO */}
         <Link href={getRouteByKey("home", currentLang)}>
-          <img src="/logo.png" className="h-12" />
+          <img src="/logo-secondary.png" className="h-32 w-auto" />
         </Link>
 
         {/* BUTTON */}
-        <button onClick={() => setOpen(true)} className="text-white text-2xl">
+        <button
+          onClick={() => setOpen(true)}
+          className="text-white text-2xl bg-gray-500 px-2 py-2 rounded-full hover:bg-gray-600 transition"
+        >
           <FaBars />
         </button>
       </nav>

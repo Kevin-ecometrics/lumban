@@ -8,7 +8,7 @@ const YourwareStory: React.FC = () => {
   const { t } = useTranslation();
   const experienceYears = new Date().getFullYear() - 1993; // Assuming Dr. Lumban started in 2005
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-4 md:px-8 py-12 md:py-20">
+    <div className="min-h-screen bg-white flex items-center justify-center px-4 md:px-8 ">
       <div className="max-w-7xl w-full mx-auto">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
           {/* Columna de imagen - IZQUIERDA */}
@@ -32,7 +32,7 @@ const YourwareStory: React.FC = () => {
                       <span className="text-green-600 mr-3">✓</span>
                       <span>
                         {t(
-                          "Seguridad y Acreditación preparación continua y atención al detalle aseguran la máxima integridad y los más altos estándares de excelencia",
+                          "Seguridad y Acreditación: preparación continua y atención al detalle aseguran la máxima integridad y los más altos estándares de excelencia",
                         )}{" "}
                       </span>
                     </li>
@@ -40,7 +40,7 @@ const YourwareStory: React.FC = () => {
                       <span className="text-green-600 mr-3">✓</span>
                       <span>
                         {t(
-                          "Atención de Élite: Las técnicas más avanzadas con una instrumentación de vanguardia para asegurar un proceso satisfactorio, abordando detalladamente sus metas y preocupaciones.",
+                          "Atención de Élite: Las técnicas más avanzadas con una instrumentación de vanguardia para asegurar un proceso satisfactorio, abordando detalladamente sus metas y preocupaciones",
                         )}
                       </span>
                     </li>
@@ -48,7 +48,7 @@ const YourwareStory: React.FC = () => {
                       <span className="text-green-600 mr-3">✓</span>
                       <span>
                         {t(
-                          "Compromiso con la Excelencia: El tiempo invertido en la evaluación y el procedimiento es la clave para alcanzar resultados armoniosos y funcionales.",
+                          "Compromiso con la Excelencia: El tiempo invertido en la evaluación y el procedimiento es la clave para alcanzar resultados armoniosos y funcionales",
                         )}
                       </span>
                     </li>
