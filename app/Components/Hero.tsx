@@ -12,16 +12,15 @@ const REMOVE_DELAY = 5000;
 const MAX_IMAGES = 12;
 
 const IMAGES = [
-  "/Dr. jaime lumban en su consultorio.jpg",
-  "/lumban realizando una cirugia.jpg",
-  "/lumban paciente.jpg",
-  "/lumban paciente 2.jpg",
-  "/lumban paciente 3.jpg",
-  "/lumban cara.jpg",
-  "/lumban oido.jpg",
   "/lumban nariz.jpg",
+  "/Dr. jaime lumban en su consultorio.jpg",
+  "/lumban paciente 3.jpg",
+  "/lumban oido.jpg",
+  "/lumban paciente.jpg",
+  "/lumban cara.jpg",
+  "/lumban paciente 2.jpg",
+  //"/lumban realizando una cirugia.jpg",
 ];
-
 interface TrailImage {
   id: number;
   src: string;

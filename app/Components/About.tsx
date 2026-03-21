@@ -20,7 +20,7 @@ const YourwareStory: React.FC = () => {
             <div className="relative w-full max-w-md lg:max-w-full">
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden shadow-md">
                 <img
-                  src="/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png"
+                  src="/lumban realizando una cirugia.jpg"
                   alt={t(
                     "Dr. Jaime Lumban - Especialista en Otorrinolaringología",
                   )}

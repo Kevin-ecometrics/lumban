@@ -1,22 +1,27 @@
 "use client";
 
-import Hero from "@/app/Components/StickyImageHero";
+import StickyVideoHero from "@/app/Components/StickyVideoHero";
 import { useTranslation } from "react-i18next";
+
+const SINUSITIS_HERO_VIDEO = "/dr lumban about.webm";
+/** Poster mientras carga el video (archivo en public) */
+const SINUSITIS_HERO_POSTER = "/Dr Jaime.webp";
 
 export default function CirugiaSinusitisPage() {
   const { t } = useTranslation();
   return (
     <main className="bg-white">
-      {/* HERO */}
-      <Hero
-        src="/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png"
-        alt={t("Cirugía de sinusitis")}
+      {/* HERO — misma animación sticky que StickyImageHero, con el video del grid */}
+      <StickyVideoHero
+        src={SINUSITIS_HERO_VIDEO}
+        poster={SINUSITIS_HERO_POSTER}
+        ariaLabel={t("Cirugía de sinusitis")}
         title={t("Cirugía de Sinusitis")}
         subtitle={t("Respiración libre y alivio duradero")}
         textClassName="max-w-3xl mx-auto px-4 -mt-8 md:-mt-4"
         titleClassName="text-5xl sm:text-4xl md:text-6xl"
         subtitleClassName="text-2lg sm:text-xl md:text-2xl -mt-2"
-        imageClassName="-mt-8 md:mt-28"
+        mediaClassName="-mt-8 md:mt-28"
       />
 
       {/* INTRO */}

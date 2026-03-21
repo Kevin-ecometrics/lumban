@@ -8,14 +8,26 @@ import { useTranslation } from "react-i18next";
 export default function CasesGrid() {
   const { t } = useTranslation();
 
-  const CASES = [
+  interface Case {
+    title: string;
+    href: string;
+    image: string;
+    type: "image" | "video";
+    tag?: string;
+    /** "contain" = imagen completa visible en la card; "cover" = rellena el recorte (resto) */
+    objectFit?: "contain" | "cover";
+    objectPosition?: string;
+  }
+
+  const CASES: Case[] = [
     {
       title: t("Rinoplastia Estética"),
       href: "/project/rinoplastia-estetica",
-      image:
-        "/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png",
+      image: "/nariz.png",
       type: "image",
       tag: t("Coming soon"),
+      objectFit: "contain",
+      objectPosition: "center",
     },
     {
       title: t("Cirugía de Sinusitis"),
@@ -65,10 +77,36 @@ export default function CasesGrid() {
               className={`group relative ${colSpan}`}
             >
               <motion.div
-                className="relative h-[320px] md:h-[420px] rounded-2xl overflow-hidden"
+                className={`relative h-[320px] md:h-[440px] rounded-2xl overflow-hidden${
+                  item.type === "image" && item.objectFit === "contain"
+                    ? " bg-white "
+                    : ""
+                }`}
                 initial="rest"
                 whileHover="hover"
                 animate="rest"
+                onMouseEnter={
+                  item.type === "video"
+                    ? (e) => {
+                        const video = e.currentTarget.querySelector("video");
+                        if (video)
+                          video.play().catch(() => {
+                            /* autoplay policy / sin interacción previa */
+                          });
+                      }
+                    : undefined
+                }
+                onMouseLeave={
+                  item.type === "video"
+                    ? (e) => {
+                        const video = e.currentTarget.querySelector("video");
+                        if (video) {
+                          video.pause();
+                          video.currentTime = 0;
+                        }
+                      }
+                    : undefined
+                }
               >
                 {/* MEDIA */}
                 {item.type === "video" ? (
@@ -77,14 +115,7 @@ export default function CasesGrid() {
                     muted
                     playsInline
                     preload="metadata"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.play();
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.pause();
-                      e.currentTarget.currentTime = 0;
-                    }}
+                    className="pointer-events-none absolute inset-0 w-full h-full object-cover"
                     variants={{
                       rest: { scale: 1 },
                       hover: { scale: 1.06 },
@@ -95,7 +126,14 @@ export default function CasesGrid() {
                   <motion.img
                     src={item.image}
                     alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className={`absolute inset-0 w-full h-full max-w-full max-h-full ${
+                      item.objectFit === "contain"
+                        ? "object-contain"
+                        : "object-cover"
+                    }`}
+                    style={{
+                      objectPosition: item.objectPosition ?? "center",
+                    }}
                     variants={{
                       rest: { scale: 1, filter: "blur(0px)" },
                       hover: { scale: 1.06 },
