@@ -4,17 +4,19 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import { useTranslation } from "react-i18next";
+import { getRouteByKey, RouteKey } from "../i18n/routeMap";
 
 export default function CasesGrid() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const lang = i18n.language.startsWith("en") ? "en" : "es";
 
   interface Case {
     title: string;
-    href: string;
+    routeKey: RouteKey;
     image: string;
     type: "image" | "video";
     tag?: string;
-    /** "contain" = imagen completa visible en la card; "cover" = rellena el recorte (resto) */
     objectFit?: "contain" | "cover";
     objectPosition?: string;
   }
@@ -22,31 +24,28 @@ export default function CasesGrid() {
   const CASES: Case[] = [
     {
       title: t("Rinoplastia Estética"),
-      href: "/project/rinoplastia-estetica",
+      routeKey: "aesthetic-nose",
       image: "/nariz.png",
       type: "image",
-      tag: t("Coming soon"),
       objectFit: "contain",
       objectPosition: "center",
     },
     {
       title: t("Cirugía de Sinusitis"),
-      href: "/project/cirugia-sinusitis",
+      routeKey: "sinusitis",
       image: "/dr lumban about.webm",
       type: "video",
     },
     {
-      title: t("Tratamiento de Otitis"),
-      href: "/project/tratamientos-otitis",
-      image:
-        "/Imagen Dr Lumban recargado en la pared en consultorio de otorrinolaringologia.png",
+      title: t("Sinusitis"),
+      routeKey: "sinusitis",
+      image: "/sinusitis.jpg",
       type: "image",
     },
     {
-      title: t("Desviación de Tabique"),
-      href: "/project/tech-repair",
-      image:
-        "/pose de Doctor Jaime lumban otorrino con brazos cruzados y traje azul.png",
+      title: t("Problemas de la Garganta"),
+      routeKey: "throat-problems",
+      image: "/garganta.jpg",
       type: "image",
     },
   ];
@@ -73,7 +72,7 @@ export default function CasesGrid() {
           return (
             <Link
               key={i}
-              href={item.href}
+              href={getRouteByKey(item.routeKey, lang)} // 🔥 aquí usas tu map
               className={`group relative ${colSpan}`}
             >
               <motion.div
@@ -89,10 +88,9 @@ export default function CasesGrid() {
                   item.type === "video"
                     ? (e) => {
                         const video = e.currentTarget.querySelector("video");
-                        if (video)
-                          video.play().catch(() => {
-                            /* autoplay policy / sin interacción previa */
-                          });
+                        if (video) {
+                          video.play().catch(() => {});
+                        }
                       }
                     : undefined
                 }

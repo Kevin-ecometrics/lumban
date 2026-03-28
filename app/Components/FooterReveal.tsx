@@ -12,11 +12,14 @@ import {
 import { useTranslation } from "react-i18next";
 import { getRouteByKey, normalizePath } from "../i18n/routeMap";
 
-const WORD = "DR LUMBÁN";
+const WORD = "Dr Lumbán"; // 👈 Cambiado de "DR LUMBÁN" a "Dr Lumbán"
 
 const SOCIAL_ITEMS = [
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Instagram", href: "https://instagram.com" },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/drlumban/?locale=es_LA",
+  },
+  { label: "Instagram", href: "https://www.instagram.com/lumbanjaime/" },
 ] as const;
 
 /* ======================================================
@@ -54,7 +57,7 @@ const AnimatedLetter = React.memo(function AnimatedLetter({
   return (
     <motion.span
       style={{ y, opacity, scale, display: "inline-block" }}
-      className="font-black text-black"
+      className="font-black text-azul"
     >
       {letter === " " ? "\u00A0" : letter}
     </motion.span>
@@ -70,10 +73,12 @@ const NavItem = ({
   label,
   href,
   isActive,
+  isExternal = false,
 }: {
   label: string;
   href: string;
   isActive?: boolean;
+  isExternal?: boolean;
 }) => (
   <motion.li
     className={`text-base md:text-lg py-1.5 cursor-pointer transition-colors duration-300
@@ -84,12 +89,38 @@ const NavItem = ({
     whileTap={{ x: 2 }}
     transition={{ type: "spring", stiffness: 100, damping: 20 }}
   >
-    <a href={href} className="relative inline-block">
+    <a
+      href={href}
+      className="relative inline-block"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+    >
       {label}
 
       {isActive && (
         <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-black" />
       )}
+    </a>
+  </motion.li>
+);
+
+/* ======================================================
+   Social Nav Item (para enlaces externos)
+====================================================== */
+const SocialNavItem = ({ label, href }: { label: string; href: string }) => (
+  <motion.li
+    className="text-base md:text-lg py-1.5 cursor-pointer transition-colors duration-300 text-gray-600 hover:text-black"
+    whileHover={{ x: 4 }}
+    whileTap={{ x: 2 }}
+    transition={{ type: "spring", stiffness: 100, damping: 20 }}
+  >
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative inline-block"
+    >
+      {label}
     </a>
   </motion.li>
 );
@@ -110,23 +141,23 @@ export default function FooterBase() {
       label: t("Certificaciones"),
       href: getRouteByKey("certifications", currentLang),
     },
-    {
-      label: t("Instalaciones"),
-      href: getRouteByKey("facilities", currentLang),
-    },
+    // {
+    //   label: t("Instalaciones"),
+    //   href: getRouteByKey("facilities", currentLang),
+    // },
     { label: t("Contacto"), href: getRouteByKey("contact", currentLang) },
-    {
-      label: t("Rinoplastia"),
-      href: getRouteByKey("aesthetic-nose", currentLang),
-    },
-    {
-      label: t("Apnea del Sueño"),
-      href: getRouteByKey("sleep-apnea", currentLang),
-    },
-    {
-      label: t("Otorrinopediatría"),
-      href: getRouteByKey("pediatric-ent", currentLang),
-    },
+    // {
+    //   label: t("Rinoplastia"),
+    //   href: getRouteByKey("aesthetic-nose", currentLang),
+    // },
+    // {
+    //   label: t("Apnea del Sueño"),
+    //   href: getRouteByKey("sleep-apnea", currentLang),
+    // },
+    // {
+    //   label: t("Otorrinopediatría"),
+    //   href: getRouteByKey("pediatric-ent", currentLang),
+    // },
   ] as const;
 
   const { scrollYProgress } = useScroll({
@@ -188,7 +219,7 @@ export default function FooterBase() {
               </h3>
               <ul className="space-y-2">
                 {SOCIAL_ITEMS.map((item) => (
-                  <NavItem
+                  <SocialNavItem
                     key={item.label}
                     label={item.label}
                     href={item.href}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaChevronDown, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
@@ -26,11 +26,34 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+  const [isNearBottom, setIsNearBottom] = useState(false);
 
   const pathname = usePathname();
   const router = useRouter();
 
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+
+  // Detectar cuando se acerca al final de la página
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const threshold = 100; // Distancia desde el final para ocultar el logo (en píxeles)
+
+      // Si estamos a menos de 'threshold' píxeles del final
+      if (scrollPosition >= documentHeight - threshold) {
+        setIsNearBottom(true);
+      } else {
+        setIsNearBottom(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Llamar una vez para establecer el estado inicial
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const menuItems: LinkItem[] = [
     {
@@ -164,10 +187,23 @@ const Navbar: React.FC = () => {
     <>
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5">
-        {/* LOGO */}
-        <Link href={getRouteByKey("home", currentLang)}>
-          <img src="/logo-secondary.png" className="h-32 w-auto" />
-        </Link>
+        {/* LOGO - Con animación de desaparición */}
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          animate={{
+            opacity: isNearBottom ? 0 : 1,
+            y: isNearBottom ? -20 : 0,
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="pointer-events-none" // Evita que el logo invisible interfiera con clicks
+        >
+          <Link
+            href={getRouteByKey("home", currentLang)}
+            className="pointer-events-auto"
+          >
+            <img src="/logo-secondary.png" className="h-32 w-auto" />
+          </Link>
+        </motion.div>
 
         {/* BUTTON */}
         <button
