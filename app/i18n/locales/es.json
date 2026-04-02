@@ -727,7 +727,8 @@
     "cause3": "Infecciones sinusales recurrentes",
     "cause4": "Problemas respiratorios",
     "cause5": "Alteraciones del sueño y fatiga constante",
-    "experience_text": "Con más de 33 años de experiencia, el Dr. Lumbán ha ayudado a cientos de pacientes a identificar la causa real de sus síntomas y recuperar su bienestar respiratorio.",
+    "experience_text_prefix": "Con más de ",
+    "experience_text_suffix": "años de experiencia, el Dr. Lumbán ha ayudado a cientos de pacientes a identificar la causa real de sus síntomas y recuperar su bienestar respiratorio.",
     "conditions_title": "Condiciones que tratamos en el consultorio del Dr. Lumbán",
     "conditions_text": "Las enfermedades alérgicas pueden manifestarse de diferentes formas. Entre las más comunes se encuentran:",
     "condition1": "Rinitis alérgica y no alérgica",
@@ -754,7 +755,8 @@
     "collaboration_text2": "El Dr. Lumbán trabaja, mano a mano, con nuestros especialistas en alergias, para proporcionar a los pacientes una atención más integral y con la tecnología médica más avanzada.",
     "important_note": "Importante: Muchas enfermedades de oído, nariz y garganta son provocadas por las alergias.",
     "team_text": "Otorrinolaringología y Alergología trabajan en conjunto, como un equipo para proporcionar un diagnóstico rápido y un tratamiento integral para que los pacientes se beneficien de esta estrecha colaboración.",
-    "experience_note": "El Dr. Jaime Lumbán tiene la práctica de la alergia desde hace más de 33 años. Si usted está sufriendo de síntomas de alergia, necesita la experiencia de clase mundial del Dr. Lumbán, en conjunto con nuestros especialistas en Alergia e Inmunología.",
+    "experience_note_prefix": "El Dr. Jaime Lumbán tiene la práctica de la alergia desde hace más de ",
+    "experience_note_suffix": "años. Si usted está sufriendo de síntomas de alergia, necesita la experiencia de clase mundial del Dr. Lumbán, en conjunto con nuestros especialistas en Alergia e Inmunología.",
     "conditions_accordion_title": "Condiciones Tratadas",
     "allergic_rhinitis_title": "La Rinitis Alérgica y no Alérgica",
     "allergic_rhinitis_text": "Se controla con antihistamínicos, esteroides nasales y evitando los desencadenantes conocidos.",
@@ -802,5 +804,565 @@
     "nasal_congestion": "Congestión Nasal",
     "nasal_obstruction": "Obstrucción Nasal",
     "allergies_condition": "Alergias"
-}
+},
+  "snoring": {
+    "seo_h1": "Ronquidos: Causas, Riesgos y Tratamientos",
+    "seo_intro": "El ronquido es un sonido producido por la vibración de los tejidos de la nariz y la garganta durante la respiración mientras dormimos. Al respirar, el aire fluye de manera constante hacia dentro y fuera de los pulmones. Sin embargo, cuando te adormeces y pasas de un sueño ligero a uno profundo, los músculos del paladar, la lengua y la garganta se relajan lo suficiente como para bloquear parcialmente las vías respiratorias y comenzar a vibrar. Cuanto más se estrechan las vías respiratorias, mayor fuerza genera el flujo de aire. Esto incrementa la vibración de los tejidos y produce un ronquido más intenso.",
+    
+    "when_problem_title": "¿Cuándo puede ser un problema mayor?",
+    "when_problem_text": "En algunos casos, roncar se asocia con un trastorno del sueño llamado apnea obstructiva del sueño (AOS). No todas las personas que roncan padecen AOS; sin embargo, si el ronquido se acompaña de alguno de los siguientes síntomas, es importante realizar una valoración médica:",
+    "symptom1": "Pausas en la respiración observadas durante el sueño",
+    "symptom2": "Somnolencia excesiva durante el día",
+    "symptom3": "Dificultad para concentrarse",
+    "symptom4": "Dolores de cabeza matutinos",
+    "symptom5": "Dolor de garganta al despertar",
+    "symptom6": "Episodios de jadeo o sensación de ahogo nocturno",
+    "symptom7": "Presión arterial alta",
+    "symptom8": "Dolor en el pecho durante la noche",
+    
+    "risk_factors_title": "Factores de Riesgo",
+    "risk_factors_text": "Existen diversos factores que pueden contribuir a la aparición de los ronquidos:",
+    "risk1": "Consumo de alcohol: Relaja los músculos de la garganta y disminuye las defensas naturales contra la obstrucción.",
+    "risk2": "Problemas nasales: La congestión nasal crónica o el tabique desviado contribuyen significativamente.",
+    "risk3": "Privación del sueño: No dormir lo suficiente provoca una mayor relajación de los tejidos de la garganta.",
+    "risk4": "Posición al dormir: Roncar es más frecuente al dormir boca arriba, ya que la gravedad estrecha las vías respiratorias.",
+    "risk5": "Anatomía y género: Los hombres tienen mayor predisposición. Asimismo, un paladar largo, amígdalas grandes o adenoides pueden estrechar el paso del aire.",
+    "risk6": "Sobrepeso: El exceso de tejido en el cuello aumenta la presión sobre las vías respiratorias.",
+    "risk7": "Antecedentes familiares: La genética es un factor de riesgo potencial para la AOS.",
+    
+    "non_surgical_title": "Tratamiento no Quirúrgico para ronquido",
+    "habits_title": "Cambios de hábito",
+    "habit1": "Pérdida de peso.",
+    "habit2": "Evitar el consumo de alcohol o medicamentos sedantes antes de dormir.",
+    "habit3": "Dejar de fumar.",
+    "habit4": "Dormir de lado en lugar de boca arriba.",
+    "dental_devices_title": "Dispositivos dentales",
+    "dental_devices_text": "Estos dispositivos adelantan la mandíbula para mantener abierta la vía aérea. Son útiles en casos leves o en pacientes que no han respondido a cambios de hábitos",
+    "cpap_title": "CPAP (Presión Positiva Continua en la Vía Aérea)",
+    "cpap_text": "Es un dispositivo que proporciona un flujo de aire constante a través de una máscara, evitando que las vías respiratorias se colapsen durante la inspiración y la espiración. Es uno de los tratamientos más efectivos para la apnea obstructiva del sueño.",
+    
+    "surgical_title": "Tratamiento Quirúrgico para ronquido",
+    "surgical_text": "El objetivo de la cirugía es mejorar el flujo de aire por la nariz y corregir anomalías anatómicas que contribuyan a la obstrucción.",
+    "procedure1": "Septoplastia: Corrige la desviación del tabique nasal.",
+    "procedure2": "Valvuloplastia nasal: Mejora el soporte de la válvula nasal.",
+    "procedure3": "Cauterización o reducción de cornetes: Disminuye el tamaño de los tejidos que obstruyen el paso del aire.",
+    
+    "recovery_cta_title": "Recupera tu descanso con un experto en padecimientos relacionados con la garganta",
+    "recovery_cta_text": "Si los ronquidos están afectando tu descanso o el de tu familia, no los ignores. Un diagnóstico oportuno puede prevenir complicaciones y mejorar significativamente tu calidad de vida. El Dr. Jaime Lumbán, otorrinolaringólogo en Tijuana con más de tres décadas de trayectoria, cuenta con amplia experiencia en el diagnóstico y tratamiento integral de ronquidos y apnea obstructiva del sueño, tanto en adultos como en niños. Tu salud respiratoria está en las mejores manos, da el primer paso hacia un descanso saludable y reparador."
+  },
+
+  "throat": {
+    "seo_h1": "Enfermedades de la garganta: Guía sobre causas, síntomas y tratamientos",
+    "seo_intro": "La garganta (faringe) es un conducto muscular en forma de tubo que conecta las cavidades nasales y bucales con el esófago y la laringe. Su función es vital y dual: permite el paso de los alimentos hacia el sistema digestivo y conduce el aire hacia la tráquea para la respiración. Al ser el punto de entrada común para el aire y los alimentos, la garganta es particularmente vulnerable a infecciones y otras afecciones. Las causas más frecuentes de malestar incluyen infecciones virales o bacterianas, alergias y el reflujo gastroesofágico, que ocurre cuando los ácidos del estómago regresan hacia el esófago, irritando la zona.",
+    
+    "common_sore_throat_title": "El dolor de garganta común",
+    "common_sore_throat_text": "Los virus, como los responsables del resfriado común o la influenza (gripe), son los causantes principales del dolor de garganta. Es importante diferenciar estos cuadros de una infección por estreptococos (bacteriana), ya que el tratamiento varía significativamente. Por lo general, la mayoría de estos dolores mejoran espontáneamente en el transcurso de una semana.",
+    "common_sore_throat_symptoms_title": "Síntomas",
+    "common_sore_throat_symptom1": "Dolor o dificultad al tragar (deglución)",
+    "common_sore_throat_symptom2": "Sensación de sequedad o irritación constante",
+    "common_sore_throat_note": "Nota: Si presentas tos, moqueo o ronquera (voz susurrante o áspera), es muy probable que la causa sea un virus y no una bacteria.",
+    
+    "tonsillitis_seo_title": "Amigdalitis: y el sistema linfático",
+    "tonsillitis_seo_text": "Las amígdalas, ubicadas en la parte posterior de la garganta, forman parte del sistema linfático. Su función es atrapar bacterias y gérmenes para prevenir infecciones en el resto del cuerpo. Cuando estas se infectan por virus o bacterias, ocurre la amigdalitis.",
+    "tonsillitis_symptoms": "Síntomas: Dolor intenso, dificultad para tragar, fiebre, enrojecimiento visible, dolor de cabeza e incluso náuseas o dolor de oído.",
+    "tonsillitis_treatment": "Tratamiento médico: Uso de analgésicos (ibuprofeno/acetaminofén), hidratación abundante y, en caso de ser bacteriana, antibióticos como la penicilina.",
+    "tonsillitis_surgical": "Opción quirúrgica: La amigdalectomía se reserva para casos crónicos, de gran severidad.",
+    
+    "pharyngitis_seo_title": "Faringitis: Síntomas y cuidados",
+    "pharyngitis_seo_text": "Se trata de la inflamación específica de la faringe. Aunque comparte síntomas con el dolor de garganta común, suele presentar una sintomatología más sistémica.",
+    "pharyngitis_symptoms": "Síntomas adicionales: Dolores musculares y articulares, erupciones cutáneas y ganglios linfáticos del cuello inflamados y sensibles al tacto.",
+    "pharyngitis_treatment": "Tratamiento: Se enfoca en combatir la infección (amoxicilina si es bacteriana) y aliviar las molestias mediante gárgaras con agua salada y reposo.",
+    
+    "throat_cancer_seo_title": "Cáncer de garganta y factores de riesgo",
+    "throat_cancer_seo_text": "El factor de riesgo predominante para el cáncer de laringe o faringe es el consumo de tabaco (tanto fumado como masticado) y el alcoholismo crónico. Otros factores incluyen la edad avanzada y el Virus del Papiloma Humano (VPH).",
+    "throat_cancer_warning": "Señales de alerta: Presencia de un bulto que no desaparece, ronquera persistente, cambios inexplicables en la voz y dolor de oído crónico.",
+    "throat_cancer_diagnosis": "Diagnóstico: Se realiza mediante una evaluación clínica completa, pruebas especializadas y, finalmente, una biopsia.",
+    "throat_cancer_treatment": "Tratamientos: Dependiendo de la etapa, puede incluir radioterapia, cirugía (laringectomía parcial o total) o una combinación de quimioterapia y radiación.",
+    
+    "croup_seo_title": "Crup: Afección respiratoria en niños",
+    "croup_seo_text": "El crup es una inflamación de las vías respiratorias superiores que afecta principalmente a niños pequeños. Se caracteriza por una tos seca y fuerte, similar a un 'ladrido', que suele empeorar durante la noche.",
+    
+    "when_to_see": "¿Cuándo ir con el otorrino? Si el dolor persiste por más de una semana, hay dificultad grave para respirar o la fiebre es muy alta, es fundamental acudir con un especialista.",
+    
+    "doctor_cta": "El Dr. Jaime Lumbán ofrece diagnósticos expertos y tratamientos personalizados para todas las condiciones relacionadas con la garganta.",
+    "doctor_cta_button_prefix": "Agenda tu consulta de valoración hoy para recibir un tratamiento a la medida por un experto con más de ",
+    "doctor_cta_button_suffix": "años de experiencia"
+  },
+  "sleep-apnea": {
+    "seo_h1": "Apnea del sueño",
+    "seo_intro": "La apnea del sueño es un trastorno grave en el cual la respiración se interrumpe de forma repetida, logrando perturbar el sueño; esta interrupción suele provocar un descenso en los niveles de oxígeno y un aumento de los niveles de dióxido de carbono en la sangre.",
+    
+    "types_title": "Tipos de apnea del sueño",
+    "obstructive_title": "Apnea obstructiva del sueño (AOS)",
+    "obstructive_text": "se presenta cuando las vías respiratorias superiores se bloquean muchas veces durante el sueño. Se produce por cierres repetidos de la garganta o de la vía aérea superior. Esta última está constituida por el conducto que va desde la boca y los orificios nasales hacia la garganta y, en línea descendente, a la laringe; estas estructuras pueden cambiar de posición cuando una persona respira. El bloqueo puede reducir o detener por completo el flujo de aire. Este es el tipo más común de apnea del sueño.",
+    
+    "children_title": "Apnea obstructiva del sueño en los niños:",
+    "children_text": "En los niños, las amígdalas o adenoides de gran tamaño, algunas afecciones dentales, la obesidad y algunas anomalías congénitas pueden causar apnea obstructiva del sueño. Las alergias estacionales que causan una congestión nasal importante pueden empeorar el cuadro. La mayoría de los niños afectados roncan. Otros síntomas relacionados con el sueño pueden incluir un descanso poco reparador y sudoración nocturna. Los síntomas diurnos pueden incluir respiración por la boca y problemas de concentración. Los problemas de aprendizaje y de comportamiento (como la hiperactividad) son, a menudo, síntomas frecuentes de la apnea obstructiva severa del sueño en niños. También pueden presentar retrasos en el crecimiento.",
+    
+    "central_title": "Apnea central del sueño",
+    "central_text": "se presenta cuando el cerebro no envía las señales necesarias para respirar. Las afecciones de salud que afectan la forma en que el cerebro controla las vías respiratorias y los músculos del pecho pueden causar este tipo de apnea.",
+    
+    "symptoms_title": "Síntomas de la apnea del sueño",
+    "symptoms_text": "En todos los tipos de apnea del sueño, las alteraciones del descanso pueden causar:",
+    "symptom1": "Somnolencia diurna.",
+    "symptom2": "Fatiga.",
+    "symptom3": "Irritabilidad.",
+    "symptom4": "Dolor de cabeza matutino.",
+    "symptom5": "Lentitud de pensamiento y dificultad para concentrarse.",
+    "symptom6": "El síntoma más común es el ronquido, que tiende a ser perturbador, con episodios de jadeo o ahogo, pausas en la respiración y despertares bruscos con un resoplido. Las personas afectadas pueden despertarse asfixiándose y asustadas.",
+    "symptom7": "Por la mañana, los pacientes a menudo no son conscientes de que su sueño se ha visto interrumpido muchas veces. Algunos se despiertan con dolor de garganta o boca seca.",
+    "symptom8": "Cuando la apnea obstructiva es grave, los episodios repetidos de resoplidos y grandes ronquidos se producen por la noche, y durante el día la persona se siente soñolienta o incluso se duerme sin querer.",
+    
+    "risk_factors_title": "Factores de riesgo de la apnea de sueño",
+    "risk_factors_text": "La probabilidad de sufrir apnea obstructiva del sueño aumenta a causa de diversos factores. La obesidad, en combinación con el envejecimiento y otros elementos, conduce a un estrechamiento de la vía aérea superior. El consumo excesivo de alcohol y el uso de sedantes empeoran el cuadro. Tener la garganta estrecha o el cuello grueso (rasgos que tienden a ser similares en miembros de una misma familia) indica que, en la mayoría de los casos, la afección tiende a ser hereditaria. Los niveles bajos de hormona tiroidea (hipotiroidismo), sufrir enfermedad por reflujo gastroesofágico (ERGE) por la noche, o el crecimiento desmesurado debido a una producción excesiva de hormona del crecimiento (acromegalia) contribuyen a este tipo de apnea. En algunas ocasiones, un accidente cerebrovascular también puede causarla. Si no se trata, puede conducir a complicaciones como hipertensión, insuficiencia cardíaca, alteraciones del ritmo cardíaco, enfermedad cardíaca aterosclerótica, hipertensión pulmonar, resistencia a la insulina e incluso la muerte.",
+    
+    "diagnosis_title": "Diagnóstico de la apnea de sueño",
+    "diagnosis_text": "Los médicos diagnostican la apnea obstructiva del sueño cuando ocurre lo siguiente:",
+    "diagnosis1": "La respiración se interrumpe durante el sueño.",
+    "diagnosis2": "Se producen 5 o más interrupciones respiratorias por hora.",
+    "diagnosis3": "Cada interrupción dura más de 10 segundos.",
+    
+    "treatments_title": "Tratamientos",
+    "habits_title": "Cambios de hábitos y rutinas",
+    "habit1": "Pérdida de peso en caso de sobrepeso",
+    "habit2": "Evitar alcohol o medicamentos sedantes",
+    "habit3": "Dejar de fumar",
+    "habit4": "Cambiar posiciones para dormir",
+    "dental_title": "Dispositivos Dentales",
+    "dental_text": "Dispositivos dentales tienen la mandíbula hacia adelante y estos dispositivos se pueden utilizar para los ronquidos leves y en las personas que no han respondido a los cambios de comportamiento.",
+    "nasal_title": "Dispositivos Nasales y Medicamentos",
+    "nasal1": "Tiras nasales adhesivas para ampliar fosas nasales",
+    "nasal2": "Aerosoles nasales con esteroides",
+    "nasal3": "Descongestionantes nasales",
+    "nasal4": "Medicamentos para vigilia diurna (Provigil, Armodafinilo)",
+    "cpap_title": "CPAP - Presión Positiva Continua",
+    "cpap_text": "Nasal de presión positiva continua en la vía aérea (CPAP) es un dispositivo que evita el estrechamiento de la vía aérea durante la inspiración y la espiración, proporcionando un aumento de la presión persistente.",
+    "surgery_title": "Cirugía",
+    "surgery_text": "Puede ser necesaria para corregir anomalías anatómicas:",
+    "surgery1": "Septoplastía: corrección de la desviación del tabique nasal.",
+    "surgery2": "Polipectomía: extracción de pólipos nasales.",
+    "surgery3": "Reducción de cornetes: para mejorar el flujo de aire.",
+    
+    "reasons_title": "Razones para tratar la apnea del sueño",
+    "reason1": "Aumento del nivel de energía: Con el tratamiento adecuado, conseguirás un sueño más profundo e ininterrumpido.",
+    "reason2": "Mejora del estado de ánimo: Al tratar la apnea, puedes experimentar una estabilización emocional, sintiéndote más equilibrado en la vida cotidiana.",
+    "reason3": "Reducción de los dolores de cabeza diurnos: Al mejorar la oxigenación nocturna, existe una alta probabilidad de eliminar estos dolores.",
+    "reason4": "Prevención de problemas cardíacos: El tratamiento ayuda a reducir riesgos de hipertensión, insuficiencia cardíaca y arritmias, protegiendo la salud del corazón.",
+    
+    "suspicion_title": "¿Sospecha de apnea del sueño?",
+    "suspicion_text": "La apnea no tratada puede tener consecuencias graves. Si experimentas estos síntomas, consulta al Dr. Lumbán para una evaluación completa y recibir el tratamiento más adecuado para tu caso específico."
+  },
+  
+  "voice-disorders": {
+    "seo_h1": "Trastornos de la Voz: Diagnóstico y Tratamiento Especializado",
+    "seo_intro": "La voz es una herramienta fundamental para nuestra comunicación y expresión personal. Se produce cuando el aire proveniente de los pulmones pasa a través de la laringe, haciendo que las cuerdas vocales vibren para generar sonido. Sin embargo, cuando este delicado mecanismo se altera, surgen los trastornos de la voz. El Dr. Jaime Lumban se especializa en la recuperación de la salud vocal, utilizando tecnología de vanguardia para tratar diversas afecciones.",
+    
+    "classification_title": "¿Cómo se clasifican los trastornos de la voz?",
+    "classification_text": "Los problemas vocales no son todos iguales. Se dividen principalmente en tres categorías:",
+    "organic": "Orgánicos: Causados por alteraciones en la estructura de la laringe o las cuerdas vocales (como nódulos o inflamación).",
+    "neurological": "Neurológicos: Ocurren cuando los nervios que controlan la laringe no funcionan correctamente.",
+    "functional": "Funcionales: Aparecen cuando las estructuras son normales, pero el uso de los músculos vocales es ineficiente o incorrecto, a menudo agravado por el estrés o factores emocionales.",
+    
+    "common_types_title": "Tipos de trastornos vocales más comunes",
+    "common_types_text": "Entre las afecciones que con mayor frecuencia alteran la voz se encuentran:",
+    "nodules": "Nódulos vocales: Pequeños crecimientos benignos en las cuerdas vocales, generalmente asociados al uso excesivo o incorrecto de la voz.",
+    "polyps": "Pólipos vocales: Lesiones benignas que aparecen como una inflamación o masa en una o ambas cuerdas vocales.",
+    "laryngitis": "Laringitis: Inflamación o irritación de las cuerdas vocales, generalmente causada por infecciones respiratorias, alergias o irritación por reflujo.",
+    "muscle_tension": "Disfonía por tensión muscular: Ocurre cuando los músculos de la laringe se tensan excesivamente. Puede provocar dolor al hablar y afectar también el cuello, los hombros y la parte superior de la espalda.",
+    "spasmodic": "Disfonía espasmódica (distonía laríngea): Trastorno neurológico que provoca espasmos involuntarios en las cuerdas vocales, alterando el sonido de la voz.",
+    "benign_lesions": "Lesiones benignas de cuerdas vocales: Incluyen quistes, nódulos o pólipos que afectan la vibración normal de las cuerdas vocales.",
+    "paralysis": "Parálisis de cuerdas vocales: Ocurre cuando una o ambas cuerdas vocales no se mueven correctamente, afectando la respiración, la voz o la deglución.",
+    
+    "causes_title": "Causas de los trastornos de la voz",
+    "causes_text": "La laringe está formada por músculos, tejidos suaves y las cuerdas vocales, ubicadas en la parte superior de la tráquea. Cuando estas estructuras se inflaman, se lesionan o dejan de moverse adecuadamente, la voz puede alterarse. Entre las causas más comunes se encuentran:",
+    "cause1": "Uso excesivo o incorrecto de la voz",
+    "cause2": "Infecciones respiratorias",
+    "cause3": "Alergias",
+    "cause4": "Reflujo gastroesofágico",
+    "cause5": "Tabaquismo",
+    "cause6": "Deshidratación",
+    "cause7": "Enfermedades neurológicas",
+    "cause8": "Lesiones o cirugías en el cuello",
+    "cause9": "Problemas de tiroides",
+    
+    "when_to_see_title": "¿Cuándo acudir con el Dr. Jaime Lumban?",
+    "when_to_see_text": "Si nota cambios en su voz que persisten por más de dos semanas, es importante realizar una valoración. Los síntomas de alerta incluyen:",
+    "alert1": "Voz rasposa, ronca o con aire.",
+    "alert2": "Cambios en el tono (muy aguda o muy grave)",
+    "alert3": "Voz temblorosa o inestable",
+    "alert4": "Debilidad o dificultad para proyectar el sonido.",
+    "alert5": "Cansancio o dolor al hablar sensación de nudo en la garganta.",
+    "alert6": "Pérdida de los tonos agudos en cantantes.",
+    "alert7": "Interrupciones o quiebres repentinos en el sonido.",
+    
+    "diagnosis_title": "Diagnóstico de los trastornos de la voz",
+    "diagnosis_text": "Para identificar la causa exacta, el Dr. Lumban analizará los síntomas, antecedentes médicos y realizará una exploración detallada de la cabeza, cuello y garganta. empleará tecnología avanzada:",
+    "laryngoscopy": "Laringoscopia: Evaluación con un endoscopio flexible de alta resolución.",
+    "videostroboscopy": "Videostroboscopia: Un estudio especializado que permite observar la vibración de las cuerdas vocales en cámara lenta, esencial para un diagnóstico preciso.",
+    "imaging": "Estudios de Imagen: En casos específicos, se pueden solicitar tomografías o resonancias.",
+    
+    "risk_factors_title": "Factores de riesgo",
+    "risk_factors_text": "Algunas condiciones o hábitos pueden aumentar el riesgo de desarrollar trastornos de la voz:",
+    "risk1": "Envejecimiento",
+    "risk2": "Consumo de alcohol",
+    "risk3": "Tabaquismo",
+    "risk4": "Enfermedades neurológicas (como Parkinson o secuelas de accidentes cerebrovasculares)",
+    "risk5": "Reflujo gastroesofágico",
+    "risk6": "Infecciones respiratorias frecuentes",
+    "risk7": "Uso excesivo de la voz",
+    
+    "high_risk_professions_title": "Profesiones con mayor riesgo",
+    "high_risk_professions_text": "Las personas que utilizan su voz de manera intensiva tienen mayor probabilidad de desarrollar problemas vocales, por ejemplo:",
+    "profession1": "Maestros",
+    "profession2": "Cantantes",
+    "profession3": "Locutores",
+    "profession4": "Predicadores",
+    "profession5": "Profesionales que hablan constantemente en público",
+    
+    "prevention_title": "¿Se pueden prevenir los trastornos de la voz?",
+    "prevention_text": "Algunas recomendaciones para cuidar la salud vocal incluyen:",
+    "prevention1": "Evitar el tabaco y el consumo excesivo de alcohol",
+    "prevention2": "Mantener una adecuada hidratación",
+    "prevention3": "Descansar la voz cuando se utiliza de manera prolongada",
+    "prevention4": "Evitar gritar o forzar la voz",
+    "prevention5": "Tratar oportunamente infecciones respiratorias y alergias",
+    
+    "specialist_cta_title": "Atención especializada en trastornos de la voz en Tijuana",
+    "specialist_cta_text": "La voz de cada persona es tan única como su huella, por lo que cualquier cambio persistente debe evaluarse oportunamente. El Dr. Jaime Lumbán, especialista en otorrinolaringología con más de tres décadas de experiencia, ofrece diagnóstico preciso y tratamiento especializado para trastornos de la voz, garganta y laringe, utilizando técnicas modernas y mínimamente invasivas. Si presentas ronquera persistente, dificultad para hablar o cambios en tu voz, agenda una consulta de valoración para identificar la causa y recibir el tratamiento adecuado"
+  },
+  "pediatric-ent": {
+    "seo_h1": "Otorrinopediatría: Cuidado Especializado para Oído, Nariz y Garganta",
+    "seo_intro": "Los niños y adolescentes no son simplemente \"adultos pequeños\". Sus cuerpos están en constante crecimiento y su sistema inmunológico se encuentra en pleno desarrollo. Por ello, ante enfermedades de oído, nariz y garganta, requieren un diagnóstico y tratamiento diferencial. En la consulta del Dr. Lumbán, entendemos que la dosificación de medicamentos, la interpretación de señales no verbales en los más pequeños y la observación de padecimientos agudos o crónicos son pilares fundamentales. Trabajamos de la mano con la familia y su pediatra de cabecera para asegurar un crecimiento sano.",
+    
+    "tonsils_adenoids_title": "Amígdalas y Adenoides: Los Guardianes de la Inmunidad",
+    "tonsils_adenoids_text": "Las amígdalas y los adenoides forman parte del sistema inmunitario de su hijo. Producen anticuerpos para ayudar al organismo a luchar contra las infecciones. Sin embargo, cuando estos tejidos se infectan o crecen demasiado, pueden causar problemas significativos.",
+    "tonsillitis_symptoms_title": "Síntomas de la Amigdalitis",
+    "tonsillitis_symptom1": "Amígdalas rojas e hinchadas con capas blancas o amarillas.",
+    "tonsillitis_symptom2": "Dolor de garganta y dificultad para tragar.",
+    "tonsillitis_symptom3": "Voz ronca.",
+    "tonsillitis_symptom4": "Ganglios linfáticos inflamados en el cuello y fiebre.",
+    
+    "when_to_see_tonsils_title": "¿Cuándo ir con el otorrino por amígdalas?",
+    "when_to_see_tonsils_text": "Dificultad respiratoria, pausas al respirar en la noche, somnolencia diurna, rechazo a la alimentación por dolor, fiebre alta persistente",
+    
+    "pediatric_apnea_title": "Apnea Obstructiva del Sueño en niños",
+    "pediatric_apnea_text": "Si su hijo ronca con frecuencia, podría ser una señal de alerta. Cuando las amígdalas están agrandadas, los músculos se relajan durante el sueño profundo y bloquean el paso del aire.",
+    "what_happens_title": "Qué sucede",
+    "what_happens_text": "Ronquido frecuente que puede ocultar episodios de cierre parcial o total de la vía aérea durante el sueño por amígdalas/adenoides agrandadas.",
+    "consequences_title": "Consecuencias",
+    "consequences_text": "Sueño fragmentado → cansancio diurno, irritabilidad, dificultades en el rendimiento escolar y, en casos severos, alteraciones del crecimiento.",
+    "solution_text": "La solución: Una evaluación detallada por el otorrinolaringólogo. En muchos casos la extirpación de amígdalas y adenoides es el tratamiento ideal.",
+    
+    "ear_health_title": "Salud Auditiva e Infecciones de Oído y tubos de ventilación",
+    "ear_health_text": "Las infecciones del oído medio (otitis media) ocurren cuando bacterias o virus infectan el espacio detrás del tímpano. Los niños son más susceptibles porque sus trompas de Eustaquio son más cortas, estrechas y horizontales, lo que facilita la acumulación de líquido.",
+    
+    "ear_infection_symptoms_title": "¿Cómo saber si mi hijo tiene una infección de oídos?",
+    "ear_infection_symptoms_text": "Se presentan con frecuencia estos síntomas:",
+    "ear_symptom1": "Dolor intenso: Que suele empeorar por la noche.",
+    "ear_symptom2": "Problemas auditivos: El niño parece no escuchar bien o no responde a los llamados.",
+    "ear_symptom3": "Supuración: Salida de líquido o pus por el conducto auditivo.",
+    "ear_symptom4": "Fiebre y dolor de cabeza.",
+    
+    "ventilation_tubes_title": "Tubos de Ventilación: ¿Cuándo son necesarios?",
+    "ventilation_tubes_text": "Indicados para otitis recurrentes o presencia persistente de líquido que causa pérdida auditiva y retraso en el lenguaje.",
+    "tube_types": "Tipos: corto plazo (caen solos ~6–12 meses) o largo plazo (requieren extracción).",
+    "procedure_text": "Procedimiento: miringotomía (incisión mínima en el tímpano), succión del líquido e inserción del tubo; dura minutos y es ambulatorio.",
+    
+    "allergies_title": "Alergias y Problemas Respiratorios en niños",
+    
+    "allergic_rhinitis_title": "Rinitis Alérgica",
+    "allergic_rhinitis_text": "A diferencia de un resfriado común, la rinitis no causa fiebre. Se manifiesta con círculos oscuros bajo los ojos, picazón intensa en la nariz o el paladar, y estornudos frecuentes. El tratamiento debe ser personalizado, incluyendo antihistamínicos modernos que no causan somnolencia o rociadores nasales específicos.",
+    
+    "sinusitis_vs_cold_title": "Diferencias entre sinusitis y resfriado en niños:",
+    "sinusitis_vs_cold_header1": "Síntomas",
+    "sinusitis_vs_cold_header2": "Resfriado Común",
+    "sinusitis_vs_cold_header3": "Sinusitis Bacteriana",
+    "duration": "Duración",
+    "duration_cold": "Generalmente 7 a 10 días.",
+    "duration_sinusitis": "Más de 10 días sin mejoría.",
+    "mucus": "Mucosidad",
+    "mucus_cold": "Transparente, se vuelve espesa en 3-4 días.",
+    "mucus_sinusitis": "Espesa, amarilla y persistente.",
+    "fever": "Fiebre",
+    "fever_cold": "Poco común o solo al inicio.",
+    "fever_sinusitis": "Fiebre constante por 3-4 días seguidos.",
+    "pain": "Dolor",
+    "pain_cold": "Malestar general leve.",
+    "pain_sinusitis": "Dolor intenso alrededor de los ojos y mal aliento.",
+    
+    "parent_recommendations_title": "Recomendaciones para padres",
+    "recommendation1": "Anotar episodios de fiebre, duración del dolor, patrón del sueño y cualquier cambio en el lenguaje o comportamiento.",
+    "recommendation2": "Mantener vacunas y control pediátrico al día.",
+    "recommendation3": "Evitar exposición al humo de tabaco y ambientes con alérgenos conocidos.",
+    "recommendation4": "Buscar evaluación otorrinolaringológica si hay infecciones recurrentes, pérdida auditiva, ronquido persistente o retraso del habla.",
+    
+    "specialist_care_title": "Atención Especializada con el Dr. Lumbán",
+    "specialist_care_text": "Contamos con las instalaciones capacitadas y el equipo tecnológico de vanguardia para tratar todas las áreas de la otorrinolaringología pediátrica. Nuestro enfoque es preventivo y mínimamente invasivo, priorizando siempre la comodidad y tranquilidad de nuestros pacientes más pequeños.",
+    
+    "final_cta": "¿Notas que tu hijo respira por la boca o tiene infecciones frecuentes? Un diagnóstico oportuno es la clave para un desarrollo sin complicaciones."
+  },
+  
+  "endoscopic-surgery": {
+    "seo_h1": "Cirugía Endoscópica para Sinusitis",
+    "what_is_sinusitis_title": "¿Qué es la sinusitis?",
+    "what_is_sinusitis_text": "La sinusitis es la inflamación de la mucosa que reviste el interior de la nariz y los senos paranasales. Los senos paranasales son cavidades óseas localizadas en el cráneo, alrededor de los ojos y la nariz, cuya función principal es la producción de mucosidad para limpiar y humectar el aire inspirado. Cuando estas mucosas se inflaman, se produce un edema (hinchazón) y un aumento en la producción de moco. Esto obstruye el drenaje natural de los senos hacia la nariz y la garganta. Al quedar retenido, el moco facilita la proliferación de bacterias y virus, lo que deriva en una infección. Factores como las alergias y los pólipos nasales también pueden obstruir estas vías y cronificar el proceso.",
+    
+    "sinusitis_types_title": "Tipos de sinusitis",
+    "sinusitis_types_text": "Existen dos formas principales de sinusitis:",
+    "acute": "Aguda: de corta duración.",
+    "chronic": "Crónica: de larga duración.",
+    "chronic_criteria": "Se considera sinusitis crónica cuando, durante al menos 12 semanas, la persona presenta al menos dos de los siguientes síntomas:",
+    "chronic_symptom1": "Congestión o bloqueo nasal.",
+    "chronic_symptom2": "Dolor o sensación de presión en la cara o la cabeza.",
+    "chronic_symptom3": "Secreción nasal espesa y/o pigmentada.",
+    "chronic_symptom4": "Disminución del sentido del olfato.",
+    "chronic_note": "Además, debe haber evidencia de inflamación en los senos paranasales observada por el médico o en una tomografía computarizada (TAC).",
+    
+    "common_symptoms_title": "Síntomas frecuentes",
+    "symptom1": "Dolor o sensación de pesadez facial.",
+    "symptom2": "Dificultad para respirar por la nariz.",
+    "symptom3": "Mal olor nasal persistente.",
+    "symptom4": "Secreción retronasal (goteo hacia la garganta).",
+    "symptom5": "Cefalea o molestias faciales.",
+    
+    "non_surgical_treatment_title": "Tratamiento no invasivo para sinusitis",
+    "non_surgical_treatment_text": "En la mayoría de los casos la sinusitis mejora con tratamiento médico, que puede incluir: antibióticos (cuando procede), antiinflamatorios, antihistamínicos, descongestionantes, tratamiento de las alergias y medidas ambientales (por ejemplo, evitar el tabaquismo). El tipo de tratamiento se decide tras la evaluación médica para abordar la causa subyacente.",
+    
+    "surgery_indication_title": "¿Cuándo está indicada la cirugía?",
+    "surgery_indication_text": "Si la sinusitis no responde a medidas médicas adecuadas o si existen alteraciones anatómicas que dificultan el drenaje (pólipos, desviación septal u otras causas), la cirugía endoscópica de senos paranasales puede ser la opción indicada",
+    
+    "surgical_procedure_title": "La Intervención Quirúrgica",
+    "surgical_procedure_text": "La cirugía endoscópica es un procedimiento mínimamente invasivo que permite operar a través de las fosas nasales sin necesidad de realizar incisiones externas, evitando así cicatrices visibles.",
+    "duration": "Duración: Entre 1 y 3 horas, dependiendo de la complejidad.",
+    "technique": "Técnica: Se utilizan endoscopios de alta resolución con diferentes ángulos de visión que permiten visualizar las lesiones con gran precisión y aumento.",
+    "advantages_title": "Ventajas:",
+    "advantage1": "Preservación del tejido sano.",
+    "advantage2": "Ausencia de inflamación facial externa.",
+    "advantage3": "Procedimiento ambulatorio (alta el mismo día en la mayoría de los casos).",
+    
+    "post_op_title": "Recomendaciones para los primeros 3 a 4 días:",
+    "rest": "Reposo relativo: Mantenerse en posición sentada o semisentada para reducir la presión cefálica y el sangrado.",
+    "restrictions": "Restricciones: No beber alcohol, no fumar, no conducir y evitar cualquier esfuerzo físico.",
+    "diet": "Alimentación: Se recomiendan alimentos blandos, fríos o a temperatura ambiente, así como abundante hidratación para aliviar la sequedad de garganta causada por la respiración bucal.",
+    "hygiene": "Higiene: Es fundamental no sonarse la nariz.",
+    
+    "follow_up_title": "Evolución y Seguimiento:",
+    "medications": "Medicamentos: Se prescribirán analgésicos/antiinflamatorios para las molestias y antibióticos para prevenir infecciones.",
+    "packing_removal": "Retiro de tapones: Se realiza en consulta entre los 2 y 6 días posteriores. Si se colocaron láminas nasales, estas se retiran entre la primera y tercera semana.",
+    "nasal_washes": "Lavados nasales: Son esenciales durante las primeras semanas para limpiar las costras y secreciones, facilitando la cicatrización.",
+    "return_activity": "Retorno a la actividad: El paciente puede retomar sus actividades habituales en 1 o 2 semanas, pero debe evitar el ejercicio físico intenso durante un mes.",
+    
+    "final_cta_title": "¿Tiene dudas sobre el la endoscopia para sinusitis?",
+    "final_cta_text": "Para obtener un diagnóstico personalizado o aclarar cualquier inquietud, el Dr. Lumbán está a su disposición. Puede concertar una cita a través de nuestro número telefónico o vía correo electrónico. Su salud respiratoria es nuestra prioridad."
+  },
+  
+  "anti-snoring-surgery": {
+    "seo_h1": "Cirugía Antirronquidos con el Dr. Jaime Lumbán: Experto en Trastornos del Sueño en Tijuana",
+    
+    "snoring_surgical_title": "Ronquido y abordaje quirúrgico",
+    "snoring_surgical_text": "El ronquido es un síntoma común dentro del espectro de los trastornos respiratorios del sueño, el cual suele presentarse de forma independiente o asociada al síndrome de apnea del sueño, conoce más en: drlumban.com/apnea-sueno. Este síntoma puede afectar significativamente la calidad del sueño y la salud general. En muchos casos, se asocia con obstrucción de la vía aérea superior, la vibración del paladar blando o el aumento del tejido faríngeo. Cuando el ronquido es persistente o se acompaña de pausas respiratorias, es importante realizar una evaluación completa para definir el tratamiento adecuado.",
+    
+    "surgery_areas_text": "Las cirugías de apnea del sueño o los ronquidos se dividen en tres áreas principales: las regiones nasal, del paladar y de la lengua, con el fin de reducir obstrucciones y ensanchar las vías respiratorias. Es posible que se requieran más de intervención en el área.",
+    
+    "surgery_types_title": "Tipos de cirugía para el ronquido:",
+    "surgery_types_text": "Cada paciente es único al igual que diagnóstico. Por ello, algunos abordajes serán más convenientes que otros de acuerdo con la edad, estilo de vida y fisionomía general. Algunos de los abordajes quirúrgicos para ronquidos son:",
+    
+    "radiofrequency_title": "Ablación por radiofrecuencia",
+    "radiofrequency_text": "También conocida como ablación en frío, se puede realizar en las regiones nasal, del paladar, de la lengua y de la epiglotis. Esta tecnología de radiofrecuencia utiliza iones y una sonda especializada para formar intencionalmente tejido cicatricial, lo que estabiliza la zona y la hace menos propensa a vibrar o bloquear el flujo de aire.",
+    
+    "uvulopalatopharyngoplasty_title": "Uvulopalatofaringoplastia (UPFP)",
+    "uvulopalatopharyngoplasty_text": "Es una cirugía que se realiza para abrir las vías respiratorias superiores mediante la extracción del tejido sobrante en la parte posterior de la garganta. Esto incluye:",
+    "upfp_item1": "La totalidad o parte de la úvula (el tejido blando que cuelga al fondo de la boca).",
+    "upfp_item2": "Partes del paladar y tejido blando de los costados de la garganta.",
+    "upfp_item3": "Las amígdalas y adenoides (en caso de no haber sido extraídas previamente).",
+    "upfp_recovery": "Recuperación: El tiempo estimado de recuperación completa es de 2 a 3 semanas.",
+    
+    "nasal_valvuloplasty_title": "Valvuloplastia nasal",
+    "nasal_valve_question": "¿Qué es una válvula nasal?",
+    "nasal_valve_text": "Es una zona en cada fosa nasal que desempeña un papel importante en la aspiración del aire. Esta zona, de apenas unos milímetros, es considerada por los especialistas como un elemento clave de la respiración, incluso más importante que el tabique o los cornetes.",
+    "nasal_valvuloplasty_text": "La intervención se realiza en el interior de la fosa nasal y no deja cicatrices externas visibles. Antes del procedimiento, es necesario realizar un examen exhaustivo para evaluar la salud general del paciente. Cabe mencionar que esta cirugía puede ensanchar ligeramente el puente nasal para permitir un mayor flujo de aire; el Dr. Lumbán se encargará de brindar resultados funcionales y estéticos.",
+    
+    "septoplasty_title": "Septoplastia y reducción de cornetes",
+    "septoplasty_text": "Septoplastia: Endereza el tabique (la pared que divide las fosas nasales) cuando está desviado. También se utiliza para eliminar crecimientos óseos llamados espolones septales. Leer mas sobre esto en https://drlumban.com/septoplastia/",
+    "turbinate_reduction_text": "Reducción de cornetes: Elimina el exceso de tejido alrededor de los huesos cornetes para facilitar el paso del aire. Puede realizarse de forma independiente o combinada con una septoplastia o rinoplastia.",
+    
+    "diagnosis_title": "Diagnóstico y Evaluación de ronquidos",
+    "diagnosis_text": "El Dr. Lumbán realiza una evaluación integral de la vía aérea superior que incluye historia clínica, examen físico y estudios especializados como la nasofibroscopía. Este último es un estudio por fibra óptica que permite revisar las estructuras profundas de nariz, garganta y laringe.",
+    "nasofibroscopy_title": "Es común realizar una nasofibroscopía en el diagnóstico de:",
+    "nasofibroscopy_item1": "Sinusitis y nariz tapada",
+    "nasofibroscopy_item2": "Apneas del sueño",
+    "nasofibroscopy_item3": "Pólipos nasales y tumores",
+    "nasofibroscopy_item4": "Tabique desviado y disfonía",
+    "nasofibroscopy_item5": "Nódulos, quistes o pólipos en cuerdas vocales",
+    "nasofibroscopy_item6": "Reflujo gastroesofágico y extraesofágico",
+    "nasofibroscopy_item7": "Otros diagnósticos",
+    "polysomnography_text": "En casos específicos, se solicita una polisomnografía para medir con precisión la calidad del sueño y cuantificar la presencia de apnea.",
+    
+    "final_cta_title": "¿Tienes dudas sobre qué cirugía antirronquidos es la ideal para ti?",
+    "final_cta_text": "Agenda una consulta con el Dr. Lumbán para una valoración completa."
+  },
+  
+  "microscopic-surgery": {
+    "seo_h1": "Cirugía Microscópica de Laringe: Tratamiento para Lesiones de las Cuerdas Vocales",
+    "seo_intro": "Los cambios en la voz pueden ser el primer síntoma de algo más serio, como debilidad vocal, tumores en las cuerdas vocales o incluso cáncer de garganta. Si presenta ronquera, molestias o cambios en la voz que duran más de tres semanas, se recomienda acudir a una evaluación con un otorrinolaringólogo, quien puede examinar la laringe y determinar la causa del problema. Las cuerdas vocales se encuentran en la laringe y la voz es el resultado de la vibración de estas estructuras. Cualquier irregularidad o masa en las cuerdas vocales puede alterar su vibración y, en consecuencia, provocar cambios en la voz.",
+    
+    "what_is_title": "¿Qué es la Cirugía Microscópica de Laringe?",
+    "what_is_text": "La cirugía microscópica de laringe, también conocida como microlaringoscopia, es un procedimiento que permite evaluar y extirpar diversas lesiones de las cuerdas vocales, incluyendo: Cáncer, quistes, papilomas, pólipos y edema de Reinke.",
+    
+    "non_surgical_title": "Tratamiento para cuerdas vocales sin cirugía y cirugía de las cuerdas vocales",
+    "non_surgical_text": "La mayoría de los problemas de voz pueden tratarse con éxito mediante métodos no invasivos:",
+    "non_surgical_item1": "Modificaciones en el estilo de vida y en el uso de la voz.",
+    "non_surgical_item2": "Higiene vocal (hidratación y cuidado).",
+    "non_surgical_item3": "Reposo de la voz.",
+    "non_surgical_item4": "Ejercicios y terapia vocal especializada.",
+    
+    "surgical_treatment_title": "En ocasiones, los trastornos de la voz requieren una intervención directa:",
+    "surgical_item1": "Inyección de las cuerdas vocales con Botox.",
+    "surgical_item2": "Extirpación de lesiones (quistes, pólipos o nódulos).",
+    "surgical_item3": "Biopsia de lesiones sospechosas para diagnóstico.",
+    "surgical_item4": "Eliminación de papilomas.",
+    "surgical_item5": "Tratamiento de edemas provocados por el tabaquismo.",
+    
+    "diseases_title": "Enfermedades de las Cuerdas Vocales que Pueden Requerir Cirugía",
+    
+    "nodules_title": "Nódulos de las cuerdas vocales",
+    "nodules_text": "A menudo denominados \"nódulos del cantante\", son crecimientos benignos que se desarrollan debido al esfuerzo excesivo o al mal uso de la voz. Los pacientes pueden experimentar ronquera, voz entrecortada o fatiga vocal. Cuando los tratamientos conservadores, como la terapia vocal, no producen mejoría, puede indicarse cirugía.",
+    
+    "polyps_title": "Pólipos de las cuerdas vocales",
+    "polyps_text": "Al igual que los nódulos, los pólipos son lesiones benignas que pueden causar cambios en la voz y molestias. Generalmente se relacionan con abuso vocal o traumatismos. Si los pólipos son grandes o persistentes, puede ser necesaria una microcirugía laríngea para extirparlos.",
+    
+    "cysts_title": "Quistes laríngeos",
+    "cysts_text": "Estos sacos llenos de líquido pueden formarse en las cuerdas vocales y provocar ronquera o cambios en la voz. Con frecuencia se requiere intervención quirúrgica para eliminar el quiste y restaurar la función vocal normal.",
+    
+    "tumors_title": "Tumores laríngeos",
+    "tumors_text": "En la laringe pueden presentarse tumores benignos o malignos. En estos casos, se puede realizar una biopsia para determinar la naturaleza del tumor. Si se confirma malignidad o riesgo de cáncer, la microcirugía laríngea puede ser esencial para su extirpación y tratamiento posterior.",
+    
+    "paralysis_title": "Parálisis de las cuerdas vocales",
+    "paralysis_text": "Esta afección puede deberse a diversas causas, como daño o lesión nerviosa. En algunos casos, la cirugía puede ayudar a reposicionar las cuerdas vocales o mejorar su función, lo que contribuye a mejorar la voz y el manejo de la vía aérea.",
+    
+    "stenosis_title": "Estenosis subglótica",
+    "stenosis_text": "Consiste en el estrechamiento de la vía respiratoria por debajo de las cuerdas vocales, lo que puede causar dificultad para respirar. La microcirugía laríngea puede ayudar a ampliar la vía aérea y mejorar el flujo de aire.",
+    
+    "inflammation_title": "Inflamación o edema laríngeo",
+    "inflammation_text": "La inflamación crónica o la hinchazón de la laringe pueden provocar cambios en la voz y molestias. En algunos casos, puede ser necesaria una cirugía para tratar la causa subyacente y restablecer la función normal.",
+    
+    "preparation_title": "Preparación y Diagnóstico para cirugía de laringe",
+    "preoperative_title": "Consulta preoperatoria",
+    "preoperative_text": "Se recomienda programar una consulta con el Dr. Lumbán otorrinolaringólogo. Durante esta cita se revisará su historial médico, se realizará una exploración física y se explicarán el procedimiento, los posibles riesgos y los resultados esperados.",
+    
+    "diagnostic_tests_title": "Pruebas de diagnóstico",
+    "diagnostic_tests_text": "Antes de la cirugía, el Dr. Lumbán puede solicitar estudios como:",
+    "test1": "Laringoscopia: procedimiento que permite visualizar la laringe y evaluar su estado.",
+    "test2": "Estudios de imagen: tomografía computarizada o resonancia magnética para analizar la extensión del problema.",
+    "test3": "Análisis de sangre: pruebas de laboratorio de rutina para identificar posibles condiciones de salud subyacentes.",
+    
+    "how_performed_title": "¿Cómo se realiza la Cirugía de Cuerdas Vocales?",
+    "how_performed_text": "La cirugía de las cuerdas vocales se realiza mediante una laringoscopia directa (microlaringoscopia) bajo anestesia general. Mientras el paciente duerme profundamente, se utiliza un laringoscopio metálico para mantener la lengua desplazada y permitir una visión clara. Utilizando un microscopio de alta precisión, el cirujano obtiene una visión magnificada de las cuerdas vocales. A través de instrumental especializado o tecnología láser, se procede a tratar la afección. El objetivo principal es resecar la lesión con la mayor precisión posible, minimizando el impacto en los tejidos sanos circundantes para preservar la calidad de la voz.",
+    
+    "recovery_title": "Recuperación después de una microcirugía laríngea",
+    "recovery_item1": "La mayoría de las cirugías laríngeas se realizan de forma ambulatoria.",
+    "recovery_item2": "Se recomienda reposo de la voz durante los primeros días después de la cirugía.",
+    "recovery_item3": "Muchos pacientes pueden volver al trabajo aproximadamente después de una semana.",
+    "recovery_item4": "La mejoría de la voz suele presentarse de forma gradual a lo largo de varias semanas.",
+    "recovery_text": "Es fundamental mantenerse bien hidratado y evitar hablar en la medida de lo posible para permitir la adecuada cicatrización de las cuerdas vocales. También se recomienda el uso de humidificadores para mantener el aire húmedo, lo cual puede ayudar a aliviar la garganta. Después de la primera semana, muchos pacientes comienzan a notar mejoras en la calidad de su voz y en su bienestar general. Sin embargo, la recuperación completa puede tardar varias semanas, por lo que es importante asistir a las citas de seguimiento con el cirujano para supervisar el proceso de cicatrización.",
+    
+    "final_cta_title": "¿Tienes dolor al hablar o ronquera prolongada?",
+    "final_cta_text": "Te invitamos a agendar una valoración con el Dr. Lumbán experto en trastornos de la voz y cirugía mínima invasiva."
+  },
+  
+  "rhinoplasty": {
+    "seo_h1": "Cirugía Estética de Nariz: Equilibrio Perfecto entre Estética y Función Nasal",
+    "seo_intro_prefix": "Con más de ",
+    "seo_intro_suffix": "años de trayectoria, el Dr. Jaime Lumbán se ha dedicado a perfeccionar la cirugía estética y funcional de la nariz. Aunque pueda parecer una estructura sencilla, la anatomía nasal es sumamente compleja y exige una precisión absoluta. Factores como la resistencia del cartílago y el tipo de piel varían en cada paciente; por ello, lo que funciona para una persona no siempre es lo ideal para otra. El enfoque de un otorrinolaringólogo es buscar resultados que armonicen con el rostro y realcen la belleza natural, manteniendo siempre la función respiratoria como el pilar fundamental de cada intervención.",
+    
+    "what_is_title": "¿Qué es la Rinoplastia?",
+    "what_is_text": "Es la cirugía diseñada para dar una nueva forma a la nariz. A través de este procedimiento, es posible aumentar o reducir su tamaño, cambiar el ángulo nasal, refinar la punta o corregir bultos y desviaciones.",
+    
+    "common_changes_title": "Cambios comunes en la rinoplastia",
+    
+    "dorsal_hump_title": "Reducción de la joroba o dorso nasal",
+    "dorsal_hump_text": "El dorso nasal es el hueso que recorre la nariz desde la zona entre las cejas hasta la punta. Cuando existe una protuberancia o \"joroba\", puede reducirse y suavizarse para crear un perfil más armónico y recto. En algunos tipos de nariz —como las narices asiáticas o africanas— puede ser necesario realizar injertos de cartílago para mejorar la proyección del dorso nasal.",
+    
+    "tip_refinement_title": "Refinamiento de la punta nasal",
+    "tip_refinement_text": "La punta de la nariz es una de las áreas que más influyen en la armonía del rostro. El refinamiento se realiza modificando los cartílagos nasales y el ángulo nasolabial, lo que permite: proyectar la punta hacia adelante, mejorar la definición, lograr un perfil más equilibrado y refinado.",
+    
+    "base_reduction_title": "Reducción de la base nasal",
+    "base_reduction_text": "La cirugía también puede enfocarse en reducir la anchura de las aletas nasales, corrigiendo desproporciones y mejorando el equilibrio facial. Una rinoplastia anterior y tienen problemas posteriores con su respiración o que desean cambios adicionales en el aspecto de la nariz. Estos casos suelen ser considerablemente más difícil y ver a un especialista en rinoplastia es una necesidad.",
+    
+    "surgery_types_title": "Tipos de cirugía de nariz",
+    
+    "functional_title": "Rinoplastia Funcional",
+    "functional_text": "Se realiza en pacientes que presentan problemas respiratorios, generalmente debido a: desviación del tabique nasal (septum), deformaciones de los huesos nasales, obstrucción nasal crónica. Indicada para pacientes con dificultades respiratorias causadas por desviación del tabique (septum), deformidades óseas o hipertrofia por alergias. La corrección funcional suele traer consigo una mejora notable en la apariencia externa.",
+    
+    "aesthetic_title": "Rinoplastia Estética",
+    "aesthetic_text": "Enfocada en pacientes que desean mejorar exclusivamente la forma de su nariz. El Dr. Lumbán asegura que el cambio estético nunca sacrifique la capacidad de respirar correctamente.",
+    
+    "revision_title": "Rinoplastia de Revisión (Secundaria)",
+    "revision_text": "Para quienes ya se sometieron a una cirugía previa y presentan problemas respiratorios o insatisfacción con los resultados visuales. Estos casos son de alta complejidad y requieren la experiencia de un especialista.",
+    
+    "approaches_title": "Tipos de abordaje en rinoplastia",
+    "approaches_text": "Dependiendo de cada caso, se selecciona el método que garantice mejores resultados y una recuperación más cómoda:",
+    
+    "closed_title": "Rinoplastia Cerrada (Incisiones Internas)",
+    "closed_text": "Se realiza exclusivamente a través de las fosas nasales, sin dejar cicatrices externas. Es ideal para modificaciones menos invasivas, ya que permite acceder a la estructura interna con un menor impacto en los tejidos circundantes.",
+    
+    "open_title": "Rinoplastia Abierta",
+    "open_text": "Se realiza una mínima incisión en la columela (la base que separa las fosas nasales). Esta técnica ofrece una visión directa y completa de la estructura nasal, siendo la opción preferida para casos complejos o de revisión donde la precisión extrema es vital. La cicatriz resultante es prácticamente invisible con el tiempo.",
+    
+    "ultrasonic_title": "Rinoplastia Ultrasónica (sin tapones)",
+    "ultrasonic_text": "Gracias a la tecnología ultrasónica, es posible realizar cortes precisos en el hueso nasal, lo que permite: reducir el trauma en los tejidos, disminuir el sangrado, evitar fracturas agresivas, mejorar la recuperación postoperatoria. Este tipo de técnica también puede permitir cirugías sin el uso de tapones nasales, lo que hace el proceso de recuperación más cómodo para el paciente.",
+    
+    "final_cta_title": "¿Qué tipo de rinoplastia es mejor para ti?",
+    "final_cta_text": "Cada nariz es única, por lo que la mejor técnica depende de tu anatomía, tus objetivos estéticos y tu función respiratoria. Te invitamos al consultorio con el Dr. Lumbán en Rio Medica a realizar una valoración personalizada, donde podremos analizar tu caso a detalle, resolver todas tus dudas y diseñar un plan quirúrgico adaptado específicamente a ti."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Agenda tu cita con el Dr. Lumbán o envíanos tus dudas",
+    "map_title": "RIO MEDICA",
+    "map_address": "Leona Vicario 1451, Zona Urbana Rio Tijuana",
+    "map_city": "22010 Tijuana, B.C.",
+    "map_rating": "4.6 (86 opiniones)",
+    "form_title": "Agenda tu Cita",
+    "form_subtitle": "Completa el formulario y nos pondremos en contacto contigo a la brevedad",
+    "label_name": "Nombre completo",
+    "label_email": "Correo electrónico",
+    "label_phone": "Teléfono",
+    "label_specialty": "Deseo atenderme de",
+    "label_condition": "¿Conoce su padecimiento?",
+    "label_message": "Mensaje",
+    "placeholder_name": "Escribe tu nombre completo",
+    "placeholder_email": "Ingresa tu correo electrónico",
+    "placeholder_phone": "Ej: +52 664 123 4567",
+    "placeholder_message": "Describa brevemente el motivo de su consulta o cualquier información adicional que considere importante",
+    "select_option": "Selecciona una opción",
+    "select_specialty_nariz": "Nariz",
+    "select_specialty_oido": "Oído",
+    "select_specialty_garganta": "Garganta",
+    "select_specialty_general": "Consulta general",
+    "select_condition_no": "No lo conozco",
+    "select_condition_sinusitis": "Sinusitis",
+    "select_condition_snoring": "Ronquidos",
+    "select_condition_apnea": "Apnea del sueño",
+    "select_condition_voice": "Trastornos de la voz",
+    "select_condition_congestion": "Congestión nasal",
+    "select_condition_vertigo": "Vértigo y mareo",
+    "select_condition_hearing_loss": "Pérdida de audición",
+    "select_condition_rhinoplasty": "Rinoplastia",
+    "button_submit": "Enviar mensaje",
+    "button_submitting": "Enviando...",
+    "required_fields": "Campos requeridos",
+    "error_name_required": "El nombre es requerido",
+    "error_email_required": "El correo electrónico es requerido",
+    "error_email_invalid": "Correo electrónico inválido",
+    "error_specialty_required": "Por favor selecciona una especialidad",
+    "error_message_required": "El mensaje es requerido",
+    "error_form_correction": "Por favor, corrige los errores en el formulario.",
+    "success_message": "Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.",
+    "error_validation": "Error en la validación de datos. Por favor, intenta nuevamente.",
+    "error_send": "Error al enviar el mensaje. Por favor, intenta nuevamente.",
+    "error_unexpected": "Ocurrió un error inesperado. Por favor, intenta nuevamente."
+  }
+
+
+
 }

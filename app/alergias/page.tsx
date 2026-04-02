@@ -8,6 +8,7 @@ import { getRouteByKey } from "../i18n/routeMap";
 export default function AlergiasPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+  const experienceYears = new Date().getFullYear() - 1993;
   const [openConditionIndex, setOpenConditionIndex] = React.useState<
     number | null
   >(null);
@@ -261,7 +262,10 @@ export default function AlergiasPage() {
             <li>{t("allergies.cause4")}</li>
             <li>{t("allergies.cause5")}</li>
           </ul>
-          <p>{t("allergies.experience_text")}</p>
+          <p>
+            {t("allergies.experience_text_prefix")} {experienceYears}{" "}
+            {t("allergies.experience_text_suffix")}
+          </p>
 
           <h2 className="text-2xl font-bold text-gray-900">
             {t("allergies.conditions_title")}
