@@ -1363,6 +1363,97 @@
     "error_validation": "Data validation error. Please try again.",
     "error_send": "Error sending message. Please try again.",
     "error_unexpected": "An unexpected error occurred. Please try again."
+  },
+  
+  "sinusitis-surgery": {
+    "hero_title": "Sinusitis Surgery",
+    "hero_subtitle": "Free breathing and lasting relief",
+    "hero_aria_label": "Sinusitis surgery",
+    
+    "seo_h1": "Sinusitis Surgery: Definitive Treatment for Chronic Sinusitis",
+    "seo_intro": "Chronic sinusitis affects millions of people who, despite multiple medical treatments, continue to suffer from nasal congestion, facial pain, thick discharge, and loss of smell. When antibiotics, corticosteroids, and nasal washes are not enough, endoscopic sinus surgery becomes the best option to regain quality of life.",
+    
+    "indication_title": "When is sinusitis surgery indicated?",
+    "indication_text": "Surgery is not the first step, but it is recommended when:",
+    "indication1": "Symptoms persist for more than 12 weeks despite adequate medical treatment.",
+    "indication2": "Nasal polyps are blocking sinus drainage.",
+    "indication3": "There are recurrent infections (more than 4 episodes per year).",
+    "indication4": "Complications such as ocular or neurological involvement occur.",
+    "indication5": "Imaging studies (CT scan) show significant anatomical obstruction.",
+    
+    "surgery_types_title": "Types of sinusitis surgery",
+    
+    "fess_title": "Functional Endoscopic Sinus Surgery (FESS)",
+    "fess_text": "It is the gold standard procedure. It is performed through the nostrils with a high-definition endoscope, without external incisions or scars. The goal is to enlarge the natural sinus openings to restore drainage and ventilation.",
+    
+    "balloon_title": "Balloon Sinuplasty",
+    "balloon_text": "A minimally invasive technique where a catheter with a balloon is inserted and inflated to dilate obstructed openings. It is ideal for patients with chronic sinusitis without polyps or complex anatomy. Recovery is faster with less discomfort.",
+    
+    "polypectomy_title": "Nasal Polyp Surgery (Polypectomy)",
+    "polypectomy_text": "Nasal polyps are soft, non-cancerous growths that block the sinuses. Their removal dramatically improves breathing and sense of smell. It is usually combined with FESS for better results.",
+    
+    "benefits_title": "Benefits of endoscopic sinus surgery",
+    "benefit1": "Significant improvement in nasal breathing.",
+    "benefit2": "Reduction of recurrent sinus infections.",
+    "benefit3": "Decreased facial pain and pressure.",
+    "benefit4": "Restoration of sense of smell.",
+    "benefit5": "Outpatient procedure (discharged same day).",
+    "benefit6": "No visible external scars.",
+    "benefit7": "Reduced need for long-term medications.",
+    
+    "recovery_title": "What is recovery like after surgery?",
+    "recovery_text": "Recovery is a gradual but manageable process:",
+    
+    "early_days_title": "First days (1 to 3 days)",
+    "early_days1": "Relative rest at home.",
+    "early_days2": "Keep head elevated while sleeping.",
+    "early_days3": "Apply cold compresses to reduce swelling.",
+    "early_days4": "Do not blow your nose.",
+    
+    "first_week_title": "First week",
+    "first_week1": "Frequent nasal washes with saline solution.",
+    "first_week2": "Avoid physical exertion and heavy lifting.",
+    "first_week3": "Possible normal bloody discharge.",
+    "first_week4": "Follow-up with Dr. Lumbán for endoscopic cleaning.",
+    
+    "second_week_title": "Second to fourth week",
+    "second_week1": "Progressive return to normal activities.",
+    "second_week2": "Gradual improvement in breathing.",
+    "second_week3": "Cessation of significant discomfort.",
+    
+    "complete_recovery_title": "Complete recovery (1 to 3 months)",
+    "complete_recovery1": "Complete tissue healing.",
+    "complete_recovery2": "Final results in respiratory function.",
+    "complete_recovery3": "Complete crust elimination.",
+    
+    "why_doctor_title": "Why choose Dr. Jaime Lumbán for your sinusitis surgery?",
+    "why_doctor_text": "With over",
+    "why_doctor_experience": "years of experience in otolaryngology, Dr. Lumbán is a reference in endoscopic sinus surgery in Tijuana. His approach combines:",
+    "why_doctor1": "Minimally invasive techniques with cutting-edge technology.",
+    "why_doctor2": "Personalized care focused on each patient's needs.",
+    "why_doctor3": "Rigorous postoperative follow-up to ensure optimal results.",
+    "why_doctor4": "Outpatient procedures that allow you to go home the same day.",
+    
+    "faq_title": "Frequently asked questions about sinusitis surgery",
+    
+    "faq1_q": "Does sinusitis surgery hurt?",
+    "faq1_a": "Surgery is performed under general anesthesia, so no pain is felt during the procedure. In the postoperative period, discomfort is mild and easily controlled with common analgesics.",
+    
+    "faq2_q": "How long does the surgery take?",
+    "faq2_a": "Duration varies depending on complexity, but generally ranges from 1 to 3 hours.",
+    
+    "faq3_q": "When can I return to work?",
+    "faq3_a": "Depending on the type of work, 3 to 7 days of rest is recommended for office jobs, and 2 to 3 weeks for demanding physical activities.",
+    
+    "faq4_q": "Is the surgery permanent?",
+    "faq4_a": "In most cases, results are permanent. However, patients with severe allergies or nasal polyps may require long-term complementary treatments.",
+    
+    "faq5_q": "Does insurance cover this surgery?",
+    "faq5_a": "It depends on each policy. Many insurances cover surgery when indicated for chronic sinusitis refractory to medical treatment.",
+    
+    "final_cta_title": "Breathe better, live better",
+    "final_cta_text": "If you have tried multiple treatments for sinusitis without success, endoscopic surgery may be the solution you need. Don't let chronic nasal congestion limit your life. Dr. Jaime Lumbán offers you a complete evaluation to determine if you are a candidate for surgery and which technique is best for your specific case. Schedule your consultation today and take the first step toward free and lasting breathing."
   }
+
 
 }

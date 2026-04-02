@@ -1361,7 +1361,100 @@
     "error_validation": "Error en la validación de datos. Por favor, intenta nuevamente.",
     "error_send": "Error al enviar el mensaje. Por favor, intenta nuevamente.",
     "error_unexpected": "Ocurrió un error inesperado. Por favor, intenta nuevamente."
+  },
+  
+
+  "sinusitis-surgery": {
+    "hero_title": "Cirugía de Sinusitis",
+    "hero_subtitle": "Respiración libre y alivio duradero",
+    "hero_aria_label": "Cirugía de sinusitis",
+    
+    "seo_h1": "Cirugía de Sinusitis: Tratamiento Definitivo para la Sinusitis Crónica",
+    "seo_intro": "La sinusitis crónica afecta a millones de personas que, a pesar de múltiples tratamientos médicos, continúan sufriendo de congestión nasal, dolor facial, secreción espesa y pérdida del olfato. Cuando los antibióticos, corticoides y lavados nasales no son suficientes, la cirugía endoscópica de senos paranasales se convierte en la mejor opción para recuperar la calidad de vida.",
+    
+    "indication_title": "¿Cuándo está indicada la cirugía de sinusitis?",
+    "indication_text": "La cirugía no es el primer paso, pero se recomienda cuando:",
+    "indication1": "Los síntomas persisten por más de 12 semanas a pesar del tratamiento médico adecuado.",
+    "indication2": "Existen pólipos nasales que obstruyen el drenaje de los senos paranasales.",
+    "indication3": "Hay infecciones recurrentes (más de 4 episodios al año).",
+    "indication4": "Se presentan complicaciones como afectación ocular o neurológica.",
+    "indication5": "Los estudios de imagen (tomografía) muestran obstrucción anatómica significativa.",
+    
+    "surgery_types_title": "Tipos de cirugía para la sinusitis",
+    
+    "fess_title": "Cirugía Endoscópica Funcional de Senos Paranasales (CENS/FESS)",
+    "fess_text": "Es el procedimiento estándar de oro. Se realiza a través de las fosas nasales con un endoscopio de alta definición, sin incisiones externas ni cicatrices. El objetivo es ampliar las aberturas naturales de los senos para restaurar el drenaje y la ventilación.",
+    
+    "balloon_title": "Sinuplastia con Balón",
+    "balloon_text": "Técnica mínimamente invasiva donde se introduce un catéter con un balón que se infla para dilatar las aberturas obstruidas. Es ideal para pacientes con sinusitis crónica sin pólipos ni anatomía muy compleja. La recuperación es más rápida y con menos molestias.",
+    
+    "polypectomy_title": "Cirugía de Pólipos Nasales (Polipectomía)",
+    "polypectomy_text": "Los pólipos nasales son crecimientos blandos no cancerosos que bloquean los senos. Su extracción mejora drásticamente la respiración y el sentido del olfato. Generalmente se combina con la CENS para mejores resultados.",
+    
+    "benefits_title": "Beneficios de la cirugía endoscópica de sinusitis",
+    "benefit1": "Mejoría significativa de la respiración nasal.",
+    "benefit2": "Reducción de infecciones sinusales recurrentes.",
+    "benefit3": "Disminución del dolor y la presión facial.",
+    "benefit4": "Recuperación del sentido del olfato.",
+    "benefit5": "Procedimiento ambulatorio (alta el mismo día).",
+    "benefit6": "Sin cicatrices externas visibles.",
+    "benefit7": "Menor necesidad de medicamentos a largo plazo.",
+    
+    "recovery_title": "¿Cómo es la recuperación después de la cirugía?",
+    "recovery_text": "La recuperación es un proceso gradual pero manejable:",
+    
+    "early_days_title": "Primeros días (1 a 3 días)",
+    "early_days1": "Reposo relativo en casa.",
+    "early_days2": "Mantener la cabeza elevada al dormir.",
+    "early_days3": "Aplicar compresas frías para reducir inflamación.",
+    "early_days4": "No sonarse la nariz.",
+    
+    "first_week_title": "Primera semana",
+    "first_week1": "Lavados nasales frecuentes con solución salina.",
+    "first_week2": "Evitar esfuerzos físicos y levantar objetos pesados.",
+    "first_week3": "Posible presencia de secreciones sanguinolentas normales.",
+    "first_week4": "Seguimiento con el Dr. Lumbán para limpieza endoscópica.",
+    
+    "second_week_title": "Segunda a cuarta semana",
+    "second_week1": "Retorno progresivo a actividades normales.",
+    "second_week2": "Mejoría gradual de la respiración.",
+    "second_week3": "Cese de molestias significativas.",
+    
+    "complete_recovery_title": "Recuperación completa (1 a 3 meses)",
+    "complete_recovery1": "Cicatrización total de los tejidos.",
+    "complete_recovery2": "Resultados finales en la función respiratoria.",
+    "complete_recovery3": "Eliminación completa de costras.",
+    
+    "why_doctor_title": "¿Por qué elegir al Dr. Jaime Lumbán para tu cirugía de sinusitis?",
+    "why_doctor_text": "Con más de",
+    "why_doctor_experience": "años de experiencia en otorrinolaringología, el Dr. Lumbán es un referente en cirugía endoscópica de senos paranasales en Tijuana. Su enfoque combina:",
+    "why_doctor1": "Técnicas mínimamente invasivas con tecnología de vanguardia.",
+    "why_doctor2": "Atención personalizada centrada en las necesidades de cada paciente.",
+    "why_doctor3": "Seguimiento postoperatorio riguroso para garantizar resultados óptimos.",
+    "why_doctor4": "Procedimientos ambulatorios que permiten volver a casa el mismo día.",
+    
+    "faq_title": "Preguntas frecuentes sobre la cirugía de sinusitis",
+    
+    "faq1_q": "¿Duele la cirugía de sinusitis?",
+    "faq1_a": "La cirugía se realiza bajo anestesia general, por lo que no se siente dolor durante el procedimiento. En el postoperatorio, las molestias son leves y se controlan fácilmente con analgésicos comunes.",
+    
+    "faq2_q": "¿Cuánto tiempo dura la cirugía?",
+    "faq2_a": "La duración varía según la complejidad, pero generalmente oscila entre 1 y 3 horas.",
+    
+    "faq3_q": "¿Cuándo puedo volver a trabajar?",
+    "faq3_a": "Dependiendo del tipo de trabajo, se recomienda reposo de 3 a 7 días para trabajos de oficina, y de 2 a 3 semanas para actividades físicas demandantes.",
+    
+    "faq4_q": "¿La cirugía es definitiva?",
+    "faq4_a": "En la mayoría de los casos, los resultados son permanentes. Sin embargo, pacientes con alergias severas o pólipos nasales pueden requerir tratamientos complementarios a largo plazo.",
+    
+    "faq5_q": "¿Cubre el seguro esta cirugía?",
+    "faq5_a": "Depende de cada póliza. Muchos seguros cubren la cirugía cuando está indicada por sinusitis crónica refractaria al tratamiento médico.",
+    
+    "final_cta_title": "Respira mejor, vive mejor",
+    "final_cta_text": "Si has probado múltiples tratamientos para la sinusitis sin éxito, la cirugía endoscópica puede ser la solución que necesitas. No dejes que la congestión nasal crónica limite tu vida. El Dr. Jaime Lumbán te ofrece una evaluación completa para determinar si eres candidato a la cirugía y cuál es la mejor técnica para tu caso específico. Agenda hoy tu consulta y da el primer paso hacia una respiración libre y duradera."
   }
+
+
 
 
 
