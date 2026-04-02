@@ -23,7 +23,7 @@ export default function CasesGrid() {
 
   const CASES: Case[] = [
     {
-      title: t("Rinoplastia Estética"),
+      title: t("home.cases.case1"),
       routeKey: "aesthetic-nose",
       image: "/nariz.png",
       type: "image",
@@ -31,19 +31,19 @@ export default function CasesGrid() {
       objectPosition: "center",
     },
     {
-      title: t("Cirugía de Sinusitis"),
-      routeKey: "sinusitis",
+      title: t("home.cases.case2"),
+      routeKey: "cirugia-sinusitis",
       image: "/dr lumban about.webm",
       type: "video",
     },
     {
-      title: t("Sinusitis"),
+      title: t("home.cases.case3"),
       routeKey: "sinusitis",
       image: "/sinusitis.jpg",
       type: "image",
     },
     {
-      title: t("Problemas de la Garganta"),
+      title: t("home.cases.case4"),
       routeKey: "throat-problems",
       image: "/garganta.jpg",
       type: "image",

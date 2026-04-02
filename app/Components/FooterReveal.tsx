@@ -135,17 +135,17 @@ export default function FooterBase() {
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
 
   const MENU_ITEMS = [
-    { label: t("Inicio"), href: getRouteByKey("home", currentLang) },
-    { label: t("Perfil"), href: getRouteByKey("profile", currentLang) },
+    { label: t("footer.home"), href: getRouteByKey("home", currentLang) },
+    { label: t("footer.profile"), href: getRouteByKey("profile", currentLang) },
     {
-      label: t("Certificaciones"),
+      label: t("footer.certifications"),
       href: getRouteByKey("certifications", currentLang),
     },
     // {
     //   label: t("Instalaciones"),
     //   href: getRouteByKey("facilities", currentLang),
     // },
-    { label: t("Contacto"), href: getRouteByKey("contact", currentLang) },
+    { label: t("footer.contact"), href: getRouteByKey("contact", currentLang) },
     // {
     //   label: t("Rinoplastia"),
     //   href: getRouteByKey("aesthetic-nose", currentLang),
@@ -196,7 +196,7 @@ export default function FooterBase() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                {t("Menu")}
+                {t("footer.menu")}
               </h3>
               <ul className="space-y-2">
                 {MENU_ITEMS.map((item) => (
@@ -215,7 +215,7 @@ export default function FooterBase() {
 
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                {t("Socials")}
+                {t("footer.socials")}
               </h3>
               <ul className="space-y-2">
                 {SOCIAL_ITEMS.map((item) => (
@@ -230,7 +230,7 @@ export default function FooterBase() {
 
             <div>
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
-                {t("Contacto")}
+                {t("footer.contact")}
               </h3>
 
               <div className="space-y-2">
@@ -264,10 +264,7 @@ export default function FooterBase() {
 
         <div className="pt-4 border-t border-gray-100">
           <p className="text-gray-500 text-xs sm:text-sm font-medium">
-            &copy; {new Date().getFullYear()}{" "}
-            {t(
-              "Dr. Jaime Lumbán Gutierrez. Especialista en Otorrinolaringología.",
-            )}
+            &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
         </div>
       </motion.div>

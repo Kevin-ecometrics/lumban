@@ -16,9 +16,9 @@ export default function AboutPage() {
       {/* HERO */}
       <Hero
         src="/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png"
-        alt={t("Dr. Jaime Lumbán")}
-        title={t("Dr. Jaime Lumbán")}
-        subtitle={t("Especialista certificado en oídos, nariz y garganta")}
+        alt={t("profile.hero_alt")}
+        title={t("profile.hero_title")}
+        subtitle={t("profile.hero_subtitle")}
       />
 
       {/* INTRO SECTION - Conoce al Dr. Jaime Lumbán */}
@@ -30,12 +30,10 @@ export default function AboutPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
-            {t("Conoce al Dr. Jaime Lumbán")}
+            {t("profile.intro_title")}
           </h1>
           <p className="text-xl text-gray-600 italic max-w-2xl mx-auto">
-            {t(
-              "Ojo experto, templanza noble y resultados naturales cualidades que le permiten abordar cada caso con la calma y precisión que la otorrinolaringología exige.",
-            )}
+            {t("profile.intro_description")}
           </p>
         </motion.div>
 
@@ -47,14 +45,10 @@ export default function AboutPage() {
           className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-16"
         >
           <p className="text-2xl md:text-3xl font-serif text-gray-800 text-center">
-            &ldquo;
-            {t(
-              "Mi filosofía es ofrecer cambios que respeten meticulosamente quién eres, priorizando siempre tu salud.",
-            )}
-            &rdquo;
+            &ldquo;{t("profile.quote")}&rdquo;
           </p>
           <p className="text-lg text-gray-600 text-center mt-4">
-            — {t("Dr. Jaime Lumbán")}
+            — {t("profile.quote_author")}
           </p>
         </motion.div>
 
@@ -65,16 +59,10 @@ export default function AboutPage() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="space-y-6 text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto"
         >
-          <p>
-            {t(
-              "Con más de tres décadas de experiencia, el Dr. Lumbán es reconocido por su capacidad de fusionar la precisión médica, brindando diagnósticos y cirugía mínima invasiva de vanguardia a pacientes de México, Estados Unidos y otros países.",
-            )}
-          </p>
+          <p>{t("profile.experience_text")}</p>
 
           <p className="font-medium text-gray-800">
-            {t(
-              "Consulta otorrinolaringológica integral para niños, adultos y adultos mayores de excelencia en Tijuana.",
-            )}
+            {t("profile.consultation_text")}
           </p>
         </motion.div>
       </section>
@@ -90,12 +78,10 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
-              {t("Excelencia con Propósito")}
+              {t("profile.excellence_title")}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {t(
-                "Su práctica se basa en la honestidad, integridad y dedicación a la excelencia en la otorrinolaringología, priorizando la funcionalidad sin sacrificar la belleza.",
-              )}
+              {t("profile.excellence_description")}
             </p>
           </motion.div>
         </div>
@@ -111,38 +97,26 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-10 text-center">
-              {t("Certificaciones")}
+              {t("profile.certifications_title")}
             </h2>
 
             <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10">
               <ul className="space-y-4 text-lg text-gray-700">
                 <li className="flex items-start">
                   <span className="text-gray-400 mr-3">•</span>
-                  <span>
-                    {t(
-                      "Academia Americana de Otorrinolaringología y Cirugía de Cabeza y Cuello",
-                    )}
-                  </span>
+                  <span>{t("profile.certification1")}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-gray-400 mr-3">•</span>
-                  <span>{t("Consejo Mexicano de Otorrinolaringología")}</span>
+                  <span>{t("profile.certification2")}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-gray-400 mr-3">•</span>
-                  <span>
-                    {t(
-                      "Miembro activo de la Academy of Otolaryngology–Head and Neck Surgery (AAO-HNS) y la American Rhinologic Society.",
-                    )}
-                  </span>
+                  <span>{t("profile.certification3")}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-gray-400 mr-3">•</span>
-                  <span>
-                    {t(
-                      "Obtuvo el primer lugar nacional en el Consejo Mexicano de Otorrinolaringología.",
-                    )}
-                  </span>
+                  <span>{t("profile.certification4")}</span>
                 </li>
               </ul>
             </div>
@@ -161,7 +135,7 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
-              {t("Por que tu salud merece el mejor trato especializado.")}
+              {t("profile.mission_title")}
             </h2>
           </motion.div>
 
@@ -173,47 +147,26 @@ export default function AboutPage() {
             className="bg-white rounded-2xl p-8 md:p-10 shadow-sm"
           >
             <h3 className="text-2xl font-serif font-semibold text-gray-800 mb-6">
-              {t("En consulta, nuestra misión es:")}
+              {t("profile.mission_subtitle")}
             </h3>
 
             <ul className="space-y-4 text-lg text-gray-600">
               <li className="flex items-start">
                 <span className="text-gray-400 mr-3">•</span>
-                <span>
-                  {t(
-                    "Estar presente para el paciente, reconociendo su tiempo y comprendiendo sus preocupaciones y metas, para asegurar una experiencia agradable y satisfactoria.",
-                  )}
-                </span>
+                <span>{t("profile.mission_item1")}</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-400 mr-3">•</span>
-                <span>
-                  {t(
-                    "Brindar bienestar de alto nivel a través de un servicio excepcional y una escucha activa, guiando a cada paciente hacia su mejor versión para recuperar su salud en padecimientos de oídos, nariz y garganta, así como mediante cirugía estética y funcional de nariz.",
-                  )}
-                </span>
+                <span>{t("profile.mission_item2")}</span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-400 mr-3">•</span>
-                <span>
-                  {t(
-                    "Proporcionar lo último en tecnología e innovaciones en otorrinolaringología y rinoplastia.",
-                  )}
-                </span>
+                <span>{t("profile.mission_item3")}</span>
               </li>
             </ul>
           </motion.div>
         </div>
       </section>
-
-      {/* MISIÓN (original) */}
-      {/* <section className="py-24 px-6">
-        <h2 className="text-3xl md:text-4xl font-serif font-bold text-center text-gray-900 mb-12">
-          {t("Nuestra Misión")}
-        </h2>
-
-        <MissionAccordion />
-      </section> */}
     </main>
   );
 }

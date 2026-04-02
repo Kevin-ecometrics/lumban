@@ -8,43 +8,38 @@ import { getRouteByKey } from "../i18n/routeMap";
 
 const sintomas = [
   {
-    title: "Vértigo",
-    description:
-      "Es la percepción de dar vueltas, el movimiento o la rotación de cualquiera de uno mismo o el medio ambiente que te rodea. Por lo general es episódica, en lugar de constante.",
+    titleKey: "ear.vertigo_title",
+    descriptionKey: "ear.vertigo_description",
   },
   {
-    title: "Desequilibrio",
-    description:
-      'Es una sensación de inestabilidad o pérdida de equilibrio, ya sea en reposo o al caminar, o en ambas ocasiones. A menudo se describe como una sensación de "estar en un barco". Estos síntomas pueden o no estar acompañado por la sensación de oídos tapados, la pérdida de la audición, o zumbido en los oídos.',
+    titleKey: "ear.imbalance_title",
+    descriptionKey: "ear.imbalance_description",
   },
 ];
 
 const causas = [
-  "Las infecciones del oído medio",
-  "Alergias",
-  "Vértigo Postural Paroxístico Benigno (VPPB)",
-  "Neuronitis Vestibular",
-  "Laberintitis. Virus del oído interno",
-  "Acumulación de líquido en el oído interno. La enfermedad de Ménière",
-  "Problemas en el cuello",
-  "Enfermedades a nivel cerebral",
+  "ear.cause_ear_infections",
+  "ear.cause_allergies",
+  "ear.cause_bppv",
+  "ear.cause_vestibular_neuronitis",
+  "ear.cause_labyrinthitis",
+  "ear.cause_fluid_buildup",
+  "ear.cause_neck_problems",
+  "ear.cause_brain_diseases",
 ];
 
 const tratamientos = [
   {
-    title: "Terapia de Rehabilitación Vestibular",
-    description:
-      '"La rehabilitación vestibular" son una serie de ejercicios para la recuperación del equilibrio. Se pueden llevar a cabo en casa o por un audiólogo y cada programa de rehabilitación está diseñado específicamente para corregir los trastornos del equilibrio del paciente.',
+    titleKey: "ear.vestibular_rehab_title",
+    descriptionKey: "ear.vestibular_rehab_description",
   },
   {
-    title: "Reposicionamiento Canalicular",
-    description:
-      "Muchos casos de vértigo se puede resolver con un simple procedimiento de posicionamiento en el consultorio. Una maniobra de reposicionamiento canalicular es el tratamiento que lleva al paciente a través de una serie de posiciones de la cabeza y el cuerpo diseñados para poner restos otoconia aflojado (cristales) de nuevo en el órgano del equilibrio.",
+    titleKey: "ear.canal_repositioning_title",
+    descriptionKey: "ear.canal_repositioning_description",
   },
   {
-    title: "Dieta y Estilo de Vida",
-    description:
-      "La cafeína, la sal, el alcohol, la nicotina y la deshidratación todos pueden tener un impacto considerable en el sentido del equilibrio. El Dr. Lumbán le dará medicamentos y recomendaciones acerca de la dieta y los hábitos diarios, para que sus problemas del equilibrio puedan seguirse controlado en casa.",
+    titleKey: "ear.lifestyle_title",
+    descriptionKey: "ear.lifestyle_description",
   },
 ];
 
@@ -55,12 +50,10 @@ export default function EarConditionsPage() {
     <main className="bg-white">
       {/* HERO */}
       <Hero
-        title={t("Padecimientos del Oído")}
-        subtitle={t(
-          "Conozca acerca de los padecimientos relacionados con el oído",
-        )}
+        title={t("ear.hero_title")}
+        subtitle={t("ear.hero_subtitle")}
         src="/mareo.png"
-        alt={t("Vértigo y Mareo")}
+        alt={t("ear.hero_alt")}
       />
 
       {/* EQUILIBRIO */}
@@ -72,147 +65,238 @@ export default function EarConditionsPage() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="space-y-6"
         >
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("ear.title_h1")}
+          </h1>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.intro_text")}
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            {t("Trastornos del Equilibrio: Vértigo y Mareo")}
+            {t("ear.what_is_vertigo_title")}
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "Nuestro equilibrio es una interacción compleja que requiere una comunicación sólida entre nuestras orejas, los ojos, y el sentido del tacto según la percepción de nuestros pies, los músculos y las articulaciones. A fin de mantener nuestro centro de gravedad, nuestro sistema nervioso central debe recibir estas tres señales y luego, correctamente, transmitirlas al cerebro.",
-            )}
+            {t("ear.what_is_vertigo_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed font-semibold">
+            {t("ear.vertigo_symptoms_title")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.vertigo_symptom1")}</li>
+            <li>{t("ear.vertigo_symptom2")}</li>
+            <li>{t("ear.vertigo_symptom3")}</li>
+            <li>{t("ear.vertigo_symptom4")}</li>
+            <li>{t("ear.vertigo_symptom5")}</li>
+          </ul>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.vertigo_cause")}
+          </p>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("ear.vertigo_types_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.vertigo_types_text")}
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "Cuando las señales de nuestros sentidos no llegan al cerebelo, o llegan a él con el mensaje equivocado, experimentamos esta falta de comunicación como una pérdida del equilibrio, un mareo.",
-            )}
+            {t("ear.vertigo_peripheral")}
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "Un trastorno del equilibrio a veces puede ser un síntoma de otras condiciones médicas. La atención médica adecuada, incluyendo una historia médica completa y evaluación del sistema de equilibrio es importante para identificar la causa y dar las opciones de tratamiento adecuadas.",
-            )}
+            {t("ear.vertigo_central")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("ear.what_is_dizziness_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.what_is_dizziness_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.dizziness_note")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("ear.balance_system_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.balance_system_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.balance_systems_list").split("\n")[0]}</li>
+            <li>{t("ear.balance_systems_list").split("\n")[1]}</li>
+            <li>{t("ear.balance_systems_list").split("\n")[2]}</li>
+          </ul>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.brain_balance")}
+          </p>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("ear.inner_ear_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.inner_ear_text")}
+          </p>
+          <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+            {t("ear.semicircular_canals_title")}
+          </h4>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.semicircular_canals_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed font-semibold">
+            {t("ear.head_movement_title")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.head_movement1")}</li>
+            <li>{t("ear.head_movement2")}</li>
+            <li>{t("ear.head_movement3")}</li>
+            <li>{t("ear.head_movement4")}</li>
+          </ul>
+          <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+            {t("ear.otolithic_organs_title")}
+          </h4>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.utricle")} / {t("ear.saccule")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.otolithic_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.balance_failure")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("ear.balance_disorder_symptoms_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.balance_disorder_symptoms_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.symptom1")}</li>
+            <li>{t("ear.symptom2")}</li>
+            <li>{t("ear.symptom3")}</li>
+            <li>{t("ear.symptom4")}</li>
+            <li>{t("ear.symptom5")}</li>
+          </ul>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("ear.causes_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.causes_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.cause1")}</li>
+            <li>{t("ear.cause2")}</li>
+            <li>{t("ear.cause3")}</li>
+            <li>{t("ear.cause4")}</li>
+            <li>{t("ear.cause5")}</li>
+            <li>{t("ear.cause6")}</li>
+            <li>{t("ear.cause7")}</li>
+          </ul>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("ear.common_diseases_title")}
+          </h3>
+          <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+            {t("ear.bppv_title")}
+          </h4>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.bppv_text")}
+          </p>
+          <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+            {t("ear.labyrinthitis_title")}
+          </h4>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.labyrinthitis_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.labyrinthitis_symptom1")}</li>
+            <li>{t("ear.labyrinthitis_symptom2")}</li>
+            <li>{t("ear.labyrinthitis_symptom3")}</li>
+          </ul>
+          <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+            {t("ear.meniere_title")}
+          </h4>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.meniere_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.meniere_symptom1")}</li>
+            <li>{t("ear.meniere_symptom2")}</li>
+            <li>{t("ear.meniere_symptom3")}</li>
+            <li>{t("ear.meniere_symptom4")}</li>
+          </ul>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.meniere_note")}
+          </p>
+          <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+            {t("ear.fistula_title")}
+          </h4>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.fistula_text")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("ear.warning_signs_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.warning_signs_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.warning1")}</li>
+            <li>{t("ear.warning2")}</li>
+            <li>{t("ear.warning3")}</li>
+            <li>{t("ear.warning4")}</li>
+          </ul>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.warning_note")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("ear.self_assessment_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.self_assessment_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("ear.question1")}</li>
+            <li>{t("ear.question2")}</li>
+            <li>{t("ear.question3")}</li>
+            <li>{t("ear.question4")}</li>
+          </ul>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.self_assessment_note")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed font-semibold">
+            {t("ear.conclusion")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.cta_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("ear.cta_phone")}
           </p>
         </motion.div>
-      </section>
-
-      {/* SÍNTOMAS */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-12">
-            {t("Síntomas y Definiciones")}
-          </h3>
-          <div className="grid md:grid-cols-2 gap-10">
-            {sintomas.map((s, idx) => (
-              <motion.div
-                key={idx}
-                className="bg-white rounded-xl shadow-lg p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-              >
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                  {t(s.title)}
-                </h4>
-                <p className="text-gray-600">{t(s.description)}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CAUSAS */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-        <h3 className="text-3xl font-bold text-gray-900 text-center mb-10">
-          {t("Causas del Mareo")}
-        </h3>
-        <ul className="grid sm:grid-cols-2 gap-4 list-disc list-inside text-gray-700 text-lg">
-          {causas.map((c, idx) => (
-            <motion.li
-              key={idx}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-            >
-              {t(c)}
-            </motion.li>
-          ))}
-        </ul>
-      </section>
-
-      {/* EVALUACIÓN */}
-      <section className="bg-white py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            {t("Evaluación de Equilibrio")}
-          </h3>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "Si tiene problemas de equilibrio o mareos, vamos a completar una evaluación exhaustiva. Nuestro laboratorio de equilibrio puede realizar una serie de pruebas para ayudar en el diagnóstico y el tratamiento de su problema.",
-            )}
-          </p>
-        </div>
-      </section>
-
-      {/* TRATAMIENTOS */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            {t("Tratamientos de Equilibrio")}
-          </h3>
-          <div className="space-y-8">
-            {tratamientos.map((tratamiento, idx) => (
-              <motion.div
-                key={idx}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-              >
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                  {t(tratamiento.title)}
-                </h4>
-                <p className="text-gray-600">{t(tratamiento.description)}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
 
       <section className="max-w-6xl mx-auto px-6 py-20 space-y-20">
         {/* CTA */}
         <div className="bg-gray-50 rounded-2xl p-10 text-center space-y-6">
-          <h2 className="text-2xl font-semibold">{t("¿Tiene alguna duda?")}</h2>
+          <h2 className="text-2xl font-semibold">{t("ear.cta_question")}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            {t(
-              "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita.",
-            )}
+            {t("ear.cta_description")}
           </p>
           <a
             href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            {t("SOLICITA TU CONSULTA")}
+            {t("ear.cta_button")}
           </a>
         </div>
 
         {/* PERFIL */}
         <div className="border-t pt-12 flex flex-col md:flex-row justify-between gap-6">
           <div>
-            <h3 className="text-xl font-semibold">
-              {t("Conozca sobre el Dr. Lumbán")}
-            </h3>
+            <h3 className="text-xl font-semibold">{t("ear.about_doctor")}</h3>
             <p className="text-gray-600 max-w-xl">
-              {t(
-                "El Dr. Lumbán cuenta con 23 años de experiencia en otorrinolaringología, especializado en Cirugía Estética de Nariz.",
-              )}
+              {t("ear.about_doctor_text")}
             </p>
           </div>
           <a
             href={getRouteByKey("profile", currentLang)}
             className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
           >
-            {t("VER PERFIL COMPLETO")}
+            {t("ear.view_full_profile")}
           </a>
         </div>
       </section>
@@ -221,9 +305,9 @@ export default function EarConditionsPage() {
       <section className="bg-gray-100 py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            {t("Otros Padecimientos de Oído")}
+            {t("ear.other_conditions")}
           </h3>
-          <p className="text-gray-700 text-lg">➢ {t("Pérdida de Audición")}</p>
+          <p className="text-gray-700 text-lg">➢ {t("ear.hearing_loss")}</p>
         </div>
       </section>
     </main>

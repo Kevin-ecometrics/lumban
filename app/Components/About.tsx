@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const YourwareStory: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const experienceYears = new Date().getFullYear() - 1993; // Assuming Dr. Lumban started in 2005
+  const experienceYears = new Date().getFullYear() - 1993;
 
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
   return (
@@ -21,40 +21,26 @@ const YourwareStory: React.FC = () => {
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden shadow-md">
                 <img
                   src="/lumban realizando una cirugia.jpg"
-                  alt={t(
-                    "Dr. Jaime Lumban - Especialista en Otorrinolaringología",
-                  )}
+                  alt={t("home.about.alt_image")}
                   className="w-full h-auto object-cover"
                 />
                 {/* Lista de valores adicionales */}
                 <div className="mt-12 p-6 bg-gray-50 rounded-lg">
                   <h3 className="text-2xl font-serif font-normal text-gray-900 mb-4">
-                    {t("Nuestros Pilares:")}
+                    {t("home.about.pilars_title")}
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start">
                       <span className="text-green-600 mr-3">✓</span>
-                      <span>
-                        {t(
-                          "Seguridad y Acreditación: preparación continua y atención al detalle aseguran la máxima integridad y los más altos estándares de excelencia",
-                        )}{" "}
-                      </span>
+                      <span>{t("home.about.pilars_item1")}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-green-600 mr-3">✓</span>
-                      <span>
-                        {t(
-                          "Atención de Élite: Las técnicas más avanzadas con una instrumentación de vanguardia para asegurar un proceso satisfactorio, abordando detalladamente sus metas y preocupaciones",
-                        )}
-                      </span>
+                      <span>{t("home.about.pilars_item2")}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-green-600 mr-3">✓</span>
-                      <span>
-                        {t(
-                          "Compromiso con la Excelencia: El tiempo invertido en la evaluación y el procedimiento es la clave para alcanzar resultados armoniosos y funcionales",
-                        )}
-                      </span>
+                      <span>{t("home.about.pilars_item3")}</span>
                     </li>
                   </ul>
                 </div>
@@ -66,41 +52,32 @@ const YourwareStory: React.FC = () => {
           <div className="lg:w-7/12">
             {/* Título */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-10 lg:mb-14 leading-tight">
-              {t("Otorrinolaringologia y rinoplastia de excelencia")}{" "}
-              {/* <span className="italic font-serif">{t("Atención")}</span> */}
+              {t("home.about.title")}
             </h1>
 
             {/* Contenido de texto */}
             <div className="space-y-7 text-gray-800 mb-2">
               <p className="text-lg md:text-xl leading-relaxed font-light">
-                {t("Más de")} {experienceYears}{" "}
-                {t(
-                  "años dedicados al cuidado integral de tu salud respiratoria y estética facial.",
-                )}
+                {t("home.about.more_than")} {experienceYears}{" "}
+                {t("home.about.experience_years")}
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed font-light">
-                {t(
-                  "Hemos diseñado un modelo de atención donde la tecnología de vanguardia se fusiona con un trato profundamente humano.",
-                )}
+                {t("home.about.description1")}
               </p>
 
               <p className="text-lg md:text-xl leading-relaxed font-light">
-                {t(
-                  "Entendemos que su bienestar no admite prisas; por ello, diseñamos una experiencia centrada en honrar su tiempo y sus necesidades individuales.",
-                )}
+                {t("home.about.description2")}
               </p>
               <p className="text-lg md:text-xl leading-relaxed font-light">
-                {t(
-                  "Será un gusto recibirle en consulta y acompañarle en el proceso hacia su bienestar y su mejor versión.",
-                )}
+                {t("home.about.description3")}
               </p>
             </div>
             <Link
               className="bg-azul px-4 py-2 text-white hover:bg-azul/90 rounded-md transition-colors duration-300 inline-block mt-2"
               href={getRouteByKey("profile", currentLang)}
             >
-              {t("Acerca de")} Lumban
+              {t("home.about.about_link")} Lumban
             </Link>
           </div>
         </div>

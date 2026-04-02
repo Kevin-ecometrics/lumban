@@ -7,13 +7,13 @@ import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
 
 const signos = [
-  "No entiende algunas palabras durante la conversación",
-  "Pide con frecuencia que le repitan las palabras",
-  "Los amigos y familiares que expresan su preocupación acerca de la audición",
-  "Dificultad para oír por teléfono",
-  "Evita situaciones sociales debido a la dificultad para escuchar a otros",
-  "Problemas para seguir la conversación en grupos o en presencia de ruido de fondo",
-  "Ruidos en el oído como timbre, rugido, silbido, zumbido, etc.",
+  "hearing-loss.sign1",
+  "hearing-loss.sign2",
+  "hearing-loss.sign3",
+  "hearing-loss.sign4",
+  "hearing-loss.sign5",
+  "hearing-loss.sign6",
+  "hearing-loss.sign7",
 ];
 
 export default function HearingLossPage() {
@@ -23,10 +23,10 @@ export default function HearingLossPage() {
     <main className="bg-white">
       {/* HERO */}
       <Hero
-        title={t("Padecimientos del Oído")}
-        subtitle={t("Conozca acerca de los padecimientos relacionados con el oído")}
+        title={t("hearing-loss.hero_title")}
+        subtitle={t("hearing-loss.hero_subtitle")}
         src="/perdida-auditiva.jpg"
-        alt={t("Padecimientos del Oído")}
+        alt={t("hearing-loss.hero_alt")}
       />
 
       {/* INTRO */}
@@ -38,88 +38,236 @@ export default function HearingLossPage() {
           transition={{ duration: 0.7 }}
           className="space-y-6"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            {t("Acerca de la Pérdida de Audición")}
-          </h2>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("hearing-loss.title_h1")}
+          </h1>
           <p className="text-lg text-gray-700">
-            {t(
-              "Para escuchar lo que has perdido, consigue que tu audición sea evaluada a fondo."
-            )}
+            {t("hearing-loss.intro_text")}
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "En cualquier momento dado, unos 30 millones de estadounidenses se ven afectados por la pérdida de audición. La pérdida de audición afecta a los adultos de manera desproporcionada. Y si bien es más común entre los adultos mayores, la pérdida de audición es también un hecho de la vida para los adultos, en sus 40 y 50 años, y no sólo para los mayores de 65 años."
-            )}
+            {t("hearing-loss.gradual_text")}
           </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("hearing-loss.classification_title")}
+          </h2>
           <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "Una cuestión clave con la pérdida de audición es que, por lo general, es gradual. Si bien puede ser repentina, la pérdida de la audición generalmente se desarrolla lentamente durante varios años. El resultado es que la mayoría de las personas con pérdida de audición no son conscientes de la magnitud de su problema."
-            )}
+            {t("hearing-loss.classification_text")}
           </p>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "También es importante recordar que la pérdida de audición no significa una incapacidad total para escuchar. La pérdida de audición puede ser leve, moderada o grave, además de total."
-            )}
-          </p>
-        </motion.div>
-      </section>
-
-      {/* SIGNOS */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            {t("Signos de Posible Pérdida de Audición")}
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("hearing-loss.conductive_title")}
           </h3>
-          <ul className="space-y-4 list-disc list-inside text-lg text-gray-700">
-            {signos.map((item, idx) => (
-              <motion.li
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-              >
-                {t(item)}
-              </motion.li>
-            ))}
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.conductive_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.conductive_note")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed font-semibold">
+            {t("hearing-loss.conductive_causes_title")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("hearing-loss.conductive_cause1")}</li>
+            <li>{t("hearing-loss.conductive_cause2")}</li>
+            <li>{t("hearing-loss.conductive_cause3")}</li>
+            <li>{t("hearing-loss.conductive_cause4")}</li>
+            <li>{t("hearing-loss.conductive_cause5")}</li>
+            <li>{t("hearing-loss.conductive_cause6")}</li>
+            <li>{t("hearing-loss.conductive_cause7")}</li>
           </ul>
-        </div>
-      </section>
-
-      {/* CAUSAS */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-6"
-        >
-          <h3 className="text-3xl font-bold text-gray-900">
-            {t("Las Causas de la Pérdida de la Audición en el Adulto")}
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("hearing-loss.sensorineural_title")}
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "La pérdida de audición en los adultos es más comúnmente el resultado de daños a la estructura del oído interno o en el nervio auditivo. Puede ser causada por el envejecimiento, las enfermedades, ciertos medicamentos, lesiones, infecciones y la exposición al ruido. Si bien este tipo de pérdida auditiva no suele ser reversible, usted puede hacer algo al respecto. Lo primero que hay que hacer es un estudio de su audición y determinar la naturaleza y el alcance de su pérdida auditiva."
-            )}
+            {t("hearing-loss.sensorineural_text")}
           </p>
+          <p className="text-gray-700 text-lg leading-relaxed font-semibold">
+            {t("hearing-loss.sensorineural_causes_title")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("hearing-loss.sensorineural_cause1")}</li>
+            <li>{t("hearing-loss.sensorineural_cause2")}</li>
+            <li>{t("hearing-loss.sensorineural_cause3")}</li>
+            <li>{t("hearing-loss.sensorineural_cause4")}</li>
+            <li>{t("hearing-loss.sensorineural_cause5")}</li>
+            <li>{t("hearing-loss.sensorineural_cause6")}</li>
+          </ul>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("hearing-loss.mixed_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.mixed_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.mixed_example")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("hearing-loss.specific_causes_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.specific_causes_text")}
+          </p>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("hearing-loss.cerumen_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.cerumen_text")}
+          </p>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("hearing-loss.noise_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.noise_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.noise_note")}
+          </p>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("hearing-loss.infections_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.infections_text")}
+          </p>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("hearing-loss.otosclerosis_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.otosclerosis_text")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("hearing-loss.warning_signs_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.warning_signs_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("hearing-loss.warning1")}</li>
+            <li>{t("hearing-loss.warning2")}</li>
+            <li>{t("hearing-loss.warning3")}</li>
+            <li>{t("hearing-loss.warning4")}</li>
+            <li>{t("hearing-loss.warning5")}</li>
+            <li>{t("hearing-loss.warning6")}</li>
+          </ul>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("hearing-loss.degrees_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.degrees_text")}
+          </p>
+          <div className="overflow-x-auto">
+            <table className="min-w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    {t("hearing-loss.degree_subtitle")}
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">
+                    {t("hearing-loss.degree_subtitle2")}{" "}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_normal")}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_normal_range")}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_slight")}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_slight_range")}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_mild")}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_mild_range")}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_moderate")}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_moderate_range")}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_moderately_severe")}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_moderately_severe_range")}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_severe")}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_severe_range")}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_profound")}
+                  </td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {t("hearing-loss.degree_profound_range")}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("hearing-loss.aging_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.aging_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("hearing-loss.aging_stat1")}</li>
+            <li>{t("hearing-loss.aging_stat2")}</li>
+            <li>{t("hearing-loss.aging_stat3")}</li>
+            <li>{t("hearing-loss.aging_stat4")}</li>
+          </ul>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("hearing-loss.prevention_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.prevention_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("hearing-loss.protection_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-1">
+            <li>{t("hearing-loss.protection1")}</li>
+            <li>{t("hearing-loss.protection2")}</li>
+            <li>{t("hearing-loss.protection3")}</li>
+          </ul>
         </motion.div>
       </section>
 
       <section className="max-w-6xl mx-auto px-6 py-20 space-y-20">
         {/* CTA */}
         <div className="bg-gray-50 rounded-2xl p-10 text-center space-y-6">
-          <h2 className="text-2xl font-semibold">{t("¿Tiene alguna duda?")}</h2>
+          <h2 className="text-2xl font-semibold">
+            {t("hearing-loss.cta_question")}
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            {t(
-              "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita."
-            )}
+            {t("hearing-loss.cta_description")}
           </p>
           <a
             href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            {t("SOLICITA TU CONSULTA")}
+            {t("hearing-loss.cta_button")}
           </a>
         </div>
 
@@ -127,19 +275,17 @@ export default function HearingLossPage() {
         <div className="border-t pt-12 flex flex-col md:flex-row justify-between gap-6">
           <div>
             <h3 className="text-xl font-semibold">
-              {t("Conozca sobre el Dr. Lumbán")}
+              {t("hearing-loss.about_doctor")}
             </h3>
             <p className="text-gray-600 max-w-xl">
-              {t(
-                "El Dr. Lumbán cuenta con 23 años de experiencia en otorrinolaringología, especializado en Cirugía Estética de Nariz."
-              )}
+              {t("hearing-loss.about_doctor_text")}
             </p>
           </div>
           <Link
             href={getRouteByKey("profile", currentLang)}
             className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
           >
-            {t("VER PERFIL COMPLETO")}
+            {t("hearing-loss.view_full_profile")}
           </Link>
         </div>
       </section>
@@ -148,10 +294,14 @@ export default function HearingLossPage() {
       <section className="bg-gray-100 py-20">
         <div className="max-w-3xl mx-auto px-6 text-center space-y-4">
           <h3 className="text-3xl font-bold text-gray-900">
-            {t("Otros Padecimientos de Oído")}
+            {t("hearing-loss.other_conditions")}
           </h3>
-          <p className="text-gray-700 text-lg">➢ {t("Pérdida de Audición")}</p>
-          <p className="text-gray-700 text-lg">➢ {t("Vértigo y Mareo")}</p>
+          <p className="text-gray-700 text-lg">
+            ➢ {t("hearing-loss.hearing_loss")}
+          </p>
+          <p className="text-gray-700 text-lg">
+            ➢ {t("hearing-loss.vertigo_dizziness")}
+          </p>
         </div>
       </section>
     </main>

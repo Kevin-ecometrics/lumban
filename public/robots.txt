@@ -2,8 +2,16 @@ User-agent: *
 Allow: /
 Disallow: /_next/
 Disallow: /Components/
+Disallow: /api/
 Disallow: /*.json$
 Disallow: /*.js$
+Disallow: /*.css$
 
-Sitemap: https://drlumban.netlify.app/sitemap.xml
-Sitemap: https://drlumban.netlify.app/sitemap.xml
+# Sitemaps
+Sitemap: https://drlumban.com/sitemap.xml
+
+# Crawl delay para no sobrecargar el servidor
+Crawl-delay: 1
+
+# Host
+Host: https://drlumban.com

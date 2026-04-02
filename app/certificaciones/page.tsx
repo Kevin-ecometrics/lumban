@@ -32,11 +32,12 @@ const itemVariants: Variants = {
 
 export default function CertificacionesPage() {
   const { t } = useTranslation();
+  const experienceYears = new Date().getFullYear() - 1993;
   const certifications = [
-    "https://drlumban.com/certificado1.png",
-    "https://drlumban.com/certificado2.png",
-    "https://drlumban.com/certificado3.jpg",
-    "https://drlumban.com/certificado4.jpg",
+    "/certificados/certificado1.png",
+    "/certificados/certificado2.jpg",
+    "/certificados/certificado3.jpg",
+    "/certificados/certificado4.png",
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -44,8 +45,8 @@ export default function CertificacionesPage() {
   return (
     <main className="bg-white">
       <StickyImageHero
-        title={t("Certificaciones")}
-        subtitle={t("Especialista certificado en oídos, nariz y garganta")}
+        title={t("certifications.hero_title")}
+        subtitle={t("certifications.hero_subtitle")}
       />
 
       <section className="max-w-7xl mx-auto px-6 py-20">
@@ -58,29 +59,22 @@ export default function CertificacionesPage() {
           className="text-center mb-12"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
-            {t(
-              "Certificaciones y Reconocimientos: El Respaldo de una Trayectoria de Excelencia",
-            )}
+            {t("certifications.title")}
           </h1>
 
           <div className="max-w-3xl mx-auto space-y-6">
             <h3 className="text-xl md:text-2xl font-serif text-gray-800 leading-relaxed">
-              {t(
-                "Para el Dr. Lumbán, la mejora continua es el estándar, no la excepción. Sus certificaciones y reconocimientos internacionales son el reflejo de 33 años de compromiso con la excelencia.",
-              )}
+              {t("certifications.description1")} {experienceYears}{" "}
+              {t("certifications.description1_suffix")}
             </h3>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              {t(
-                "En un campo que evoluciona constantemente, su actualización en las técnicas más avanzadas de rinoplastia y otorrinolaringología asegura resultados precisos con un solo propósito: brindar al paciente la atención de alto nivel que merecen.",
-              )}
+              {t("certifications.description2")}
             </p>
 
             <div className="pt-4">
               <h4 className="text-lg font-semibold text-gray-900 inline-block border-b-2 border-gray-300 pb-2">
-                {t(
-                  "Trayectoria y preparación avalan el trabajo del mejor otorrinolaringólogo en Tijuana",
-                )}
+                {t("certifications.subtitle")}
               </h4>
             </div>
           </div>
@@ -104,7 +98,7 @@ export default function CertificacionesPage() {
               <div className="flex items-center justify-center h-[340px] p-6 bg-gray-50">
                 <motion.img
                   src={certification}
-                  alt={`${t("Certificación")} ${index + 1}`}
+                  alt={`${t("certifications.certification_label")} ${index + 1}`}
                   className="max-h-full max-w-full object-contain"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.4 }}
@@ -112,7 +106,7 @@ export default function CertificacionesPage() {
               </div>
               <div className="p-4 bg-white border-t border-gray-100">
                 <p className="text-sm text-gray-500 text-center">
-                  {t("Certificación")} {index + 1}
+                  {t("certifications.certification_label")} {index + 1}
                 </p>
               </div>
             </motion.figure>
@@ -140,7 +134,7 @@ export default function CertificacionesPage() {
             >
               <img
                 src={selectedImage}
-                alt={t("Imagen ampliada")}
+                alt={t("certifications.expanded_image")}
                 className="w-full h-full rounded-xl shadow-2xl"
               />
               <button

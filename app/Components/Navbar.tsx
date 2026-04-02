@@ -57,120 +57,120 @@ const Navbar: React.FC = () => {
 
   const menuItems: LinkItem[] = [
     {
-      title: t("Inicio"),
+      title: t("navbar.home"),
       href: getRouteByKey("home", currentLang),
     },
     {
-      title: t("Acerca de"),
+      title: t("navbar.about"),
       subItems: [
         {
-          title: t("Perfil del Dr. Lumban"),
+          title: t("navbar.profile"),
           href: getRouteByKey("profile", currentLang),
         },
         {
-          title: t("Certificaciones"),
+          title: t("navbar.certifications"),
           href: getRouteByKey("certifications", currentLang),
         },
         {
-          title: t("Instalaciones"),
+          title: t("navbar.facilities"),
           href: getRouteByKey("facilities", currentLang),
         },
       ],
     },
     {
-      title: t("Padecimientos"),
+      title: t("navbar.conditions"),
       subItems: [
         {
-          title: t("Oído"),
+          title: t("navbar.ear"),
           href: getRouteByKey("ear", currentLang),
           subItems: [
             {
-              title: t("Vértigo y Mareo"),
+              title: t("navbar.vertigo"),
               href: getRouteByKey("vertigo-dizziness", currentLang),
             },
             {
-              title: t("Pérdida de Audición"),
+              title: t("navbar.hearing_loss"),
               href: getRouteByKey("hearing-loss", currentLang),
             },
           ],
         },
         {
-          title: t("Nariz"),
+          title: t("navbar.nose"),
           href: getRouteByKey("nose", currentLang),
           subItems: [
             {
-              title: t("Septoplastia"),
+              title: t("navbar.septoplasty"),
               href: getRouteByKey("septoplasty", currentLang),
             },
             {
-              title: t("Sinusitis"),
+              title: t("navbar.sinusitis"),
               href: getRouteByKey("sinusitis", currentLang),
             },
             {
-              title: t("Congestión Nasal"),
+              title: t("navbar.nasal_congestion"),
               href: getRouteByKey("nasal-congestion", currentLang),
             },
             {
-              title: t("Obstrucción Nasal"),
+              title: t("navbar.nasal_obstruction"),
               href: getRouteByKey("nasal-obstruction", currentLang),
             },
             {
-              title: t("Alergias"),
+              title: t("navbar.allergies"),
               href: getRouteByKey("allergies", currentLang),
             },
           ],
         },
         {
-          title: t("Garganta"),
+          title: t("navbar.throat"),
           href: getRouteByKey("throat", currentLang),
           subItems: [
             {
-              title: t("Problemas de la Garganta"),
+              title: t("navbar.throat_problems"),
               href: getRouteByKey("throat-problems", currentLang),
             },
             {
-              title: t("Ronquidos"),
+              title: t("navbar.snoring"),
               href: getRouteByKey("snoring", currentLang),
             },
             {
-              title: t("Apnea del Sueño"),
+              title: t("navbar.sleep_apnea"),
               href: getRouteByKey("sleep-apnea", currentLang),
             },
             {
-              title: t("Trastornos de la Voz"),
+              title: t("navbar.voice_disorders"),
               href: getRouteByKey("voice-disorders", currentLang),
             },
           ],
         },
         {
-          title: t("Otorrinopediatría"),
+          title: t("navbar.pediatric_ent"),
           href: getRouteByKey("pediatric-ent", currentLang),
         },
       ],
     },
     {
-      title: t("Procedimientos"),
+      title: t("navbar.procedures"),
       subItems: [
         {
-          title: t("Endoscopia para Sinusitis"),
+          title: t("navbar.endoscopic_surgery"),
           href: getRouteByKey("endoscopic-surgery", currentLang),
         },
         {
-          title: t("Cirugía Antirronquido"),
+          title: t("navbar.anti_snoring_surgery"),
           href: getRouteByKey("anti-snoring-surgery", currentLang),
         },
         {
-          title: t("Cirugía Microscópica de Laringe"),
+          title: t("navbar.microscopic_surgery"),
           href: getRouteByKey("microscopic-surgery", currentLang),
         },
       ],
     },
     {
-      title: t("Rinoplastia"),
+      title: t("navbar.rhinoplasty"),
       href: getRouteByKey("aesthetic-nose", currentLang),
     },
     {
-      title: t("Contacto"),
+      title: t("navbar.contact"),
       href: getRouteByKey("contact", currentLang),
     },
   ];

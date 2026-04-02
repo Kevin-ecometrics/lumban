@@ -8,65 +8,54 @@ import { getRouteByKey } from "../i18n/routeMap";
 
 const beneficios = [
   {
-    title: "Mejoría en la Respiración",
-    description:
-      "Restablece la respiración nasal natural, mejorando no solo la respiración diurna sino también el sueño.",
+    titleKey: "septoplasty.benefit1_title",
+    descriptionKey: "septoplasty.benefit1_desc",
   },
   {
-    title: "Tratamiento para Apnea",
-    description:
-      "Se utiliza como tratamiento auxiliar en pacientes con apnea del sueño, mejorando la calidad del descanso.",
+    titleKey: "septoplasty.benefit2_title",
+    descriptionKey: "septoplasty.benefit2_desc",
   },
   {
-    title: "Rendimiento Atlético",
-    description:
-      "Beneficioso para atletas que necesitan un flujo de aire nasal adecuado durante la actividad física.",
+    titleKey: "septoplasty.benefit3_title",
+    descriptionKey: "septoplasty.benefit3_desc",
   },
   {
-    title: "Sueño Mejorado",
-    description:
-      "Pacientes que antes respiraban por la boca al dormir ahora disfrutan de una respiración nasal natural.",
+    titleKey: "septoplasty.benefit4_title",
+    descriptionKey: "septoplasty.benefit4_desc",
   },
 ];
 
 const procedimiento = [
   {
     step: "1",
-    title: "Incisión Mínima",
-    description:
-      "La septoplastía nasal se logra a través de una pequeña incisión dentro de la fosa nasal.",
+    titleKey: "septoplasty.procedure_step1_title",
+    descriptionKey: "septoplasty.procedure_step1_desc",
   },
   {
     step: "2",
-    title: "Procedimiento Ambulatorio",
-    description:
-      "Se realiza como procedimiento ambulatorio que suele tardar menos de una hora.",
+    titleKey: "septoplasty.procedure_step2_title",
+    descriptionKey: "septoplasty.procedure_step2_desc",
   },
   {
     step: "3",
-    title: "Reducción de Cornetes",
-    description:
-      "Si es necesario, se combina con la reducción de cornetes (tejidos inflamados en la pared lateral de la nariz).",
-  },
-  {
-    step: "4",
-    title: "Recuperación Rápida",
-    description:
-      "Los pacientes reportan dolor mínimo y pueden volver al trabajo en 3 a 5 días.",
+    titleKey: "septoplasty.procedure_step3_title",
+    descriptionKey: "septoplasty.procedure_step3_desc",
   },
 ];
 
 export default function SeptoplastiaPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+  const experienceYears = new Date().getFullYear() - 1993;
+
   return (
     <main className="bg-white">
       {/* HERO */}
       <Hero
-        title={t("Acerca de la Septoplastía")}
-        subtitle={t("Corrección del tabique nasal para mejorar la respiración")}
+        title={t("septoplasty.hero_title")}
+        subtitle={t("septoplasty.hero_subtitle")}
         src="/septoplastia.jpg"
-        alt={t("Acerca de la Septoplastía")}
+        alt={t("septoplasty.hero_alt")}
       />
 
       {/* INTRO */}
@@ -78,95 +67,130 @@ export default function SeptoplastiaPage() {
           transition={{ duration: 0.7 }}
           className="space-y-6"
         >
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("septoplasty.title_h1")}
+          </h1>
           <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "La corrección del tabique nasal (septoplastía) es uno de los procedimientos más comunes en otorrinolaringología. La desviación del septum nasal (tabique) puede ser de nacimiento o puede ser causado por un golpe que hizo que se doblara, del centro hacia un lado. A menudo, las lesiones aparentemente menores durante los años de crecimiento, pueden conducir a la desviación más grave conforme la nariz madura y se desarrolla. Esto puede resultar en la disminución del paso del aire por la nariz y dar la sensación de obstrucción nasal."
-            )}
+            {t("septoplasty.intro_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.common_text")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("septoplasty.anatomy_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.anatomy_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.anatomy_note")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("septoplasty.symptoms_title")}
+          </h2>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-2">
+            <li>{t("septoplasty.symptom1")}</li>
+            <li>{t("septoplasty.symptom2")}</li>
+            <li>{t("septoplasty.symptom3")}</li>
+            <li>{t("septoplasty.symptom4")}</li>
+            <li>{t("septoplasty.symptom5")}</li>
+          </ul>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("septoplasty.surgery_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.surgery_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.surgery_detail")}
+          </p>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("septoplasty.procedure_title")}
+          </h3>
+          <div className="space-y-4">
+            <div>
+              <h4 className="text-xl font-semibold text-gray-800">
+                {t("septoplasty.incision_title")}
+              </h4>
+              <p className="text-gray-700">{t("septoplasty.incision_desc")}</p>
+            </div>
+            <div>
+              <h4 className="text-xl font-semibold text-gray-800">
+                {t("septoplasty.outpatient_title")}
+              </h4>
+              <p className="text-gray-700">
+                {t("septoplasty.outpatient_desc")}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-xl font-semibold text-gray-800">
+                {t("septoplasty.recovery_title")}
+              </h4>
+              <p className="text-gray-700">{t("septoplasty.recovery_desc")}</p>
+            </div>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("septoplasty.advanced_technique_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.advanced_technique_text")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("septoplasty.benefits_title")}
+          </h2>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-2">
+            <li>{t("septoplasty.benefit1")}</li>
+            <li>{t("septoplasty.benefit2")}</li>
+            <li>{t("septoplasty.benefit3")}</li>
+            <li>{t("septoplasty.benefit4")}</li>
+          </ul>
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            {t("septoplasty.differences_title")}
+          </h3>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.differences_text")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.differences_note")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.differences_combined")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {t("septoplasty.recovery_evolution_title")}
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.recovery_text")}
+          </p>
+          <ul className="list-disc list-inside text-gray-700 text-lg space-y-2">
+            <li>{t("septoplasty.recovery_day1")}</li>
+            <li>{t("septoplasty.recovery_day10")}</li>
+            <li>{t("septoplasty.recovery_complete")}</li>
+          </ul>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.recovery_note")}
+          </p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            {t("septoplasty.cta_final")} {experienceYears}{" "}
+            {t("septoplasty.cta_final_suffix")}
           </p>
         </motion.div>
-      </section>
-
-      {/* BENEFICIOS */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-12">
-            {t("Beneficios de la Corrección Quirúrgica")}
-          </h3>
-          <div className="grid md:grid-cols-2 gap-10">
-            {beneficios.map((b, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="bg-white rounded-xl shadow-lg p-6 text-left"
-              >
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                  {t(b.title)}
-                </h4>
-                <p className="text-gray-600">{t(b.description)}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROCEDIMIENTO */}
-      <section className="max-w-5xl mx-auto px-6 py-24">
-        <h3 className="text-3xl font-bold text-gray-900 text-center mb-14">
-          {t("Detalles del Procedimiento")}
-        </h3>
-        <div className="grid md:grid-cols-2 gap-12">
-          {procedimiento.map((p, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="flex gap-6"
-            >
-              <div className="text-4xl font-bold text-blue-600">{p.step}</div>
-              <div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-1">
-                  {t(p.title)}
-                </h4>
-                <p className="text-gray-600">{t(p.description)}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* TÉCNICA */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-6">
-          <h3 className="text-3xl font-bold text-gray-900">
-            {t("Técnica Avanzada del Dr. Lumbán")}
-          </h3>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            {t(
-              "El Dr. Lumbán no utiliza taponamientos nasales que bloquean el paso del aire después de la cirugía; por lo que sale del hospital respirando por su nariz y no por su boca."
-            )}
-          </p>
-        </div>
       </section>
 
       <section className="max-w-6xl mx-auto px-6 py-20 space-y-20">
         {/* CTA */}
         <div className="bg-gray-50 rounded-2xl p-10 text-center space-y-6">
-          <h2 className="text-2xl font-semibold">{t("¿Tiene alguna duda?")}</h2>
+          <h2 className="text-2xl font-semibold">
+            {t("septoplasty.cta_question")}
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            {t(
-              "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita."
-            )}
+            {t("septoplasty.cta_description")}
           </p>
           <a
             href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            {t("SOLICITA TU CONSULTA")}
+            {t("septoplasty.cta_button")}
           </a>
         </div>
 
@@ -174,19 +198,17 @@ export default function SeptoplastiaPage() {
         <div className="border-t pt-12 flex flex-col md:flex-row justify-between gap-6">
           <div>
             <h3 className="text-xl font-semibold">
-              {t("Conozca sobre el Dr. Lumbán")}
+              {t("septoplasty.about_doctor")}
             </h3>
             <p className="text-gray-600 max-w-xl">
-              {t(
-                "El Dr. Lumbán cuenta con 23 años de experiencia en otorrinolaringología, especializado en Cirugía Estética de Nariz."
-              )}
+              {t("septoplasty.about_doctor_text")}
             </p>
           </div>
           <Link
             href={getRouteByKey("profile", currentLang)}
             className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
           >
-            {t("VER PERFIL COMPLETO")}
+            {t("septoplasty.view_full_profile")}
           </Link>
         </div>
       </section>
@@ -195,13 +217,23 @@ export default function SeptoplastiaPage() {
       <section className="bg-gray-100 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center space-y-3">
           <h3 className="text-3xl font-bold text-gray-900">
-            {t("Otros Padecimientos de Nariz")}
+            {t("septoplasty.other_conditions")}
           </h3>
-          <p className="text-gray-700 text-lg">➢ {t("Septoplastía")}</p>
-          <p className="text-gray-700 text-lg">➢ {t("Sinusitis")}</p>
-          <p className="text-gray-700 text-lg">➢ {t("Congestión Nasal")}</p>
-          <p className="text-gray-700 text-lg">➢ {t("Obstrucción Nasal")}</p>
-          <p className="text-gray-700 text-lg">➢ {t("Alergias")}</p>
+          <p className="text-gray-700 text-lg">
+            ➢ {t("septoplasty.septoplasty")}
+          </p>
+          <p className="text-gray-700 text-lg">
+            ➢ {t("septoplasty.sinusitis")}
+          </p>
+          <p className="text-gray-700 text-lg">
+            ➢ {t("septoplasty.nasal_congestion")}
+          </p>
+          <p className="text-gray-700 text-lg">
+            ➢ {t("septoplasty.nasal_obstruction")}
+          </p>
+          <p className="text-gray-700 text-lg">
+            ➢ {t("septoplasty.allergies")}
+          </p>
         </div>
       </section>
     </main>

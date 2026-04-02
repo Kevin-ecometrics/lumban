@@ -21,27 +21,23 @@ const FAQSection: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       id: 1,
-      questionKey: "¿Cuándo debo acudir con un otorrinolaringólogo?",
-      answerKey:
-        "Es recomendable acudir cuando presentas:\n\nObstrucción nasal persistente\nRonquidos o apnea del sueño\nSinusitis frecuente\nDolor o infecciones recurrentes de garganta\nCambios en la voz\nMareos o pérdida auditiva\nInflamación o bolitas en cuello",
+      questionKey: "home.faq.question1",
+      answerKey: "home.faq.answer1",
     },
     {
       id: 2,
-      questionKey: "¿Cómo es una consulta otorrinolaringológica?",
-      answerKey:
-        "La consulta inicia con una entrevista clínica detallada, donde se evalúan:\n\nSíntomas actuales\nAntecedentes médicos y quirúrgicos\nAlergias\nHábitos (tabaquismo, uso de medicamentos etc.)\nHistoria de infecciones recurrentes o problemas respiratorios\n\nPosteriormente, se realiza una exploración física especializada de oídos, nariz y garganta.\n\nDependiendo del caso, pueden solicitarse estudios complementarios como:\n\nEstudios de imagen (radiografías o tomografía)\nPruebas de alergia\nEstudios auditivos\nCultivos o análisis específicos",
+      questionKey: "home.faq.question2",
+      answerKey: "home.faq.answer2",
     },
     {
       id: 3,
-      questionKey: "¿Cómo se lleva a cabo una valoración para rinoplastia?",
-      answerKey:
-        "La valoración incluye:\n\nAnálisis facial integral (proporciones, simetría y armonía del rostro)\nEvaluación funcional de la respiración nasal\nEstudio del tabique y estructuras internas\nFotografías clínicas\nExplicación detallada de expectativas reales y resultados posibles",
+      questionKey: "home.faq.question3",
+      answerKey: "home.faq.answer3",
     },
     {
       id: 4,
-      questionKey: "¿A partir de cuándo se ven los resultados?",
-      answerKey:
-        "El cambio es visible desde que se retira la férula (aproximadamente a los 7–10 días).\n\nSin embargo:\n\nLa inflamación disminuye progresivamente durante los primeros 3 meses.\nEl resultado más refinado puede apreciarse entre los 6 y 12 meses.\nLa paciencia es clave, ya que la nariz es una estructura que desinflama de manera gradual",
+      questionKey: "home.faq.question4",
+      answerKey: "home.faq.answer4",
     },
   ];
 
@@ -59,7 +55,7 @@ const FAQSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-12 md:mb-16"
         >
-          {t("Preguntas Frecuentes Otorrinolaringología y Rinoplastia")}
+          {t("home.faq.title")}
         </motion.h2>
 
         {/* Lista de FAQs */}
@@ -141,12 +137,12 @@ const FAQSection: React.FC = () => {
         >
           <div className="h-px w-16 bg-gray-900 mb-8"></div>
           <p className="text-gray-600 text-lg font-light">
-            {t("¿Tiene más preguntas o necesita más información?")}{" "}
+            {t("home.faq.footer_text")}{" "}
             <a
               href={getRouteByKey("contact", currentLang)}
               className="text-gray-900 underline hover:no-underline transition-colors duration-200"
             >
-              {t("Contáctenos aquí.")}
+              {t("home.faq.footer_link")}
             </a>
           </p>
         </motion.div>

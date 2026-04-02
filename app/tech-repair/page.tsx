@@ -28,19 +28,19 @@ export default function TechRepairProjectPage() {
         <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
           <p>
             {t(
-              "Este proyecto se centró en la instalación de taquetes para fijación de mobiliario y elementos pesados, garantizando seguridad y durabilidad en cada anclaje."
+              "Este proyecto se centró en la instalación de taquetes para fijación de mobiliario y elementos pesados, garantizando seguridad y durabilidad en cada anclaje.",
             )}
           </p>
 
           <p>
             {t(
-              "Aplicamos un diagnóstico previo del material base y seleccionamos el taquete adecuado para cada carga, logrando un acabado limpio y resistente."
+              "Aplicamos un diagnóstico previo del material base y seleccionamos el taquete adecuado para cada carga, logrando un acabado limpio y resistente.",
             )}
           </p>
 
           <p>
             {t(
-              "La intervención fue precisa, rápida y con mínimo impacto en las áreas de uso diario."
+              "La intervención fue precisa, rápida y con mínimo impacto en las áreas de uso diario.",
             )}
           </p>
         </div>

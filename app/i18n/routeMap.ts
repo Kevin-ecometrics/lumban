@@ -24,7 +24,8 @@ export type RouteKey =
   | "throat-problems"
   | "throat"
   | "ear"
-  | "nose";
+  | "nose"
+  | "cirugia-sinusitis";
 
 export const ROUTE_PAIRS: Array<{ key: RouteKey; es: string; en: string }> = [
   { key: "home", es: "/", en: "/" },
@@ -51,6 +52,7 @@ export const ROUTE_PAIRS: Array<{ key: RouteKey; es: string; en: string }> = [
   { key: "hearing-loss", es: "/perdida-audicion", en: "/hearing-loss" },
   { key: "ear", es: "/oido", en: "/ear" },
   { key: "nose", es: "/nariz", en: "/nose" },
+  { key: "cirugia-sinusitis", es: "/cirugia-sinusitis", en: "/sinusitis-surgery" },
 ];
 
 const routeMap = ROUTE_PAIRS.reduce<Record<RouteKey, { es: string; en: string }>>(
