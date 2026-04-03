@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 const beneficios = [
   {
@@ -54,7 +55,7 @@ export default function SeptoplastiaPage() {
       <Hero
         title={t("septoplasty.hero_title")}
         subtitle={t("septoplasty.hero_subtitle")}
-        src="/septoplastia.jpg"
+        src="/septoplastia/Septoplastia con un experto con 30 decadas de experiencia Jaime Lumban.webp"
         alt={t("septoplasty.hero_alt")}
       />
 
@@ -144,6 +145,7 @@ export default function SeptoplastiaPage() {
             <li>{t("septoplasty.benefit3")}</li>
             <li>{t("septoplasty.benefit4")}</li>
           </ul>
+          <SecondaryImage src="/septoplastia/Recupera tu respiracion el mejor otorrino en Tijuana Dr Jaime Lumban.webp" />
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
             {t("septoplasty.differences_title")}
           </h3>
@@ -201,7 +203,8 @@ export default function SeptoplastiaPage() {
               {t("septoplasty.about_doctor")}
             </h3>
             <p className="text-gray-600 max-w-xl">
-              {t("septoplasty.about_doctor_text")}
+              {t("septoplasty.about_doctor_text_prefix")} {experienceYears}{" "}
+              {t("septoplasty.about_doctor_text_suffix")}
             </p>
           </div>
           <Link

@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function RonquidosPage() {
   const { t, i18n } = useTranslation();
@@ -17,7 +18,7 @@ export default function RonquidosPage() {
         subtitle={t(
           "Conozca acerca de los padecimientos relacionados con la garganta",
         )}
-        src="/ronquido.jpg"
+        src="/ronquidos/Los ronquidos frecuentes y falta de descanso es una senal para acudir con el Dr Lumban experto en garganta y ronquidos.webp"
         alt={t("Acerca de los Ronquidos")}
       />
 
@@ -62,6 +63,8 @@ export default function RonquidosPage() {
             <li>{t("snoring.risk7")}</li>
           </ul>
         </div>
+
+        <SecondaryImage src="/ronquidos/El ronquido puede  bloquear parcialmente las vias respiratorias agenda con un experto en ronquido en Tijuana.webp" />
 
         {/* TRATAMIENTO NO QUIRÚRGICO */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">

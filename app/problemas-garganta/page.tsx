@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function PadecimientosGargantaPage() {
   const { t, i18n } = useTranslation();
@@ -17,7 +18,7 @@ export default function PadecimientosGargantaPage() {
         subtitle={t(
           "Conozca acerca de los padecimientos relacionados con la garganta",
         )}
-        src="/garganta.jpg"
+        src="/dolor de garganta/Obten un diagnostico y tratamiento preciso para dolor e infecciones de garganta con el Dr Lumban otorrino en Tijuana.webp"
         alt={t("Padecimientos de la Garganta")}
       />
 
@@ -75,6 +76,8 @@ export default function PadecimientosGargantaPage() {
           <p>{t("throat.throat_cancer_diagnosis")}</p>
           <p>{t("throat.throat_cancer_treatment")}</p>
         </div>
+
+        <SecondaryImage src="/dolor de garganta/El Dr.  Jaime Lumban atiende  toda clase condiciones relacionadas con la garganta en ninos y adultos.webp" />
 
         {/* CRUP */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-2 text-gray-700 leading-relaxed">

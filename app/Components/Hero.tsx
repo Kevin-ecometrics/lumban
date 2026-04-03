@@ -12,15 +12,15 @@ const REMOVE_DELAY = 5000;
 const MAX_IMAGES = 12;
 
 const IMAGES = [
-  "/lumban nariz.jpg",
-  "/Dr. jaime lumban en su consultorio.jpg",
-  "/lumban paciente 3.jpg",
-  "/lumban oido.jpg",
-  "/lumban paciente.jpg",
-  "/lumban cara.jpg",
-  "/lumban paciente 2.jpg",
-  //"/lumban realizando una cirugia.jpg",
+  "/lumban nariz.webp",
+  "/Dr. jaime lumban en su consultorio.webp",
+  "/lumban paciente 3.webp",
+  "/lumban oido.webp",
+  "/lumban paciente.webp",
+  "/lumban cara.webp",
+  "/lumban paciente 2.webp",
 ];
+
 interface TrailImage {
   id: number;
   src: string;
@@ -30,6 +30,7 @@ interface TrailImage {
 
 export default function OurWaveHero() {
   const [images, setImages] = useState<TrailImage[]>([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
   const idRef = useRef(0);
@@ -37,10 +38,46 @@ export default function OurWaveHero() {
   const moveCounterRef = useRef(0);
   const lastMouseRef = useRef({ x: 0, y: 0 });
 
-  /* -------- ADD IMAGE -------- */
+  /* -------- PRELOAD IMAGES -------- */
+  useEffect(() => {
+    let isMounted = true;
 
-  const addImage = (x: number, y: number) => {
-    const rect = sectionRef.current!.getBoundingClientRect();
+    const preloadImages = async () => {
+      const imagePromises = IMAGES.map((src) => {
+        return new Promise<void>((resolve, reject) => {
+          const img = new window.Image();
+          img.src = src;
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error(`Failed to load ${src}`));
+        });
+      });
+
+      try {
+        await Promise.all(imagePromises);
+        if (isMounted) {
+          setImagesLoaded(true);
+        }
+      } catch (err) {
+        console.error("Error preloading images:", err);
+        // Aún así marca como cargado para no bloquear la UI
+        if (isMounted) {
+          setImagesLoaded(true);
+        }
+      }
+    };
+
+    preloadImages();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  /* -------- ADD IMAGE -------- */
+  const addImage = useCallback((x: number, y: number) => {
+    if (!sectionRef.current) return;
+
+    const rect = sectionRef.current.getBoundingClientRect();
 
     const img: TrailImage = {
       id: idRef.current++,
@@ -51,30 +88,37 @@ export default function OurWaveHero() {
 
     imgIndexRef.current = (imgIndexRef.current + 1) % IMAGES.length;
 
-    setImages((prev) => [...prev.slice(-MAX_IMAGES + 1), img]);
+    setImages((prev) => {
+      const newImages = [...prev, img];
+      return newImages.slice(-MAX_IMAGES);
+    });
 
     setTimeout(() => {
       setImages((prev) => prev.filter((i) => i.id !== img.id));
     }, REMOVE_DELAY);
-  };
-
-  /* -------- MOUSE MOVE (LOCAL) -------- */
-
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    const dx = e.clientX - lastMouseRef.current.x;
-    const dy = e.clientY - lastMouseRef.current.y;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-
-    if (distance < MOVE_DISTANCE) return;
-
-    lastMouseRef.current = { x: e.clientX, y: e.clientY };
-    moveCounterRef.current += 1;
-
-    if (moveCounterRef.current < MOVES_REQUIRED) return;
-
-    moveCounterRef.current = 0;
-    addImage(e.clientX, e.clientY);
   }, []);
+
+  /* -------- MOUSE MOVE -------- */
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!imagesLoaded) return; // No crear imágenes hasta que estén precargadas
+
+      const dx = e.clientX - lastMouseRef.current.x;
+      const dy = e.clientY - lastMouseRef.current.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < MOVE_DISTANCE) return;
+
+      lastMouseRef.current = { x: e.clientX, y: e.clientY };
+      moveCounterRef.current += 1;
+
+      if (moveCounterRef.current < MOVES_REQUIRED) return;
+
+      moveCounterRef.current = 0;
+      addImage(e.clientX, e.clientY);
+    },
+    [addImage, imagesLoaded],
+  );
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -91,16 +135,18 @@ export default function OurWaveHero() {
       ref={sectionRef}
       className="relative isolate h-screen overflow-hidden bg-white"
     >
+      {/* HIDDEN PRELOAD IMAGES */}
+      <div className="hidden">
+        {IMAGES.map((src) => (
+          <img key={src} src={src} alt="" />
+        ))}
+      </div>
+
       {/* ---------------- IMAGE LAYER ---------------- */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         <AnimatePresence>
           {images.map((img, index) => {
             const depth = index / Math.max(images.length - 1, 1);
-
-            // const isLastThree =
-            //   img.src === IMAGES[IMAGES.length - 1] ||
-            //   img.src === IMAGES[IMAGES.length - 2] ||
-            //   img.src === IMAGES[IMAGES.length - 3];
 
             return (
               <motion.div
@@ -126,10 +172,10 @@ export default function OurWaveHero() {
                     src={img.src}
                     width={IMAGE_SIZE}
                     height={IMAGE_SIZE}
-                    className="
-                      object-cover rounded-2xl"
+                    className="object-cover rounded-2xl"
                     style={{ mixBlendMode: "normal" }}
                     alt=""
+                    loading="eager"
                   />
                 </div>
               </motion.div>

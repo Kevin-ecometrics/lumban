@@ -41,6 +41,10 @@ export default function InstalacionesPage() {
     "/instalaciones/img06-consultorio_rio_medica_dr_lumban.jpg",
     "/instalaciones/img07-consultorio_rio_medica_dr_lumban.jpg",
     "/instalaciones/img08-consultorio_rio_medica_dr_lumban.jpg",
+    "/instalaciones/Dr. Jaime Lumban-instalaciones.webp",
+    "/instalaciones/dr lumban recepcion.webp",
+    "/instalaciones/El consultorio cuenta con todo el equipo para realizar endoscopias y procedimientos no invasivos.webp",
+    "/instalaciones/Interior del consultorio donde la calidad y comodiad destacan.webp",
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -48,6 +52,7 @@ export default function InstalacionesPage() {
   return (
     <main className="bg-white">
       <StickyImageHero
+        src="/instalaciones/Exterior del consultorio ubicado en RIO MEDICA.webp"
         title={t("facilities.hero_title")}
         subtitle={t("facilities.hero_subtitle")}
       />

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 type AccordionItem = {
   question: string;
@@ -109,7 +110,7 @@ export default function OtorrinoPediatria() {
 
           <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-4">
             <img
-              src="/otorrinopediatria.jpg"
+              src="/otorrinopediatria/El Dr Lumban brinda atencion pediatrica para infecciones de oido y otros padecimientos frecuentes en ninos en Tijuana.webp"
               alt={t("Otorrinopediatría")}
               className="w-full h-auto rounded-2xl object-cover"
             />
@@ -241,6 +242,8 @@ export default function OtorrinoPediatria() {
             </table>
           </div>
         </div>
+
+        <SecondaryImage src="/otorrinopediatria/Si tu hijo tiene problemas para respirar dormir  dolor de garganta e infecciones en agmidalas  en dr Jaime Lumban es experto en atencion pediatrica.webp" />
 
         {/* RECOMENDACIONES PARA PADRES */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">

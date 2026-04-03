@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function SinusitisPage() {
   const { t, i18n } = useTranslation();
@@ -14,7 +15,7 @@ export default function SinusitisPage() {
       <Hero
         title={t("sinusitis.hero_title")}
         subtitle={t("sinusitis.hero_subtitle")}
-        src="/sinusitis.jpg"
+        src="/sinusitis/Si te congestionas con frecuencia y tienes problemas para respirar acude con el especialista en nariz Jaime Lumban.webp"
         alt={t("sinusitis.hero_alt")}
       />
 
@@ -55,6 +56,8 @@ export default function SinusitisPage() {
             </ul>
           </div>
         </div>
+
+        <SecondaryImage src="/sinusitis/Detecta a tiempo una sinusitis antes que se haga cronica con el Dr Jaime Lumban.webp" />
 
         {/* DIAGNÓSTICO */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">

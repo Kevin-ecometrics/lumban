@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function AlergiasPage() {
   const { t, i18n } = useTranslation();
@@ -54,7 +55,7 @@ export default function AlergiasPage() {
       <Hero
         title={t("allergies.hero_title")}
         subtitle={t("allergies.hero_subtitle")}
-        src="/alergias.jpg"
+        src="/alergias/Identifica las causas de tus estornudos, secrecion nasal y congestion puede trataterse de una alergia el Dr Lumban puede apoyarte.webp"
         alt={t("allergies.hero_alt")}
       />
 
@@ -249,6 +250,8 @@ export default function AlergiasPage() {
               </tbody>
             </table>
           </div>
+
+          <SecondaryImage src="/alergias/Vuelve a respirar con un tratamiento eficaz contra las alergias con el Dr Lumban.webp" />
 
           <h2 className="text-2xl font-bold text-gray-900">
             {t("allergies.why_important_title")}

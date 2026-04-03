@@ -45,6 +45,7 @@ export default function CertificacionesPage() {
   return (
     <main className="bg-white">
       <StickyImageHero
+        src="/certificados/El doctor Jaime Lumban es un otorrino certificado por el consejo mexicano de otorrinolaringologia.webp"
         title={t("certifications.hero_title")}
         subtitle={t("certifications.hero_subtitle")}
       />

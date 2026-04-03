@@ -2,20 +2,17 @@
 "use client";
 
 import Hero from "@/app/Components/StickyImageHero";
-import MissionAccordion from "@/app/Components/MissionAccordion";
-import getExperienceYears from "../Components/Year";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 export default function AboutPage() {
   const { t } = useTranslation();
-  const year = getExperienceYears();
 
   return (
     <main className="bg-white">
       {/* HERO */}
       <Hero
-        src="/Dr Jaime Lumban otorrinolaringologo en pared lisa y mirando de frente.png"
+        src="/perfil/El Dr lumban es un un experto en la precision que prioriza tu salud.webp"
         alt={t("profile.hero_alt")}
         title={t("profile.hero_title")}
         subtitle={t("profile.hero_subtitle")}

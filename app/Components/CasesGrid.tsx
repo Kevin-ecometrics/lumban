@@ -39,13 +39,15 @@ export default function CasesGrid() {
     {
       title: t("home.cases.case3"),
       routeKey: "sinusitis",
-      image: "/sinusitis.jpg",
+      image:
+        "/sinusitis/Si te congestionas con frecuencia y tienes problemas para respirar acude con el especialista en nariz Jaime Lumban.webp",
       type: "image",
     },
     {
       title: t("home.cases.case4"),
       routeKey: "throat-problems",
-      image: "/garganta.jpg",
+      image:
+        "/dolor de garganta/Obten un diagnostico y tratamiento preciso para dolor e infecciones de garganta con el Dr Lumban otorrino en Tijuana.webp",
       type: "image",
     },
   ];

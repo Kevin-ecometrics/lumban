@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function CongestionNasalPage() {
   const { t, i18n } = useTranslation();
@@ -91,7 +92,7 @@ export default function CongestionNasalPage() {
       <Hero
         title={t("nasal-congestion.hero_title")}
         subtitle={t("nasal-congestion.hero_subtitle")}
-        src="/congestion-nasal.jpg"
+        src="/congestion nasal/El dr Lumban trata nariz tapada y con dificultad para respirar en su consultorio en Tijuana.webp"
         alt={t("nasal-congestion.hero_alt")}
       />
 
@@ -232,6 +233,8 @@ export default function CongestionNasalPage() {
             ))}
           </div>
         </div>
+
+        <SecondaryImage src="/congestion nasal/Respira con normalidad con un tratamiento efectivo con un experto en nariz en Tijuana.webp" />
 
         {/* PREVENCIÓN */}
         <div className="space-y-6">

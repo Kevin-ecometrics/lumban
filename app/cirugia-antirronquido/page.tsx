@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function CirugiaAntirronquidoPage() {
   const { t, i18n } = useTranslation();
@@ -16,7 +17,7 @@ export default function CirugiaAntirronquidoPage() {
         subtitle={t(
           "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
         )}
-        src="/ronquido.jpg"
+        src="/cirugia antirronquidos/Recupera tu descanso de forma permanente con una cirugia antirronquidos con el Dr. Lumban.webp"
         alt={t("Cirugía Antirronquido")}
       />
 
@@ -71,6 +72,8 @@ export default function CirugiaAntirronquidoPage() {
           <p>{t("anti-snoring-surgery.septoplasty_text")}</p>
           <p>{t("anti-snoring-surgery.turbinate_reduction_text")}</p>
         </div>
+
+        <SecondaryImage src="/cirugia antirronquidos/Acude a una valoracion para saber si eres candidato una cirugia no invasiva anti ronquido con el Dr. Lumban.webp" />
 
         {/* DIAGNÓSTICO Y EVALUACIÓN */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">

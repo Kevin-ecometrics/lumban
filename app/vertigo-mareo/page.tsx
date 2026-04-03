@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
-
+import SecondaryImageSimple from "@components/Image";
 const sintomas = [
   {
     titleKey: "ear.vertigo_title",
@@ -46,13 +46,14 @@ const tratamientos = [
 export default function EarConditionsPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+  const experienceYears = new Date().getFullYear() - 1993;
   return (
     <main className="bg-white">
       {/* HERO */}
       <Hero
         title={t("ear.hero_title")}
         subtitle={t("ear.hero_subtitle")}
-        src="/mareo.png"
+        src="/vertigo y mareo/Diagnostico y tratamiento para mareo en Tijuana con el Dr Lumban.webp"
         alt={t("ear.hero_alt")}
       />
 
@@ -221,6 +222,12 @@ export default function EarConditionsPage() {
           <p className="text-gray-700 text-lg leading-relaxed">
             {t("ear.meniere_note")}
           </p>
+          <SecondaryImageSimple
+            src="/vertigo y mareo/Atencion para vertigo con el otorrinolaringologo Jaime Lumban.webp"
+            alt={t("ear.vertigo_image_alt")}
+            rounded="lg"
+          />
+
           <h4 className="text-xl md:text-2xl font-bold text-gray-900">
             {t("ear.fistula_title")}
           </h4>
@@ -289,7 +296,8 @@ export default function EarConditionsPage() {
           <div>
             <h3 className="text-xl font-semibold">{t("ear.about_doctor")}</h3>
             <p className="text-gray-600 max-w-xl">
-              {t("ear.about_doctor_text")}
+              {t("ear.about_doctor_text_prefix")} {experienceYears}{" "}
+              {t("ear.about_doctor_text_suffix")}
             </p>
           </div>
           <a

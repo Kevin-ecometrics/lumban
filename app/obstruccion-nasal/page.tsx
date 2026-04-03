@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function ObstruccionNasalPage() {
   const { t, i18n } = useTranslation();
@@ -15,7 +16,7 @@ export default function ObstruccionNasalPage() {
       <Hero
         title={t("nasal-obstruction.hero_title")}
         subtitle={t("nasal-obstruction.hero_subtitle")}
-        src="/obstruccion-nasal.png"
+        src="/obstruccion nasal/La obstruccion nasal puede deberse a alergias, malformaciones, tabique desviado es importante agendar tu valoracion con el Dr Lumban.webp"
         alt={t("nasal-obstruction.hero_alt")}
       />
 
@@ -61,6 +62,8 @@ export default function ObstruccionNasalPage() {
             </p>
           </div>
         </div>
+
+        <SecondaryImage src="/obstruccion nasal/El DR Lumban realiza tu nariz con un endoscopio nasal para visualizar estructuras internas y explorar con precision tu nariz para un diagnostico preciso.webp" />
 
         {/* TRATAMIENTO */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">

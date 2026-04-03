@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function CirugiaMicroscopicaLaringePage() {
   const { t, i18n } = useTranslation();
@@ -16,7 +17,7 @@ export default function CirugiaMicroscopicaLaringePage() {
         subtitle={t(
           "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
         )}
-        src="/laringe.jpg"
+        src="/cirugia microscopica/si presentas ronquera, molestias o cambios en la voz acude con el dr Lumban otorrinolaringologo de confianza.webp"
         alt={t("Cirugía Microscópica de Laringe")}
       />
 
@@ -103,6 +104,8 @@ export default function CirugiaMicroscopicaLaringePage() {
           </h3>
           <p>{t("microscopic-surgery.inflammation_text")}</p>
         </div>
+
+        <SecondaryImage src="/cirugia microscopica/La Cirugia microscopica con el Dr. Lumban de laringe es de alta precision para tratamiento de cuerdas vocales y afecciones de garganta.webp" />
 
         {/* PREPARACIÓN Y DIAGNÓSTICO */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">

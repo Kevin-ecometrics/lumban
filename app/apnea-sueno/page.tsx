@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function ApneaSuenoPage() {
   const { t, i18n } = useTranslation();
@@ -17,7 +18,7 @@ export default function ApneaSuenoPage() {
         subtitle={t(
           "Conozca acerca de los padecimientos relacionados con la garganta",
         )}
-        src="/apnea.png"
+        src="/apnea del sueno/La apnea sueno es un trastono comun y serio de respiracion que requiere atencion especializada de un otorrino experimentado como el Dr Lumban.webp"
         alt={t("Acerca de la Apnea del Sueño")}
       />
 
@@ -75,6 +76,8 @@ export default function ApneaSuenoPage() {
           </h2>
           <p>{t("sleep-apnea.risk_factors_text")}</p>
         </div>
+
+        <SecondaryImage src="/apnea del sueno/CPAP es un excelente Tratamiento para mantener las vias respiratorias abiertas durante el sueno recomendado por el Dr Lumban.webp" />
 
         {/* DIAGNÓSTICO */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">

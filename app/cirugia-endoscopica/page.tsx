@@ -4,6 +4,7 @@ import React from "react";
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function CirugiaEndoscopicaSinusitisPage() {
   const { t, i18n } = useTranslation();
@@ -16,7 +17,7 @@ export default function CirugiaEndoscopicaSinusitisPage() {
         subtitle={t(
           "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
         )}
-        src="/sinusitis.jpg"
+        src="/endoscopica/La cirugia endoscopica de sinusitis en Tijuana es la mejor opcion de tratamiento con el Dr Lumban.webp"
         alt={t("Cirugía endoscópica para sinusitis")}
       />
 
@@ -99,6 +100,8 @@ export default function CirugiaEndoscopicaSinusitisPage() {
             <li>{t("endoscopic-surgery.advantage3")}</li>
           </ul>
         </div>
+
+        <SecondaryImage src="/endoscopica/la cirugia endoscopica que realiza el Dr Jaime Lumban de senos paranasales es recomendada para paciente con sinusitis cronica.webp" />
 
         {/* RECOMENDACIONES POSTOPERATORIAS */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">

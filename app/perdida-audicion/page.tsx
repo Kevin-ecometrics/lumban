@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
-
+import SecondaryImage from "../Components/Image";
 const signos = [
   "hearing-loss.sign1",
   "hearing-loss.sign2",
@@ -19,13 +19,14 @@ const signos = [
 export default function HearingLossPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+  const experienceYears = new Date().getFullYear() - 1993;
   return (
     <main className="bg-white">
       {/* HERO */}
       <Hero
         title={t("hearing-loss.hero_title")}
         subtitle={t("hearing-loss.hero_subtitle")}
-        src="/perdida-auditiva.jpg"
+        src="/perdida de audicion/Diagnostico y tratamiento para afecciones en oido y perdida aditiva con el especialista Jaime Lumban.webp"
         alt={t("hearing-loss.hero_alt")}
       />
 
@@ -147,6 +148,8 @@ export default function HearingLossPage() {
             <li>{t("hearing-loss.warning5")}</li>
             <li>{t("hearing-loss.warning6")}</li>
           </ul>
+
+          <SecondaryImage src="/perdida de audicion/El Dr Jaime Lumban te brinda solucion  al problema auditivo.webp" />
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             {t("hearing-loss.degrees_title")}
           </h2>
@@ -278,7 +281,8 @@ export default function HearingLossPage() {
               {t("hearing-loss.about_doctor")}
             </h3>
             <p className="text-gray-600 max-w-xl">
-              {t("hearing-loss.about_doctor_text")}
+              {t("hearing-loss.about_doctor_text_prefix")} {experienceYears}{" "}
+              {t("hearing-loss.about_doctor_text_suffix")}
             </p>
           </div>
           <Link

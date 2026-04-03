@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import SecondaryImage from "../Components/Image";
 
 export default function RinoplastiaPage() {
   const { t, i18n } = useTranslation();
@@ -44,7 +45,7 @@ export default function RinoplastiaPage() {
             </div>
             <div className="rounded-3xl border border-gray-200 bg-white/90 backdrop-blur shadow-sm p-4">
               <img
-                src="/rino1.jpg"
+                src="/rinoplastia/Trasforma tu perfil con una rinoplastia en manos de un experto en nariz con mas de 3 decadas de experiencia en Tijuana.webp"
                 alt={t("Rinoplastía")}
                 className="w-full h-auto rounded-2xl object-cover"
               />
@@ -105,6 +106,8 @@ export default function RinoplastiaPage() {
           </h3>
           <p>{t("rhinoplasty.revision_text")}</p>
         </div>
+
+        <SecondaryImage src="/rinoplastia/Haz tu cita para rinoplastia con especialistas en nariz con gran experiencia como el Dr. Lumban.webp" />
 
         {/* TIPOS DE ABORDAJE */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-6 text-gray-700 leading-relaxed">
