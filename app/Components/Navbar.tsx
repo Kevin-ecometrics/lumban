@@ -173,6 +173,10 @@ const Navbar: React.FC = () => {
       title: t("navbar.contact"),
       href: getRouteByKey("contact", currentLang),
     },
+    {
+      title: t("navbar.testimonials"),
+      href: getRouteByKey("testimonials", currentLang),
+    },
   ];
 
   const handleLanguageChange = (lang: Lang) => {

@@ -26,7 +26,8 @@
     "anti_snoring_surgery": "Cirugía Antirronquido",
     "microscopic_surgery": "Cirugía Microscópica de Laringe",
     "rhinoplasty": "Rinoplastia",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "testimonials": "Testimoniales"
 },
 "footer": {
     "home": "Inicio",
@@ -41,7 +42,7 @@
         "cases": {
             "case1": "Rinoplastia Estética",
             "case2": "Cirugía de Sinusitis",
-            "case3": "Sinusitis",
+            "case3": "Testimoniales",
             "case4": "Problemas de la Garganta"
         },
         "scroll": {
@@ -1455,8 +1456,121 @@
     
     "final_cta_title": "Respira mejor, vive mejor",
     "final_cta_text": "Si has probado múltiples tratamientos para la sinusitis sin éxito, la cirugía endoscópica puede ser la solución que necesitas. No dejes que la congestión nasal crónica limite tu vida. El Dr. Jaime Lumbán te ofrece una evaluación completa para determinar si eres candidato a la cirugía y cuál es la mejor técnica para tu caso específico. Agenda hoy tu consulta y da el primer paso hacia una respiración libre y duradera."
+  },
+  
+"testimonials": {
+    "hero_aria_label": "Video de testimonios de pacientes del Dr. Lumbán",
+  "hero_title": "Testimonios de Pacientes",
+  "hero_subtitle": "Experiencias reales que transforman vidas",
+  "title": "Lo que dicen nuestros pacientes",
+  "subtitle": "Opiniones reales de pacientes que han confiado en el Dr. Lumbán en Google y Doctoralia",
+  
+  "stats": {
+    "google_rating": "Puntuación media en Google",
+    "google_reviews": "Reseñas en Google",
+    "doctoralia_reviews": "Reseñas en Doctoralia",
+    "based_on": "basado en",
+    "reviews": "reseñas",
+    "google_average": "4.6",
+    "google_count": "102",
+    "doctoralia_count": "4"
+  },
+  
+  "tabs": {
+    "all": "Todas",
+    "google": "Google",
+    "doctoralia": "Doctoralia"
+  },
+  
+  "badges": {
+    "google": "Google",
+    "doctoralia": "Doctoralia",
+    "local_guide": "Guía Local",
+    "verified": "Verificado",
+    "photo": "foto",
+    "photos": "fotos"
+  },
+  
+  "labels": {
+    "consultation_type": "Tipo de consulta",
+    "first_visit": "Primera visita Otorrinolaringología",
+    "biopsy": "Biopsia nasal, auricular y faríngea",
+    "other": "Otro",
+    "likes": "persona le pareció útil",
+    "likes_plural": "personas les pareció útil"
+  },
+  
+  "dates": {
+    "one_month_ago": "Hace un mes",
+    "two_months_ago": "Hace 2 meses",
+    "four_months_ago": "Hace 4 meses"
+  },
+  
+  "locations": {
+    "mexico": "México",
+    "mexico_city": "CDMX",
+    "international": "Internacional"
+  },
+  
+  "tags": {
+    "surgery": "cirugía",
+    "natural_results": "resultados naturales",
+    "rhinoplasty": "rinoplastia",
+    "international_experience": "experiencia internacional",
+    "attention": "atención",
+    "experience": "experiencia",
+    "professionalism": "profesionalismo",
+    "follow_up": "seguimiento"
+  },
+  
+  "reviews": {
+    "ahs": {
+      "name": "AHS Bienes Raíces",
+      "text": "Experiencia con el Dr Jaime Lumban 10/10 desde la primera consulta hasta el postoperatorio. Quede muy satisfecha con mis resultados - que son tan naturales. La atención fue súper - siempre muy profesional, amable, explica todo con detalle."
+    },
+    "jasmine": {
+      "name": "Jasmine Perez",
+      "text": "10/10 experience. From consultation to post-op care, everything was professional and reassuring. I'm still early in the healing process, but I already love how natural and balanced my nose looks. The surgeon took time to explain everything and made me feel completely comfortable. Highly recommend."
+    },
+    "nydia": {
+      "name": "Nydia Mendoza",
+      "text": "La atención es excelente; desde la recepción hasta la estancia con el doctor. El Dr. Lumban es un médico de una amplia experiencia quedamos muy satisfechos y agradecidos con su servicio!!"
+    },
+    "mendez": {
+      "name": "Mr Mendez",
+      "text": "El Dr. Lumban es un médico muy profesional. Me realizó dos cirugías por distintos procedimientos me dio una explicación muy clara de todo proceso, resolviendo todas mis dudas. Siempre estuvo al pendiente de mi evolución. Lo recomiendo ampliamente."
+    },
+    "jpm": {
+      "name": "JPM",
+      "text": "Gran doctor y profesionista con calidad humana, nunca había recibido un trato tan integral."
+    },
+    "luis": {
+      "name": "Luis Hernández",
+      "text": "Excelente lo recomiendo había consultado con otros otorrinos, la verdad, me da mucho gusto que me ayudó a encontrar de raíz exactamente el problema, que durante muchos años me causaba y ahora satisfecho por la mejoría que he tenido."
+    },
+    "paula": {
+      "name": "Paula Pérez",
+      "text": "El Doctor y sus asistentes muy amables, el Doctor muy específico y te explica muy bien que tienes y que debes de hacer."
+    },
+    "laura": {
+      "name": "Laura Vega",
+      "text": "Excelente trato en recepción y con el doctor excelente su atención y explicación sobre mi problema."
+    }
+  },
+  
+  "share_section": {
+    "title": "¿Quieres compartir tu experiencia?",
+    "subtitle": "Tu opinión es muy importante para nosotros y ayuda a otros pacientes a tomar la mejor decisión.",
+    "google_button": "Dejar reseña en Google",
+    "doctoralia_button": "Dejar reseña en Doctoralia"
+  },
+  
+  "cta": {
+    "title": "¿Sufres de sinusitis o problemas otorrinolaringológicos?",
+    "subtitle": "Solicita una consulta con el Dr. Lumbán y descubre cómo podemos ayudarte a recuperar tu calidad de vida.",
+    "button": "SOLICITA TU CONSULTA"
   }
-
+}
 
 
 

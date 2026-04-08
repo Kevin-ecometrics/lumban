@@ -38,10 +38,9 @@ export default function CasesGrid() {
     },
     {
       title: t("home.cases.case3"),
-      routeKey: "sinusitis",
-      image:
-        "/sinusitis/Si te congestionas con frecuencia y tienes problemas para respirar acude con el especialista en nariz Jaime Lumban.webp",
-      type: "image",
+      routeKey: "testimonials",
+      image: "/testimonial.webm",
+      type: "video",
     },
     {
       title: t("home.cases.case4"),
