@@ -1460,117 +1460,123 @@
     "final_cta_text": "If you have tried multiple treatments for sinusitis without success, endoscopic surgery may be the solution you need. Don't let chronic nasal congestion limit your life. Dr. Jaime Lumbán offers you a complete evaluation to determine if you are a candidate for surgery and which technique is best for your specific case. Schedule your consultation today and take the first step toward free and lasting breathing."
   },
 "testimonials": {
-    "hero_aria_label": "Dr. Lumbán patient testimonials video",
-  "hero_title": "Patient Testimonials",
-  "hero_subtitle": "Real experiences that transform lives",
-  "title": "What our patients say",
-  "subtitle": "Real opinions from patients who have trusted Dr. Lumbán on Google and Doctoralia",
-  
-  "stats": {
-    "google_rating": "Average rating on Google",
-    "google_reviews": "Google Reviews",
-    "doctoralia_reviews": "Doctoralia Reviews",
-    "based_on": "based on",
-    "reviews": "reviews",
-    "google_average": "4.6",
-    "google_count": "102",
-    "doctoralia_count": "4"
-  },
-  
-  "tabs": {
-    "all": "All",
-    "google": "Google",
-    "doctoralia": "Doctoralia"
-  },
-  
-  "badges": {
-    "google": "Google",
-    "doctoralia": "Doctoralia",
-    "local_guide": "Local Guide",
-    "verified": "Verified",
-    "photo": "photo",
-    "photos": "photos"
-  },
-  
-  "labels": {
-    "consultation_type": "Consultation type",
-    "first_visit": "First ENT Visit",
-    "biopsy": "Nasal, ear and pharyngeal biopsy",
-    "other": "Other",
-    "likes": "person found this helpful",
-    "likes_plural": "people found this helpful"
-  },
-  
-  "dates": {
-    "one_month_ago": "1 month ago",
-    "two_months_ago": "2 months ago",
-    "four_months_ago": "4 months ago"
-  },
-  
-  "locations": {
-    "mexico": "Mexico",
-    "mexico_city": "Mexico City",
-    "international": "International"
-  },
-  
-  "tags": {
-    "surgery": "surgery",
-    "natural_results": "natural results",
-    "rhinoplasty": "rhinoplasty",
-    "international_experience": "international experience",
-    "attention": "attention",
-    "experience": "experience",
-    "professionalism": "professionalism",
-    "follow_up": "follow-up"
-  },
-  
-  "reviews": {
-    "ahs": {
-      "name": "AHS Bienes Raíces",
-      "text": "Experience with Dr. Jaime Lumban 10/10 from the first consultation to the postoperative period. I am very satisfied with my results - they are so natural. The attention was great - always very professional, friendly, explains everything in detail."
+    "hero_aria_label": "Video of patient testimonials from Dr. Lumbán",
+    "hero_title": "Patient Testimonials",
+    "hero_subtitle": "Real experiences that transform lives",
+    "h1_title": "Dr. Lumbán's Patient Testimonials",
+    "h1_subtitle": "Discover their stories and spectacular results",
+    "title": "What our patients say",
+    "subtitle": "Real opinions from patients who have trusted Dr. Lumbán on Google and Doctoralia",
+    "results_title": "Rhinoplasty Results with Dr. Jaime Lumbán",
+    "results_subtitle": "Real transformations that speak for themselves",
+    "view_result": "View result",
+    "cta_title": "Would you like to get a rhinoplasty?",
+    "cta_subtitle": "Request a consultation with Dr. Lumbán for a detailed evaluation",
+    "cta_button": "REQUEST YOUR CONSULTATION",
+    
+    "stats": {
+      "google_rating": "Average rating on Google",
+      "google_reviews": "Google Reviews",
+      "doctoralia_reviews": "Doctoralia Reviews",
+      "based_on": "based on",
+      "reviews": "reviews",
+      "google_average": "4.6",
+      "google_count": "102",
+      "doctoralia_count": "4"
     },
-    "jasmine": {
-      "name": "Jasmine Perez",
-      "text": "10/10 experience. From consultation to post-op care, everything was professional and reassuring. I'm still early in the healing process, but I already love how natural and balanced my nose looks. The surgeon took time to explain everything and made me feel completely comfortable. Highly recommend."
+    
+    "tabs": {
+      "all": "All",
+      "google": "Google",
+      "doctoralia": "Doctoralia"
     },
-    "nydia": {
-      "name": "Nydia Mendoza",
-      "text": "The attention is excellent; from the reception to the time with the doctor. Dr. Lumban is a doctor with extensive experience, we are very satisfied and grateful for his service!!"
+    
+    "badges": {
+      "google": "Google",
+      "doctoralia": "Doctoralia",
+      "local_guide": "Local Guide",
+      "verified": "Verified",
+      "photo": "photo",
+      "photos": "photos"
     },
-    "mendez": {
-      "name": "Mr Mendez",
-      "text": "Dr. Lumban is a very professional doctor. He performed two surgeries for different procedures, gave me a very clear explanation of the entire process, answering all my questions. He was always aware of my progress. I highly recommend him."
+    
+    "labels": {
+      "consultation_type": "Consultation type",
+      "first_visit": "First ENT visit",
+      "biopsy": "Nasal, ear and pharyngeal biopsy",
+      "other": "Other",
+      "likes": "person found this helpful",
+      "likes_plural": "people found this helpful"
     },
-    "jpm": {
-      "name": "JPM",
-      "text": "Great doctor and professional with human quality, I had never received such comprehensive treatment."
+    
+    "dates": {
+      "one_month_ago": "One month ago",
+      "two_months_ago": "2 months ago",
+      "four_months_ago": "4 months ago"
     },
-    "luis": {
-      "name": "Luis Hernández",
-      "text": "Excellent, I recommend him. I had consulted with other ENTs, truthfully, I am very glad that he helped me find the root cause of the problem that had been affecting me for many years, and now I am satisfied with the improvement I have experienced."
+    
+    "locations": {
+      "mexico": "Mexico",
+      "mexico_city": "Mexico City",
+      "international": "International"
     },
-    "paula": {
-      "name": "Paula Pérez",
-      "text": "The doctor and his assistants are very kind, the doctor is very specific and explains very well what you have and what you should do."
+    
+    "tags": {
+      "surgery": "surgery",
+      "natural_results": "natural results",
+      "rhinoplasty": "rhinoplasty",
+      "international_experience": "international experience",
+      "attention": "attention",
+      "experience": "experience",
+      "professionalism": "professionalism",
+      "follow_up": "follow-up"
     },
-    "laura": {
-      "name": "Laura Vega",
-      "text": "Excellent treatment at reception and with the doctor, excellent attention and explanation about my problem."
+    
+    "reviews": {
+      "ahs": {
+        "name": "AHS Bienes Raíces",
+        "text": "Experience with Dr. Jaime Lumban 10/10 from the first consultation to the postoperative period. I was very satisfied with my results - which are so natural. The attention was super - always very professional, kind, explains everything in detail and kindly, takes his time to answer all questions and doubts. When you WhatsApp with any question, they always answer immediately. The staff is always very friendly, professional and attentive. I did not suffer pain and the inflammation was minimal. I was also delighted with the hospital and its staff. Without a doubt I recommend it with my eyes closed for nose plastic surgery. My surgery was on Nov 20, 2025 and it's Feb 11, 2026. I am very grateful to Dr. Lumban and his team 🙏🏼💗"
+      },
+      "jasmine": {
+        "name": "Jasmine Perez",
+        "text": "10/10 experience. From consultation to post-op care, everything was professional and reassuring. I'm still early in the healing process, but I already love how natural and balanced my nose looks. The surgeon took time to explain everything and made me feel completely comfortable. Highly recommend."
+      },
+      "nydia": {
+        "name": "Nydia Mendoza",
+        "text": "The attention is excellent; from reception to the stay with the doctor. Dr. Lumban is a doctor of extensive experience, we were very satisfied and grateful for his service!!"
+      },
+      "mendez": {
+        "name": "Mr Mendez",
+        "text": "Dr. Lumban is a very professional doctor. He performed two surgeries for different procedures, gave me a very clear explanation of the whole process, resolving all my doubts. He was always aware of my evolution. I highly recommend him."
+      },
+      "jpm": {
+        "name": "JPM",
+        "text": "Great doctor and professional with human quality, I had never received such comprehensive treatment."
+      },
+      "luis": {
+        "name": "Luis Hernández",
+        "text": "Excellent I recommend him, I had consulted with other ENT specialists, truthfully, I am very glad that he helped me find the exact root of the problem that had been causing me issues for many years, and now I am satisfied with the improvement I have had."
+      },
+      "paula": {
+        "name": "Paula Pérez",
+        "text": "The Doctor and his assistants are very kind, the Doctor is very specific and explains very well what you have and what you should do."
+      },
+      "laura": {
+        "name": "Laura Vega",
+        "text": "Excellent treatment at reception and with the doctor, excellent attention and explanation about my problem."
+      }
+    },
+    
+    "modal": {
+      "view_original": "View original review"
+    },
+    
+    "share_section": {
+      "title": "Want to share your experience?",
+      "subtitle": "Your opinion is very important to us and helps other patients make the best decision.",
+      "google_button": "Leave a Google review",
+      "doctoralia_button": "Leave a Doctoralia review"
     }
-  },
-  
-  "share_section": {
-    "title": "Want to share your experience?",
-    "subtitle": "Your opinion is very important to us and helps other patients make the best decision.",
-    "google_button": "Leave a Google Review",
-    "doctoralia_button": "Leave a Doctoralia Review"
-  },
-  
-  "cta": {
-    "title": "Do you suffer from sinusitis or ENT problems?",
-    "subtitle": "Request a consultation with Dr. Lumbán and discover how we can help you regain your quality of life.",
-    "button": "REQUEST YOUR CONSULTATION"
   }
-}
 
 }

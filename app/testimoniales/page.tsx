@@ -18,10 +18,28 @@ import {
   FaMapMarkerAlt,
   FaCamera,
   FaRegComment,
+  FaTimes,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 
 const SINUSITIS_HERO_VIDEO = "/testimonial.webm";
 const SINUSITIS_HERO_POSTER = "/testimoniales/testimonial.webp";
+
+// Resultados de rinoplastias - Imágenes
+const RHINOPLASTY_RESULTS = [
+  {
+    src: "/testimoniales/Resultados de una rinoplastia despues de 3 meses con el dr lumban.webp",
+    alt: "Paciente disfrutando de sus resultados de rinoplastia con el DR.Lumbán  después de 3 meses  ",
+  },
+  {
+    src: "/testimoniales/Resultado de rinoplastia despues de semanas con el mejor otorrino el dr lumban.webp",
+    alt: "Paciente con par de semanas postoperada mostrando resultados de rinoplastia con el Dr. lumbán  ",
+  },
+  {
+    src: "/testimoniales/Recibe la mejor atencion con el mejor otorrino en Tijuana.webp",
+    alt: "Recibe atención especializada con el mejor otorrinolaringólogo en la Ciudad de Tijuana",
+  },
+];
 
 // Tipo para testimonio
 type Testimonial = {
@@ -35,6 +53,8 @@ type Testimonial = {
   source: "google" | "doctoralia";
   verified: boolean;
   hasPhoto?: boolean;
+  hasImage?: boolean;
+  imageSrc?: string;
   location?: string;
   locationKey?: string;
   likes?: number;
@@ -87,17 +107,18 @@ const SourceBadge = ({ source }: { source: string }) => {
   );
 };
 
-// Componente de Tarjeta de Testimonio
-const TestimonialCard = ({
+// Modal para ver review completo
+const ReviewModal = ({
   testimonial,
   t,
+  onClose,
 }: {
   testimonial: Testimonial;
   t: any;
+  onClose: () => void;
 }) => {
   const isGoogle = testimonial.source === "google";
 
-  // Obtener el texto del testimonio traducido
   const getTestimonialText = () => {
     if (testimonial.textKey) {
       return t(`testimonials.reviews.${testimonial.textKey}.text`);
@@ -105,7 +126,6 @@ const TestimonialCard = ({
     return testimonial.text;
   };
 
-  // Obtener el nombre traducido
   const getTestimonialName = () => {
     if (testimonial.name.includes(" ")) {
       return testimonial.name;
@@ -116,15 +136,6 @@ const TestimonialCard = ({
     return testimonial.name;
   };
 
-  // Obtener la ubicación traducida
-  const getLocation = () => {
-    if (testimonial.locationKey) {
-      return t(`testimonials.locations.${testimonial.locationKey}`);
-    }
-    return testimonial.location;
-  };
-
-  // Obtener la fecha traducida
   const getDate = () => {
     if (testimonial.dateKey) {
       return t(`testimonials.dates.${testimonial.dateKey}`);
@@ -132,7 +143,149 @@ const TestimonialCard = ({
     return testimonial.date;
   };
 
-  // Obtener los tags traducidos
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="relative max-w-2xl w-full bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Botón cerrar */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition z-10"
+        >
+          <FaTimes className="w-4 h-4 text-gray-600" />
+        </button>
+
+        {/* Imagen si existe */}
+        {testimonial.hasImage && testimonial.imageSrc && (
+          <div className="relative h-[500px] overflow-hidden rounded-t-2xl">
+            <img
+              src={testimonial.imageSrc}
+              alt={`Foto de ${getTestimonialName()}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+
+        <div className="p-6">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-4">
+            <StarRating rating={testimonial.rating} />
+          </div>
+
+          {/* Quote */}
+
+          <FaQuoteLeft className="w-8 h-8 text-gray-200 mb-4" />
+
+          {/* Texto completo */}
+          <p className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
+            &quot;{getTestimonialText()}&quot;
+          </p>
+
+          {/* Información del paciente */}
+          <div className="flex items-start gap-3 pt-4 border-t border-gray-100">
+            <FaUserCircle className="w-12 h-12 text-gray-400 flex-shrink-0" />
+            <div className="flex-1">
+              <div className="font-semibold text-gray-900 flex items-center gap-2 flex-wrap">
+                {getTestimonialName()}
+                {testimonial.verified && (
+                  <FaCheckCircle
+                    className="w-4 h-4 text-green-500"
+                    title={t("testimonials.badges.verified")}
+                  />
+                )}
+              </div>
+              <div className="flex items-center gap-2 text-xs text-gray-500 mt-1">
+                <FaCalendarAlt className="w-3 h-3" />
+                <span>{getDate()}</span>
+                {isGoogle && testimonial.hasPhoto && (
+                  <>
+                    <span>•</span>
+                    <FaCamera className="w-3 h-3" />
+                    <span>{t("testimonials.badges.photo")}</span>
+                  </>
+                )}
+              </div>
+              <div className="flex items-center gap-1 text-xs text-gray-400 mt-1">
+                <FaMapMarkerAlt className="w-2.5 h-2.5" />
+                <span>Tijuana, México</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <SourceBadge source={testimonial.source} />
+          </div>
+
+          {/* Botón para ver reseña original */}
+          {/* <div className="mt-6 pt-4 border-t border-gray-100">
+            <a
+              href={
+                isGoogle
+                  ? "https://g.page/r/review"
+                  : "https://www.doctoralia.com.mx/opiniones"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700"
+            >
+              {t("testimonials.modal.view_original")}
+              <FaExternalLinkAlt className="w-3 h-3" />
+            </a>
+          </div> */}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Componente de Tarjeta de Testimonio
+const TestimonialCard = ({
+  testimonial,
+  t,
+  onCardClick,
+}: {
+  testimonial: Testimonial;
+  t: any;
+  onCardClick: (testimonial: Testimonial) => void;
+}) => {
+  const isGoogle = testimonial.source === "google";
+
+  const getTestimonialText = () => {
+    if (testimonial.textKey) {
+      return t(`testimonials.reviews.${testimonial.textKey}.text`);
+    }
+    return testimonial.text;
+  };
+
+  const getTestimonialName = () => {
+    if (testimonial.name.includes(" ")) {
+      return testimonial.name;
+    }
+    if (testimonial.textKey) {
+      return t(`testimonials.reviews.${testimonial.textKey}.name`);
+    }
+    return testimonial.name;
+  };
+
+  const getLocation = () => {
+    if (testimonial.locationKey) {
+      return t(`testimonials.locations.${testimonial.locationKey}`);
+    }
+    return testimonial.location;
+  };
+
+  const getDate = () => {
+    if (testimonial.dateKey) {
+      return t(`testimonials.dates.${testimonial.dateKey}`);
+    }
+    return testimonial.date;
+  };
+
   const getTags = () => {
     if (testimonial.tagKeys && testimonial.tagKeys.length > 0) {
       return testimonial.tagKeys.map((tagKey: string) =>
@@ -142,7 +295,6 @@ const TestimonialCard = ({
     return testimonial.tags || [];
   };
 
-  // Obtener el tipo de visita traducido
   const getVisitTypeText = () => {
     if (testimonial.visitType) {
       return t(`testimonials.labels.${testimonial.visitType}`);
@@ -150,19 +302,31 @@ const TestimonialCard = ({
     return "";
   };
 
+  // Truncar texto para vista previa
+  const getPreviewText = () => {
+    const fullText = getTestimonialText();
+    if (fullText.length > 150) {
+      return fullText.substring(0, 150) + "...";
+    }
+    return fullText;
+  };
+
   return (
-    <div className="group bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+    <div
+      className="group bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+      onClick={() => onCardClick(testimonial)}
+    >
       {/* Header con rating y fuente */}
       <div className="flex items-center justify-between mb-4">
         <StarRating rating={testimonial.rating} />
         <SourceBadge source={testimonial.source} />
       </div>
 
-      {/* Texto del testimonio */}
+      {/* Texto del testimonio (vista previa) */}
       <div className="mb-4">
         <FaQuoteLeft className="w-6 h-6 text-gray-200 mb-2" />
         <p className="text-gray-700 leading-relaxed line-clamp-4">
-          &quot;{getTestimonialText()}&quot;
+          &quot;{getPreviewText()}&quot;
         </p>
       </div>
 
@@ -182,7 +346,15 @@ const TestimonialCard = ({
 
       {/* Información del paciente */}
       <div className="flex items-start gap-3 pt-4 border-t border-gray-100">
-        <FaUserCircle className="w-10 h-10 text-gray-400 flex-shrink-0" />
+        {testimonial.hasImage && testimonial.imageSrc ? (
+          <img
+            src={testimonial.imageSrc}
+            alt={getTestimonialName()}
+            className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+          />
+        ) : (
+          <FaUserCircle className="w-10 h-10 text-gray-400 flex-shrink-0" />
+        )}
         <div className="flex-1 min-w-0">
           <div className="font-medium text-gray-900 flex items-center gap-2 flex-wrap">
             {getTestimonialName()}
@@ -230,19 +402,6 @@ const TestimonialCard = ({
           />
         )}
       </div>
-
-      {/* Likes de Google */}
-      {/* {isGoogle && testimonial.likes && testimonial.likes > 0 && (
-        <div className="mt-3 flex items-center gap-1 text-xs text-gray-400">
-          <FaThumbsUp className="w-3 h-3" />
-          <span>
-            {testimonial.likes}{" "}
-            {testimonial.likes === 1
-              ? t("testimonials.labels.likes")
-              : t("testimonials.labels.likes_plural")}
-          </span>
-        </div>
-      )} */}
     </div>
   );
 };
@@ -253,17 +412,12 @@ export default function TestimonialsPage() {
   const [activeTab, setActiveTab] = useState<"all" | "google" | "doctoralia">(
     "all",
   );
+  const [selectedTestimonial, setSelectedTestimonial] =
+    useState<Testimonial | null>(null);
 
   // Obtener testimonios traducidos
   const getTestimonials = (): Testimonial[] => {
-    const googleCount = t("testimonials.stats.google_count", {
-      returnObjects: false,
-    });
-    const doctoraliaCount = t("testimonials.stats.doctoralia_count", {
-      returnObjects: false,
-    });
-
-    // Testimonios de Google con claves de traducción
+    // Testimonios de Google con imágenes
     const googleTestimonials: Testimonial[] = [
       {
         id: 1,
@@ -274,6 +428,9 @@ export default function TestimonialsPage() {
         source: "google",
         verified: true,
         hasPhoto: true,
+        hasImage: true,
+        imageSrc:
+          "/testimoniales/Resultados de una rinoplastia despues de 3 meses con el dr lumban.webp",
         locationKey: "mexico",
         likes: 0,
         tagKeys: ["surgery", "natural_results"],
@@ -288,6 +445,9 @@ export default function TestimonialsPage() {
         source: "google",
         verified: true,
         hasPhoto: true,
+        hasImage: true,
+        imageSrc:
+          "/testimoniales/Resultado de rinoplastia despues de semanas con el mejor otorrino el dr lumban.webp",
         locationKey: "international",
         likes: 1,
         tagKeys: ["rhinoplasty", "international_experience"],
@@ -302,6 +462,9 @@ export default function TestimonialsPage() {
         source: "google",
         verified: true,
         hasPhoto: true,
+        hasImage: true,
+        imageSrc:
+          "/testimoniales/Recibe la mejor atencion con el mejor otorrino en Tijuana.webp",
         locationKey: "mexico",
         likes: 0,
         tagKeys: ["attention", "experience"],
@@ -316,6 +479,7 @@ export default function TestimonialsPage() {
         source: "google",
         verified: true,
         hasPhoto: false,
+        hasImage: false,
         locationKey: "mexico",
         likes: 0,
         tagKeys: ["professionalism", "follow_up"],
@@ -323,7 +487,7 @@ export default function TestimonialsPage() {
       },
     ];
 
-    // Testimonios de Doctoralia con claves de traducción
+    // Testimonios de Doctoralia
     const doctoraliaTestimonials: Testimonial[] = [
       {
         id: 5,
@@ -386,11 +550,6 @@ export default function TestimonialsPage() {
   const doctoraliaCount = doctoraliaTestimonials.length;
   const totalTestimonials = allTestimonials.length;
 
-  // Obtener estadísticas desde i18n
-  const googleAverage = parseFloat(
-    t("testimonials.stats.google_average", { returnObjects: false }) || "4.6",
-  );
-
   // Filtrar testimonios según tab activa
   const filteredTestimonials =
     activeTab === "all"
@@ -399,24 +558,26 @@ export default function TestimonialsPage() {
         ? googleTestimonials
         : doctoraliaTestimonials;
 
-  // FAQs desde i18n
-  const faqItems = [
-    { q: "faq1_q", a: "faq1_a" },
-    { q: "faq2_q", a: "faq2_a" },
-    { q: "faq3_q", a: "faq3_a" },
-    { q: "faq4_q", a: "faq4_a" },
-    { q: "faq5_q", a: "faq5_a" },
-  ];
+  const handleCardClick = (testimonial: Testimonial) => {
+    setSelectedTestimonial(testimonial);
+  };
 
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
+  const closeModal = () => {
+    setSelectedTestimonial(null);
   };
 
   return (
     <main className="bg-white">
-      {/* Hero con video - Totalmente traducido */}
+      {/* Modal para review completo */}
+      {selectedTestimonial && (
+        <ReviewModal
+          testimonial={selectedTestimonial}
+          t={t}
+          onClose={closeModal}
+        />
+      )}
+
+      {/* Hero con video */}
       <StickyVideoHero
         src={SINUSITIS_HERO_VIDEO}
         poster={SINUSITIS_HERO_POSTER}
@@ -430,67 +591,17 @@ export default function TestimonialsPage() {
       />
 
       <div className="max-w-6xl mx-auto px-6 py-16 space-y-16">
-        {/* TÍTULO Y DESCRIPCIÓN DE TESTIMONIALES - Traducido */}
+        {/* H1 principal */}
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-            {t("testimonials.title")}
+            {t("testimonials.h1_title")}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t("testimonials.subtitle")}
+            {t("testimonials.h1_subtitle")}
           </p>
         </div>
 
-        {/* ESTADÍSTICAS - Traducido */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 text-center border border-yellow-100">
-            <div className="flex justify-center mb-2">
-              <FaStar className="w-8 h-8 text-yellow-400" />
-            </div>
-            <div className="text-3xl font-bold text-gray-900">
-              {googleAverage}
-            </div>
-            <div className="text-sm text-gray-600">
-              {t("testimonials.stats.google_rating")}
-            </div>
-            <div className="text-xs text-gray-500 mt-1">
-              ⭐ {t("testimonials.stats.based_on")}{" "}
-              {t("testimonials.stats.google_count")}{" "}
-              {t("testimonials.stats.reviews")}
-            </div>
-          </div>
-
-          <div
-            className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 text-center border border-blue-100 cursor-pointer hover:shadow-md transition"
-            onClick={() => setActiveTab("google")}
-          >
-            <div className="flex justify-center mb-2">
-              <FaGoogle className="w-8 h-8 text-blue-600" />
-            </div>
-            <div className="text-3xl font-bold text-gray-900">
-              {googleCount}
-            </div>
-            <div className="text-sm text-gray-600">
-              {t("testimonials.stats.google_reviews")}
-            </div>
-          </div>
-
-          <div
-            className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 text-center border border-purple-100 cursor-pointer hover:shadow-md transition"
-            onClick={() => setActiveTab("doctoralia")}
-          >
-            <div className="flex justify-center mb-2">
-              <FaAward className="w-8 h-8 text-purple-600" />
-            </div>
-            <div className="text-3xl font-bold text-gray-900">
-              {doctoraliaCount}
-            </div>
-            <div className="text-sm text-gray-600">
-              {t("testimonials.stats.doctoralia_reviews")}
-            </div>
-          </div>
-        </div> */}
-
-        {/* TABS PARA FILTRAR - Traducido */}
+        {/* TABS PARA FILTRAR */}
         <div className="flex justify-center border-b border-gray-200">
           <div className="flex gap-8">
             <button
@@ -533,87 +644,56 @@ export default function TestimonialsPage() {
               key={testimonial.id}
               testimonial={testimonial}
               t={t}
+              onCardClick={handleCardClick}
             />
           ))}
         </div>
 
-        {/* SECCIÓN PARA COMPARTIR EXPERIENCIA - Traducido */}
-        {/* <div className="rounded-3xl bg-gradient-to-r from-gray-900 to-gray-800 p-8 md:p-12 text-center text-white">
-          <FaQuoteLeft className="w-12 h-12 mx-auto mb-4 opacity-50" />
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            {t("testimonials.share_section.title")}
-          </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-6">
-            {t("testimonials.share_section.subtitle")}
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="https://g.page/r/xxxxx/review"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-gray-900 font-medium hover:bg-gray-100 transition"
-            >
-              <FaGoogle className="w-4 h-4" />
-              {t("testimonials.share_section.google_button")}
-            </a>
-            <a
-              href="https://www.doctoralia.es/xxxxx/opiniones"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-purple-600 text-white font-medium hover:bg-purple-700 transition"
-            >
-              <FaAward className="w-4 h-4" />
-              {t("testimonials.share_section.doctoralia_button")}
-            </a>
+        {/* SECCIÓN DE RESULTADOS DE RINOPLASTIAS */}
+        {/* <div className="space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              {t("testimonials.results_title")}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {t("testimonials.results_subtitle")}
+            </p>
           </div>
-        </div> */}
 
-        {/* FAQ SECTION - Traducido */}
-        {/* <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700">
-          <h2 className="text-3xl font-semibold">
-            {t("sinusitis-surgery.faq_title")}
-          </h2>
-          <div className="space-y-4">
-            {faqItems.map((faq, idx) => (
+          <div className="grid grid-cols-1 gap-6">
+            {RHINOPLASTY_RESULTS.map((result, index) => (
               <div
-                key={idx}
-                className="rounded-2xl border border-gray-200 bg-white"
+                key={index}
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               >
-                <button
-                  className="w-full text-left px-5 py-4 flex justify-between items-center font-medium"
-                  onClick={() => toggleFaq(idx)}
-                  aria-expanded={openFaq === idx}
-                >
-                  <span className="text-gray-900">
-                    {t(`sinusitis-surgery.${faq.q}`)}
+                <img
+                  src="/testimoniales/Cirugia de nariz estetica y funcional para hombres en Tijuana.jpg"
+                  alt={result.alt}
+                  className="w-auto h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                  <span className="text-white text-sm font-medium">
+                    {t("testimonials.view_result")}
                   </span>
-                  <span className="text-gray-500">
-                    {openFaq === idx ? "-" : "+"}
-                  </span>
-                </button>
-                {openFaq === idx && (
-                  <div className="border-t border-gray-100 px-5 py-4 text-gray-600">
-                    {t(`sinusitis-surgery.${faq.a}`)}
-                  </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
         </div> */}
 
-        {/* CTA FINAL - Traducido */}
+        {/* CTA FINAL */}
         <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-blue-50 to-white p-10 text-center space-y-6 shadow-sm">
-          <h2 className="text-2xl font-semibold">
-            {t("testimonials.cta.title")}
-          </h2>
+          <h3 className="text-2xl font-semibold text-gray-900">
+            {t("testimonials.cta_title")}
+          </h3>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            {t("testimonials.cta.subtitle")}
+            {t("testimonials.cta_subtitle")}
           </p>
           <a
             href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            {t("testimonials.cta.button")}
+            {t("testimonials.cta_button")}
           </a>
         </div>
       </div>
