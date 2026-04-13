@@ -199,13 +199,16 @@ const Navbar: React.FC = () => {
             y: isNearBottom ? -20 : 0,
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="pointer-events-none" // Evita que el logo invisible interfiera con clicks
+          className="pointer-events-none"
         >
           <Link
             href={getRouteByKey("home", currentLang)}
             className="pointer-events-auto"
           >
-            <img src="/logo-secondary.png" className="h-32 w-auto" />
+            <img
+              src="/logo-secondary.png"
+              className="h-32 w-auto md:block hidden"
+            />
           </Link>
         </motion.div>
 

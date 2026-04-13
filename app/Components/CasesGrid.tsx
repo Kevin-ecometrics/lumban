@@ -32,7 +32,7 @@ export default function CasesGrid() {
     },
     {
       title: t("home.cases.case2"),
-      routeKey: "cirugia-sinusitis",
+      routeKey: "profile",
       image: "/dr lumban about.webm",
       type: "video",
     },

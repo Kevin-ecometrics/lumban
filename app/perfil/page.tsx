@@ -4,18 +4,28 @@
 import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import StickyVideoHero from "@/app/Components/StickyVideoHero";
 
 export default function AboutPage() {
   const { t } = useTranslation();
 
+  const SINUSITIS_HERO_VIDEO = "/dr lumban about.webm";
+  const SINUSITIS_HERO_POSTER = "/dr lumban about poster.webp";
+
   return (
     <main className="bg-white">
       {/* HERO */}
-      <Hero
-        src="/perfil/El Dr lumban es un un experto en la precision que prioriza tu salud.webp"
-        alt={t("profile.hero_alt")}
+
+      <StickyVideoHero
+        src={SINUSITIS_HERO_VIDEO}
+        poster={SINUSITIS_HERO_POSTER}
+        ariaLabel={t("sinusitis-surgery.hero_aria_label")}
         title={t("profile.hero_title")}
         subtitle={t("profile.hero_subtitle")}
+        textClassName="max-w-3xl mx-auto px-4 -mt-8 md:-mt-4"
+        titleClassName="text-5xl sm:text-4xl md:text-6xl"
+        subtitleClassName="text-2lg sm:text-xl md:text-2xl -mt-2"
+        mediaClassName="-mt-8 md:mt-28"
       />
 
       {/* INTRO SECTION - Conoce al Dr. Jaime Lumbán */}

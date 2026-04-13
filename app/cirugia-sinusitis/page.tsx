@@ -1,12 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import StickyVideoHero from "@/app/Components/StickyVideoHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
-
-const SINUSITIS_HERO_VIDEO = "/dr lumban about.webm";
-const SINUSITIS_HERO_POSTER = "/Dr Jaime.webp";
 
 export default function CirugiaSinusitisPage() {
   const { t, i18n } = useTranslation();
@@ -28,18 +24,6 @@ export default function CirugiaSinusitisPage() {
 
   return (
     <main className="bg-white">
-      <StickyVideoHero
-        src={SINUSITIS_HERO_VIDEO}
-        poster={SINUSITIS_HERO_POSTER}
-        ariaLabel={t("sinusitis-surgery.hero_aria_label")}
-        title={t("sinusitis-surgery.hero_title")}
-        subtitle={t("sinusitis-surgery.hero_subtitle")}
-        textClassName="max-w-3xl mx-auto px-4 -mt-8 md:-mt-4"
-        titleClassName="text-5xl sm:text-4xl md:text-6xl"
-        subtitleClassName="text-2lg sm:text-xl md:text-2xl -mt-2"
-        mediaClassName="-mt-8 md:mt-28"
-      />
-
       <div className="max-w-6xl mx-auto px-6 py-16 space-y-16">
         {/* INTRO - SEO H1 */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">
