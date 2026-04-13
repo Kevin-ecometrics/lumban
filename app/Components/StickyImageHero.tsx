@@ -72,17 +72,17 @@ export default function StickyImageHero({
         <div className="relative w-full max-w-6xl px-6">
           {/* ---------------- TEXTOS ---------------- */}
           <div
-            className={`absolute left-1/2 top-[6%] w-full text-center z-20 ${
+            className={`absolute left-1/2 top-[12%] w-full text-center z-20 ${
               textClassName ?? ""
             }`}
             style={{
               opacity: textOpacity,
               filter: `blur(${textBlur}px)`,
-              transform: `translate(-50%, ${textTranslateY}px)`
+              transform: `translate(-50%, ${textTranslateY}px)`,
             }}
           >
             <h1
-              className={`text-black text-3xl md:text-8xl font-bold tracking-wide mb-6 ${
+              className={`text-black text-3xl md:text-[60px] font-bold tracking-wide mb-6 ${
                 titleClassName ?? ""
               }`}
             >

@@ -44,9 +44,9 @@ export default function CasesGrid() {
     },
     {
       title: t("home.cases.case4"),
-      routeKey: "throat-problems",
+      routeKey: "guia-completa-para-tu-primera-visita-con-el-dr-lumban",
       image:
-        "/dolor de garganta/Obten un diagnostico y tratamiento preciso para dolor e infecciones de garganta con el Dr Lumban otorrino en Tijuana.webp",
+        "/blog/Como prepararte para una cita con el dr lumban en tijuana.webp",
       type: "image",
     },
   ];

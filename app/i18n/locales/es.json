@@ -25,9 +25,12 @@
     "endoscopic_surgery": "Endoscopia para Sinusitis",
     "anti_snoring_surgery": "Cirugía Antirronquido",
     "microscopic_surgery": "Cirugía Microscópica de Laringe",
+    "sinusitis_surgery": "Cirugía de Sinusitis",
     "rhinoplasty": "Rinoplastia",
     "contact": "Contacto",
-    "testimonials": "Testimoniales"
+    "testimonials": "Testimoniales",
+    "blog": "Blog",
+    "blog1": "Guía Completa para tu Primera Visita con el Dr. Lumbán"
 },
 "footer": {
     "home": "Inicio",
@@ -41,9 +44,9 @@
     "home": {
         "cases": {
             "case1": "Rinoplastia Estética",
-            "case2": "Sobre el dr. lumbán",
-            "case3": "Testimoniales",
-            "case4": "Problemas de la Garganta"
+            "case2": "Conoce más sobre el Dr. Lumbán",
+            "case3": "Testimoniales de pacientes",
+            "case4": "Guía Completa para tu Primera Visita con el Dr. Lumbán"
         },
         "scroll": {
             "text1": "Seguridad y Acreditación",
@@ -1576,7 +1579,74 @@
       "google_button": "Dejar reseña en Google",
       "doctoralia_button": "Dejar reseña en Doctoralia"
     }
+  },
+  
+  "blog": "Blog",
+  "AGENDA TU CONSULTA": "Agenda tu consulta",
+  "blog.first_visit": {
+    "badge": "Blog | Guía completa",
+ "title": "Cómo prepararte para tu primera consulta otorrinolaringológica",
+  "subtitle": "Guía completa",
+
+    "intro_1": "A menudo, posponemos la visita al médico por temor o incertidumbre, permitiendo que síntomas superficiales se conviertan en complicaciones mayores.",
+    "intro_2": "Identificar los signos de alerta y buscar atención especializada desde el inicio ayuda a prevenir complicaciones y a recibir un diagnóstico más preciso. Como otorrinolaringólogo, siempre recomiendo no esperar a que el problema avance, especialmente si presentas síntomas prolongados o recurrentes.",
+    "when_to_visit_title": "¿Cuándo deberías visitar al otorrinolaringólogo?",
+    "signs_title": "Señales que no debes ignorar",
+    "signs_intro": "Hay síntomas que merecen atención médica, especialmente si persisten en el tiempo. Entre ellos destacan:",
+    "symptom1": "ronquera prolongada",
+    "symptom2": "dolor de garganta recurrente",
+    "symptom3": "congestión nasal crónica",
+    "symptom4": "secreción nasal constante",
+    "symptom5": "ronquidos fuertes",
+    "symptom6": "dificultad para respirar por la nariz",
+    "symptom7": "dolor o presión en los oídos",
+    "symptom8": "pérdida de audición",
+    "symptom9": "mareo, vértigo o sensación de inestabilidad",
+    "symptom10": "dificultad para tragar",
+    "how_to_prepare_title": "Cómo prepararte para tu cita con el Dr. Lumbán",
+    "how_to_prepare_intro": "Para aprovechar al máximo tu consulta, te recomendamos llegar preparado con la siguiente información:",
+    "preparation1": "anota tus síntomas y desde cuándo comenzaron",
+    "preparation2": "observa con qué frecuencia aparecen",
+    "preparation3": "identifica qué los empeora o qué los alivia",
+    "preparation4": "lleva una lista de tus medicamentos actuales, incluyendo suplementos o tratamientos de venta libre",
+    "preparation5": "menciona cirugías previas o antecedentes médicos importantes",
+    "preparation6": "trae estudios, radiografías o resultados previos si ya te los realizaron",
+    "no_small_questions": "Escribe tus dudas para comentarlas durante la consulta, No hay preguntas pequeñas. Queremos que comprendas perfectamente qué sucede con tu salud y cuál será el camino a seguir.",
+    "what_to_expect_title": "¿Qué esperar durante tu primera visita con el otorrino?",
+    "what_to_expect_content": "Sabemos que la comodidad del paciente empieza desde que cruza la puerta. Al llegar a Río Medica, nuestro equipo te recibirá y te orientará para que tu experiencia sea lo más sencilla posible. Después podrás esperar cómodamente en el área de recepción antes de pasar al consultorio.",
+    "evaluation_process_title": "Cómo es el proceso de evaluación con el Dr. Jaime Lumbán",
+    "evaluation_process_intro": "Una vez en consulta, dividimos la atención en tres etapas fundamentales:",
+    "step1_title": "Historial Clínico y Escucha Activa:",
+    "step1_content": "Analizaremos tus antecedentes médicos, cirugías previas, alergias y los medicamentos que tomas actualmente. Este es el momento de hablar abiertamente sobre tus síntomas; escucharte es la clave para un diagnóstico preciso.",
+    "step2_title": "Examen Físico Especializado:",
+    "step2_intro": "Realizamos una revisión minuciosa de oídos, nariz y garganta utilizando tecnología de vanguardia.",
+    "ears_label": "Oídos:",
+    "ears_content": "Si es necesario, utilizamos microscopía avanzada, lo que permite una visualización profunda y limpiezas mucho más seguras y eficaces que los métodos tradicionales.",
+    "nose_throat_label": "Nariz y Garganta:",
+    "nose_throat_content": "Empleamos endoscopios y cámaras de alta definición para explorar áreas de difícil acceso, permitiéndonos detectar el origen del problema de manera rápida y mínimamente invasiva.",
+    "step3_title": "Plan de Tratamiento:",
+    "step3_content": "Tras la revisión, determinaremos si necesitas estudios complementarios. El objetivo no es solo recetar, sino encontrar la solución que mejor se adapte a ti, ya sea un cambio de hábitos, tratamiento farmacológico o, en casos específicos, una intervención quirúrgica.",
+    "will_you_need_treatment_title": "¿Te recetarán medicamento, estudios o cirugía?",
+    "will_you_need_treatment_intro": "No todos los casos requieren el mismo tratamiento. En consulta se valoran tus síntomas, tu historia clínica y los hallazgos de la exploración para determinar el mejor camino a seguir. Dependiendo del diagnóstico, el manejo puede incluir:",
+    "treatment1": "cambios en hábitos o cuidados generales",
+    "treatment2": "tratamiento médico",
+    "treatment3": "estudios complementarios",
+    "treatment4": "procedimientos mínimamente invasivos",
+    "treatment5": "referencia a otro especialista, si fuera necesario",
+    "dont_self_diagnose": "Es importante no adelantarse a un diagnóstico sin una revisión adecuada, ya que algunos síntomas pueden confundirse entre sí o intensificarse por ansiedad y preocupación.",
+    "consultation_duration_title": "¿Cuánto dura una consulta con el otorrinolaringólogo?",
+    "consultation_duration_content": "El tiempo de la consulta o de los estudios puede variar según cada caso y de la complejidad del problema a evaluar. Algunas valoraciones son rápidas y otras requieren un análisis más detallado, pero siempre procuramos brindarte el tiempo necesario para resolver tus dudas y orientarte correctamente.",
+    "personalized_care_title": "Atención médica personalizada y cercana en Tijuana",
+    "personalized_care_content_1": "Con más de tres décadas de experiencia en otorrinolaringología, mi enfoque siempre ha sido escuchar al paciente con atención y ofrecer una valoración humana, precisa y personalizada. Cada consulta está diseñada para que te sientas validado y acompañado en todo momento.",
+    "personalized_care_content_2": "Ya sea que busques atención general en otorrinolaringología o una valoración relacionada con rinoplastia, el objetivo es encontrar juntos la solución más adecuada para tu caso. El tratamiento puede ir desde recomendaciones sencillas y cambios de hábitos, hasta medicamentos o procedimientos mínimamente invasivos, según lo que realmente necesites.",
+    "personalized_care_location": "Nuestro consultorio se encuentra a tan solo 10 minutos del cruce fronterizo, en una zona segura y de fácil acceso, con diversas opciones de estacionamiento en los alrededores para mayor comodidad.",
+    "personalized_care_access": "Pensando en tu experiencia desde el primer momento, contamos con instalaciones accesibles, con acceso tanto por escaleras como por elevador.",
+    "personalized_care_waiting_area": "Además, hemos acondicionado un espacio de espera cómodo y agradable, con área de café y jugos, así como aire acondicionado, para que tu visita sea lo más tranquila y confortable posible mientras eres atendido.",
+    "appointment_title": "Agenda tu cita de otorrinolaringología en Tijuana",
+    "appointment_invite": "Si tienes molestias en nariz, garganta u oídos, te invitamos a una valoración. Agenda tu consulta y aclara todas tus dudas con atención especializada.",
+    "call_us": "Llámanos al:"
   }
+
 
 
 

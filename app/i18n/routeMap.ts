@@ -19,6 +19,7 @@ export type RouteKey =
   | "endoscopic-surgery"
   | "anti-snoring-surgery"
   | "microscopic-surgery"
+  | "sinusitis-surgery"
   | "vertigo-dizziness"
   | "hearing-loss"
   | "throat-problems"
@@ -27,6 +28,8 @@ export type RouteKey =
   | "nose"
   | "cirugia-sinusitis"
   | "testimonials"
+  | "guia-completa-para-tu-primera-visita-con-el-dr-lumban"
+
 
 export const ROUTE_PAIRS: Array<{ key: RouteKey; es: string; en: string }> = [
   { key: "home", es: "/", en: "/" },
@@ -49,12 +52,14 @@ export const ROUTE_PAIRS: Array<{ key: RouteKey; es: string; en: string }> = [
   { key: "endoscopic-surgery", es: "/cirugia-endoscopica", en: "/endoscopic-surgery" },
   { key: "anti-snoring-surgery", es: "/cirugia-antirronquido", en: "/anti-snoring-surgery" },
   { key: "microscopic-surgery", es: "/cirugia-microscopica", en: "/microscopic-surgery" },
+  { key: "sinusitis-surgery", es: "/cirugia-sinusitis", en: "/sinusitis-surgery" },
   { key: "vertigo-dizziness", es: "/vertigo-mareo", en: "/vertigo-dizziness" },
   { key: "hearing-loss", es: "/perdida-audicion", en: "/hearing-loss" },
   { key: "ear", es: "/oido", en: "/ear" },
   { key: "nose", es: "/nariz", en: "/nose" },
   { key: "cirugia-sinusitis", es: "/cirugia-sinusitis", en: "/sinusitis-surgery" },
   { key: "testimonials", es: "/testimoniales", en: "/testimonials" },
+  { key: "guia-completa-para-tu-primera-visita-con-el-dr-lumban", es: "/blog/guia-completa-para-tu-primera-visita-con-el-dr-lumban", en: "/blog/a-complete-guide-to-your-first-visit-with-dr-lumban" },
 ];
 
 const routeMap = ROUTE_PAIRS.reduce<Record<RouteKey, { es: string; en: string }>>(

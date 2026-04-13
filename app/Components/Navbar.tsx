@@ -163,6 +163,22 @@ const Navbar: React.FC = () => {
           title: t("navbar.microscopic_surgery"),
           href: getRouteByKey("microscopic-surgery", currentLang),
         },
+        {
+          title: t("navbar.sinusitis_surgery"),
+          href: getRouteByKey("sinusitis-surgery", currentLang),
+        },
+      ],
+    },
+    {
+      title: t("navbar.blog"),
+      subItems: [
+        {
+          title: t("navbar.blog1"),
+          href: getRouteByKey(
+            "guia-completa-para-tu-primera-visita-con-el-dr-lumban",
+            currentLang,
+          ),
+        },
       ],
     },
     {

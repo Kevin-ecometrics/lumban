@@ -25,9 +25,12 @@
     "endoscopic_surgery": "Endoscopic Sinus Surgery",
     "anti_snoring_surgery": "Anti-Snoring Surgery",
     "microscopic_surgery": "Microscopic Laryngeal Surgery",
+    "sinusitis_surgery": "Sinusitis Surgery",
     "rhinoplasty": "Rhinoplasty",
     "contact": "Contact",
-    "testimonials": "Testimonials"
+    "testimonials": "Testimonials",
+    "blog": "Blog",
+    "blog1": "A Complete Guide to Your First Visit with Dr. Lumbán"
 },
 "footer": {
     "home": "Home",
@@ -41,9 +44,9 @@
       "home": {
         "cases": {
 "case1": "Cosmetic Rhinoplasty",
-"case2": "About Dr. Lumbán",
-"case3": "Testimonials",
-"case4": "Throat Problems"
+"case2": "Learn more about Dr. Lumbán",
+"case3": "Testimonials from patients",
+"case4": "A Complete Guide to Your First Visit with Dr. Lumbán"
         },
                 "scroll": {
 
@@ -1577,6 +1580,72 @@
       "google_button": "Leave a Google review",
       "doctoralia_button": "Leave a Doctoralia review"
     }
+  },
+  
+  "blog": "Blog",
+  "AGENDA TU CONSULTA": "Schedule your consultation",
+  "blog.first_visit": {
+ "badge": "Blog | Complete Guide",
+  "title": "How to prepare for your first ENT consultation",
+  "subtitle": "Complete guide",
+    "intro_1": "Often, we postpone visiting the doctor due to fear or uncertainty, allowing superficial symptoms to become major complications.",
+    "intro_2": "Identifying warning signs and seeking specialized care from the start helps prevent complications and receive a more accurate diagnosis. As an ENT specialist, I always recommend not waiting for the problem to advance, especially if you have prolonged or recurrent symptoms.",
+    "when_to_visit_title": "When should you visit an ENT specialist?",
+    "signs_title": "Signs you shouldn't ignore",
+    "signs_intro": "There are symptoms that deserve medical attention, especially if they persist over time. These include:",
+    "symptom1": "prolonged hoarseness",
+    "symptom2": "recurrent sore throat",
+    "symptom3": "chronic nasal congestion",
+    "symptom4": "constant nasal discharge",
+    "symptom5": "loud snoring",
+    "symptom6": "difficulty breathing through the nose",
+    "symptom7": "ear pain or pressure",
+    "symptom8": "hearing loss",
+    "symptom9": "dizziness, vertigo, or feeling of instability",
+    "symptom10": "difficulty swallowing",
+    "how_to_prepare_title": "How to prepare for your appointment with Dr. Lumbán",
+    "how_to_prepare_intro": "To make the most of your consultation, we recommend coming prepared with the following information:",
+    "preparation1": "write down your symptoms and when they started",
+    "preparation2": "note how often they appear",
+    "preparation3": "identify what makes them worse or better",
+    "preparation4": "bring a list of your current medications, including supplements or over-the-counter treatments",
+    "preparation5": "mention previous surgeries or important medical history",
+    "preparation6": "bring previous studies, X-rays, or results if you've had them done",
+    "no_small_questions": "Write down your questions to ask during the consultation, There are no small questions. We want you to fully understand what is happening with your health and what the path forward will be.",
+    "what_to_expect_title": "What to expect during your first ENT visit?",
+    "what_to_expect_content": "We know patient comfort begins from the moment you walk through the door. When you arrive at Río Médica, our team will welcome you and guide you to make your experience as smooth as possible. Then you can wait comfortably in the reception area before entering the office.",
+    "evaluation_process_title": "What is the evaluation process with Dr. Jaime Lumbán like?",
+    "evaluation_process_intro": "Once in the office, we divide the consultation into three fundamental stages:",
+    "step1_title": "Medical History and Active Listening:",
+    "step1_content": "We will analyze your medical history, previous surgeries, allergies, and current medications. This is the time to speak openly about your symptoms; listening to you is key to an accurate diagnosis.",
+    "step2_title": "Specialized Physical Examination:",
+    "step2_intro": "We perform a thorough examination of the ears, nose, and throat using cutting-edge technology.",
+    "ears_label": "Ears:",
+    "ears_content": "If necessary, we use advanced microscopy, allowing deep visualization and much safer and more effective cleanings than traditional methods.",
+    "nose_throat_label": "Nose and Throat:",
+    "nose_throat_content": "We use high-definition endoscopes and cameras to explore hard-to-reach areas, allowing us to quickly and minimally invasively detect the source of the problem.",
+    "step3_title": "Treatment Plan:",
+    "step3_content": "After the review, we will determine if you need additional studies. The goal is not just to prescribe, but to find the solution that best fits you, whether it's lifestyle changes, medication, or in specific cases, surgery.",
+    "will_you_need_treatment_title": "Will you be prescribed medication, tests, or surgery?",
+    "will_you_need_treatment_intro": "Not all cases require the same treatment. During the consultation, we evaluate your symptoms, medical history, and examination findings to determine the best path forward. Depending on the diagnosis, management may include:",
+    "treatment1": "lifestyle changes or general care",
+    "treatment2": "medical treatment",
+    "treatment3": "additional tests",
+    "treatment4": "minimally invasive procedures",
+    "treatment5": "referral to another specialist if necessary",
+    "dont_self_diagnose": "It's important not to jump to a diagnosis without an appropriate evaluation, as some symptoms can be confused with each other or intensified by anxiety and worry.",
+    "consultation_duration_title": "How long does an ENT consultation last?",
+    "consultation_duration_content": "The duration of the consultation or tests may vary depending on each case and the complexity of the problem being evaluated. Some evaluations are quick and others require more detailed analysis, but we always strive to give you the necessary time to resolve your doubts and guide you correctly.",
+    "personalized_care_title": "Personalized and compassionate medical care in Tijuana",
+    "personalized_care_content_1": "With over three decades of experience in ENT, my approach has always been to listen carefully to the patient and offer a humane, precise, and personalized evaluation. Every consultation is designed so you feel validated and accompanied at all times.",
+    "personalized_care_content_2": "Whether you seek general ENT care or an evaluation related to rhinoplasty, the goal is to find the best solution for your case together. Treatment can range from simple recommendations and lifestyle changes to medications or minimally invasive procedures, depending on what you truly need.",
+    "personalized_care_location": "Our office is located just 10 minutes from the border crossing, in a safe and easily accessible area, with various parking options nearby for your convenience.",
+    "personalized_care_access": "Thinking about your experience from the first moment, we have accessible facilities, with access via both stairs and elevator.",
+    "personalized_care_waiting_area": "Additionally, we have prepared a comfortable and pleasant waiting area, with a coffee and juice area, as well as air conditioning, so your visit is as calm and comfortable as possible while you wait to be seen.",
+    "appointment_title": "Schedule your ENT appointment in Tijuana",
+    "appointment_invite": "If you have discomfort in your nose, throat, or ears, we invite you for an evaluation. Schedule your consultation and get all your questions answered with specialized care.",
+    "call_us": "Call us at:"
   }
+
 
 }
