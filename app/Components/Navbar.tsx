@@ -206,7 +206,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5">
+      <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5" aria-label="Navegación principal">
         {/* LOGO - Con animación de desaparición */}
         <motion.div
           initial={{ opacity: 1, y: 0 }}
@@ -220,9 +220,11 @@ const Navbar: React.FC = () => {
           <Link
             href={getRouteByKey("home", currentLang)}
             className="pointer-events-auto"
+            aria-label="Ir a página principal - Dr. Lumbán"
           >
             <img
               src="/logo-secondary.png"
+              alt="Dr. Jaime Lumbán - Otorrinolaringólogo"
               className="h-32 w-auto md:block hidden"
             />
           </Link>
@@ -231,9 +233,10 @@ const Navbar: React.FC = () => {
         {/* BUTTON */}
         <button
           onClick={() => setOpen(true)}
+          aria-label="Abrir menú de navegación"
           className="text-white text-2xl bg-gray-500 px-2 py-2 rounded-full hover:bg-gray-600 transition"
         >
-          <FaBars />
+          <FaBars aria-hidden="true" />
         </button>
       </nav>
 
