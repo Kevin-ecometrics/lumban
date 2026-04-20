@@ -20,7 +20,7 @@ export default function RinoplastiaPage() {
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
                 <div className="w-8 h-px bg-gray-300" />
-                {t("Rinoplastía")}
+                {t("rhinoplasty.hero_title")}
               </div>
 
               <h1 className="text-5xl lg:text-6xl font-light tracking-tight leading-tight">
@@ -37,13 +37,13 @@ export default function RinoplastiaPage() {
                   href={getRouteByKey("contact", currentLang)}
                   className="inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-gray-900 text-white text-sm font-medium tracking-wide hover:bg-gray-800 transition-colors duration-200"
                 >
-                  {t("SOLICITA TU CONSULTA")}
+                  {t("rhinoplasty.cta_button")}
                 </a>
                 <a
                   href={getRouteByKey("profile", currentLang)}
                   className="inline-flex items-center justify-center px-8 py-3.5 rounded-md border border-gray-300 text-sm font-medium tracking-wide hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
                 >
-                  {t("VER PERFIL COMPLETO")}
+                  {t("rhinoplasty.view_full_profile")}
                 </a>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function RinoplastiaPage() {
               <div className="absolute -inset-4 bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl -z-10" />
               <img
                 src="/rinoplastia/Trasforma tu perfil con una rinoplastia en manos de un experto en nariz con mas de 3 decadas de experiencia en Tijuana.webp"
-                alt={t("Rinoplastía")}
+                alt={t("rhinoplasty.hero_title")}
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -200,7 +200,7 @@ export default function RinoplastiaPage() {
               href={getRouteByKey("contact", currentLang)}
               className="inline-flex items-center justify-center px-10 py-4 rounded-md bg-gray-900 text-white font-medium tracking-wide hover:bg-gray-800 transition-colors duration-200"
             >
-              {t("SOLICITA TU CONSULTA")}
+              {t("rhinoplasty.cta_button")}
             </a>
           </div>
         </div>

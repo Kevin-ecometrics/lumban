@@ -33,6 +33,11 @@ const Navbar: React.FC = () => {
 
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
 
+  // Función para ordenar alfabéticamente de Z a A (inverso)
+  const sortReverse = <T extends { title: string }>(items: T[]): T[] => {
+    return [...items].sort((a, b) => b.title.localeCompare(a.title, currentLang === "en" ? "en" : "es"));
+  };
+
   // Detectar cuando se acerca al final de la página
   useEffect(() => {
     const handleScroll = () => {
@@ -55,14 +60,14 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems: LinkItem[] = [
+  const menuItems: LinkItem[] = sortReverse([
     {
       title: t("navbar.home"),
       href: getRouteByKey("home", currentLang),
     },
     {
       title: t("navbar.about"),
-      subItems: [
+      subItems: sortReverse([
         {
           title: t("navbar.profile"),
           href: getRouteByKey("profile", currentLang),
@@ -75,7 +80,7 @@ const Navbar: React.FC = () => {
           title: t("navbar.facilities"),
           href: getRouteByKey("facilities", currentLang),
         },
-      ],
+      ]),
     },
     {
       title: t("navbar.conditions"),
@@ -83,28 +88,24 @@ const Navbar: React.FC = () => {
         {
           title: t("navbar.ear"),
           href: getRouteByKey("ear", currentLang),
-          subItems: [
-            {
-              title: t("navbar.vertigo"),
-              href: getRouteByKey("vertigo-dizziness", currentLang),
-            },
+          subItems: sortReverse([
             {
               title: t("navbar.hearing_loss"),
               href: getRouteByKey("hearing-loss", currentLang),
             },
-          ],
+            {
+              title: t("navbar.vertigo"),
+              href: getRouteByKey("vertigo-dizziness", currentLang),
+            },
+          ]),
         },
         {
           title: t("navbar.nose"),
           href: getRouteByKey("nose", currentLang),
-          subItems: [
+          subItems: sortReverse([
             {
-              title: t("navbar.septoplasty"),
-              href: getRouteByKey("septoplasty", currentLang),
-            },
-            {
-              title: t("navbar.sinusitis"),
-              href: getRouteByKey("sinusitis", currentLang),
+              title: t("navbar.allergies"),
+              href: getRouteByKey("allergies", currentLang),
             },
             {
               title: t("navbar.nasal_congestion"),
@@ -115,49 +116,53 @@ const Navbar: React.FC = () => {
               href: getRouteByKey("nasal-obstruction", currentLang),
             },
             {
-              title: t("navbar.allergies"),
-              href: getRouteByKey("allergies", currentLang),
+              title: t("navbar.septoplasty"),
+              href: getRouteByKey("septoplasty", currentLang),
             },
-          ],
+            {
+              title: t("navbar.sinusitis"),
+              href: getRouteByKey("sinusitis", currentLang),
+            },
+          ]),
+        },
+        {
+          title: t("navbar.pediatric_ent"),
+          href: getRouteByKey("pediatric-ent", currentLang),
         },
         {
           title: t("navbar.throat"),
           href: getRouteByKey("throat", currentLang),
-          subItems: [
+          subItems: sortReverse([
             {
-              title: t("navbar.throat_problems"),
-              href: getRouteByKey("throat-problems", currentLang),
+              title: t("navbar.sleep_apnea"),
+              href: getRouteByKey("sleep-apnea", currentLang),
             },
             {
               title: t("navbar.snoring"),
               href: getRouteByKey("snoring", currentLang),
             },
             {
-              title: t("navbar.sleep_apnea"),
-              href: getRouteByKey("sleep-apnea", currentLang),
+              title: t("navbar.throat_problems"),
+              href: getRouteByKey("throat-problems", currentLang),
             },
             {
               title: t("navbar.voice_disorders"),
               href: getRouteByKey("voice-disorders", currentLang),
             },
-          ],
-        },
-        {
-          title: t("navbar.pediatric_ent"),
-          href: getRouteByKey("pediatric-ent", currentLang),
+          ]),
         },
       ],
     },
     {
       title: t("navbar.procedures"),
-      subItems: [
-        {
-          title: t("navbar.endoscopic_surgery"),
-          href: getRouteByKey("endoscopic-surgery", currentLang),
-        },
+      subItems: sortReverse([
         {
           title: t("navbar.anti_snoring_surgery"),
           href: getRouteByKey("anti-snoring-surgery", currentLang),
+        },
+        {
+          title: t("navbar.endoscopic_surgery"),
+          href: getRouteByKey("endoscopic-surgery", currentLang),
         },
         {
           title: t("navbar.microscopic_surgery"),
@@ -167,7 +172,7 @@ const Navbar: React.FC = () => {
           title: t("navbar.sinusitis_surgery"),
           href: getRouteByKey("sinusitis-surgery", currentLang),
         },
-      ],
+      ]),
     },
     {
       title: t("navbar.blog"),
@@ -193,7 +198,7 @@ const Navbar: React.FC = () => {
       title: t("navbar.testimonials"),
       href: getRouteByKey("testimonials", currentLang),
     },
-  ];
+  ]);
 
   const handleLanguageChange = (lang: Lang) => {
     i18n.changeLanguage(lang);
@@ -267,9 +272,34 @@ const Navbar: React.FC = () => {
                   MENU
                 </span>
 
+                {/* LANGUAGE TOGGLE */}
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={() => handleLanguageChange("es")}
+                    className={`px-2 py-1 rounded-full text-xs font-medium transition-all ${
+                      currentLang === "es"
+                        ? "bg-gray-800 text-white"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    ES
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange("en")}
+                    className={`px-2 py-1 rounded-full text-xs font-medium transition-all ${
+                      currentLang === "en"
+                        ? "bg-gray-800 text-white"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    EN
+                  </button>
+                </div>
+
                 <button
                   onClick={() => setOpen(false)}
                   className="text-xl text-gray-700 hover:rotate-90 transition"
+                  aria-label="Cerrar menú"
                 >
                   ✕
                 </button>
@@ -379,11 +409,8 @@ const Navbar: React.FC = () => {
                 ))}
               </div>
 
-              {/* LANG */}
-              <div className="flex justify-center gap-4 mt-6">
-                <button onClick={() => handleLanguageChange("es")}>ES</button>
-                <button onClick={() => handleLanguageChange("en")}>EN</button>
-              </div>
+              {/* FOOTER - Optional spacing */}
+              <div className="mt-4" />
             </motion.div>
           </>
         )}

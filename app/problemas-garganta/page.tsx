@@ -107,7 +107,7 @@ export default function PadecimientosGargantaPage() {
             href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            {t("SOLICITA TU CONSULTA")}
+            {t("throat.cta_button")}
           </a>
         </div>
       </div>

@@ -813,6 +813,10 @@
     "allergies_condition": "Alergias"
 },
   "snoring": {
+    "hero_title": "Ronquidos",
+    "hero_subtitle": "Causas, riesgos y tratamientos",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Ronquidos: Causas, Riesgos y Tratamientos",
     "seo_intro": "El ronquido es un sonido producido por la vibración de los tejidos de la nariz y la garganta durante la respiración mientras dormimos. Al respirar, el aire fluye de manera constante hacia dentro y fuera de los pulmones. Sin embargo, cuando te adormeces y pasas de un sueño ligero a uno profundo, los músculos del paladar, la lengua y la garganta se relajan lo suficiente como para bloquear parcialmente las vías respiratorias y comenzar a vibrar. Cuanto más se estrechan las vías respiratorias, mayor fuerza genera el flujo de aire. Esto incrementa la vibración de los tejidos y produce un ronquido más intenso.",
     
@@ -859,6 +863,10 @@
   },
 
   "throat": {
+    "hero_title": "Enfermedades de la Garganta",
+    "hero_subtitle": "Causas, síntomas y tratamientos especializados",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Enfermedades de la garganta: Guía sobre causas, síntomas y tratamientos",
     "seo_intro": "La garganta (faringe) es un conducto muscular en forma de tubo que conecta las cavidades nasales y bucales con el esófago y la laringe. Su función es vital y dual: permite el paso de los alimentos hacia el sistema digestivo y conduce el aire hacia la tráquea para la respiración. Al ser el punto de entrada común para el aire y los alimentos, la garganta es particularmente vulnerable a infecciones y otras afecciones. Las causas más frecuentes de malestar incluyen infecciones virales o bacterianas, alergias y el reflujo gastroesofágico, que ocurre cuando los ácidos del estómago regresan hacia el esófago, irritando la zona.",
     
@@ -896,6 +904,10 @@
     "doctor_cta_button_suffix": "años de experiencia"
   },
   "sleep-apnea": {
+    "hero_title": "Apnea del Sueño",
+    "hero_subtitle": "Tratamiento especializado para respirar mejor",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Apnea del sueño",
     "seo_intro": "La apnea del sueño es un trastorno grave en el cual la respiración se interrumpe de forma repetida, logrando perturbar el sueño; esta interrupción suele provocar un descenso en los niveles de oxígeno y un aumento de los niveles de dióxido de carbono en la sangre.",
     
@@ -961,6 +973,10 @@
   },
   
   "voice-disorders": {
+    "hero_title": "Trastornos de la Voz",
+    "hero_subtitle": "Diagnóstico y tratamiento especializado",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Trastornos de la Voz: Diagnóstico y Tratamiento Especializado",
     "seo_intro": "La voz es una herramienta fundamental para nuestra comunicación y expresión personal. Se produce cuando el aire proveniente de los pulmones pasa a través de la laringe, haciendo que las cuerdas vocales vibren para generar sonido. Sin embargo, cuando este delicado mecanismo se altera, surgen los trastornos de la voz. El Dr. Jaime Lumban se especializa en la recuperación de la salud vocal, utilizando tecnología de vanguardia para tratar diversas afecciones.",
     
@@ -1038,6 +1054,10 @@
     "specialist_cta_text": "La voz de cada persona es tan única como su huella, por lo que cualquier cambio persistente debe evaluarse oportunamente. El Dr. Jaime Lumbán, especialista en otorrinolaringología con más de tres décadas de experiencia, ofrece diagnóstico preciso y tratamiento especializado para trastornos de la voz, garganta y laringe, utilizando técnicas modernas y mínimamente invasivas. Si presentas ronquera persistente, dificultad para hablar o cambios en tu voz, agenda una consulta de valoración para identificar la causa y recibir el tratamiento adecuado"
   },
   "pediatric-ent": {
+    "hero_title": "Otorrinopediatría",
+    "hero_subtitle": "Cuidado especializado para niños",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Otorrinopediatría: Cuidado Especializado para Oído, Nariz y Garganta",
     "seo_intro": "Los niños y adolescentes no son simplemente \"adultos pequeños\". Sus cuerpos están en constante crecimiento y su sistema inmunológico se encuentra en pleno desarrollo. Por ello, ante enfermedades de oído, nariz y garganta, requieren un diagnóstico y tratamiento diferencial. En la consulta del Dr. Lumbán, entendemos que la dosificación de medicamentos, la interpretación de señales no verbales en los más pequeños y la observación de padecimientos agudos o crónicos son pilares fundamentales. Trabajamos de la mano con la familia y su pediatra de cabecera para asegurar un crecimiento sano.",
     
@@ -1112,6 +1132,8 @@
   "endoscopic-surgery": {
     "hero_title": "Cirugía Endoscópica para Sinusitis",
     "hero_subtitle": "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Cirugía Endoscópica para Sinusitis",
     "what_is_sinusitis_title": "¿Qué es la sinusitis?",
     "what_is_sinusitis_text": "La sinusitis es la inflamación de la mucosa que reviste el interior de la nariz y los senos paranasales. Los senos paranasales son cavidades óseas localizadas en el cráneo, alrededor de los ojos y la nariz, cuya función principal es la producción de mucosidad para limpiar y humectar el aire inspirado. Cuando estas mucosas se inflaman, se produce un edema (hinchazón) y un aumento en la producción de moco. Esto obstruye el drenaje natural de los senos hacia la nariz y la garganta. Al quedar retenido, el moco facilita la proliferación de bacterias y virus, lo que deriva en una infección. Factores como las alergias y los pólipos nasales también pueden obstruir estas vías y cronificar el proceso.",
@@ -1168,6 +1190,8 @@
   "anti-snoring-surgery": {
     "hero_title": "Cirugía Antirronquido",
     "hero_subtitle": "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Cirugía Antirronquidos con el Dr. Jaime Lumbán: Experto en Trastornos del Sueño en Tijuana",
     
     "snoring_surgical_title": "Ronquido y abordaje quirúrgico",
@@ -1216,6 +1240,8 @@
   "microscopic-surgery": {
     "hero_title": "Cirugía Microscópica de Laringe",
     "hero_subtitle": "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Cirugía Microscópica de Laringe: Tratamiento para Lesiones de las Cuerdas Vocales",
     "seo_intro": "Los cambios en la voz pueden ser el primer síntoma de algo más serio, como debilidad vocal, tumores en las cuerdas vocales o incluso cáncer de garganta. Si presenta ronquera, molestias o cambios en la voz que duran más de tres semanas, se recomienda acudir a una evaluación con un otorrinolaringólogo, quien puede examinar la laringe y determinar la causa del problema. Las cuerdas vocales se encuentran en la laringe y la voz es el resultado de la vibración de estas estructuras. Cualquier irregularidad o masa en las cuerdas vocales puede alterar su vibración y, en consecuencia, provocar cambios en la voz.",
     
@@ -1284,6 +1310,10 @@
   },
   
   "rhinoplasty": {
+    "hero_title": "Rinoplastía",
+    "hero_subtitle": "Transforma tu nariz con el experto en cirugía nasal",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Cirugía Estética de Nariz: Equilibrio Perfecto entre Estética y Función Nasal",
     "seo_intro_prefix": "Con más de ",
     "seo_intro_suffix": "años de trayectoria, el Dr. Jaime Lumbán se ha dedicado a perfeccionar la cirugía estética y funcional de la nariz. Aunque pueda parecer una estructura sencilla, la anatomía nasal es sumamente compleja y exige una precisión absoluta. Factores como la resistencia del cartílago y el tipo de piel varían en cada paciente; por ello, lo que funciona para una persona no siempre es lo ideal para otra. El enfoque de un otorrinolaringólogo es buscar resultados que armonicen con el rostro y realcen la belleza natural, manteniendo siempre la función respiratoria como el pilar fundamental de cada intervención.",
@@ -1380,6 +1410,8 @@
   "sinusitis-surgery": {
     "hero_title": "Cirugía de Sinusitis",
     "hero_subtitle": "Respiración libre y alivio duradero",
+    "cta_button": "SOLICITA TU CONSULTA",
+    "view_full_profile": "VER PERFIL COMPLETO",
     "hero_aria_label": "Cirugía de sinusitis",
     
     "seo_h1": "Cirugía de Sinusitis: Tratamiento Definitivo para la Sinusitis Crónica",

@@ -298,7 +298,7 @@ export default function CirugiaSinusitisPage() {
               href={getRouteByKey("contact", currentLang)}
               className="inline-flex items-center justify-center px-10 py-4 rounded-md bg-gray-900 text-white font-medium tracking-wide hover:bg-gray-800 transition-colors duration-200"
             >
-              {t("SOLICITA TU CONSULTA")}
+              {t("sinusitis-surgery.cta_button")}
             </a>
           </div>
         </div>

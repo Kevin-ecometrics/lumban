@@ -97,13 +97,13 @@ export default function OtorrinoPediatria() {
                 href={getRouteByKey("contact", currentLang)}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition"
               >
-                {t("SOLICITA TU CONSULTA")}
+                {t("pediatric-ent.cta_button")}
               </a>
               <a
                 href={getRouteByKey("profile", currentLang)}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition"
               >
-                {t("VER PERFIL COMPLETO")}
+                {t("pediatric-ent.view_full_profile")}
               </a>
             </div>
           </div>
@@ -277,7 +277,7 @@ export default function OtorrinoPediatria() {
             href={getRouteByKey("contact", currentLang)}
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
           >
-            {t("SOLICITA TU CONSULTA")}
+            {t("pediatric-ent.cta_button")}
           </a>
         </div>
       </div>
