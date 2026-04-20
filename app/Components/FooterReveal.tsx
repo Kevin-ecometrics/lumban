@@ -136,28 +136,14 @@ export default function FooterBase() {
 
   const MENU_ITEMS = [
     { label: t("footer.home"), href: getRouteByKey("home", currentLang) },
-    { label: t("footer.profile"), href: getRouteByKey("profile", currentLang) },
-    {
-      label: t("footer.certifications"),
-      href: getRouteByKey("certifications", currentLang),
-    },
-    // {
-    //   label: t("Instalaciones"),
-    //   href: getRouteByKey("facilities", currentLang),
-    // },
+    { label: t("navbar.about"), href: getRouteByKey("profile", currentLang) },
+    { label: t("navbar.procedures"), href: getRouteByKey("endoscopic-surgery", currentLang) },
+    { label: t("navbar.conditions"), href: getRouteByKey("nose", currentLang) },
+  ] as const;
+
+  const CONTACT_ITEMS = [
+    { label: "Email", href: "mailto:contacto@drlumban.com" },
     { label: t("footer.contact"), href: getRouteByKey("contact", currentLang) },
-    // {
-    //   label: t("Rinoplastia"),
-    //   href: getRouteByKey("aesthetic-nose", currentLang),
-    // },
-    // {
-    //   label: t("Apnea del Sueño"),
-    //   href: getRouteByKey("sleep-apnea", currentLang),
-    // },
-    // {
-    //   label: t("Otorrinopediatría"),
-    //   href: getRouteByKey("pediatric-ent", currentLang),
-    // },
   ] as const;
 
   const { scrollYProgress } = useScroll({
@@ -193,8 +179,8 @@ export default function FooterBase() {
             <img src="/logo.png" alt="Dr Lumban" className="h-48" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="col-span-2 md:col-span-1">
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
                 {t("footer.menu")}
               </h3>
@@ -213,7 +199,7 @@ export default function FooterBase() {
               </ul>
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
                 {t("footer.socials")}
               </h3>
@@ -228,19 +214,20 @@ export default function FooterBase() {
               </ul>
             </div>
 
-            <div>
+            <div className="col-span-2">
               <h3 className="text-gray-500 text-xs uppercase mb-3 font-semibold">
                 {t("footer.contact")}
               </h3>
-
-              <div className="space-y-2">
-                <a
-                  href="mailto:contacto@drlumban.com"
-                  className="block text-base md:text-lg text-black hover:text-azul"
-                >
-                  contacto@drlumban.com
-                </a>
-              </div>
+              <ul className="space-y-2">
+                {CONTACT_ITEMS.map((item) => (
+                  <NavItem
+                    key={item.href}
+                    label={item.label}
+                    href={item.href}
+                    isExternal={item.href.startsWith("mailto:")}
+                  />
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -249,7 +236,7 @@ export default function FooterBase() {
 
         {/* Logo animado (INTOCABLE) */}
         <div className="w-full py-16 flex justify-center">
-          <div className="text-6xl md:text-[200px] font-black tracking-tighter flex">
+          <div className="text-7xl md:text-[250px] font-black tracking-tighter flex">
             {letters.map((letter, index) => (
               <AnimatedLetter
                 key={`${letter}-${index}`}

@@ -186,7 +186,7 @@ export default function OurWaveHero() {
 
       {/* ---------------- TEXT LAYER ---------------- */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
-        <h1 className="mt-12 capitalize text-azul text-6xl md:text-8xl tracking-tight font-black">
+        <h1 className="mt-12 capitalize text-azul text-7xl md:text-9xl tracking-tight font-black">
           Dr. Lumbán
         </h1>
       </div>
