@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import FooterBase from "./Components/FooterReveal";
 import Navbar from "./Components/Navbar";
 import Providers from "./Providers";
+import FacebookPixel from "./Components/FacebookPixel";
 
 export const metadata: Metadata = {
   title: "Dr. Jaime Lumbán — Otorrinolaringólogo en Tijuana",
@@ -75,15 +77,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <GoogleTagManager gtmId="GTM-KXLQJ545" />
       <body>
         <Providers>
           <Navbar />
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
           <FooterBase />
         </Providers>
+        <FacebookPixel />
       </body>
+      <GoogleAnalytics gaId="G-7ZPJE5QPS6" />
     </html>
   );
 }

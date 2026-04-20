@@ -31,7 +31,7 @@ export default function CirugiaSinusitisPage() {
           <div className="space-y-8 max-w-4xl">
             <div className="inline-flex items-center gap-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
               <div className="w-8 h-px bg-gray-300" />
-              {t("Cirugía de Sinusitis")}
+              {t("sinusitis-surgery.hero_title")}
             </div>
 
             <h1 className="text-5xl lg:text-6xl font-light tracking-tight leading-tight">

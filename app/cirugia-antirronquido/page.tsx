@@ -13,12 +13,10 @@ export default function CirugiaAntirronquidoPage() {
   return (
     <main className="bg-white text-gray-900">
       <Hero
-        title={t("Cirugía Antirronquido")}
-        subtitle={t(
-          "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
-        )}
+        title={t("anti-snoring-surgery.hero_title")}
+        subtitle={t("anti-snoring-surgery.hero_subtitle")}
         src="/cirugia antirronquidos/Recupera tu descanso de forma permanente con una cirugia antirronquidos con el Dr. Lumban.webp"
-        alt={t("Cirugía Antirronquido")}
+        alt={t("anti-snoring-surgery.hero_title")}
       />
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">

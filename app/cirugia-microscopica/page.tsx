@@ -12,13 +12,11 @@ export default function CirugiaMicroscopicaLaringePage() {
 
   return (
     <main className="bg-white text-gray-900">
-      <Hero
-        title={t("Cirugía Microscópica de Laringe")}
-        subtitle={t(
-          "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
-        )}
-        src="/cirugia microscopica/si presentas ronquera, molestias o cambios en la voz acude con el dr Lumban otorrinolaringologo de confianza.webp"
-        alt={t("Cirugía Microscópica de Laringe")}
+<Hero
+        title={t("microscopic-surgery.hero_title")}
+        subtitle={t("microscopic-surgery.hero_subtitle")}
+        src="/cirugia microscopica/Cirugia microscopica de laringe para lesiones de cuerdas vocales con el Dr. Jaime Lumban en Tijuana.webp"
+        alt={t("microscopic-surgery.hero_title")}
       />
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">

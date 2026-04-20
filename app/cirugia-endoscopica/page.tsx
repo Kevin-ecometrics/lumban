@@ -13,12 +13,10 @@ export default function CirugiaEndoscopicaSinusitisPage() {
   return (
     <main className="bg-white text-gray-900">
       <Hero
-        title={t("Cirugía endoscópica para sinusitis")}
-        subtitle={t(
-          "Conozca las diferentes cirugías que el Dr. Lumbán puede realizar",
-        )}
+        title={t("endoscopic-surgery.hero_title")}
+        subtitle={t("endoscopic-surgery.hero_subtitle")}
         src="/endoscopica/La cirugia endoscopica de sinusitis en Tijuana es la mejor opcion de tratamiento con el Dr Lumban.webp"
-        alt={t("Cirugía endoscópica para sinusitis")}
+        alt={t("endoscopic-surgery.hero_title")}
       />
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">

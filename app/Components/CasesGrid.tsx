@@ -33,14 +33,18 @@ export default function CasesGrid() {
     {
       title: t("home.cases.case2"),
       routeKey: "profile",
-      image: "/dr lumban about.webm",
-      type: "video",
+      image: "/test2.png",
+      type: "image",
+      objectFit: "cover",
+      objectPosition: "center",
     },
     {
       title: t("home.cases.case3"),
       routeKey: "testimonials",
-      image: "/testimonial.webm",
-      type: "video",
+      image: "/test.png",
+      type: "image",
+      objectFit: "cover",
+      objectPosition: "center",
     },
     {
       title: t("home.cases.case4"),
