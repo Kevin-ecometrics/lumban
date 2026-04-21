@@ -12,13 +12,20 @@ const REMOVE_DELAY = 5000;
 const MAX_IMAGES = 12;
 
 const IMAGES = [
+  "/paciente 1.1.webp",
   "/lumban nariz.webp",
   "/Dr. jaime lumban en su consultorio.webp",
-  "/lumban paciente 3.webp",
+  "/paciente 3.1.webp",
+
+  // "/lumban paciente 3.webp",
   "/lumban oido.webp",
-  "/lumban paciente.webp",
+  "/paciente 4.1.webp",
+
+  // "/lumban paciente.webp",
   "/lumban cara.webp",
-  "/lumban paciente 2.webp",
+  "/paciente 2.1.webp",
+
+  // "/lumban paciente 2.webp",
 ];
 
 interface TrailImage {
