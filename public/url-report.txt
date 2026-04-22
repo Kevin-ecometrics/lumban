@@ -1,14 +1,12 @@
 ============================================================
 REPORTE DE URLs - DR LUMBÁN
 ============================================================
-Fecha de generación: 2026-04-20
-Total de URLs: 47
+Fecha de generación: 2026-04-22
+Total de URLs: 49
 
-URLs por categoría:
-
-Alta prioridad (>=0.9): 11 URLs
-Media prioridad (0.7-0.9): 36 URLs
-Baja prioridad (<0.7): 0 URLs
+Alta prioridad (>=0.9): 13 URLs
+Media prioridad (0.7-0.9): 35 URLs
+Baja prioridad (<0.7): 1 URLs
 
 ------------------------------------------------------------
 LISTA COMPLETA DE URLs:
@@ -93,17 +91,21 @@ LISTA COMPLETA DE URLs:
    Prioridad: 0.8 | Frecuencia: monthly
 40. /sinusitis
    Prioridad: 0.7 | Frecuencia: monthly
-41. /sinusitis-en
+41. /cirugia-sinusitis
+   Prioridad: 0.9 | Frecuencia: monthly
+42. /sinusitis-surgery
+   Prioridad: 0.9 | Frecuencia: monthly
+43. /garganta
    Prioridad: 0.7 | Frecuencia: monthly
-42. /garganta
+44. /throat
    Prioridad: 0.7 | Frecuencia: monthly
-43. /throat
+45. /oido
    Prioridad: 0.7 | Frecuencia: monthly
-44. /oido
+46. /ear
    Prioridad: 0.7 | Frecuencia: monthly
-45. /ear
+47. /nariz
    Prioridad: 0.7 | Frecuencia: monthly
-46. /nariz
+48. /nose
    Prioridad: 0.7 | Frecuencia: monthly
-47. /nose
-   Prioridad: 0.7 | Frecuencia: monthly
+49. /sitemap
+   Prioridad: 0.6 | Frecuencia: monthly

@@ -7,11 +7,8 @@ Disallow: /*.json$
 Disallow: /*.js$
 Disallow: /*.css$
 
-# Sitemaps
 Sitemap: https://drlumban.com/sitemap.xml
 
-# Crawl delay para no sobrecargar el servidor
 Crawl-delay: 1
 
-# Host
 Host: https://drlumban.com

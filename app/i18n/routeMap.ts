@@ -6,6 +6,7 @@ export type RouteKey =
   | "certifications"
   | "facilities"
   | "contact"
+  | "sitemap"
   | "aesthetic-nose"
   | "septoplasty"
   | "sinusitis"
@@ -37,6 +38,7 @@ export const ROUTE_PAIRS: Array<{ key: RouteKey; es: string; en: string }> = [
   { key: "certifications", es: "/certificaciones", en: "/certifications" },
   { key: "facilities", es: "/instalaciones", en: "/facilities" },
   { key: "contact", es: "/contacto", en: "/contact" },
+  { key: "sitemap", es: "/sitemap", en: "/sitemap" },
   { key: "aesthetic-nose", es: "/cosmetica-nariz", en: "/rhinoplasty" },
   { key: "septoplasty", es: "/septoplastia", en: "/septoplasty" },
   { key: "sinusitis", es: "/sinusitis", en: "/sinusitis" },

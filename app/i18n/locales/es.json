@@ -1675,10 +1675,17 @@
     "personalized_care_waiting_area": "Además, hemos acondicionado un espacio de espera cómodo y agradable, con área de café y jugos, así como aire acondicionado, para que tu visita sea lo más tranquila y confortable posible mientras eres atendido.",
     "appointment_title": "Agenda tu cita de otorrinolaringología en Tijuana",
     "appointment_invite": "Si tienes molestias en nariz, garganta u oídos, te invitamos a una valoración. Agenda tu consulta y aclara todas tus dudas con atención especializada.",
-    "call_us": "Llámanos al:"
+"call_us": "Llámanos al:",
+    "sitemap": {
+        "title": "Mapa del Sitio",
+        "description": "Explora todas las páginas disponibles en el sitio del Dr. Jaime Lumbán.",
+        "main_pages": "Páginas Principales",
+        "surgical_procedures": "Procedimientos Quirúrgicos",
+        "medical_conditions": "Padecimientos",
+        "total_urls": "Total de páginas",
+        "priority": "Prioridad",
+        "frequency": "Frecuencia",
+        "last_updated": "Última actualización"
+    }
   }
-
-
-
-
 }

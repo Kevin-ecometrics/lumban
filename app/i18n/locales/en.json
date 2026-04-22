@@ -31,7 +31,19 @@
     "testimonials": "Testimonials",
     "blog": "Blog",
     "blog1": "A Complete Guide to Your First Visit with Dr. Lumbán"
-},
+  },
+  "sitemap": {
+    "title": "Sitemap",
+    "description": "Explore all available pages on Dr. Jaime Lumbán's website.",
+    "main_pages": "Main Pages",
+    "surgical_procedures": "Surgical Procedures",
+    "medical_conditions": "Medical Conditions",
+    "total_urls": "Total pages",
+    "priority": "Priority",
+    "frequency": "Frequency",
+    "last_updated": "Last updated"
+  }
+,
 "footer": {
     "home": "Home",
     "profile": "Profile",
