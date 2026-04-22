@@ -389,7 +389,7 @@ export default function ContactPage() {
                   <textarea
                     id="mensaje"
                     name="mensaje"
-                    rows={5}
+                    rows={10}
                     required
                     value={formData.mensaje}
                     onChange={handleChange}
