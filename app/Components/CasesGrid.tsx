@@ -33,7 +33,7 @@ export default function CasesGrid() {
     {
       title: t("home.cases.case2"),
       routeKey: "profile",
-      image: "/test2.png",
+      image: "/test.png",
       type: "image",
       objectFit: "cover",
       objectPosition: "center",
@@ -41,7 +41,7 @@ export default function CasesGrid() {
     {
       title: t("home.cases.case3"),
       routeKey: "testimonials",
-      image: "/test.png",
+      image: "/test2.png",
       type: "image",
       objectFit: "cover",
       objectPosition: "center",

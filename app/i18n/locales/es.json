@@ -1389,6 +1389,7 @@
     "whatsapp_button": "Contactar por WhatsApp",
     "info_address_label": "Dirección",
     "info_phone_label": "Teléfono",
+    "info_phone_note": "* Estos números solo reciben llamadas",
     "info_schedule_label": "Horario de Atención",
     "info_schedule_weekdays": "Lun - Vie: 9:00 AM - 7:30 PM",
     "info_schedule_saturday": "Sáb: 9:00 AM - 3:00 PM",

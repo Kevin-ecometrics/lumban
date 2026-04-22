@@ -155,15 +155,48 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-md font-semibold text-gray-900 mb-0.5">
+                    <p className="text-md font-semibold text-gray-900 mb-2">
                       {t("contact.info_phone_label")}
                     </p>
-                    <a
-                      href="tel:+526646842364"
-                      className="text-md text-azul hover:underline"
-                    >
-                      664 684 2364
-                    </a>
+
+                    <div className="flex flex-col gap-2">
+                      <a
+                        href="tel:+526646842364"
+                        className="group flex items-center gap-2 px-3 py-2 bg-gray-50 hover:bg-azul/5 rounded-lg transition-colors"
+                      >
+                        <span className="text-lg">🇲🇽</span>
+                        <span className="text-md text-azul group-hover:underline">
+                          664 684 2364
+                        </span>
+                        <span className="text-xs text-gray-400">(MX)</span>
+                      </a>
+
+                      <a
+                        href="tel:+526646388135"
+                        className="group flex items-center gap-2 px-3 py-2 bg-gray-50 hover:bg-azul/5 rounded-lg transition-colors"
+                      >
+                        <span className="text-lg">🇲🇽</span>
+                        <span className="text-md text-azul group-hover:underline">
+                          664 638 8135
+                        </span>
+                        <span className="text-xs text-gray-400">(MX)</span>
+                      </a>
+
+                      <a
+                        href="tel:+16197137722"
+                        className="group flex items-center gap-2 px-3 py-2 bg-gray-50 hover:bg-azul/5 rounded-lg transition-colors"
+                      >
+                        <span className="text-lg">🇺🇸</span>
+                        <span className="text-md text-azul group-hover:underline">
+                          619 713 7722
+                        </span>
+                        <span className="text-xs text-gray-400">(US)</span>
+                      </a>
+                    </div>
+
+                    <p className="text-sm text-gray-500 mt-2">
+                      {t("contact.info_phone_note")}
+                    </p>
                   </div>
                 </div>
 
@@ -403,7 +436,7 @@ export default function ContactPage() {
       </div>
 
       <a
-        href="https://wa.me/526646842364"
+        href="https://wa.me/526643683081"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 hover:shadow-green-500/50 z-50"

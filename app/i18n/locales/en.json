@@ -1403,6 +1403,7 @@
     "whatsapp_button": "Contact via WhatsApp",
     "info_address_label": "Address",
     "info_phone_label": "Phone",
+    "info_phone_note": "* These numbers only receive calls",
     "info_schedule_label": "Office Hours",
     "info_schedule_weekdays": "Mon - Fri: 9:00 AM - 7:30 PM",
     "info_schedule_saturday": "Sat: 9:00 AM - 3:00 PM",
