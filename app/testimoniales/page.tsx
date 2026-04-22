@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StickyVideoHero from "@/app/Components/StickyVideoHero";
 import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
 import { getRouteByKey } from "../i18n/routeMap";
 import {
   FaStar,
@@ -25,21 +26,11 @@ import {
 const SINUSITIS_HERO_VIDEO = "/testimonial.webm";
 const SINUSITIS_HERO_POSTER = "/testimoniales/testimonial.webp";
 
-// Resultados de rinoplastias - Imágenes
-const RHINOPLASTY_RESULTS = [
-  {
-    src: "/testimoniales/Resultados de una rinoplastia despues de 3 meses con el dr lumban.webp",
-    alt: "Paciente disfrutando de sus resultados de rinoplastia con el DR.Lumbán  después de 3 meses  ",
-  },
-  {
-    src: "/testimoniales/Resultado de rinoplastia despues de semanas con el mejor otorrino el dr lumban.webp",
-    alt: "Paciente con par de semanas postoperada mostrando resultados de rinoplastia con el Dr. lumbán  ",
-  },
-  {
-    src: "/testimoniales/Recibe la mejor atencion con el mejor otorrino en Tijuana.webp",
-    alt: "Recibe atención especializada con el mejor otorrinolaringólogo en la Ciudad de Tijuana",
-  },
-];
+// Resultados de rinoplastias - 15 pacientes
+const RHINOPLASTY_RESULTS = Array.from({ length: 15 }, (_, i) => ({
+  src: `/rinoplastia/paciente${i + 1}.webp`,
+  label: `Caso ${i + 1}`,
+}));
 
 // Tipo para testimonio
 type Testimonial = {
@@ -414,6 +405,43 @@ export default function TestimonialsPage() {
   );
   const [selectedTestimonial, setSelectedTestimonial] =
     useState<Testimonial | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null,
+  );
+
+  useEffect(() => {
+    if (selectedImageIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedImageIndex]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImageIndex === null) return;
+      if (e.key === "ArrowLeft") {
+        setSelectedImageIndex(
+          selectedImageIndex === 0
+            ? RHINOPLASTY_RESULTS.length - 1
+            : selectedImageIndex - 1,
+        );
+      } else if (e.key === "ArrowRight") {
+        setSelectedImageIndex(
+          selectedImageIndex === RHINOPLASTY_RESULTS.length - 1
+            ? 0
+            : selectedImageIndex + 1,
+        );
+      } else if (e.key === "Escape") {
+        setSelectedImageIndex(null);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImageIndex]);
 
   // Obtener testimonios traducidos
   const getTestimonials = (): Testimonial[] => {
@@ -650,7 +678,7 @@ export default function TestimonialsPage() {
         </div>
 
         {/* SECCIÓN DE RESULTADOS DE RINOPLASTIAS */}
-        {/* <div className="space-y-8">
+        <div className="space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               {t("testimonials.results_title")}
@@ -660,26 +688,36 @@ export default function TestimonialsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {RHINOPLASTY_RESULTS.map((result, index) => (
-              <div
+              <motion.figure
                 key={index}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                className="group cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                onClick={() => setSelectedImageIndex(index)}
               >
-                <img
-                  src="/testimoniales/Cirugia de nariz estetica y funcional para hombres en Tijuana.jpg"
-                  alt={result.alt}
-                  className="w-auto h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                  <span className="text-white text-sm font-medium">
-                    {t("testimonials.view_result")}
-                  </span>
+                <div className="relative overflow-hidden rounded-lg shadow-md">
+                  <img
+                    src={result.src}
+                    alt={result.label}
+                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+                      {t("testimonials.view_result")}
+                    </span>
+                  </div>
                 </div>
-              </div>
+                <figcaption className="mt-2 text-sm text-gray-500 text-center">
+                  {result.label}
+                </figcaption>
+              </motion.figure>
             ))}
           </div>
-        </div> */}
+        </div>
 
         {/* CTA FINAL */}
         <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-blue-50 to-white p-10 text-center space-y-6 shadow-sm">
@@ -697,6 +735,177 @@ export default function TestimonialsPage() {
           </a>
         </div>
       </div>
+
+      {/* MODAL DE GALERÍA */}
+      <AnimatePresence>
+        {selectedImageIndex !== null && (
+          <motion.div
+            key="modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={() => setSelectedImageIndex(null)}
+          >
+            <button
+              onClick={() => setSelectedImageIndex(null)}
+              className="absolute top-4 right-4 z-50 bg-white/20 backdrop-blur-sm text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+              aria-label={t("testimonials.gallery_close")}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <motion.div
+              className="relative max-h-[90vh] max-w-[90vw] flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={RHINOPLASTY_RESULTS[selectedImageIndex].src}
+                  src={RHINOPLASTY_RESULTS[selectedImageIndex].src}
+                  alt={RHINOPLASTY_RESULTS[selectedImageIndex].label}
+                  className="max-w-full max-h-[85vh] rounded-lg shadow-2xl"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                />
+              </AnimatePresence>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+                {RHINOPLASTY_RESULTS[selectedImageIndex].label}
+              </div>
+              {RHINOPLASTY_RESULTS.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex(
+                        selectedImageIndex === 0
+                          ? RHINOPLASTY_RESULTS.length - 1
+                          : selectedImageIndex - 1,
+                      );
+                    }}
+                    className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-sm text-white w-12 h-12 rounded-full items-center justify-center hover:bg-white/30 transition-colors"
+                    aria-label={t("testimonials.gallery_previous")}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-8 w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex(
+                        selectedImageIndex === RHINOPLASTY_RESULTS.length - 1
+                          ? 0
+                          : selectedImageIndex + 1,
+                      );
+                    }}
+                    className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white/20 backdrop-blur-sm text-white w-12 h-12 rounded-full items-center justify-center hover:bg-white/30 transition-colors"
+                    aria-label={t("testimonials.gallery_next")}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-8 w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                </>
+              )}
+              {RHINOPLASTY_RESULTS.length > 1 && (
+                <div className="md:hidden flex items-center justify-between w-full mt-4 px-4">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex(
+                        selectedImageIndex === 0
+                          ? RHINOPLASTY_RESULTS.length - 1
+                          : selectedImageIndex - 1,
+                      );
+                    }}
+                    className="bg-gray-100 text-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                    aria-label={t("testimonials.gallery_previous")}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex(
+                        selectedImageIndex === RHINOPLASTY_RESULTS.length - 1
+                          ? 0
+                          : selectedImageIndex + 1,
+                      );
+                    }}
+                    className="bg-gray-100 text-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                    aria-label={t("testimonials.gallery_next")}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

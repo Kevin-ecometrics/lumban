@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
 import { getRouteByKey } from "../i18n/routeMap";
 import SecondaryImage from "../Components/Image";
 
@@ -10,42 +9,6 @@ export default function RinoplastiaPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
   const experienceYears = new Date().getFullYear() - 1993;
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
-  const patients = Array.from({ length: 15 }, (_, i) => ({
-    src: `/rinoplastia/paciente${i + 1}.webp`,
-    label: `${t("rhinoplasty.gallery_case")} ${i + 1}`,
-  }));
-
-  useEffect(() => {
-    if (selectedIndex !== null) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [selectedIndex]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedIndex === null) return;
-      if (e.key === "ArrowLeft") {
-        setSelectedIndex(
-          selectedIndex === 0 ? patients.length - 1 : selectedIndex - 1,
-        );
-      } else if (e.key === "ArrowRight") {
-        setSelectedIndex(
-          selectedIndex === patients.length - 1 ? 0 : selectedIndex + 1,
-        );
-      } else if (e.key === "Escape") {
-        setSelectedIndex(null);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedIndex, patients.length]);
 
   return (
     <section className="bg-white text-gray-900">
@@ -221,49 +184,7 @@ export default function RinoplastiaPage() {
                 {t("rhinoplasty.ultrasonic_text")}
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* GALERÍA DE CASOS */}
-        <div className="space-y-12">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-light tracking-tight border-b border-gray-200 pb-6">
-              {t("rhinoplasty.gallery_title")}
-            </h2>
-            <p className="text-lg text-gray-600">
-              {t("rhinoplasty.gallery_subtitle")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {patients.map((patient, index) => (
-              <motion.figure
-                key={index}
-                className="group cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                onClick={() => setSelectedIndex(index)}
-              >
-                <div className="relative overflow-hidden rounded-lg shadow-md">
-                  <img
-                    src={patient.src}
-                    alt={patient.label}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
-                      {t("rhinoplasty.gallery_view")}
-                    </span>
-                  </div>
-                </div>
-                <figcaption className="mt-2 text-sm text-gray-500 text-center">
-                  {patient.label}
-                </figcaption>
-              </motion.figure>
-            ))}
-          </div>
+</div>
         </div>
 
         {/* CTA FINAL */}
@@ -284,177 +205,6 @@ export default function RinoplastiaPage() {
           </div>
         </div>
       </div>
-
-      {/* MODAL */}
-      <AnimatePresence>
-        {selectedIndex !== null && (
-          <motion.div
-            key="modal"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
-            onClick={() => setSelectedIndex(null)}
-          >
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="absolute top-4 right-4 z-50 bg-white/20 backdrop-blur-sm text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
-              aria-label={t("rhinoplasty.gallery_close")}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            <motion.div
-              className="relative max-h-[90vh] max-w-[90vw] flex flex-col items-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={patients[selectedIndex].src}
-                  src={patients[selectedIndex].src}
-                  alt={patients[selectedIndex].label}
-                  className="w-auto rounded-lg shadow-2xl"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
-                />
-              </AnimatePresence>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
-                {patients[selectedIndex].label}
-              </div>
-              {patients.length > 1 && (
-                <>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedIndex(
-                        selectedIndex === 0
-                          ? patients.length - 1
-                          : selectedIndex - 1,
-                      );
-                    }}
-                    className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-sm text-white w-12 h-12 rounded-full items-center justify-center hover:bg-white/30 transition-colors"
-                    aria-label={t("rhinoplasty.gallery_previous")}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-8 w-8"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 19l-7-7 7-7"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedIndex(
-                        selectedIndex === patients.length - 1
-                          ? 0
-                          : selectedIndex + 1,
-                      );
-                    }}
-                    className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white/20 backdrop-blur-sm text-white w-12 h-12 rounded-full items-center justify-center hover:bg-white/30 transition-colors"
-                    aria-label={t("rhinoplasty.gallery_next")}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-8 w-8"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
-                </>
-              )}
-              {patients.length > 1 && (
-                <div className="md:hidden flex items-center justify-between w-full mt-4 px-4">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedIndex(
-                        selectedIndex === 0
-                          ? patients.length - 1
-                          : selectedIndex - 1,
-                      );
-                    }}
-                    className="bg-gray-100 text-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
-                    aria-label={t("rhinoplasty.gallery_previous")}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 19l-7-7 7-7"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedIndex(
-                        selectedIndex === patients.length - 1
-                          ? 0
-                          : selectedIndex + 1,
-                      );
-                    }}
-                    className="bg-gray-100 text-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
-                    aria-label={t("rhinoplasty.gallery_next")}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              )}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
