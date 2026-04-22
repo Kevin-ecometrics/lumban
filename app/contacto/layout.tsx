@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: [
     "Contacto Dr. Lumbán",
     "Agendar cita otorrinolaringólogo Tijuana",
-    "Consultorio Río Médica",
+    "Consultorio Dr. Lumbán",
     "Teléfono Dr. Lumbán",
     "Cita rinoplastia Tijuana",
     "Otorrinolaringólogo Tijuana contacto",

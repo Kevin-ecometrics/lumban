@@ -1,62 +1,23 @@
 "use client";
-import { useMemo, useState } from "react";
-import { z } from "zod";
-import axios from "axios";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useTranslation } from "react-i18next";
-
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWhatsapp, FaLock, FaM } from "react-icons/fa6";
 type ContactFormData = {
   nombre: string;
   email: string;
   telefono?: string;
-  especialidad: "nariz" | "oido" | "garganta" | "general";
-  conocePadecimiento?:
-    | "no"
-    | "sinusitis"
-    | "ronquidos"
-    | "apnea del sueno"
-    | "transtornos de la voz"
-    | "congestion nasal"
-    | "veertigo y mareo"
-    | "perdida de audicion"
-    | "rinoplastia";
   mensaje: string;
 };
 
 export default function ContactPage() {
-  const { t, i18n } = useTranslation();
-
-  const contactSchema = useMemo(
-    () =>
-      z.object({
-        nombre: z.string().min(1, t("contact.error_name_required")),
-        email: z.string().email(t("contact.error_email_invalid")),
-        telefono: z.string().optional(),
-        especialidad: z.enum(["nariz", "oido", "garganta", "general"]),
-        conocePadecimiento: z
-          .enum([
-            "no",
-            "sinusitis",
-            "ronquidos",
-            "apnea del sueno",
-            "transtornos de la voz",
-            "congestion nasal",
-            "veertigo y mareo",
-            "perdida de audicion",
-            "rinoplastia",
-          ])
-          .optional(),
-        mensaje: z.string().min(1, t("contact.error_message_required")),
-      }),
-    [i18n.language, t],
-  );
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState<ContactFormData>({
     nombre: "",
     email: "",
     telefono: "",
-    especialidad: "" as ContactFormData["especialidad"],
-    conocePadecimiento: "" as ContactFormData["conocePadecimiento"],
     mensaje: "",
   });
 
@@ -66,9 +27,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -84,7 +43,7 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrors({});
@@ -105,11 +64,6 @@ export default function ContactPage() {
       hasError = true;
     }
 
-    if (!formData.especialidad) {
-      newErrors.especialidad = t("contact.error_specialty_required");
-      hasError = true;
-    }
-
     if (!formData.mensaje.trim()) {
       newErrors.mensaje = t("contact.error_message_required");
       hasError = true;
@@ -123,25 +77,16 @@ export default function ContactPage() {
     }
 
     try {
-      const dataForValidation = {
-        nombre: formData.nombre,
-        email: formData.email,
-        telefono: formData.telefono || undefined,
-        especialidad: formData.especialidad as
-          | "nariz"
-          | "oido"
-          | "garganta"
-          | "general",
-        conocePadecimiento: formData.conocePadecimiento || undefined,
-        mensaje: formData.mensaje,
-      };
-
-      const validatedData = contactSchema.parse(dataForValidation);
-
-      await axios.post("https://drlumban.com/api/contact", validatedData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
+      await fetch("https://drlumban.com/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          email: formData.email,
+          telefono: formData.telefono || undefined,
+          especialidad: "general",
+          mensaje: formData.mensaje,
+        }),
       });
 
       toast.success(t("contact.success_message"));
@@ -150,33 +95,21 @@ export default function ContactPage() {
         nombre: "",
         email: "",
         telefono: "",
-        especialidad: "" as ContactFormData["especialidad"],
-        conocePadecimiento: "" as ContactFormData["conocePadecimiento"],
         mensaje: "",
       });
 
       setErrors({});
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        console.error("Zod validation error:", error);
-        toast.error(t("contact.error_validation"));
-      } else if (axios.isAxiosError(error)) {
-        console.error("Axios error:", error);
-        toast.error(error.response?.data?.message || t("contact.error_send"));
-      } else {
-        console.error("Unexpected error:", error);
-        toast.error(t("contact.error_unexpected"));
-      }
+    } catch {
+      toast.error(t("contact.error_send"));
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             {t("contact.title")}
           </h1>
@@ -185,115 +118,219 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid lg:grid-cols-5 gap-8 mb-12">
-          {/* Left Column - Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Map Card */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <div className="h-96 md:h-[610px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.8822268706056!2d-117.02573584883764!3d32.53185422267431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d948519ab1c2d5%3A0x6c47ea1f6d5a92ab!2sOtorrinolaringologo%20Dr.%20Lumban!5e0!3m2!1ses-419!2smx!4v1762983205886!5m2!1ses-419!2smx"
-                  width="100%"
-                  height="100%"
-                  className="border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  {t("contact.map_title")}
-                </h3>
-                <p className="text-sm text-gray-600 mb-2">
-                  {t("contact.map_address")}
-                  <br />
-                  {t("contact.map_city")}
-                </p>
-                <div className="flex items-center gap-2">
-                  <div className="flex text-yellow-400 text-sm">
-                    ★★★★<span className="text-gray-300">★</span>
+        <div className="grid lg:grid-cols-3 gap-8">
+          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="h-64">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d567.2420416371925!2d-117.02496789895783!3d32.53131455821253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d948519ab1c2d5%3A0x6c47ea1f6d5a92ab!2sOtorrinolaringologo%20Dr.%20Lumban!5e0!3m2!1ses!2smx!4v1776874884979!5m2!1ses!2smx"
+                width="100%"
+                height="100%"
+                className="border-0"
+                allowFullScreen
+                loading="eager"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación Dr. Jaime Lumbán"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {t("contact.map_title")}
+              </h3>
+
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-9 h-9 bg-azul/10 rounded-lg flex items-center justify-center">
+                    <svg
+                      className="w-4 h-4 text-azul"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
                   </div>
-                  <span className="text-xs text-gray-500">
-                    {t("contact.map_rating")}
-                  </span>
+                  <div>
+                    <p className="text-md font-semibold text-gray-900 mb-0.5">
+                      {t("contact.info_phone_label")}
+                    </p>
+                    <a
+                      href="tel:+526646842364"
+                      className="text-md text-azul hover:underline"
+                    >
+                      664 684 2364
+                    </a>
+                  </div>
                 </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-9 h-9 bg-azul/10 rounded-lg flex items-center justify-center">
+                    <svg
+                      className="w-4 h-4 text-azul"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-md font-semibold text-gray-900 mb-0.5">
+                      {t("contact.info_schedule_label")}
+                    </p>
+                    <p className="text-md text-gray-600">
+                      {t("contact.info_schedule_weekdays")}
+                    </p>
+                    <p className="text-md text-gray-600">
+                      {t("contact.info_schedule_saturday")}
+                    </p>
+                    <p className="text-md text-gray-400">
+                      {t("contact.info_schedule_sunday")}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-9 h-9 bg-azul/10 rounded-lg flex items-center justify-center">
+                    <svg
+                      className="w-4 h-4 text-azul"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-md font-semibold text-gray-900 mb-0.5">
+                      Email
+                    </p>
+                    <a
+                      href="mailto:contacto@drlumban.com"
+                      className="text-md text-azul hover:underline"
+                    >
+                      contacto@drlumban.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-9 h-9 bg-azul/10 rounded-lg flex items-center justify-center">
+                    <svg
+                      className="w-4 h-4 text-azul"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-md font-semibold text-gray-900 mb-0.5">
+                      {t("contact.info_address_label")}
+                    </p>
+                    <p className="text-md text-gray-600">
+                      Leona Vicario 1451, Zona Urbana Rio
+                    </p>
+                    <p className="text-md text-gray-600">22010 Tijuana, B.C.</p>
+                  </div>
+                </div>
+                <a
+                  href="https://www.google.com/maps/dir//Otorrinolaringologo+Dr.+Lumban,+Leona+Vicario+1451,+Zona+Urbana+Rio+Tijuana,+22010+Tijuana,+B.C./@32.5313301,-117.0255576,20z/data=!3m1!5s0x80d94855df4f99ab:0x77da01b122ffdd27!4m17!1m7!3m6!1s0x80d948519ab1c2d5:0x6c47ea1f6d5a92ab!2sOtorrinolaringologo+Dr.+Lumban!8m2!3d32.5314167!4d-117.0253995!16s%2Fg%2F1tgwsk28!4m8!1m0!1m5!1m1!1s0x80d948519ab1c2d5:0x6c47ea1f6d5a92ab!2m2!1d-117.0253995!2d32.5314167!3e0?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-azul text-white py-2.5 px-4 rounded-xl transition-colors hover:bg-azul/90 text-sm font-medium mt-5"
+                >
+                  <FaMapMarkerAlt className="w-4 h-4" />
+                  {t("contact.get_directions")}
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Form */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                {t("contact.form_title")}
-              </h2>
-              <p className="text-gray-600 mb-8">{t("contact.form_subtitle")}</p>
+          <div className="lg:col-span-2 bg-white rounded-3xl shadow-xl border border-gray-100 p-6 lg:p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              {t("contact.form_title")}
+            </h2>
+            <p className="text-gray-600 mb-5">{t("contact.form_subtitle")}</p>
 
-              <div className="space-y-6">
-                {/* Name and Email */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="nombre"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                      {t("contact.label_name")}{" "}
-                      <span className="text-azul">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="nombre"
-                      name="nombre"
-                      required
-                      value={formData.nombre}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent ${
-                        errors.nombre ? "border-azul" : "border-gray-300"
-                      }`}
-                      placeholder={t("contact.placeholder_name")}
-                    />
-                    {errors.nombre && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.nombre}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                      {t("contact.label_email")}{" "}
-                      <span className="text-azul">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent ${
-                        errors.email ? "border-azul" : "border-gray-300"
-                      }`}
-                      placeholder={t("contact.placeholder_email")}
-                    />
-                    {errors.email && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.email}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                {/* Phone */}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label
+                    htmlFor="nombre"
+                    className="block text-sm font-semibold text-gray-700 mb-1.5"
+                  >
+                    {t("contact.label_name")}{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-azul focus:border-transparent transition-all ${errors.nombre ? "border-red-500 bg-red-50" : "border-gray-200 hover:border-gray-300"}`}
+                    placeholder={t("contact.placeholder_name")}
+                  />
+                  {errors.nombre && (
+                    <p className="text-red-500 text-sm mt-1">{errors.nombre}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-gray-700 mb-1.5"
+                  >
+                    {t("contact.label_email")}{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-azul focus:border-transparent transition-all ${errors.email ? "border-red-500 bg-red-50" : "border-gray-200 hover:border-gray-300"}`}
+                    placeholder={t("contact.placeholder_email")}
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
+
+                <div className="md:col-span-2">
+                  <label
                     htmlFor="telefono"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-gray-700 mb-1.5"
                   >
                     {t("contact.label_phone")}
                   </label>
@@ -303,117 +340,27 @@ export default function ContactPage() {
                     name="telefono"
                     value={formData.telefono}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-200 hover:border-gray-300 rounded-xl focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
                     placeholder={t("contact.placeholder_phone")}
                   />
                 </div>
 
-                {/* Specialty and Condition */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="especialidad"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                      {t("contact.label_specialty")}{" "}
-                      <span className="text-azul">*</span>
-                    </label>
-                    <select
-                      id="especialidad"
-                      name="especialidad"
-                      required
-                      value={formData.especialidad}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent ${
-                        errors.especialidad ? "border-azul" : "border-gray-300"
-                      }`}
-                    >
-                      <option value="">{t("contact.select_option")}</option>
-                      <option value="nariz">
-                        {t("contact.select_specialty_nariz")}
-                      </option>
-                      <option value="oido">
-                        {t("contact.select_specialty_oido")}
-                      </option>
-                      <option value="garganta">
-                        {t("contact.select_specialty_garganta")}
-                      </option>
-                      <option value="general">
-                        {t("contact.select_specialty_general")}
-                      </option>
-                    </select>
-                    {errors.especialidad && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.especialidad}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="conocePadecimiento"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                      {t("contact.label_condition")}
-                    </label>
-                    <select
-                      id="conocePadecimiento"
-                      name="conocePadecimiento"
-                      value={formData.conocePadecimiento}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent"
-                    >
-                      <option value="">{t("contact.select_option")}</option>
-                      <option value="no">
-                        {t("contact.select_condition_no")}
-                      </option>
-                      <option value="sinusitis">
-                        {t("contact.select_condition_sinusitis")}
-                      </option>
-                      <option value="ronquidos">
-                        {t("contact.select_condition_snoring")}
-                      </option>
-                      <option value="apnea del sueno">
-                        {t("contact.select_condition_apnea")}
-                      </option>
-                      <option value="transtornos de la voz">
-                        {t("contact.select_condition_voice")}
-                      </option>
-                      <option value="congestion nasal">
-                        {t("contact.select_condition_congestion")}
-                      </option>
-                      <option value="veertigo y mareo">
-                        {t("contact.select_condition_vertigo")}
-                      </option>
-                      <option value="perdida de audicion">
-                        {t("contact.select_condition_hearing_loss")}
-                      </option>
-                      <option value="rinoplastia">
-                        {t("contact.select_condition_rhinoplasty")}
-                      </option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div>
+                <div className="md:col-span-2">
                   <label
                     htmlFor="mensaje"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-gray-700 mb-1.5"
                   >
                     {t("contact.label_message")}{" "}
-                    <span className="text-azul">*</span>
+                    <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="mensaje"
                     name="mensaje"
-                    rows={6}
+                    rows={5}
                     required
                     value={formData.mensaje}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-azul focus:border-transparent resize-none ${
-                      errors.mensaje ? "border-azul" : "border-gray-300"
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-azul focus:border-transparent resize-none transition-all ${errors.mensaje ? "border-red-500 bg-red-50" : "border-gray-200 hover:border-gray-300"}`}
                     placeholder={t("contact.placeholder_message")}
                   />
                   {errors.mensaje && (
@@ -422,33 +369,48 @@ export default function ContactPage() {
                     </p>
                   )}
                 </div>
+              </div>
 
-                {/* Submit Button */}
-                <div className="flex items-center gap-4">
-                  <button
-                    onClick={handleSubmit}
-                    disabled={isSubmitting}
-                    className={`bg-azul text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg ${
-                      isSubmitting
-                        ? "opacity-50 cursor-not-allowed"
-                        : "hover:bg-azul/90"
-                    }`}
-                  >
-                    {isSubmitting
-                      ? t("contact.button_submitting")
-                      : t("contact.button_submit")}
-                  </button>
-                  <p className="text-xs text-gray-500">
-                    <span className="text-azul">*</span>{" "}
-                    {t("contact.required_fields")}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full bg-azul text-white font-semibold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl ${isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-azul/90"}`}
+              >
+                {isSubmitting
+                  ? t("contact.button_submitting")
+                  : t("contact.button_submit")}
+              </button>
+            </form>
+
+            <div className="mt-6 pt-6 border-t border-gray-100">
+              <div className="flex items-start gap-3">
+                <FaLock className="w-6 h-6 text-azul" />
+
+                <div>
+                  <p className="text-xl font-semibold text-gray-900 mb-1">
+                    {t("contact.privacy_title")}
+                  </p>
+                  <p className="text-md text-gray-500">
+                    {t("contact.privacy_text")}
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <Toaster position="top-right" />
       </div>
+
+      <a
+        href="https://wa.me/526646842364"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 hover:shadow-green-500/50 z-50"
+        aria-label="Contact via WhatsApp"
+      >
+        <FaWhatsapp className="w-8 h-8" />
+      </a>
     </div>
   );
 }
