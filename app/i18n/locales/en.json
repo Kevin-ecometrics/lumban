@@ -1368,6 +1368,14 @@
     "ultrasonic_title": "Ultrasonic Rhinoplasty (without packing)",
     "ultrasonic_text": "Thanks to ultrasonic technology, it is possible to make precise cuts in the nasal bone, which allows: reducing tissue trauma, decreasing bleeding, avoiding aggressive fractures, improving postoperative recovery. This type of technique can also allow surgeries without the use of nasal packing, making the recovery process more comfortable for the patient.",
     
+    "gallery_title": "Real Cases",
+    "gallery_subtitle": "Patient results - Before and After",
+    "gallery_case": "Case",
+    "gallery_view": "View result",
+    "gallery_close": "Close",
+    "gallery_previous": "Previous",
+    "gallery_next": "Next",
+    
     "final_cta_title": "What type of rhinoplasty is best for you?",
     "final_cta_text": "Each nose is unique, so the best technique depends on your anatomy, your aesthetic goals, and your respiratory function. We invite you to the office with Dr. Lumbán at Rio Medica for a personalized evaluation, where we can analyze your case in detail, resolve all your questions, and design a surgical plan specifically adapted to you."
   },
