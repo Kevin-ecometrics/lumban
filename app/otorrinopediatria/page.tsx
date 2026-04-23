@@ -1,124 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import Hero from "@/app/Components/StickyImageHero";
 import SecondaryImage from "../Components/Image";
-
-type AccordionItem = {
-  question: string;
-  answer: React.ReactNode;
-};
 
 export default function OtorrinoPediatria() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
-
-  // Acordeones basados en el SEO schema (solo lo que está en el schema)
-  const items: AccordionItem[] = [
-    {
-      question: t("pediatric-ent.ear_infection_symptoms_title"),
-      answer: (
-        <>
-          <p>{t("pediatric-ent.ear_infection_symptoms_text")}</p>
-          <ul className="list-disc list-inside my-2">
-            <li>{t("pediatric-ent.ear_symptom1")}</li>
-            <li>{t("pediatric-ent.ear_symptom2")}</li>
-            <li>{t("pediatric-ent.ear_symptom3")}</li>
-            <li>{t("pediatric-ent.ear_symptom4")}</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      question: t("pediatric-ent.ventilation_tubes_title"),
-      answer: (
-        <>
-          <p>{t("pediatric-ent.ventilation_tubes_text")}</p>
-          <p>{t("pediatric-ent.tube_types")}</p>
-          <p>{t("pediatric-ent.procedure_text")}</p>
-        </>
-      ),
-    },
-    {
-      question: t("pediatric-ent.when_to_see_tonsils_title"),
-      answer: <p>{t("pediatric-ent.when_to_see_tonsils_text")}</p>,
-    },
-    {
-      question: t("pediatric-ent.pediatric_apnea_title"),
-      answer: (
-        <>
-          <p>{t("pediatric-ent.pediatric_apnea_text")}</p>
-          <p>
-            <strong>{t("pediatric-ent.what_happens_title")}</strong>{" "}
-            {t("pediatric-ent.what_happens_text")}
-          </p>
-          <p>
-            <strong>{t("pediatric-ent.consequences_title")}</strong>{" "}
-            {t("pediatric-ent.consequences_text")}
-          </p>
-          <p>{t("pediatric-ent.solution_text")}</p>
-        </>
-      ),
-    },
-    {
-      question: t("pediatric-ent.allergic_rhinitis_title"),
-      answer: <p>{t("pediatric-ent.allergic_rhinitis_text")}</p>,
-    },
-  ];
-
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const experienceYears = new Date().getFullYear() - 1993;
 
   return (
-    <section className="bg-gradient-to-b from-slate-50 via-white to-white text-gray-900">
-<div className="max-w-6xl mx-auto px-6 pt-16 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
-          <div className="space-y-5">
-            <span className="inline-flex w-fit items-center rounded-full border border-gray-200 bg-white/80 px-4 py-1 text-xs font-medium uppercase tracking-widest text-gray-600 shadow-sm">
-              {t("Otorrinopediatría")}
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              {t("pediatric-ent.seo_h1")}
-            </h1>
-            <p className="text-lg text-gray-600 max-w-2xl">
-              {t(
-                "Conozca sobre diferentes enfermedades de nariz, oído y garganta en niños",
-              )}
-            </p>
-            <p className="text-gray-600 max-w-2xl">
-              {t("pediatric-ent.seo_intro")}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={getRouteByKey("contact", currentLang)}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition"
-              >
-                {t("pediatric-ent.cta_button")}
-              </a>
-              <a
-                href={getRouteByKey("profile", currentLang)}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition"
-              >
-                {t("pediatric-ent.view_full_profile")}
-              </a>
-            </div>
-          </div>
+    <main className="bg-white">
+      {/* HERO */}
+      <Hero
+        title={t("pediatric-ent.hero_title")}
+        subtitle={t("pediatric-ent.hero_subtitle")}
+        src="/otorrinopediatria/El Dr Lumban brinda atencion pediatrica para infecciones de oido y otros padecimientos frecuentes en ninos en Tijuana.webp"
+        alt={t("pediatric-ent.hero_alt")}
+      />
 
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-4">
-            <img
-              src="/otorrinopediatria/El Dr Lumban brinda atencion pediatrica para infecciones de oido y otros padecimientos frecuentes en ninos en Tijuana.webp"
-              alt={t("Otorrinopediatría")}
-              className="w-full h-auto rounded-2xl object-cover"
-            />
-          </div>
-        </div>
-      </div>
-
+      {/* CONTENT - CON LOS TEXTOS ORIGINALES */}
       <div className="max-w-6xl mx-auto px-6 pb-16 space-y-16">
+        {/* PAGE INTRO */}
+        <div className="space-y-4 text-gray-700">
+          <h2 className="text-3xl font-semibold">
+            {t("pediatric-ent.page_title")}
+          </h2>
+          <p className="text-lg">{t("pediatric-ent.page_subtitle")}</p>
+          <p className="text-lg leading-relaxed">{t("pediatric-ent.seo_intro")}</p>
+        </div>
+
         {/* AMÍGDALAS Y ADENOIDES */}
         <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">
           <h2 className="text-3xl font-semibold">
@@ -281,6 +193,25 @@ export default function OtorrinoPediatria() {
           </a>
         </div>
       </div>
-    </section>
+
+      {/* PERFIL */}
+      <section className="max-w-6xl mx-auto px-6 py-12 border-t">
+        <div className="flex flex-col md:flex-row justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-semibold">{t("pediatric-ent.about_doctor")}</h3>
+            <p className="text-gray-600 max-w-xl">
+              {t("pediatric-ent.about_doctor_text_prefix")} {experienceYears}{" "}
+              {t("pediatric-ent.about_doctor_text_suffix")}
+            </p>
+          </div>
+          <a
+            href={getRouteByKey("profile", currentLang)}
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
+            {t("pediatric-ent.view_full_profile")}
+          </a>
+        </div>
+      </section>
+    </main>
   );
 }

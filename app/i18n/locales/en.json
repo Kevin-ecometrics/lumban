@@ -1085,8 +1085,14 @@
   "pediatric-ent": {
     "hero_title": "Pediatric ENT",
     "hero_subtitle": "Specialized care for children",
+    "hero_alt": "Pediatric ENT in Tijuana",
+    "page_title": "Pediatric ENT: Specialized Care for Ear, Nose, and Throat",
+    "page_subtitle": "Learn about different nose, ear, and throat conditions in children",
     "cta_button": "REQUEST YOUR CONSULTATION",
     "view_full_profile": "VIEW FULL PROFILE",
+    "about_doctor": "Meet Dr. Lumbán",
+    "about_doctor_text_prefix": "Dr. Lumbán has ",
+    "about_doctor_text_suffix": "years of experience in pediatric otolaryngology.",
     "seo_h1": "Pediatric ENT: Specialized Care for Ear, Nose, and Throat",
     "seo_intro": "Children and adolescents are not simply \"small adults.\" Their bodies are constantly growing and their immune system is still developing. Therefore, for ear, nose, and throat conditions, they require differential diagnosis and treatment. At Dr. Lumbán's practice, we understand that medication dosing, interpreting non-verbal cues in young children, and observing acute or chronic conditions are fundamental pillars. We work hand in hand with the family and their primary care pediatrician to ensure healthy growth.",
     
@@ -1356,8 +1362,13 @@
   "rhinoplasty": {
     "hero_title": "Rhinoplasty",
     "hero_subtitle": "Transform your nose with the nasal surgery expert",
+    "hero_alt": "About Rhinoplasty",
+    "page_title": "Aesthetic Nose Surgery: Perfect Balance Between Aesthetics and Nasal Function",
     "cta_button": "REQUEST YOUR CONSULTATION",
     "view_full_profile": "VIEW FULL PROFILE",
+    "about_doctor": "Meet Dr. Lumbán",
+    "about_doctor_text_prefix": "Dr. Lumbán has ",
+    "about_doctor_text_suffix": "years of experience in otolaryngology, specialized in Aesthetic Nasal Surgery.",
     "seo_h1": "Aesthetic Nose Surgery: Perfect Balance Between Aesthetics and Nasal Function",
     "seo_intro_prefix": "With over ",
     "seo_intro_suffix": "years of experience, Dr. Jaime Lumbán has dedicated himself to perfecting aesthetic and functional nose surgery. Although it may seem like a simple structure, nasal anatomy is extremely complex and demands absolute precision. Factors such as cartilage resistance and skin type vary in each patient; therefore, what works for one person is not always ideal for another. The approach of an otolaryngologist is to seek results that harmonize with the face and enhance natural beauty, always maintaining respiratory function as the fundamental pillar of each intervention.",

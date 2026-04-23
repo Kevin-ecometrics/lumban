@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import Hero from "@/app/Components/StickyImageHero";
 import SecondaryImage from "../Components/Image";
 
 export default function RinoplastiaPage() {
@@ -11,56 +11,28 @@ export default function RinoplastiaPage() {
   const experienceYears = new Date().getFullYear() - 1993;
 
   return (
-    <section className="bg-white text-gray-900">
+    <main className="bg-white">
       {/* HERO */}
-      <div className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.03),transparent_50%)]" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                <div className="w-8 h-px bg-gray-300" />
-                {t("rhinoplasty.hero_title")}
-              </div>
+      <Hero
+        title={t("rhinoplasty.hero_title")}
+        subtitle={t("rhinoplasty.hero_subtitle")}
+        src="/rinoplastia/Trasforma tu perfil con una rinoplastia en manos de un experto en nariz con mas de 3 decadas de experiencia en Tijuana.webp"
+        alt={t("rhinoplasty.hero_alt")}
+      />
 
-              <h1 className="text-5xl lg:text-6xl font-light tracking-tight leading-tight">
-                {t("rhinoplasty.seo_h1")}
-              </h1>
-
-              <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                {t("rhinoplasty.seo_intro_prefix")} {experienceYears}{" "}
-                {t("rhinoplasty.seo_intro_suffix")}
-              </p>
-
-              <div className="flex flex-wrap gap-4 pt-4">
-                <a
-                  href={getRouteByKey("contact", currentLang)}
-                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-gray-900 text-white text-sm font-medium tracking-wide hover:bg-gray-800 transition-colors duration-200"
-                >
-                  {t("rhinoplasty.cta_button")}
-                </a>
-                <a
-                  href={getRouteByKey("profile", currentLang)}
-                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-md border border-gray-300 text-sm font-medium tracking-wide hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
-                >
-                  {t("rhinoplasty.view_full_profile")}
-                </a>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl -z-10" />
-              <img
-                src="/rinoplastia/Trasforma tu perfil con una rinoplastia en manos de un experto en nariz con mas de 3 decadas de experiencia en Tijuana.webp"
-                alt={t("rhinoplasty.hero_title")}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
+      {/* CONTENT - CON LOS TEXTOS ORIGINALES */}
       <div className="max-w-5xl mx-auto px-6 lg:px-8 py-24 space-y-20">
+        {/* PAGE INTRO */}
+        <div className="space-y-6">
+          <h2 className="text-4xl font-light tracking-tight border-b border-gray-200 pb-6">
+            {t("rhinoplasty.page_title")}
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            {t("rhinoplasty.page_subtitle_prefix")} {experienceYears}{" "}
+            {t("rhinoplasty.page_subtitle_suffix")}
+          </p>
+        </div>
+
         {/* ¿QUÉ ES LA RINOPLASTIA? */}
         <div className="space-y-6">
           <h2 className="text-4xl font-light tracking-tight border-b border-gray-200 pb-6">
@@ -143,9 +115,7 @@ export default function RinoplastiaPage() {
           </div>
         </div>
 
-        <div className="py-8">
-          <SecondaryImage src="/rinoplastia/Haz tu cita para rinoplastia con especialistas en nariz con gran experiencia como el Dr. Lumban.webp" />
-        </div>
+        <SecondaryImage src="/rinoplastia/Haz tu cita para rinoplastia con especialistas en nariz con gran experiencia como el Dr. Lumban.webp" />
 
         {/* TIPOS DE ABORDAJE */}
         <div className="space-y-12">
@@ -184,10 +154,10 @@ export default function RinoplastiaPage() {
                 {t("rhinoplasty.ultrasonic_text")}
               </p>
             </div>
-</div>
+          </div>
         </div>
 
-        {/* CTA FINAL */}
+        {/* CTA FINAL ORIGINAL */}
         <div className="bg-gray-50 rounded-lg p-12 text-center space-y-6 border border-gray-100">
           <h2 className="text-3xl font-light tracking-tight">
             {t("rhinoplasty.final_cta_title")}
@@ -205,6 +175,27 @@ export default function RinoplastiaPage() {
           </div>
         </div>
       </div>
-    </section>
+
+      {/* PERFIL */}
+      <section className="max-w-6xl mx-auto px-6 py-12 border-t">
+        <div className="flex flex-col md:flex-row justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-semibold">
+              {t("rhinoplasty.about_doctor")}
+            </h3>
+            <p className="text-gray-600 max-w-xl">
+              {t("rhinoplasty.about_doctor_text_prefix")} {experienceYears}{" "}
+              {t("rhinoplasty.about_doctor_text_suffix")}
+            </p>
+          </div>
+          <a
+            href={getRouteByKey("profile", currentLang)}
+            className="inline-flex items-center justify-center text-center px-5 py-6 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
+            {t("rhinoplasty.view_full_profile")}
+          </a>
+        </div>
+      </section>
+    </main>
   );
 }
