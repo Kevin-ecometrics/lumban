@@ -311,11 +311,16 @@ export default function EarConditionsPage() {
 
       {/* OTROS PADECIMIENTOS */}
       <section className="bg-gray-100 py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-center space-y-4">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">
             {t("ear.other_conditions")}
           </h3>
-          <p className="text-gray-700 text-lg">➢ {t("ear.hearing_loss")}</p>
+          <a
+            href={getRouteByKey("hearing-loss", currentLang)}
+            className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            {t("ear.hearing_loss")}
+          </a>
         </div>
       </section>
     </main>

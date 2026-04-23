@@ -31,8 +31,8 @@ export default function SinusitisPage() {
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">
         {/* INTRO + SÍNTOMAS */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
-          <div className="space-y-6 text-gray-700 leading-relaxed">
+        <div className="space-y-8">
+          <div className="text-gray-700 leading-relaxed">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
               {t("sinusitis.title_h1")}
             </h1>
@@ -78,7 +78,7 @@ export default function SinusitisPage() {
         </div>
 
         {/* OPCIONES DE TRATAMIENTO */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="space-y-8">
           <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700">
             <h2 className="text-3xl font-semibold">
               {t("sinusitis.treatment_title")}
@@ -101,7 +101,7 @@ export default function SinusitisPage() {
         </div>
 
         {/* CTA + PERFIL */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="space-y-8">
           <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-8 space-y-4 text-gray-700">
             <h2 className="text-3xl font-semibold">
               {t("sinusitis.cta_chronic_title")}
@@ -135,21 +135,31 @@ export default function SinusitisPage() {
             {t("sinusitis.other_conditions")}
           </h3>
           <div className="flex flex-wrap gap-3 text-gray-700">
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            <a
+              href={getRouteByKey("septoplasty", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("sinusitis.septoplasty")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
-              {t("sinusitis.sinusitis")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            
+            <a
+              href={getRouteByKey("nasal-congestion", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("sinusitis.nasal_congestion")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            <a
+              href={getRouteByKey("nasal-obstruction", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("sinusitis.nasal_obstruction")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            <a
+              href={getRouteByKey("allergies", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("sinusitis.allergies")}
-            </span>
+            </a>
           </div>
         </div>
       </div>

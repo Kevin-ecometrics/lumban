@@ -222,21 +222,38 @@ export default function SeptoplastiaPage() {
           <h3 className="text-3xl font-bold text-gray-900">
             {t("septoplasty.other_conditions")}
           </h3>
-          <p className="text-gray-700 text-lg">
-            ➢ {t("septoplasty.septoplasty")}
-          </p>
-          <p className="text-gray-700 text-lg">
-            ➢ {t("septoplasty.sinusitis")}
-          </p>
-          <p className="text-gray-700 text-lg">
-            ➢ {t("septoplasty.nasal_congestion")}
-          </p>
-          <p className="text-gray-700 text-lg">
-            ➢ {t("septoplasty.nasal_obstruction")}
-          </p>
-          <p className="text-gray-700 text-lg">
-            ➢ {t("septoplasty.allergies")}
-          </p>
+          <div className="flex flex-col gap-3">
+            <a
+              href={getRouteByKey("septoplasty", currentLang)}
+              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {t("septoplasty.septoplasty")}
+            </a>
+            <a
+              href={getRouteByKey("sinusitis", currentLang)}
+              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {t("septoplasty.sinusitis")}
+            </a>
+            <a
+              href={getRouteByKey("nasal-congestion", currentLang)}
+              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {t("septoplasty.nasal_congestion")}
+            </a>
+            <a
+              href={getRouteByKey("nasal-obstruction", currentLang)}
+              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {t("septoplasty.nasal_obstruction")}
+            </a>
+            <a
+              href={getRouteByKey("allergies", currentLang)}
+              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {t("septoplasty.allergies")}
+            </a>
+          </div>
         </div>
       </section>
     </main>

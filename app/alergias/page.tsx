@@ -307,35 +307,34 @@ export default function AlergiasPage() {
         </div>
 
         {/* CTA + PERFIL */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-10 text-center space-y-6 shadow-sm">
-            <h2 className="text-2xl font-semibold">
-              {t("allergies.cta_question")}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t("allergies.cta_description")}
-            </p>
-            <a
-              href={getRouteByKey("contact", currentLang)}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
-            >
-              {t("allergies.cta_appointment")}
-            </a>
-          </div>
-          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
-            <h3 className="text-xl font-semibold">
-              {t("allergies.about_doctor")}
-            </h3>
-            <p className="text-gray-600 max-w-xl">
-              {t("allergies.about_doctor_text")}
-            </p>
-            <a
-              href={getRouteByKey("profile", currentLang)}
-              className="inline-flex items-center justify-center text-center px-5 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition"
-            >
-              {t("allergies.view_full_profile")}
-            </a>
-          </div>
+        <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-10 text-center space-y-6 shadow-sm">
+          <h2 className="text-2xl font-semibold">
+            {t("allergies.cta_question")}
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            {t("allergies.cta_description")}
+          </p>
+          <a
+            href={getRouteByKey("contact", currentLang)}
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition"
+          >
+            {t("allergies.cta_appointment")}
+          </a>
+        </div>
+
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
+            {t("allergies.about_doctor")}
+          </h3>
+          <p className="text-gray-600 max-w-xl">
+            {t("allergies.about_doctor_text")}
+          </p>
+          <a
+            href={getRouteByKey("profile", currentLang)}
+            className="inline-flex items-center justify-center text-center px-5 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition"
+          >
+            {t("allergies.view_full_profile")}
+          </a>
         </div>
 
         {/* OTROS PADECIMIENTOS */}
@@ -344,21 +343,31 @@ export default function AlergiasPage() {
             {t("allergies.other_conditions")}
           </h3>
           <div className="flex flex-wrap gap-3 text-gray-700">
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            <a
+              href={getRouteByKey("septoplasty", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("allergies.septoplasty")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            <a
+              href={getRouteByKey("sinusitis", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("allergies.sinusitis_condition")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            <a
+              href={getRouteByKey("nasal-congestion", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("allergies.nasal_congestion")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            <a
+              href={getRouteByKey("nasal-obstruction", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("allergies.nasal_obstruction")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
-              {t("allergies.allergies_condition")}
-            </span>
+            </a>
+            
           </div>
         </div>
       </div>

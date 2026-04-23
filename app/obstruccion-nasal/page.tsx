@@ -66,7 +66,7 @@ export default function ObstruccionNasalPage() {
         <SecondaryImage src="/obstruccion nasal/El DR Lumban realiza tu nariz con un endoscopio nasal para visualizar estructuras internas y explorar con precision tu nariz para un diagnostico preciso.webp" />
 
         {/* TRATAMIENTO */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="space-y-8">
           <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
             <h2 className="text-3xl font-semibold">
               {t("nasal-obstruction.treatment_options_title")}
@@ -115,7 +115,7 @@ export default function ObstruccionNasalPage() {
         </div>
 
         {/* CTA + PERFIL */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="space-y-8">
           <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-10 text-center space-y-6 shadow-sm">
             <h2 className="text-2xl font-semibold">
               {t("nasal-obstruction.cta_question")}

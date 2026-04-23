@@ -75,7 +75,7 @@ export default function OtorrinoPediatria() {
 
   return (
     <section className="bg-gradient-to-b from-slate-50 via-white to-white text-gray-900">
-      <div className="max-w-6xl mx-auto px-6 pt-16 pb-12">
+<div className="max-w-6xl mx-auto px-6 pt-16 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div className="space-y-5">
             <span className="inline-flex w-fit items-center rounded-full border border-gray-200 bg-white/80 px-4 py-1 text-xs font-medium uppercase tracking-widest text-gray-600 shadow-sm">

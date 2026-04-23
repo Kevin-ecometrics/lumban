@@ -300,12 +300,15 @@ export default function HearingLossPage() {
           <h3 className="text-3xl font-bold text-gray-900">
             {t("hearing-loss.other_conditions")}
           </h3>
-          <p className="text-gray-700 text-lg">
-            ➢ {t("hearing-loss.hearing_loss")}
-          </p>
-          <p className="text-gray-700 text-lg">
-            ➢ {t("hearing-loss.vertigo_dizziness")}
-          </p>
+          <div className="flex flex-col gap-3">
+            
+            <a
+              href={getRouteByKey("vertigo-dizziness", currentLang)}
+              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {t("hearing-loss.vertigo_dizziness")}
+            </a>
+          </div>
         </div>
       </section>
     </main>

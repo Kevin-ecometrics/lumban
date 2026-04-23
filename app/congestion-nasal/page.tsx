@@ -98,7 +98,7 @@ export default function CongestionNasalPage() {
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">
         {/* DESCRIPCIÓN */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="space-y-8">
           <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4 text-gray-700 leading-relaxed">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
               {t("nasal-congestion.title_h1")}
@@ -304,7 +304,7 @@ export default function CongestionNasalPage() {
         </div>
 
         {/* CTA + PERFIL */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="space-y-8">
           <div className="rounded-3xl border border-gray-200 bg-gradient-to-r from-slate-50 to-white p-10 text-center space-y-6 shadow-sm">
             <h2 className="text-2xl font-semibold">
               {t("nasal-congestion.cta_evaluation")}
@@ -342,21 +342,31 @@ export default function CongestionNasalPage() {
             {t("nasal-congestion.other_conditions")}
           </h3>
           <div className="flex flex-wrap gap-3 text-gray-700">
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            <a
+              href={getRouteByKey("septoplasty", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("nasal-congestion.septoplasty")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            <a
+              href={getRouteByKey("sinusitis", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("nasal-congestion.sinusitis")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
-              {t("nasal-congestion.nasal_congestion")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            
+            <a
+              href={getRouteByKey("nasal-obstruction", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("nasal-congestion.nasal_obstruction")}
-            </span>
-            <span className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm">
+            </a>
+            <a
+              href={getRouteByKey("allergies", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
               {t("nasal-congestion.allergies")}
-            </span>
+            </a>
           </div>
         </div>
       </div>
