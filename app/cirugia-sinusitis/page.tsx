@@ -312,6 +312,33 @@ export default function CirugiaSinusitisPage() {
             </a>
           </div>
         </div>
+
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
+            {t("sinusitis-surgery.other_conditions")}
+          </h3>
+          <div className="flex flex-wrap gap-3 text-gray-700">
+            <a
+              href={getRouteByKey("endoscopic-surgery", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("sinusitis-surgery.endoscopic_surgery")}
+            </a>
+            <a
+              href={getRouteByKey("anti-snoring-surgery", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("sinusitis-surgery.anti_snoring_surgery")}
+            </a>
+            <a
+              href={getRouteByKey("microscopic-surgery", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("sinusitis-surgery.microscopic_surgery")}
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );

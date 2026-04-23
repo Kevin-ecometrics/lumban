@@ -214,42 +214,34 @@ export default function SeptoplastiaPage() {
             {t("septoplasty.view_full_profile")}
           </Link>
         </div>
-      </section>
 
-      {/* OTROS PADECIMIENTOS */}
-      <section className="bg-gray-100 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-3">
-          <h3 className="text-3xl font-bold text-gray-900">
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
             {t("septoplasty.other_conditions")}
           </h3>
-          <div className="flex flex-col gap-3">
-            <a
-              href={getRouteByKey("septoplasty", currentLang)}
-              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
-            >
-              {t("septoplasty.septoplasty")}
-            </a>
+          <div className="flex flex-wrap gap-3 text-gray-700">
             <a
               href={getRouteByKey("sinusitis", currentLang)}
-              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
             >
               {t("septoplasty.sinusitis")}
             </a>
             <a
               href={getRouteByKey("nasal-congestion", currentLang)}
-              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
             >
               {t("septoplasty.nasal_congestion")}
             </a>
             <a
               href={getRouteByKey("nasal-obstruction", currentLang)}
-              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
             >
               {t("septoplasty.nasal_obstruction")}
             </a>
             <a
               href={getRouteByKey("allergies", currentLang)}
-              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
             >
               {t("septoplasty.allergies")}
             </a>

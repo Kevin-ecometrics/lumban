@@ -12,10 +12,10 @@ export default function CirugiaMicroscopicaLaringePage() {
 
   return (
     <main className="bg-white text-gray-900">
-<Hero
+      <Hero
         title={t("microscopic-surgery.hero_title")}
         subtitle={t("microscopic-surgery.hero_subtitle")}
-        src="/cirugia microscopica/Cirugia microscopica de laringe para lesiones de cuerdas vocales con el Dr. Jaime Lumban en Tijuana.webp"
+        src="/cirugia microscopica/si presentas ronquera, molestias o cambios en la voz acude con el dr Lumban otorrinolaringologo de confianza.webp"
         alt={t("microscopic-surgery.hero_title")}
       />
 
@@ -167,6 +167,33 @@ export default function CirugiaMicroscopicaLaringePage() {
           >
             {t("microscopic-surgery.cta_button")}
           </a>
+        </div>
+
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
+            {t("microscopic-surgery.other_conditions")}
+          </h3>
+          <div className="flex flex-wrap gap-3 text-gray-700">
+            <a
+              href={getRouteByKey("endoscopic-surgery", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("microscopic-surgery.endoscopic_surgery")}
+            </a>
+            <a
+              href={getRouteByKey("anti-snoring-surgery", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("microscopic-surgery.anti_snoring_surgery")}
+            </a>
+            <a
+              href={getRouteByKey("sinusitis-surgery", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("microscopic-surgery.sinusitis_surgery")}
+            </a>
+          </div>
         </div>
       </div>
     </main>

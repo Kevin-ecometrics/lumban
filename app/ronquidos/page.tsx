@@ -119,6 +119,33 @@ export default function RonquidosPage() {
             {t("snoring.cta_button")}
           </a>
         </div>
+
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
+            {t("snoring.other_conditions")}
+          </h3>
+          <div className="flex flex-wrap gap-3 text-gray-700">
+            <a
+              href={getRouteByKey("voice-disorders", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("snoring.voice_disorders")}
+            </a>
+            <a
+              href={getRouteByKey("sleep-apnea", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("snoring.sleep_apnea")}
+            </a>
+            <a
+              href={getRouteByKey("throat-problems", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("snoring.throat_problems")}
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );

@@ -491,7 +491,7 @@
     "medical_treatment_text": "Cuando la inflamación sinusal no se borra por los propios mecanismos del cuerpo, o incluso con terapia antibiótica adecuada, entonces los síntomas persistirán y la terapia más intensiva puede ser indicada. Esto podría incluir cursos más largos de antibióticos, el uso concomitante de descongestionantes y mucolíticos, o posiblemente incluso esteroides anti-inflamatorios.",
     "anatomical_title": "Evaluación Anatómica",
     "anatomical_text": "Pueden detectarse anomalías anatómicas, como una desviación del tabique, pólipos nasales o sinusales, hinchazón o secreciones anormales. Estos hallazgos pueden ayudar a guiar la terapia y la respuesta al tratamiento. Imágenes TC se utilizan con criterio para evaluar completamente los senos, proporcionando información acerca de la magnitud y distribución de la inflamación en los senos nasales.",
-    "endoscopic_title": "Cirugía Endoscópica de Senos",
+    "endoscopic_title": "Cirugía Endoscópica para Sinusitis",
     "endoscopic_text": "Para los pacientes cuya inflamación es refractaria y tiene poca respuesta al tratamiento médico, o que tienen una obstrucción significativa de la nariz y/o anormalidades anatómicas de los senos, la cirugía puede ser considerada. La cirugía de senos se realiza por vía endoscópica, dando prioridad a la preservación de la función del seno mientras se restaura el drenaje adecuado, conocida como Endoscopia Sinusal Funcional (CENS).",
     "endoscopic_note": "Se realiza con más frecuencia bajo anestesia general, de forma ambulatoria (es decir, cirugía el mismo día). En algunos casos, se utilizan imágenes de TC en tecnología de orientación de imagen, lo que permite el seguimiento en tiempo real de los instrumentos quirúrgicos durante el procedimiento.",
     "risk_factors_title": "Factores de Riesgo Importantes",
@@ -654,21 +654,21 @@
     "medical_item2": "Corticoesteroides nasales",
     "medical_item3": "Antihistamínicos para alergias",
     "medical_item4": "Lavados nasales con solución salina",
-    "medical_item5": "Inmunoterapia para alergias",
-    "surgical_section_title": "Tratamiento Quirúrgico",
-    "surgical_item1_full": "Septoplastía (corrección del tabique)",
-    "surgical_item2_full": "Reducción de cornetes inferiores",
-    "surgical_item3_full": "Cirugía endoscópica nasal",
-    "surgical_item4_full": "Procedimientos ambulatorios",
-    "surgical_item5_full": "Recuperación rápida",
-    "cta_question": "¿Quisieras mejorar tu imagen?",
-    "cta_text": "El Dr. Lumbán es especialista en la Cirugía Estética de Nariz. Infórmate acerca de este procedimiento que puede mejorar tu salud y tu imagen.",
-    "cta_button": "VER MÁS INFORMACIÓN",
+"medical_item5": "Inmunoterapia para alergias",
+    "cta_question": "¿Tiene alguna duda?",
+    "cta_text": "El Dr. Lumbán entiende que una cirugía es una gran decisión. Puede contactarlo por teléfono, correo electrónico o agendar una cita.",
+    "cta_button": "SOLICITA TU CONSULTA",
     "about_doctor": "Conozca sobre el Dr. Lumbán",
-    "about_doctor_text": "El Dr. Lumbán tiene años de experiencia dentro del campo de la otorrinolaringología, prestando un servicio de calidad y trato amable.",
-    "view_full_profile": "VER PERFIL COMPLETO"
-},
-"allergies": {
+    "about_doctor_text": "El Dr. Lumbán cuenta con",
+    "view_full_profile": "VER PERFIL COMPLETO",
+    "years_suffix": "años de experiencia en otorrinolaringología, especializado en el diagnóstico y tratamiento de obstrucciones nasales.",
+    "other_conditions": "Otros Padecimientos de Nariz",
+    "septoplasty": "Septoplastía",
+    "sinusitis": "Sinusitis",
+    "nasal_congestion": "Congestión Nasal",
+    "allergies": "Alergias"
+  },
+  "allergies": {
     "hero_title": "Acerca de las Alergias",
     "hero_subtitle": "Diagnóstico y tratamiento integral de enfermedades alérgicas",
     "hero_alt": "Acerca de las Alergias",
@@ -859,7 +859,11 @@
     "procedure3": "Cauterización o reducción de cornetes: Disminuye el tamaño de los tejidos que obstruyen el paso del aire.",
     
     "recovery_cta_title": "Recupera tu descanso con un experto en padecimientos relacionados con la garganta",
-    "recovery_cta_text": "Si los ronquidos están afectando tu descanso o el de tu familia, no los ignores. Un diagnóstico oportuno puede prevenir complicaciones y mejorar significativamente tu calidad de vida. El Dr. Jaime Lumbán, otorrinolaringólogo en Tijuana con más de tres décadas de trayectoria, cuenta con amplia experiencia en el diagnóstico y tratamiento integral de ronquidos y apnea obstructiva del sueño, tanto en adultos como en niños. Tu salud respiratoria está en las mejores manos, da el primer paso hacia un descanso saludable y reparador."
+    "recovery_cta_text": "Si los ronquidos están afectando tu descanso o el de tu familia, no los ignores. Un diagnóstico oportuno puede prevenir complicaciones y mejorar significativamente tu calidad de vida. El Dr. Jaime Lumbán, otorrinolaringólogo en Tijuana con más de tres décadas de trayectoria, cuenta con amplia experiencia en el diagnóstico y tratamiento integral de ronquidos y apnea obstructiva del sueño, tanto en adultos como en niños. Tu salud respiratoria está en las mejores manos, da el primer paso hacia un descanso saludable y reparador.",
+    "other_conditions": "Otros Padecimientos de Garganta",
+    "voice_disorders": "Trastornos de la Voz",
+    "sleep_apnea": "Apnea del Sueño",
+    "throat_problems": "Problemas de Garganta"
   },
 
   "throat": {
@@ -901,7 +905,11 @@
     
     "doctor_cta": "El Dr. Jaime Lumbán ofrece diagnósticos expertos y tratamientos personalizados para todas las condiciones relacionadas con la garganta.",
     "doctor_cta_button_prefix": "Agenda tu consulta de valoración hoy para recibir un tratamiento a la medida por un experto con más de ",
-    "doctor_cta_button_suffix": "años de experiencia"
+    "doctor_cta_button_suffix": "años de experiencia",
+    "other_conditions": "Otros Padecimientos de Garganta",
+    "voice_disorders": "Trastornos de la Voz",
+    "snoring": "Ronquidos",
+    "sleep_apnea": "Apnea del Sueño"
   },
   "sleep-apnea": {
     "hero_title": "Apnea del Sueño",
@@ -969,7 +977,11 @@
     "reason4": "Prevención de problemas cardíacos: El tratamiento ayuda a reducir riesgos de hipertensión, insuficiencia cardíaca y arritmias, protegiendo la salud del corazón.",
     
     "suspicion_title": "¿Sospecha de apnea del sueño?",
-    "suspicion_text": "La apnea no tratada puede tener consecuencias graves. Si experimentas estos síntomas, consulta al Dr. Lumbán para una evaluación completa y recibir el tratamiento más adecuado para tu caso específico."
+    "suspicion_text": "La apnea no tratada puede tener consecuencias graves. Si experimentas estos síntomas, consulta al Dr. Lumbán para una evaluación completa y recibir el tratamiento más adecuado para tu caso específico.",
+    "other_conditions": "Otros Padecimientos de Garganta",
+    "voice_disorders": "Trastornos de la Voz",
+    "snoring": "Ronquidos",
+    "throat_problems": "Problemas de Garganta"
   },
   
   "voice-disorders": {
@@ -1051,7 +1063,11 @@
     "prevention5": "Tratar oportunamente infecciones respiratorias y alergias",
     
     "specialist_cta_title": "Atención especializada en trastornos de la voz en Tijuana",
-    "specialist_cta_text": "La voz de cada persona es tan única como su huella, por lo que cualquier cambio persistente debe evaluarse oportunamente. El Dr. Jaime Lumbán, especialista en otorrinolaringología con más de tres décadas de experiencia, ofrece diagnóstico preciso y tratamiento especializado para trastornos de la voz, garganta y laringe, utilizando técnicas modernas y mínimamente invasivas. Si presentas ronquera persistente, dificultad para hablar o cambios en tu voz, agenda una consulta de valoración para identificar la causa y recibir el tratamiento adecuado"
+    "specialist_cta_text": "La voz de cada persona es tan única como su huella, por lo que cualquier cambio persistente debe evaluarse oportunamente. El Dr. Jaime Lumbán, especialista en otorrinolaringología con más de tres décadas de experiencia, ofrece diagnóstico preciso y tratamiento especializado para trastornos de la voz, garganta y laringe, utilizando técnicas modernas y mínimamente invasivas. Si presentas ronquera persistente, dificultad para hablar o cambios en tu voz, agenda una consulta de valoración para identificar la causa y recibir el tratamiento adecuado",
+    "other_conditions": "Otros Padecimientos de Garganta",
+    "snoring": "Ronquidos",
+    "sleep_apnea": "Apnea del Sueño",
+    "throat_problems": "Problemas de Garganta"
   },
   "pediatric-ent": {
     "hero_title": "Otorrinopediatría",
@@ -1184,7 +1200,12 @@
     "return_activity": "Retorno a la actividad: El paciente puede retomar sus actividades habituales en 1 o 2 semanas, pero debe evitar el ejercicio físico intenso durante un mes.",
     
     "final_cta_title": "¿Tiene dudas sobre el la endoscopia para sinusitis?",
-    "final_cta_text": "Para obtener un diagnóstico personalizado o aclarar cualquier inquietud, el Dr. Lumbán está a su disposición. Puede concertar una cita a través de nuestro número telefónico o vía correo electrónico. Su salud respiratoria es nuestra prioridad."
+    "final_cta_text": "Para obtener un diagnóstico personalizado o aclarar cualquier inquietud, el Dr. Lumbán está a su disposición. Puede concertar una cita a través de nuestro número telefónico o vía correo electrónico. Su salud respiratoria es nuestra prioridad.",
+"other_conditions": "Otros Procedimientos",
+    "sinusitis_surgery": "Cirugía para Sinusitis",
+    "endoscopic_surgery": "Cirugía Endoscópica para Sinusitis",
+    "anti_snoring_surgery": "Cirugía Antirronquido",
+    "microscopic_surgery": "Cirugía Microscópica de Laringe"
   },
   
   "anti-snoring-surgery": {
@@ -1234,7 +1255,12 @@
     "polysomnography_text": "En casos específicos, se solicita una polisomnografía para medir con precisión la calidad del sueño y cuantificar la presencia de apnea.",
     
     "final_cta_title": "¿Tienes dudas sobre qué cirugía antirronquidos es la ideal para ti?",
-    "final_cta_text": "Agenda una consulta con el Dr. Lumbán para una valoración completa."
+    "final_cta_text": "Agenda una consulta con el Dr. Lumbán para una valoración completa.",
+    "other_conditions": "Otros Procedimientos",
+    "sinusitis_surgery": "Cirugía para Sinusitis",
+    "endoscopic_surgery": "Cirugía Endoscópica para Sinusitis",
+    "anti_snoring_surgery": "Cirugía Antirronquido",
+    "microscopic_surgery": "Cirugía Microscópica de Laringe"
   },
   
   "microscopic-surgery": {
@@ -1306,7 +1332,12 @@
     "recovery_text": "Es fundamental mantenerse bien hidratado y evitar hablar en la medida de lo posible para permitir la adecuada cicatrización de las cuerdas vocales. También se recomienda el uso de humidificadores para mantener el aire húmedo, lo cual puede ayudar a aliviar la garganta. Después de la primera semana, muchos pacientes comienzan a notar mejoras en la calidad de su voz y en su bienestar general. Sin embargo, la recuperación completa puede tardar varias semanas, por lo que es importante asistir a las citas de seguimiento con el cirujano para supervisar el proceso de cicatrización.",
     
     "final_cta_title": "¿Tienes dolor al hablar o ronquera prolongada?",
-    "final_cta_text": "Te invitamos a agendar una valoración con el Dr. Lumbán experto en trastornos de la voz y cirugía mínima invasiva."
+    "final_cta_text": "Te invitamos a agendar una valoración con el Dr. Lumbán experto en trastornos de la voz y cirugía mínima invasiva.",
+"other_conditions": "Otros Procedimientos",
+    "sinusitis_surgery": "Cirugía para Sinusitis",
+    "endoscopic_surgery": "Cirugía Endoscópica para Sinusitis",
+    "anti_snoring_surgery": "Cirugía Antirronquido",
+    "microscopic_surgery": "Cirugía Microscópica de Laringe"
   },
   
   "rhinoplasty": {
@@ -1498,10 +1529,15 @@
     "faq5_a": "Depende de cada póliza. Muchos seguros cubren la cirugía cuando está indicada por sinusitis crónica refractaria al tratamiento médico.",
     
     "final_cta_title": "Respira mejor, vive mejor",
-    "final_cta_text": "Si has probado múltiples tratamientos para la sinusitis sin éxito, la cirugía endoscópica puede ser la solución que necesitas. No dejes que la congestión nasal crónica limite tu vida. El Dr. Jaime Lumbán te ofrece una evaluación completa para determinar si eres candidato a la cirugía y cuál es la mejor técnica para tu caso específico. Agenda hoy tu consulta y da el primer paso hacia una respiración libre y duradera."
+    "final_cta_text": "Si has probado múltiples tratamientos para la sinusitis sin éxito, la cirugía endoscópica puede ser la solución que necesitas. No dejes que la congestión nasal crónica limite tu vida. El Dr. Jaime Lumbán te ofrece una evaluación completa para determinar si eres candidato a la cirugía y cuál es la mejor técnica para tu caso específico. Agenda hoy tu consulta y da el primer paso hacia una respiración libre y duradera.",
+"other_conditions": "Otros Procedimientos",
+    "sinusitis_surgery": "Cirugía para Sinusitis",
+    "endoscopic_surgery": "Cirugía Endoscópica para Sinusitis",
+    "anti_snoring_surgery": "Cirugía Antirronquido",
+    "microscopic_surgery": "Cirugía Microscópica de Laringe"
   },
   
-"testimonials": {
+  "testimonials": {
     "hero_aria_label": "Video de testimonios de pacientes del Dr. Lumbán",
     "hero_title": "Testimonios de Pacientes",
     "hero_subtitle": "Experiencias reales que transforman vidas",

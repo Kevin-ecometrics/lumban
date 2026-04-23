@@ -666,21 +666,21 @@
     "medical_item2": "Nasal corticosteroids",
     "medical_item3": "Antihistamines for allergies",
     "medical_item4": "Saline nasal rinses",
-    "medical_item5": "Immunotherapy for allergies",
-    "surgical_section_title": "Surgical Treatment",
-    "surgical_item1_full": "Septoplasty (septum correction)",
-    "surgical_item2_full": "Inferior turbinate reduction",
-    "surgical_item3_full": "Endoscopic nasal surgery",
-    "surgical_item4_full": "Outpatient procedures",
-    "surgical_item5_full": "Fast recovery",
-    "cta_question": "Would you like to improve your appearance?",
-    "cta_text": "Dr. Lumbán is a specialist in Aesthetic Nose Surgery. Learn about this procedure that can improve your health and appearance.",
-    "cta_button": "VIEW MORE INFORMATION",
+"medical_item5": "Immunotherapy for allergies",
+    "cta_question": "Do you have any questions?",
+    "cta_text": "Dr. Lumbán understands that surgery is a big decision. You can contact him by phone, email, or schedule an appointment.",
+    "cta_button": "REQUEST YOUR CONSULTATION",
     "about_doctor": "Learn about Dr. Lumbán",
-    "about_doctor_text": "Dr. Lumbán has years of experience in the field of otolaryngology, providing quality service and friendly treatment.",
-    "view_full_profile": "VIEW FULL PROFILE"
-},
-"allergies": {
+    "about_doctor_text": "Dr. Lumbán has",
+    "view_full_profile": "VIEW FULL PROFILE",
+    "years_suffix": "years of experience in otolaryngology, specializing in the diagnosis and treatment of nasal obstructions.",
+    "other_conditions": "Other Nose Conditions",
+    "septoplasty": "Septoplasty",
+    "sinusitis": "Sinusitis",
+    "nasal_congestion": "Nasal Congestion",
+    "allergies": "Allergies"
+  },
+  "allergies": {
     "hero_title": "About Allergies",
     "hero_subtitle": "Comprehensive diagnosis and treatment of allergic diseases",
     "hero_alt": "About Allergies",
@@ -871,7 +871,11 @@
     "procedure3": "Cauterization or turbinate reduction: Decreases the size of tissues that block airflow.",
     
     "recovery_cta_title": "Recover your rest with an expert in throat-related conditions",
-    "recovery_cta_text": "If snoring is affecting your rest or your family's, don't ignore it. A timely diagnosis can prevent complications and significantly improve your quality of life. Dr. Jaime Lumbán, ENT specialist in Tijuana with over three decades of experience, has extensive experience in the comprehensive diagnosis and treatment of snoring and obstructive sleep apnea, in both adults and children. Your respiratory health is in the best hands. Take the first step toward healthy, restorative sleep."
+    "recovery_cta_text": "If snoring is affecting your rest or your family's, don't ignore it. A timely diagnosis can prevent complications and significantly improve your quality of life. Dr. Jaime Lumbán, ENT specialist in Tijuana with over three decades of experience, has extensive experience in the comprehensive diagnosis and treatment of snoring and obstructive sleep apnea, in both adults and children. Your respiratory health is in the best hands. Take the first step toward healthy, restorative sleep.",
+    "other_conditions": "Other Throat Conditions",
+    "voice_disorders": "Voice Disorders",
+    "sleep_apnea": "Sleep Apnea",
+    "throat_problems": "Throat Problems"
   },
   "throat": {
     "hero_title": "Throat Diseases",
@@ -912,7 +916,11 @@
     
     "doctor_cta": "Dr. Jaime Lumbán offers expert diagnoses and personalized treatments for all throat-related conditions.",
     "doctor_cta_button_prefix": "Schedule your consultation today to receive tailored treatment from an expert with more than ",
-    "doctor_cta_button_suffix": "years of experience"
+    "doctor_cta_button_suffix": "years of experience",
+    "other_conditions": "Other Throat Conditions",
+    "voice_disorders": "Voice Disorders",
+    "snoring": "Snoring",
+    "sleep_apnea": "Sleep Apnea"
   },
   
   "sleep-apnea": {
@@ -981,7 +989,11 @@
     "reason4": "Prevention of heart problems: Treatment helps reduce risks of hypertension, heart failure, and arrhythmias, protecting heart health.",
     
     "suspicion_title": "Suspected Sleep Apnea?",
-    "suspicion_text": "Untreated apnea can have serious consequences. If you experience these symptoms, consult Dr. Lumbán for a complete evaluation and the most appropriate treatment for your specific case."
+    "suspicion_text": "Untreated apnea can have serious consequences. If you experience these symptoms, consult Dr. Lumbán for a complete evaluation and the most appropriate treatment for your specific case.",
+    "other_conditions": "Other Throat Conditions",
+    "voice_disorders": "Voice Disorders",
+    "snoring": "Snoring",
+    "throat_problems": "Throat Problems"
   },
 
   "voice-disorders": {
@@ -1063,7 +1075,11 @@
     "prevention5": "Promptly treat respiratory infections and allergies",
     
     "specialist_cta_title": "Specialized care for voice disorders in Tijuana",
-    "specialist_cta_text": "Each person's voice is as unique as their fingerprint, so any persistent change should be evaluated promptly. Dr. Jaime Lumbán, ENT specialist with over three decades of experience, offers precise diagnosis and specialized treatment for voice, throat, and laryngeal disorders, using modern and minimally invasive techniques. If you have persistent hoarseness, difficulty speaking, or changes in your voice, schedule a consultation to identify the cause and receive appropriate treatment."
+    "specialist_cta_text": "Each person's voice is as unique as their fingerprint, so any persistent change should be evaluated promptly. Dr. Jaime Lumbán, ENT specialist with over three decades of experience, offers precise diagnosis and specialized treatment for voice, throat, and laryngeal disorders, using modern and minimally invasive techniques. If you have persistent hoarseness, difficulty speaking, or changes in your voice, schedule a consultation to identify the cause and receive appropriate treatment.",
+    "other_conditions": "Other Throat Conditions",
+    "snoring": "Snoring",
+    "sleep_apnea": "Sleep Apnea",
+    "throat_problems": "Throat Problems"
   },
 
   "pediatric-ent": {
@@ -1197,7 +1213,12 @@
     "return_activity": "Return to activity: The patient can resume normal activities in 1 or 2 weeks, but should avoid intense physical exercise for one month.",
     
     "final_cta_title": "Do you have questions about endoscopic sinus surgery?",
-    "final_cta_text": "For a personalized diagnosis or to clarify any concerns, Dr. Lumbán is at your disposal. You can schedule an appointment through our phone number or via email. Your respiratory health is our priority."
+    "final_cta_text": "For a personalized diagnosis or to clarify any concerns, Dr. Lumbán is at your disposal. You can schedule an appointment through our phone number or via email. Your respiratory health is our priority.",
+"other_conditions": "Other Procedures",
+    "sinusitis_surgery": "Sinusitis Surgery",
+    "endoscopic_surgery": "Endoscopic Surgery for Sinusitis",
+    "anti_snoring_surgery": "Anti-Snoring Surgery",
+    "microscopic_surgery": "Microscopic Laryngeal Surgery"
   },
   
   "anti-snoring-surgery": {
@@ -1247,7 +1268,12 @@
     "polysomnography_text": "In specific cases, a polysomnography is requested to accurately measure sleep quality and quantify the presence of apnea.",
     
     "final_cta_title": "Do you have questions about which anti-snoring surgery is ideal for you?",
-    "final_cta_text": "Schedule a consultation with Dr. Lumbán for a complete evaluation."
+    "final_cta_text": "Schedule a consultation with Dr. Lumbán for a complete evaluation.",
+    "other_conditions": "Other Procedures",
+    "sinusitis_surgery": "Sinusitis Surgery",
+    "endoscopic_surgery": "Endoscopic Surgery for Sinusitis",
+    "anti_snoring_surgery": "Anti-Snoring Surgery",
+    "microscopic_surgery": "Microscopic Laryngeal Surgery"
   },
   
   "microscopic-surgery": {
@@ -1319,7 +1345,12 @@
     "recovery_text": "It is essential to stay well hydrated and avoid speaking as much as possible to allow proper healing of the vocal cords. Using humidifiers to keep the air moist is also recommended, which can help soothe the throat. After the first week, many patients begin to notice improvements in their voice quality and overall well-being. However, complete recovery may take several weeks, so it is important to attend follow-up appointments with the surgeon to monitor the healing process.",
     
     "final_cta_title": "Do you have pain when speaking or prolonged hoarseness?",
-    "final_cta_text": "We invite you to schedule an evaluation with Dr. Lumbán, an expert in voice disorders and minimally invasive surgery."
+    "final_cta_text": "We invite you to schedule an evaluation with Dr. Lumbán, an expert in voice disorders and minimally invasive surgery.",
+    "other_conditions": "Other Procedures",
+    "sinusitis_surgery": "Sinusitis Surgery",
+    "endoscopic_surgery": "Endoscopic Surgery for Sinusitis",
+    "anti_snoring_surgery": "Anti-Snoring Surgery",
+    "microscopic_surgery": "Microscopic Laryngeal Surgery"
   },
   
   "rhinoplasty": {
@@ -1508,13 +1539,19 @@
     "faq4_q": "Is the surgery permanent?",
     "faq4_a": "In most cases, results are permanent. However, patients with severe allergies or nasal polyps may require long-term complementary treatments.",
     
-    "faq5_q": "Does insurance cover this surgery?",
-    "faq5_a": "It depends on each policy. Many insurances cover surgery when indicated for chronic sinusitis refractory to medical treatment.",
+"faq5_q": "Does insurance cover this surgery?",
+    "faq5_a": "It depends on each policy. Many insurance plans cover the surgery when indicated for chronic sinusitis refractory to medical treatment.",
     
     "final_cta_title": "Breathe better, live better",
-    "final_cta_text": "If you have tried multiple treatments for sinusitis without success, endoscopic surgery may be the solution you need. Don't let chronic nasal congestion limit your life. Dr. Jaime Lumbán offers you a complete evaluation to determine if you are a candidate for surgery and which technique is best for your specific case. Schedule your consultation today and take the first step toward free and lasting breathing."
+    "final_cta_text": "If you've tried multiple treatments for sinusitis without success, endoscopic surgery may be the solution you need. Don't let chronic nasal congestion limit your life. Dr. Jaime Lumbán offers a complete evaluation to determine if you are a candidate for surgery and which is the best technique for your specific case. Schedule your consultation today and take the first step toward free and lasting breathing.",
+"other_conditions": "Other Procedures",
+    "sinusitis_surgery": "Sinusitis Surgery",
+    "endoscopic_surgery": "Endoscopic Surgery for Sinusitis",
+    "anti_snoring_surgery": "Anti-Snoring Surgery",
+    "microscopic_surgery": "Microscopic Laryngeal Surgery"
   },
-"testimonials": {
+  
+  "testimonials": {
     "hero_aria_label": "Video of patient testimonials from Dr. Lumbán",
     "hero_title": "Patient Testimonials",
     "hero_subtitle": "Real experiences that transform lives",

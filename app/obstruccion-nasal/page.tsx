@@ -9,6 +9,7 @@ import SecondaryImage from "../Components/Image";
 export default function ObstruccionNasalPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+  const experienceYears = new Date().getFullYear() - 1993;
 
   return (
     <main className="bg-white text-gray-900">
@@ -136,13 +137,46 @@ export default function ObstruccionNasalPage() {
               {t("nasal-obstruction.about_doctor")}
             </h3>
             <p className="text-gray-600 max-w-xl">
-              {t("nasal-obstruction.about_doctor_text")}
+              {t("nasal-obstruction.about_doctor_text", { experienceYears })} {experienceYears} {t("nasal-obstruction.years_suffix")}
             </p>
             <a
               href={getRouteByKey("profile", currentLang)}
               className="inline-flex items-center justify-center text-center px-5 py-3 rounded-full border border-gray-400 hover:bg-gray-100 transition"
             >
               {t("nasal-obstruction.view_full_profile")}
+            </a>
+          </div>
+        </div>
+
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
+            {t("nasal-obstruction.other_conditions")}
+          </h3>
+          <div className="flex flex-wrap gap-3 text-gray-700">
+            <a
+              href={getRouteByKey("septoplasty", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("nasal-obstruction.septoplasty")}
+            </a>
+            <a
+              href={getRouteByKey("sinusitis", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("nasal-obstruction.sinusitis")}
+            </a>
+            <a
+              href={getRouteByKey("nasal-congestion", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("nasal-obstruction.nasal_congestion")}
+            </a>
+            <a
+              href={getRouteByKey("allergies", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("nasal-obstruction.allergies")}
             </a>
           </div>
         </div>

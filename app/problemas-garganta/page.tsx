@@ -110,6 +110,33 @@ export default function PadecimientosGargantaPage() {
             {t("throat.cta_button")}
           </a>
         </div>
+
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
+            {t("throat.other_conditions")}
+          </h3>
+          <div className="flex flex-wrap gap-3 text-gray-700">
+            <a
+              href={getRouteByKey("voice-disorders", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("throat.voice_disorders")}
+            </a>
+            <a
+              href={getRouteByKey("snoring", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("throat.snoring")}
+            </a>
+            <a
+              href={getRouteByKey("sleep-apnea", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("throat.sleep_apnea")}
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );

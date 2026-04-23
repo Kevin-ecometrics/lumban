@@ -307,20 +307,20 @@ export default function EarConditionsPage() {
             {t("ear.view_full_profile")}
           </a>
         </div>
-      </section>
 
-      {/* OTROS PADECIMIENTOS */}
-      <section className="bg-gray-100 py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center space-y-4">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
             {t("ear.other_conditions")}
           </h3>
-          <a
-            href={getRouteByKey("hearing-loss", currentLang)}
-            className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
-          >
-            {t("ear.hearing_loss")}
-          </a>
+          <div className="flex flex-wrap gap-3 text-gray-700">
+            <a
+              href={getRouteByKey("hearing-loss", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("ear.hearing_loss")}
+            </a>
+          </div>
         </div>
       </section>
     </main>

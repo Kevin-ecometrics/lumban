@@ -292,19 +292,16 @@ export default function HearingLossPage() {
             {t("hearing-loss.view_full_profile")}
           </Link>
         </div>
-      </section>
 
-      {/* OTROS PADECIMIENTOS */}
-      <section className="bg-gray-100 py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center space-y-4">
-          <h3 className="text-3xl font-bold text-gray-900">
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
             {t("hearing-loss.other_conditions")}
           </h3>
-          <div className="flex flex-col gap-3">
-            
+          <div className="flex flex-wrap gap-3 text-gray-700">
             <a
               href={getRouteByKey("vertigo-dizziness", currentLang)}
-              className="text-lg text-blue-600 hover:text-blue-800 hover:underline"
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
             >
               {t("hearing-loss.vertigo_dizziness")}
             </a>

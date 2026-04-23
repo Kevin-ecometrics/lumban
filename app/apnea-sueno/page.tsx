@@ -169,6 +169,33 @@ export default function ApneaSuenoPage() {
             {t("sleep-apnea.cta_button")}
           </a>
         </div>
+
+        {/* OTROS PADECIMIENTOS */}
+        <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <h3 className="text-xl font-semibold">
+            {t("sleep-apnea.other_conditions")}
+          </h3>
+          <div className="flex flex-wrap gap-3 text-gray-700">
+            <a
+              href={getRouteByKey("voice-disorders", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("sleep-apnea.voice_disorders")}
+            </a>
+            <a
+              href={getRouteByKey("snoring", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("sleep-apnea.snoring")}
+            </a>
+            <a
+              href={getRouteByKey("throat-problems", currentLang)}
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm hover:bg-gray-100 transition"
+            >
+              {t("sleep-apnea.throat_problems")}
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );
