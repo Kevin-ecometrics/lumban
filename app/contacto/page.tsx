@@ -4,6 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaWhatsapp, FaLock, FaM } from "react-icons/fa6";
+import JsonLdFaq from "@components/JsonLdFaq";
 type ContactFormData = {
   nombre: string;
   email: string;
@@ -108,6 +109,14 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <JsonLdFaq
+        questions={[
+          { questionKey: "home.faq.question1", answerKey: "home.faq.answer1" },
+          { questionKey: "home.faq.question2", answerKey: "home.faq.answer2" },
+          { questionKey: "home.faq.question3", answerKey: "home.faq.answer3" },
+          { questionKey: "home.faq.question4", answerKey: "home.faq.answer4" },
+        ]}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">

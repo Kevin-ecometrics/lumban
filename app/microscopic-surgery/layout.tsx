@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "What is a vocal cord surgery like?",
     "Pain when speaking or hoarseness",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/microscopic-surgery",
+  },
 };
 
 export default function ProfileLayout({

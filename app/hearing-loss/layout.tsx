@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "How to know if I'm losing hearing?",
     "How to care for your ears?",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/hearing-loss",
+  },
 };
 export default function ProfileLayout({
   children,

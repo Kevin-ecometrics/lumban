@@ -6,6 +6,42 @@ import Navbar from "./Components/Navbar";
 import Providers from "./Providers";
 import FacebookPixel from "./Components/FacebookPixel";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  name: "Dr. Jaime Lumbán",
+  url: "https://drlumban.com",
+  image: "https://drlumban.com/og-image.png",
+  description:
+    "Otorrinolaringólogo certificado en Tijuana con más de 23 años de experiencia. Especialista en oído, nariz y garganta, rinoplastia, cirugía endoscopic y tratamientos para sinusitis.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Tijuana",
+    addressRegion: "Baja California",
+    addressCountry: "MX",
+  },
+  telephone: "+52-664-684-2364",
+  email: "contacto@drlumban.com",
+  priceRange: "$$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "127",
+  },
+  sameAs: [
+    "https://www.facebook.com/drlumban",
+    "https://www.instagram.com/drlumban",
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Dr. Jaime Lumbán — Otorrinolaringólogo en Tijuana",
 
@@ -65,6 +101,10 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://drlumban.com/",
+    languages: {
+      es: "https://drlumban.com/",
+      en: "https://drlumban.com/en",
+    },
   },
 
   metadataBase: new URL("https://drlumban.com"),
@@ -79,6 +119,10 @@ export default function RootLayout({
     <html lang="es">
       <GoogleTagManager gtmId="GTM-KXLQJ545" />
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Providers>
           <Navbar />
           <main>{children}</main>

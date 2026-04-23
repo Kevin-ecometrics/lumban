@@ -33,7 +33,7 @@ export type RouteKey =
 
 
 export const ROUTE_PAIRS: Array<{ key: RouteKey; es: string; en: string }> = [
-  { key: "home", es: "/", en: "/" },
+  { key: "home", es: "/", en: "/en" },
   { key: "profile", es: "/perfil", en: "/profile" },
   { key: "certifications", es: "/certificaciones", en: "/certifications" },
   { key: "facilities", es: "/instalaciones", en: "/facilities" },
@@ -41,7 +41,7 @@ export const ROUTE_PAIRS: Array<{ key: RouteKey; es: string; en: string }> = [
   { key: "sitemap", es: "/sitemap", en: "/sitemap" },
   { key: "aesthetic-nose", es: "/cosmetica-nariz", en: "/rhinoplasty" },
   { key: "septoplasty", es: "/septoplastia", en: "/septoplasty" },
-  { key: "sinusitis", es: "/sinusitis", en: "/sinusitis" },
+  { key: "sinusitis", es: "/sinusitis", en: "/sinusitis-treatment" },
   { key: "nasal-congestion", es: "/congestion-nasal", en: "/nasal-congestion" },
   { key: "nasal-obstruction", es: "/obstruccion-nasal", en: "/nasal-obstruction" },
   { key: "allergies", es: "/alergias", en: "/allergies" },

@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "Rhinoplasty results in Tijuana",
     "Before and after rhinoplasty",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/testimonials",
+  },
 };
 
 export default function ProfileLayout({

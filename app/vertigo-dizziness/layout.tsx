@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "Common causes of vertigo and dizziness",
     "Otolaryngologic assessment",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/vertigo-dizziness",
+  },
 };
 
 export default function ProfileLayout({

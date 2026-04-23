@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "Causes of Nasal Congestion",
     "Treatment for nasal congestion",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/nasal-congestion",
+  },
 };
 export default function ProfileLayout({
   children,

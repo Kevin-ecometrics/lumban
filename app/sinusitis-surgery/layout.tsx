@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "Nasal congestion surgery",
     "Recurrent sinus infections",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/sinusitis-surgery",
+  },
 };
 
 export default function SinusitisSurgeryLayout({

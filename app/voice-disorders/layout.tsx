@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Voice Disorders: Diagnosis and Treatment in Tijuana",
   description:
-    "Do you feel your voice has changed or you have trouble speaking? Don’t let the problem worsen. Dr. Jaime Lumban specializes in restoring your voice.",
+    "Do you feel your voice has changed or you have trouble speaking? Don't let the problem worsen. Dr. Jaime Lumban specializes in restoring your voice.",
   keywords: [
     "Dr. Jaime Lumban",
     "Vocal nodules",
@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "Can voice disorders be prevented?",
     "Specialized care for voice disorders in Tijuana",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/voice-disorders",
+  },
 };
 export default function ProfileLayout({
   children,

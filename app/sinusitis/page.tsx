@@ -5,12 +5,22 @@ import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
 import SecondaryImage from "../Components/Image";
+import JsonLdFaq from "../Components/JsonLdFaq";
 
 export default function SinusitisPage() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
   return (
     <main className="bg-white text-gray-900">
+      <JsonLdFaq
+        questions={[
+          { questionKey: "sinusitis.faq1_q", answerKey: "sinusitis.faq1_a" },
+          { questionKey: "sinusitis.faq2_q", answerKey: "sinusitis.faq2_a" },
+          { questionKey: "sinusitis.faq3_q", answerKey: "sinusitis.faq3_a" },
+          { questionKey: "sinusitis.faq4_q", answerKey: "sinusitis.faq4_a" },
+          { questionKey: "sinusitis.faq5_q", answerKey: "sinusitis.faq5_a" },
+        ]}
+      />
       {/* HERO */}
       <Hero
         title={t("sinusitis.hero_title")}

@@ -1,11 +1,11 @@
 ============================================================
 REPORTE DE URLs - DR LUMBÁN
 ============================================================
-Fecha de generación: 2026-04-22
-Total de URLs: 49
+Fecha de generación: 2026-04-23
+Total de URLs: 51
 
-Alta prioridad (>=0.9): 13 URLs
-Media prioridad (0.7-0.9): 35 URLs
+Alta prioridad (>=0.9): 14 URLs
+Media prioridad (0.7-0.9): 36 URLs
 Baja prioridad (<0.7): 1 URLs
 
 ------------------------------------------------------------
@@ -13,99 +13,103 @@ LISTA COMPLETA DE URLs:
 ------------------------------------------------------------
 1. /
    Prioridad: 1 | Frecuencia: weekly
-2. /perfil
+2. /en
+   Prioridad: 1 | Frecuencia: weekly
+3. /perfil
    Prioridad: 0.9 | Frecuencia: monthly
-3. /profile
+4. /profile
    Prioridad: 0.9 | Frecuencia: monthly
-4. /contacto
+5. /contacto
    Prioridad: 0.9 | Frecuencia: monthly
-5. /contact
+6. /contact
    Prioridad: 0.9 | Frecuencia: monthly
-6. /instalaciones
+7. /instalaciones
    Prioridad: 0.8 | Frecuencia: monthly
-7. /facilities
+8. /facilities
    Prioridad: 0.8 | Frecuencia: monthly
-8. /certificaciones
+9. /certificaciones
    Prioridad: 0.8 | Frecuencia: monthly
-9. /certifications
+10. /certifications
    Prioridad: 0.8 | Frecuencia: monthly
-10. /cirugia-microscopica
+11. /cirugia-microscopica
    Prioridad: 0.9 | Frecuencia: monthly
-11. /microscopic-surgery
+12. /microscopic-surgery
    Prioridad: 0.9 | Frecuencia: monthly
-12. /cirugia-endoscopica
+13. /cirugia-endoscopica
    Prioridad: 0.9 | Frecuencia: monthly
-13. /endoscopic-surgery
+14. /endoscopic-surgery
    Prioridad: 0.9 | Frecuencia: monthly
-14. /cirugia-antirronquido
+15. /cirugia-antirronquido
    Prioridad: 0.9 | Frecuencia: monthly
-15. /anti-snoring-surgery
+16. /anti-snoring-surgery
    Prioridad: 0.9 | Frecuencia: monthly
-16. /septoplastia
+17. /septoplastia
    Prioridad: 0.8 | Frecuencia: monthly
-17. /septoplasty
+18. /septoplasty
    Prioridad: 0.8 | Frecuencia: monthly
-18. /cosmetica-nariz
+19. /cosmetica-nariz
    Prioridad: 0.8 | Frecuencia: monthly
-19. /rhinoplasty
+20. /rhinoplasty
    Prioridad: 0.8 | Frecuencia: monthly
-20. /alergias
+21. /alergias
    Prioridad: 0.7 | Frecuencia: monthly
-21. /allergies
+22. /allergies
    Prioridad: 0.7 | Frecuencia: monthly
-22. /congestion-nasal
+23. /congestion-nasal
    Prioridad: 0.7 | Frecuencia: monthly
-23. /nasal-congestion
+24. /nasal-congestion
    Prioridad: 0.7 | Frecuencia: monthly
-24. /obstruccion-nasal
+25. /obstruccion-nasal
    Prioridad: 0.7 | Frecuencia: monthly
-25. /nasal-obstruction
+26. /nasal-obstruction
    Prioridad: 0.7 | Frecuencia: monthly
-26. /perdida-audicion
+27. /perdida-audicion
    Prioridad: 0.7 | Frecuencia: monthly
-27. /hearing-loss
+28. /hearing-loss
    Prioridad: 0.7 | Frecuencia: monthly
-28. /vertigo-mareo
+29. /vertigo-mareo
    Prioridad: 0.7 | Frecuencia: monthly
-29. /vertigo-dizziness
+30. /vertigo-dizziness
    Prioridad: 0.7 | Frecuencia: monthly
-30. /ronquidos
+31. /ronquidos
    Prioridad: 0.7 | Frecuencia: monthly
-31. /snoring
+32. /snoring
    Prioridad: 0.7 | Frecuencia: monthly
-32. /problemas-garganta
+33. /problemas-garganta
    Prioridad: 0.7 | Frecuencia: monthly
-33. /throat-problems
+34. /throat-problems
    Prioridad: 0.7 | Frecuencia: monthly
-34. /apnea-sueno
+35. /apnea-sueno
    Prioridad: 0.7 | Frecuencia: monthly
-35. /sleep-apnea
+36. /sleep-apnea
    Prioridad: 0.7 | Frecuencia: monthly
-36. /trastornos-voz
+37. /trastornos-voz
    Prioridad: 0.7 | Frecuencia: monthly
-37. /voice-disorders
+38. /voice-disorders
    Prioridad: 0.7 | Frecuencia: monthly
-38. /otorrinopediatria
+39. /otorrinopediatria
    Prioridad: 0.8 | Frecuencia: monthly
-39. /pediatric-ent
+40. /pediatric-ent
    Prioridad: 0.8 | Frecuencia: monthly
-40. /sinusitis
+41. /sinusitis
    Prioridad: 0.7 | Frecuencia: monthly
-41. /cirugia-sinusitis
+42. /sinusitis-treatment
+   Prioridad: 0.7 | Frecuencia: monthly
+43. /cirugia-sinusitis
    Prioridad: 0.9 | Frecuencia: monthly
-42. /sinusitis-surgery
+44. /sinusitis-surgery
    Prioridad: 0.9 | Frecuencia: monthly
-43. /garganta
+45. /garganta
    Prioridad: 0.7 | Frecuencia: monthly
-44. /throat
+46. /throat
    Prioridad: 0.7 | Frecuencia: monthly
-45. /oido
+47. /oido
    Prioridad: 0.7 | Frecuencia: monthly
-46. /ear
+48. /ear
    Prioridad: 0.7 | Frecuencia: monthly
-47. /nariz
+49. /nariz
    Prioridad: 0.7 | Frecuencia: monthly
-48. /nose
+50. /nose
    Prioridad: 0.7 | Frecuencia: monthly
-49. /sitemap
+51. /sitemap
    Prioridad: 0.6 | Frecuencia: monthly

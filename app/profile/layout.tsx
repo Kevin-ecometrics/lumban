@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "Ear, nose and throat conditions",
     "Aesthetic and functional nose surgery in Tijuana",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/profile",
+  },
 };
 
 export default function ProfileLayout({

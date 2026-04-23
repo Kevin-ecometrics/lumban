@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     "Diagnosis and evaluation of snoring",
     "Is anti‑snoring surgery the ideal for you?",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/anti-snoring-surgery",
+  },
 };
 
 export default function ProfileLayout({

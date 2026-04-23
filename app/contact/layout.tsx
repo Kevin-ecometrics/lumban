@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "ENT specialist Tijuana contact",
     "Nose specialist consultation",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/contact",
+  },
 };
 
 export default function ContactLayout({

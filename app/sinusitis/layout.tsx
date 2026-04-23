@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "Diagnóstico y evaluación de sinusitis ",
     "Opciones de tratamiento para sinusitis ",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/sinusitis",
+  },
 };
 export default function ProfileLayout({
   children,

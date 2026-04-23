@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     "Allergies and respiratory problems in children",
     "Differences between sinusitis and a cold in children",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/pediatric-ent",
+  },
 };
 
 export default function ProfileLayout({

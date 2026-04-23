@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "Advanced rhinoplasty techniques",
     "Advanced otolaryngology techniques",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/certifications",
+  },
 };
 export default function ProfileLayout({
   children,

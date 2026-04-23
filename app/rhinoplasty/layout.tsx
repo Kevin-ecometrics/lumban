@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "Types of rhinoplasty",
     "Which type of rhinoplasty is best for you?",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/rhinoplasty",
+  },
 };
 
 export default function ProfileLayout({

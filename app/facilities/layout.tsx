@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description:
     "Visit our top-tier facilities in Tijuana for otolaryngology consultation and specialized rhinoplasty.",
   keywords: ["Otolaryngology Office", "Río Médica Building"],
+  alternates: {
+    canonical: "https://drlumban.com/facilities",
+  },
 };
 
 export default function ProfileLayout({

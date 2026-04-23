@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import JsonLdFaq from "../Components/JsonLdFaq";
 
 export default function CirugiaSinusitisPage() {
   const { t, i18n } = useTranslation();
@@ -24,6 +25,15 @@ export default function CirugiaSinusitisPage() {
 
   return (
     <main className="bg-white">
+      <JsonLdFaq
+        questions={[
+          { questionKey: "sinusitis.faq1_q", answerKey: "sinusitis.faq1_a" },
+          { questionKey: "sinusitis.faq2_q", answerKey: "sinusitis.faq2_a" },
+          { questionKey: "sinusitis.faq3_q", answerKey: "sinusitis.faq3_a" },
+          { questionKey: "sinusitis.faq4_q", answerKey: "sinusitis.faq4_a" },
+          { questionKey: "sinusitis.faq5_q", answerKey: "sinusitis.faq5_a" },
+        ]}
+      />
       {/* HERO */}
       <div className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.03),transparent_50%)]" />

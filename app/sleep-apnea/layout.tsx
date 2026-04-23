@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "Treatment for sleep apnea",
     "Obstructive sleep apnea in children",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/sleep-apnea",
+  },
 };
 export default function ProfileLayout({
   children,

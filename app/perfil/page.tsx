@@ -5,6 +5,7 @@ import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import StickyVideoHero from "@/app/Components/StickyVideoHero";
+import JsonLdFaq from "@components/JsonLdFaq";
 
 export default function AboutPage() {
   const { t } = useTranslation();
@@ -14,6 +15,15 @@ export default function AboutPage() {
 
   return (
     <main className="bg-white">
+      <JsonLdFaq
+        questions={[
+          { questionKey: "home.faq.question1", answerKey: "home.faq.answer1" },
+          { questionKey: "home.faq.question2", answerKey: "home.faq.answer2" },
+          { questionKey: "home.faq.question3", answerKey: "home.faq.answer3" },
+          { questionKey: "home.faq.question4", answerKey: "home.faq.answer4" },
+        ]}
+      />
+
       {/* HERO */}
 
       <StickyVideoHero

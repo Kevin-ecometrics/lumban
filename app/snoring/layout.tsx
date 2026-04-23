@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "Diagnosis and treatment for snoring",
     "Treatment for obstructive sleep apnea",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/snoring",
+  },
 };
 export default function ProfileLayout({
   children,

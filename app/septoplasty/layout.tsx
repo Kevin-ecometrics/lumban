@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "Benefits of septoplasty",
     "Difference between septoplasty and rhinoplasty",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/septoplasty",
+  },
 };
 export default function ProfileLayout({
   children,

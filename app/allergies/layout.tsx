@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     "How to differentiate allergy, cold or flu",
     "Diagnosis and treatment for allergy",
   ],
+  alternates: {
+    canonical: "https://drlumban.com/allergies",
+  },
 };
 export default function ProfileLayout({
   children,
