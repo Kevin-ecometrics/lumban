@@ -20,17 +20,74 @@ import {
   FaCamera,
   FaRegComment,
   FaTimes,
-  FaExternalLinkAlt,
 } from "react-icons/fa";
 
 const SINUSITIS_HERO_VIDEO = "/testimonial.webm";
 const SINUSITIS_HERO_POSTER = "/testimoniales/testimonial.webp";
 
 // Resultados de rinoplastias - 15 pacientes
-const RHINOPLASTY_RESULTS = Array.from({ length: 15 }, (_, i) => ({
-  src: `/rinoplastia/paciente${i + 1}.webp`,
-  label: `Caso ${i + 1}`,
-}));
+const RHINOPLASTY_RESULTS = [
+  {
+    src: `/rinoplastia/Cirugia de nariz estetica y funcional para hombres en Tijuana.webp`,
+    label: `testimonials.case_1`,
+  },
+  {
+    src: `/rinoplastia/Perfil armonico y respingado con hecho por un otorrino especializado en rinoplastia.webp`,
+    label: `testimonials.case_2`,
+  },
+  {
+    src: `/rinoplastia/Luce una nariz mas delicada y armoniosa con tu rostro con una rinoplastia con el Dr Lumban.webp`,
+    label: `testimonials.case_3`,
+  },
+  {
+    src: `/rinoplastia/Rinoplastia sutil para hombres con el dr Jaime Lumban.webp`,
+    label: `testimonials.case_4`,
+  },
+  {
+    src: `/rinoplastia/Correcion de giba y punta de nariz en Tijuana con Dr Jaime Lumban.webp`,
+    label: `testimonials.case_5`,
+  },
+  {
+    src: `/rinoplastia/Nariz respingada y pequena para rostro con facciones finas solo con un experto en rinoplastia.webp`,
+    label: `testimonials.case_6`,
+  },
+  {
+    src: `/rinoplastia/Rinoplastia minima invasiva en Tijuana con el Dr Lumban.webp`,
+    label: `testimonials.case_7`,
+  },
+  {
+    src: `/rinoplastia/Nariz recta y varonil con el mejor otorrino en tijuana dr Lumban.webp`,
+    label: `testimonials.case_8`,
+  },
+  {
+    src: `/rinoplastia/luce un perfil mas bello con una rinoplastia con un especialista en nariz en tijuana.webp`,
+    label: `testimonials.case_9`,
+  },
+  {
+    src: `/rinoplastia/Correcion de giba y punta caida con un otorrinolaringologo en Tijuana.webp`,
+    label: `testimonials.case_10`,
+  },
+  {
+    src: `/rinoplastia/Remodelacion de punta de nariz para hombre con el Dr. Jaime Lumban.webp`,
+    label: `testimonials.case_11`,
+  },
+  {
+    src: `/rinoplastia/Antes y despues de paciente con una rinoplastia en tijuana con el dr jaime Lumban.webp`,
+    label: `testimonials.case_12`,
+  },
+  {
+    src: `/rinoplastia/Vista comparativa antes y despues de su rinoplastia con el dr lumban.webp`,
+    label: `testimonials.case_13`,
+  },
+  {
+    src: `/rinoplastia/nariz respingada con aspecto natural solo con el dr lumban en tijuana.webp`,
+    label: `testimonials.case_14`,
+  },
+  {
+    src: `/rinoplastia/Antes y despues de paciente del dr lumban con resultados masculinos.webp`,
+    label: `testimonials.case_15`,
+  },
+];
 
 // Tipo para testimonio
 type Testimonial = {
@@ -711,8 +768,8 @@ export default function TestimonialsPage() {
                     </span>
                   </div>
                 </div>
-                <figcaption className="mt-2 text-sm text-gray-500 text-center">
-                  {result.label}
+               <figcaption className="mt-2 text-sm text-gray-500 text-center">
+                  {t(result.label)}
                 </figcaption>
               </motion.figure>
             ))}
@@ -783,9 +840,9 @@ export default function TestimonialsPage() {
                   transition={{ duration: 0.25, ease: "easeOut" }}
                 />
               </AnimatePresence>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
-                {RHINOPLASTY_RESULTS[selectedImageIndex].label}
-              </div>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+                  {t(RHINOPLASTY_RESULTS[selectedImageIndex].label)}
+                </div>
               {RHINOPLASTY_RESULTS.length > 1 && (
                 <>
                   <button
