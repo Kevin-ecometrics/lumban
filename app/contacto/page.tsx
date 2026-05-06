@@ -1,19 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import toast, { Toaster } from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaWhatsapp, FaLock, FaM } from "react-icons/fa6";
+import { FaLock, FaWhatsapp } from "react-icons/fa6";
+import { z } from "zod";
 import JsonLdFaq from "@components/JsonLdFaq";
-type ContactFormData = {
-  nombre: string;
-  email: string;
-  telefono?: string;
-  mensaje: string;
-};
+
+const contactSchema = z.object({
+  nombre: z.string().min(2, "Mínimo 2 caracteres").max(100, "Máximo 100 caracteres"),
+  email: z.string().email("Correo electrónico inválido"),
+  telefono: z.string().max(20, "Máximo 20 caracteres").optional().or(z.literal("")),
+  mensaje: z.string().min(10, "Mínimo 10 caracteres").max(1000, "Máximo 1000 caracteres"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
+type FormErrors = Partial<Record<keyof ContactFormData, string>>;
 
 export default function ContactPage() {
   const { t } = useTranslation();
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const [formData, setFormData] = useState<ContactFormData>({
     nombre: "",
@@ -22,25 +29,16 @@ export default function ContactPage() {
     mensaje: "",
   });
 
-  const [errors, setErrors] = useState<
-    Partial<Record<keyof ContactFormData, string>>
-  >({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-
+    setFormData({ ...formData, [name]: value });
     if (errors[name as keyof ContactFormData]) {
-      setErrors({
-        ...errors,
-        [name]: "",
-      });
+      setErrors({ ...errors, [name]: "" });
     }
   };
 
@@ -49,30 +47,22 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setErrors({});
 
-    let hasError = false;
-    const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
-
-    if (!formData.nombre.trim()) {
-      newErrors.nombre = t("contact.error_name_required");
-      hasError = true;
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = t("contact.error_email_required");
-      hasError = true;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = t("contact.error_email_invalid");
-      hasError = true;
-    }
-
-    if (!formData.mensaje.trim()) {
-      newErrors.mensaje = t("contact.error_message_required");
-      hasError = true;
-    }
-
-    if (hasError) {
-      setErrors(newErrors);
+    const result = contactSchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: FormErrors = {};
+      for (const issue of result.error.issues) {
+        const field = issue.path[0] as keyof ContactFormData;
+        if (!fieldErrors[field]) fieldErrors[field] = issue.message;
+      }
+      setErrors(fieldErrors);
       toast.error(t("contact.error_form_correction"));
+      setIsSubmitting(false);
+      return;
+    }
+
+    const captchaToken = recaptchaRef.current?.getValue();
+    if (!captchaToken) {
+      toast.error("Por favor completa el captcha");
       setIsSubmitting(false);
       return;
     }
@@ -87,19 +77,14 @@ export default function ContactPage() {
           telefono: formData.telefono || undefined,
           especialidad: "general",
           mensaje: formData.mensaje,
+          captchaToken,
         }),
       });
 
       toast.success(t("contact.success_message"));
-
-      setFormData({
-        nombre: "",
-        email: "",
-        telefono: "",
-        mensaje: "",
-      });
-
+      setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
       setErrors({});
+      recaptchaRef.current?.reset();
     } catch {
       toast.error(t("contact.error_send"));
     } finally {
@@ -411,6 +396,13 @@ export default function ContactPage() {
                     </p>
                   )}
                 </div>
+              </div>
+
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                />
               </div>
 
               <button
