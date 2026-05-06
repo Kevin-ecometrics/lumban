@@ -7,6 +7,9 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { getLocalizedPath, getRouteByKey, Lang } from "../i18n/routeMap";
+import { useTheme } from "./ThemeContext";
+
+type ThemeColor = "morado" | "azul" | "verde";
 
 interface SubLink {
   title: string;
@@ -22,6 +25,7 @@ interface LinkItem {
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const { theme, setTheme } = useTheme();
 
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -30,12 +34,16 @@ const Navbar: React.FC = () => {
 
   const pathname = usePathname();
   const router = useRouter();
+  const isHomepage =
+    pathname === "/" || pathname === "/es" || pathname === "/en";
 
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
 
   // Función para ordenar alfabéticamente de Z a A (inverso)
   const sortReverse = <T extends { title: string }>(items: T[]): T[] => {
-    return [...items].sort((a, b) => b.title.localeCompare(a.title, currentLang === "en" ? "en" : "es"));
+    return [...items].sort((a, b) =>
+      b.title.localeCompare(a.title, currentLang === "en" ? "en" : "es"),
+    );
   };
 
   // Detectar cuando se acerca al final de la página
@@ -60,145 +68,149 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems: LinkItem[] = sortReverse([
-    {
-      title: t("navbar.home"),
-      href: getRouteByKey("home", currentLang),
-    },
-    {
-      title: t("navbar.about"),
-      subItems: sortReverse([
-        {
-          title: t("navbar.profile"),
-          href: getRouteByKey("profile", currentLang),
-        },
-        {
-          title: t("navbar.certifications"),
-          href: getRouteByKey("certifications", currentLang),
-        },
-        {
-          title: t("navbar.facilities"),
-          href: getRouteByKey("facilities", currentLang),
-        },
-      ]),
-    },
-    {
-      title: t("navbar.conditions"),
-      subItems: [
-        {
-          title: t("navbar.ear"),
-          href: getRouteByKey("ear", currentLang),
-          subItems: sortReverse([
-            {
-              title: t("navbar.hearing_loss"),
-              href: getRouteByKey("hearing-loss", currentLang),
-            },
-            {
-              title: t("navbar.vertigo"),
-              href: getRouteByKey("vertigo-dizziness", currentLang),
-            },
-          ]),
-        },
-        {
-          title: t("navbar.nose"),
-          href: getRouteByKey("nose", currentLang),
-          subItems: sortReverse([
-            {
-              title: t("navbar.allergies"),
-              href: getRouteByKey("allergies", currentLang),
-            },
-            {
-              title: t("navbar.nasal_congestion"),
-              href: getRouteByKey("nasal-congestion", currentLang),
-            },
-            {
-              title: t("navbar.nasal_obstruction"),
-              href: getRouteByKey("nasal-obstruction", currentLang),
-            },
-            {
-              title: t("navbar.septoplasty"),
-              href: getRouteByKey("septoplasty", currentLang),
-            },
-            {
-              title: t("navbar.sinusitis"),
-              href: getRouteByKey("sinusitis", currentLang),
-            },
-          ]),
-        },
-        {
-          title: t("navbar.pediatric_ent"),
-          href: getRouteByKey("pediatric-ent", currentLang),
-        },
-        {
-          title: t("navbar.throat"),
-          href: getRouteByKey("throat", currentLang),
-          subItems: sortReverse([
-            {
-              title: t("navbar.sleep_apnea"),
-              href: getRouteByKey("sleep-apnea", currentLang),
-            },
-            {
-              title: t("navbar.snoring"),
-              href: getRouteByKey("snoring", currentLang),
-            },
-            {
-              title: t("navbar.throat_problems"),
-              href: getRouteByKey("throat-problems", currentLang),
-            },
-            {
-              title: t("navbar.voice_disorders"),
-              href: getRouteByKey("voice-disorders", currentLang),
-            },
-          ]),
-        },
-      ],
-    },
-    {
-      title: t("navbar.procedures"),
-      subItems: sortReverse([
-        {
-          title: t("navbar.anti_snoring_surgery"),
-          href: getRouteByKey("anti-snoring-surgery", currentLang),
-        },
-        {
-          title: t("navbar.endoscopic_surgery"),
-          href: getRouteByKey("endoscopic-surgery", currentLang),
-        },
-        {
-          title: t("navbar.microscopic_surgery"),
-          href: getRouteByKey("microscopic-surgery", currentLang),
-        },
-        {
-          title: t("navbar.sinusitis_surgery"),
-          href: getRouteByKey("sinusitis-surgery", currentLang),
-        },
-      ]),
-    },
-    {
-      title: t("navbar.blog"),
-      subItems: [
-        {
-          title: t("navbar.blog1"),
-          href: getRouteByKey(
-            "guia-completa-para-tu-primera-visita-con-el-dr-lumban",
-            currentLang,
-          ),
-        },
-      ],
-    },
-    {
-      title: t("navbar.rhinoplasty"),
-      href: getRouteByKey("aesthetic-nose", currentLang),
-    },
-    {
-      title: t("navbar.contact"),
-      href: getRouteByKey("contact", currentLang),
-    },
-    {
-      title: t("navbar.testimonials"),
-      href: getRouteByKey("testimonials", currentLang),
-    },
-  ]);
+  const homeItem: LinkItem = {
+    title: t("navbar.home"),
+    href: getRouteByKey("home", currentLang),
+  };
+
+  const menuItems: LinkItem[] = [
+    homeItem,
+    ...sortReverse([
+      {
+        title: t("navbar.about"),
+        subItems: sortReverse([
+          {
+            title: t("navbar.profile"),
+            href: getRouteByKey("profile", currentLang),
+          },
+          {
+            title: t("navbar.certifications"),
+            href: getRouteByKey("certifications", currentLang),
+          },
+          {
+            title: t("navbar.facilities"),
+            href: getRouteByKey("facilities", currentLang),
+          },
+        ]),
+      },
+      {
+        title: t("navbar.conditions"),
+        subItems: [
+          {
+            title: t("navbar.ear"),
+            href: getRouteByKey("ear", currentLang),
+            subItems: sortReverse([
+              {
+                title: t("navbar.hearing_loss"),
+                href: getRouteByKey("hearing-loss", currentLang),
+              },
+              {
+                title: t("navbar.vertigo"),
+                href: getRouteByKey("vertigo-dizziness", currentLang),
+              },
+            ]),
+          },
+          {
+            title: t("navbar.nose"),
+            href: getRouteByKey("nose", currentLang),
+            subItems: sortReverse([
+              {
+                title: t("navbar.allergies"),
+                href: getRouteByKey("allergies", currentLang),
+              },
+              {
+                title: t("navbar.nasal_congestion"),
+                href: getRouteByKey("nasal-congestion", currentLang),
+              },
+              {
+                title: t("navbar.nasal_obstruction"),
+                href: getRouteByKey("nasal-obstruction", currentLang),
+              },
+              {
+                title: t("navbar.septoplasty"),
+                href: getRouteByKey("septoplasty", currentLang),
+              },
+              {
+                title: t("navbar.sinusitis"),
+                href: getRouteByKey("sinusitis", currentLang),
+              },
+            ]),
+          },
+          {
+            title: t("navbar.pediatric_ent"),
+            href: getRouteByKey("pediatric-ent", currentLang),
+          },
+          {
+            title: t("navbar.throat"),
+            href: getRouteByKey("throat", currentLang),
+            subItems: sortReverse([
+              {
+                title: t("navbar.sleep_apnea"),
+                href: getRouteByKey("sleep-apnea", currentLang),
+              },
+              {
+                title: t("navbar.snoring"),
+                href: getRouteByKey("snoring", currentLang),
+              },
+              {
+                title: t("navbar.throat_problems"),
+                href: getRouteByKey("throat-problems", currentLang),
+              },
+              {
+                title: t("navbar.voice_disorders"),
+                href: getRouteByKey("voice-disorders", currentLang),
+              },
+            ]),
+          },
+        ],
+      },
+      {
+        title: t("navbar.procedures"),
+        subItems: sortReverse([
+          {
+            title: t("navbar.anti_snoring_surgery"),
+            href: getRouteByKey("anti-snoring-surgery", currentLang),
+          },
+          {
+            title: t("navbar.endoscopic_surgery"),
+            href: getRouteByKey("endoscopic-surgery", currentLang),
+          },
+          {
+            title: t("navbar.microscopic_surgery"),
+            href: getRouteByKey("microscopic-surgery", currentLang),
+          },
+          {
+            title: t("navbar.sinusitis_surgery"),
+            href: getRouteByKey("sinusitis-surgery", currentLang),
+          },
+        ]),
+      },
+      {
+        title: t("navbar.blog"),
+        subItems: [
+          {
+            title: t("navbar.blog1"),
+            href: getRouteByKey(
+              "guia-completa-para-tu-primera-visita-con-el-dr-lumban",
+              currentLang,
+            ),
+          },
+        ],
+      },
+      {
+        title: t("navbar.rhinoplasty"),
+        href: getRouteByKey("aesthetic-nose", currentLang),
+      },
+      {
+        title: t("navbar.contact"),
+        href: getRouteByKey("contact", currentLang),
+      },
+      {
+        title: t("navbar.testimonials"),
+        href: getRouteByKey("testimonials", currentLang),
+      },
+    ]),
+  ];
 
   const handleLanguageChange = (lang: Lang) => {
     i18n.changeLanguage(lang);
@@ -211,8 +223,11 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5" aria-label="Navegación principal">
-        {/* LOGO - Con animación de desaparición */}
+      <nav
+        className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5"
+        aria-label="Navegación principal"
+      >
+        {/* LOGO O IMÁGENES SEGÚN TEMA */}
         <motion.div
           initial={{ opacity: 1, y: 0 }}
           animate={{
@@ -222,27 +237,61 @@ const Navbar: React.FC = () => {
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="pointer-events-none"
         >
-          <Link
-            href={getRouteByKey("home", currentLang)}
-            className="pointer-events-auto"
-            aria-label="Ir a página principal - Dr. Lumbán"
-          >
-            <img
-              src="/logo-secondary.png"
-              alt="Dr. Jaime Lumbán - Otorrinolaringólogo"
-              className="h-32 w-auto md:block hidden"
-            />
-          </Link>
+          {isHomepage ? (
+            <div className="flex gap-2 pointer-events-auto">
+              {[
+                { src: "/lumban 1.4.jpg", color: "morado" as ThemeColor },
+                { src: "/lumban 1.3.jpg", color: "verde" as ThemeColor },
+                { src: "/lumban 1.2.jpg", color: "azul" as ThemeColor },
+              ].map((img) => (
+                <button
+                  key={img.color}
+                  onClick={() => setTheme(img.color)}
+                  className="w-auto h-12 md:h-16 overflow-hidden hover:scale-105 transition-transform border-2 border-transparent hover:border-white"
+                >
+                  <img
+                    src={img.src}
+                    alt=""
+                    className="h-full w-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          ) : (
+            <Link
+              href={getRouteByKey("home", currentLang)}
+              className="pointer-events-auto"
+              aria-label="Ir a página principal - Dr. Lumbán"
+            >
+              <img
+                src="/logo-secondary.png"
+                alt="Dr. Jaime Lumbán - Otorrinolaringólogo"
+                className="h-32 w-auto md:block hidden"
+              />
+            </Link>
+          )}
         </motion.div>
 
-        {/* BUTTON */}
-        <button
-          onClick={() => setOpen(true)}
-          aria-label="Abrir menú de navegación"
-          className="text-white text-2xl bg-gray-500 px-2 py-2 rounded-full hover:bg-gray-600 transition"
-        >
-          <FaBars aria-hidden="true" />
-        </button>
+        {/* BUTTON + LANGUAGE */}
+        <div className="flex items-center gap-2">
+          {/* LANGUAGE TOGGLE */}
+          <button
+            onClick={() =>
+              handleLanguageChange(currentLang === "es" ? "en" : "es")
+            }
+            className="w-10 h-10 rounded-full text-xs font-medium bg-gray-500 text-white hover:bg-gray-600 transition flex items-center justify-center"
+          >
+            {currentLang === "es" ? "EN" : "ES"}
+          </button>
+
+          <button
+            onClick={() => setOpen(true)}
+            aria-label="Abrir menú de navegación"
+            className="text-white text-2xl bg-gray-500 px-2 py-2 rounded-full hover:bg-gray-600 transition"
+          >
+            <FaBars aria-hidden="true" />
+          </button>
+        </div>
       </nav>
 
       {/* MENU */}
@@ -271,30 +320,6 @@ const Navbar: React.FC = () => {
                 <span className="text-xs tracking-[0.2em] text-gray-500">
                   MENU
                 </span>
-
-                {/* LANGUAGE TOGGLE */}
-                <div className="flex items-center gap-1">
-                  <button
-                    onClick={() => handleLanguageChange("es")}
-                    className={`px-2 py-1 rounded-full text-xs font-medium transition-all ${
-                      currentLang === "es"
-                        ? "bg-gray-800 text-white"
-                        : "text-gray-500 hover:text-gray-700"
-                    }`}
-                  >
-                    ES
-                  </button>
-                  <button
-                    onClick={() => handleLanguageChange("en")}
-                    className={`px-2 py-1 rounded-full text-xs font-medium transition-all ${
-                      currentLang === "en"
-                        ? "bg-gray-800 text-white"
-                        : "text-gray-500 hover:text-gray-700"
-                    }`}
-                  >
-                    EN
-                  </button>
-                </div>
 
                 <button
                   onClick={() => setOpen(false)}

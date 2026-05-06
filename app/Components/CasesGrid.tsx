@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
@@ -8,6 +9,7 @@ import { getRouteByKey, RouteKey } from "../i18n/routeMap";
 
 export default function CasesGrid() {
   const { t, i18n } = useTranslation();
+  const [firstHovered, setFirstHovered] = useState(false);
 
   const lang = i18n.language.startsWith("en") ? "en" : "es";
 
@@ -81,35 +83,35 @@ export default function CasesGrid() {
               className={`group relative ${colSpan}`}
             >
               <motion.div
-                className={`relative h-[320px] md:h-[440px] rounded-2xl overflow-hidden${
-                  item.type === "image" && item.objectFit === "contain"
-                    ? " bg-white "
-                    : ""
+                className={`relative h-[320px] md:h-[520px] rounded-2xl overflow-hidden${
+                  i === 0 && firstHovered
+                    ? " bg-verde "
+                    : item.type === "image" && item.objectFit === "contain"
+                      ? " bg-white "
+                      : ""
                 }`}
                 initial="rest"
                 whileHover="hover"
                 animate="rest"
-                onMouseEnter={
-                  item.type === "video"
-                    ? (e) => {
-                        const video = e.currentTarget.querySelector("video");
-                        if (video) {
-                          video.play().catch(() => {});
-                        }
-                      }
-                    : undefined
-                }
-                onMouseLeave={
-                  item.type === "video"
-                    ? (e) => {
-                        const video = e.currentTarget.querySelector("video");
-                        if (video) {
-                          video.pause();
-                          video.currentTime = 0;
-                        }
-                      }
-                    : undefined
-                }
+                onMouseEnter={(e) => {
+                  if (i === 0) setFirstHovered(true);
+                  if (item.type === "video") {
+                    const video = e.currentTarget.querySelector("video");
+                    if (video) {
+                      video.play().catch(() => {});
+                    }
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (i === 0) setFirstHovered(false);
+                  if (item.type === "video") {
+                    const video = e.currentTarget.querySelector("video");
+                    if (video) {
+                      video.pause();
+                      video.currentTime = 0;
+                    }
+                  }
+                }}
               >
                 {/* MEDIA */}
                 {item.type === "video" ? (
@@ -127,7 +129,9 @@ export default function CasesGrid() {
                   />
                 ) : (
                   <motion.img
-                    src={item.image}
+                    src={
+                      i === 0 && firstHovered ? "/nariz-hover.png" : item.image
+                    }
                     alt={item.title}
                     className={`absolute inset-0 w-full h-full max-w-full max-h-full ${
                       item.objectFit === "contain"

@@ -5,9 +5,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
 import Link from "next/link";
+import { useTheme } from "./ThemeContext";
 
 const YourwareStory: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const { theme } = useTheme();
   const experienceYears = new Date().getFullYear() - 1993;
 
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
@@ -48,8 +50,8 @@ const YourwareStory: React.FC = () => {
             </div>
           </div>
 
-          {/* Columna de texto - DERECHA */}
-          <div className="lg:w-7/12">
+           {/* Columna de texto - DERECHA */}
+           <div className="lg:w-7/12 self-center">
             {/* Título */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-10 lg:mb-14 leading-tight">
               {t("home.about.title")}
@@ -74,7 +76,8 @@ const YourwareStory: React.FC = () => {
               </p>
             </div>
             <Link
-              className="bg-azul px-4 py-2 text-white hover:bg-azul/90 rounded-md transition-colors duration-300 inline-block mt-2"
+              style={{ backgroundColor: theme === "morado" ? "#A0ADD9" : theme === "azul" ? "#4588C8" : "#A2CC80" }}
+              className="px-4 py-2 text-white hover:opacity-90 rounded-md transition-colors duration-300 inline-block mt-2"
               href={getRouteByKey("profile", currentLang)}
             >
               {t("home.about.about_link")} Lumban

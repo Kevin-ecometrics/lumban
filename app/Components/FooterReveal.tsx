@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey, normalizePath } from "../i18n/routeMap";
+import { useTheme } from "./ThemeContext";
 
 const WORD = "Dr Lumbán"; // 👈 Cambiado de "DR LUMBÁN" a "Dr Lumbán"
 
@@ -25,7 +26,7 @@ const SOCIAL_ITEMS = [
 /* ======================================================
    Animated Letter (NO TOCAR)
 ====================================================== */
-const AnimatedLetter = React.memo(function AnimatedLetter({
+const AnimatedLetter = function AnimatedLetter({
   letter,
   centerDistance,
   maxDistance,
@@ -50,19 +51,35 @@ const AnimatedLetter = React.memo(function AnimatedLetter({
     mass: 1.3,
   });
 
-  const y = useTransform(smooth, [0, 0.45, 0.8, 1], [60, -10, 2, 0]);
+  const y = useTransform(smooth, [0, 1], [15, 0]);
   const opacity = useTransform(smooth, [0, 0.2, 1], [0, 1, 1]);
   const scale = useTransform(smooth, [0, 0.5, 1], [0.9, 1.05, 1]);
 
+  const { theme } = useTheme();
+
+  const colorMap = {
+    morado: "#A0ADD9",
+    azul: "#4588C8",
+    verde: "#A2CC80",
+  };
+
   return (
     <motion.span
-      style={{ y, opacity, scale, display: "inline-block" }}
-      className="font-black text-azul"
+      style={{
+        y,
+        opacity,
+        scale,
+        display: "inline-block",
+        color: colorMap[theme],
+      }}
+      className="font-black"
     >
       {letter === " " ? "\u00A0" : letter}
     </motion.span>
   );
-});
+};
+
+AnimatedLetter.displayName = "AnimatedLetter";
 
 AnimatedLetter.displayName = "AnimatedLetter";
 
@@ -137,7 +154,10 @@ export default function FooterBase() {
   const MENU_ITEMS = [
     { label: t("footer.home"), href: getRouteByKey("home", currentLang) },
     { label: t("navbar.about"), href: getRouteByKey("profile", currentLang) },
-    { label: t("navbar.procedures"), href: getRouteByKey("endoscopic-surgery", currentLang) },
+    {
+      label: t("navbar.procedures"),
+      href: getRouteByKey("endoscopic-surgery", currentLang),
+    },
     { label: t("navbar.conditions"), href: getRouteByKey("nose", currentLang) },
   ] as const;
 

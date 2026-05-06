@@ -2,17 +2,18 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useTheme } from "./ThemeContext";
 
 /* ---------------- CONFIG ---------------- */
 
 const IMAGE_SIZE = 260;
-const MOVE_DISTANCE = 12;
-const MOVES_REQUIRED = 5;
+const MOVE_DISTANCE = 16;
+const MOVES_REQUIRED = 8;
 const REMOVE_DELAY = 5000;
 const MAX_IMAGES = 12;
 
 const IMAGES = [
-  "/paciente 1.1.webp",
+  // "/paciente 1.1.webp",
   "/lumban nariz.webp",
   "/Dr. jaime lumban en su consultorio.webp",
   "/paciente 3.1.webp",
@@ -21,7 +22,7 @@ const IMAGES = [
   "/lumban oido.webp",
   "/paciente 4.1.webp",
 
-  // "/lumban paciente.webp",
+  "/lumban paciente.webp",
   "/lumban cara.webp",
   "/paciente 2.1.webp",
 
@@ -39,6 +40,7 @@ export default function OurWaveHero() {
   const [images, setImages] = useState<TrailImage[]>([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const { theme } = useTheme();
 
   const idRef = useRef(0);
   const imgIndexRef = useRef(0);
@@ -193,7 +195,17 @@ export default function OurWaveHero() {
 
       {/* ---------------- TEXT LAYER ---------------- */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center pointer-events-none">
-        <h1 className="mt-12 capitalize text-azul text-7xl md:text-9xl tracking-tight font-black">
+        <h1
+          style={{
+            color:
+              theme === "morado"
+                ? "#A0ADD9"
+                : theme === "azul"
+                  ? "#4588C8"
+                  : "#A2CC80",
+          }}
+          className="mt-12 capitalize text-7xl md:text-9xl tracking-tight font-black"
+        >
           Dr. Lumbán
         </h1>
       </div>

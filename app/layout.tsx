@@ -5,6 +5,7 @@ import FooterBase from "./Components/FooterReveal";
 import Navbar from "./Components/Navbar";
 import Providers from "./Providers";
 import FacebookPixel from "./Components/FacebookPixel";
+import { ThemeProvider } from "./Components/ThemeContext";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -123,11 +124,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Providers>
-          <Navbar />
-          <main>{children}</main>
-          <FooterBase />
-        </Providers>
+        <ThemeProvider>
+          <Providers>
+            <Navbar />
+            <main>{children}</main>
+            <FooterBase />
+          </Providers>
+        </ThemeProvider>
         <FacebookPixel />
       </body>
       <GoogleAnalytics gaId="G-7ZPJE5QPS6" />
