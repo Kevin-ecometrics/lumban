@@ -12,38 +12,34 @@ const contactSchema = z.object({
   nombre: z.string().min(2, "Mínimo 2 caracteres").max(100, "Máximo 100 caracteres"),
   email: z.string().email("Correo electrónico inválido"),
   telefono: z.string().max(20, "Máximo 20 caracteres").optional().or(z.literal("")),
-  especialidad: z.enum(["nariz", "oido", "garganta", "general"], {
-    errorMap: () => ({ message: "Por favor selecciona una especialidad" }),
-  }),
-  conocePadecimiento: z
-    .enum([
-      "no",
-      "sinusitis",
-      "ronquidos",
-      "apnea del sueno",
-      "transtornos de la voz",
-      "congestion nasal",
-      "veertigo y mareo",
-      "perdida de audicion",
-      "rinoplastia",
-    ])
-    .optional(),
+  especialidad: z.string().refine(
+    (val) => ["nariz", "oido", "garganta", "general"].includes(val),
+    { message: "Por favor selecciona una especialidad" },
+  ),
+  conocePadecimiento: z.string().refine(
+    (val) => !val || ["no", "sinusitis", "ronquidos", "apnea del sueno", "transtornos de la voz", "congestion nasal", "veertigo y mareo", "perdida de audicion", "rinoplastia"].includes(val),
+    { message: "Opción inválida" },
+  ).optional(),
   mensaje: z.string().min(10, "Mínimo 10 caracteres").max(1000, "Máximo 1000 caracteres"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 type FormErrors = Partial<Record<keyof ContactFormData, string>>;
+type FormState = Omit<ContactFormData, "especialidad" | "conocePadecimiento"> & {
+  especialidad: string;
+  conocePadecimiento: string;
+};
 
 export default function ContactPage() {
   const { t } = useTranslation();
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState<FormState>({
     nombre: "",
     email: "",
     telefono: "",
-    especialidad: "" as ContactFormData["especialidad"],
-    conocePadecimiento: undefined,
+    especialidad: "",
+    conocePadecimiento: "",
     mensaje: "",
   });
 
@@ -55,7 +51,7 @@ export default function ContactPage() {
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    if (errors[name as keyof ContactFormData]) {
+    if (errors[name as keyof FormState]) {
       setErrors({ ...errors, [name]: "" });
     }
   };
@@ -101,7 +97,7 @@ export default function ContactPage() {
       });
 
       toast.success(t("contact.success_message"));
-      setFormData({ nombre: "", email: "", telefono: "", especialidad: "" as ContactFormData["especialidad"], conocePadecimiento: undefined, mensaje: "" });
+      setFormData({ nombre: "", email: "", telefono: "", especialidad: "", conocePadecimiento: "", mensaje: "" });
       setErrors({});
       recaptchaRef.current?.reset();
     } catch {
