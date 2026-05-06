@@ -12,6 +12,22 @@ const contactSchema = z.object({
   nombre: z.string().min(2, "Mínimo 2 caracteres").max(100, "Máximo 100 caracteres"),
   email: z.string().email("Correo electrónico inválido"),
   telefono: z.string().max(20, "Máximo 20 caracteres").optional().or(z.literal("")),
+  especialidad: z.enum(["nariz", "oido", "garganta", "general"], {
+    errorMap: () => ({ message: "Por favor selecciona una especialidad" }),
+  }),
+  conocePadecimiento: z
+    .enum([
+      "no",
+      "sinusitis",
+      "ronquidos",
+      "apnea del sueno",
+      "transtornos de la voz",
+      "congestion nasal",
+      "veertigo y mareo",
+      "perdida de audicion",
+      "rinoplastia",
+    ])
+    .optional(),
   mensaje: z.string().min(10, "Mínimo 10 caracteres").max(1000, "Máximo 1000 caracteres"),
 });
 
@@ -26,6 +42,8 @@ export default function ContactPage() {
     nombre: "",
     email: "",
     telefono: "",
+    especialidad: "" as ContactFormData["especialidad"],
+    conocePadecimiento: undefined,
     mensaje: "",
   });
 
@@ -33,7 +51,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -75,14 +93,15 @@ export default function ContactPage() {
           nombre: formData.nombre,
           email: formData.email,
           telefono: formData.telefono || undefined,
-          especialidad: "general",
+          especialidad: formData.especialidad,
+          conocePadecimiento: formData.conocePadecimiento || undefined,
           mensaje: formData.mensaje,
           captchaToken,
         }),
       });
 
       toast.success(t("contact.success_message"));
-      setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
+      setFormData({ nombre: "", email: "", telefono: "", especialidad: "" as ContactFormData["especialidad"], conocePadecimiento: undefined, mensaje: "" });
       setErrors({});
       recaptchaRef.current?.reset();
     } catch {
@@ -370,6 +389,60 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 border border-gray-200 hover:border-gray-300 rounded-xl focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
                     placeholder={t("contact.placeholder_phone")}
                   />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="especialidad"
+                    className="block text-sm font-semibold text-gray-700 mb-1.5"
+                  >
+                    {t("contact.label_specialty")}{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="especialidad"
+                    name="especialidad"
+                    required
+                    value={formData.especialidad}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-azul focus:border-transparent transition-all ${errors.especialidad ? "border-red-500 bg-red-50" : "border-gray-200 hover:border-gray-300"}`}
+                  >
+                    <option value="">{t("contact.placeholder_specialty")}</option>
+                    <option value="nariz">{t("contact.specialty_nariz")}</option>
+                    <option value="oido">{t("contact.specialty_oido")}</option>
+                    <option value="garganta">{t("contact.specialty_garganta")}</option>
+                    <option value="general">{t("contact.specialty_general")}</option>
+                  </select>
+                  {errors.especialidad && (
+                    <p className="text-red-500 text-sm mt-1">{errors.especialidad}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="conocePadecimiento"
+                    className="block text-sm font-semibold text-gray-700 mb-1.5"
+                  >
+                    {t("contact.label_condition")}
+                  </label>
+                  <select
+                    id="conocePadecimiento"
+                    name="conocePadecimiento"
+                    value={formData.conocePadecimiento ?? ""}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-200 hover:border-gray-300 rounded-xl focus:ring-2 focus:ring-azul focus:border-transparent transition-all"
+                  >
+                    <option value="">{t("contact.placeholder_condition")}</option>
+                    <option value="no">{t("contact.condition_no")}</option>
+                    <option value="sinusitis">{t("contact.condition_sinusitis")}</option>
+                    <option value="ronquidos">{t("contact.condition_ronquidos")}</option>
+                    <option value="apnea del sueno">{t("contact.condition_apnea")}</option>
+                    <option value="transtornos de la voz">{t("contact.condition_voz")}</option>
+                    <option value="congestion nasal">{t("contact.condition_congestion")}</option>
+                    <option value="veertigo y mareo">{t("contact.condition_vertigo")}</option>
+                    <option value="perdida de audicion">{t("contact.condition_audicion")}</option>
+                    <option value="rinoplastia">{t("contact.condition_rinoplastia")}</option>
+                  </select>
                 </div>
 
                 <div className="md:col-span-2">
