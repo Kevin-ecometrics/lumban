@@ -60,7 +60,7 @@ export default function CasesGrid() {
   return (
     <section className="px-6 py-20">
       <h2 className="text-4xl md:text-5xl font-light mb-12">
-        {t("Casos Destacados")}
+        {t("home.cases.title")}
       </h2>
 
       <div className="grid grid-cols-12 gap-6">

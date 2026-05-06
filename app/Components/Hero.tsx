@@ -176,7 +176,7 @@ export default function OurWaveHero() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <div className="shadow-2xl">
+                <div className="shadow-2xl rounded-2xl overflow-hidden">
                   <img
                     src={img.src}
                     width={IMAGE_SIZE}
@@ -204,7 +204,7 @@ export default function OurWaveHero() {
                   ? "#4588C8"
                   : "#A2CC80",
           }}
-          className="mt-12 capitalize text-7xl md:text-9xl tracking-tight font-black"
+          className="mt-12 capitalize text-7xl md:text-[200px] tracking-tighter font-black"
         >
           Dr. Lumbán
         </h1>
