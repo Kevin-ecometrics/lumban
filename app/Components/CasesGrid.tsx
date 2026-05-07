@@ -58,32 +58,27 @@ export default function CasesGrid() {
   ];
 
   return (
-    <section className="px-6 py-20">
-      <h2 className="text-4xl md:text-5xl font-light mb-12">
+    <section className="px-6 py-8">
+      <h2 className="text-3xl md:text-4xl font-light mb-6">
         {t("home.cases.title")}
       </h2>
 
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {CASES.map((item, i) => {
-          const isEvenRow = Math.floor(i / 2) % 2 === 0;
-          const isFirstInRow = i % 2 === 0;
-
-          const colSpan = isEvenRow
-            ? isFirstInRow
-              ? "col-span-12 md:col-span-7"
-              : "col-span-12 md:col-span-5"
-            : isFirstInRow
-              ? "col-span-12 md:col-span-5"
-              : "col-span-12 md:col-span-7";
+          const colSpan =
+            i === 0 ? "col-span-2 md:col-span-2" :
+            i === 1 ? "col-span-2 md:col-span-1" :
+            i === 2 ? "col-span-2 md:col-span-1" :
+                      "col-span-2 md:col-span-2";
 
           return (
             <Link
               key={i}
-              href={getRouteByKey(item.routeKey, lang)} // 🔥 aquí usas tu map
+              href={getRouteByKey(item.routeKey, lang)}
               className={`group relative ${colSpan}`}
             >
               <motion.div
-                className={`relative h-[320px] md:h-[520px] rounded-2xl overflow-hidden${
+                className={`relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden${
                   i === 0 && firstHovered
                     ? " bg-verde "
                     : item.type === "image" && item.objectFit === "contain"
@@ -193,6 +188,57 @@ export default function CasesGrid() {
                     {item.title}
                   </h3>
                 </motion.div>
+
+                {/* CARD 1 STATIC TEXT */}
+                {i === 1 && (
+                  <>
+                    <motion.div
+                      className="absolute top-5 left-5 z-20"
+                      variants={{ rest: { opacity: 1 }, hover: { opacity: 0 } }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <span className="text-white text-2xl md:text-4xl font-bold drop-shadow-lg">
+                        Dr. Lumbán
+                      </span>
+                    </motion.div>
+                    <motion.div
+                      className="absolute bottom-15 right-4 z-20"
+                      variants={{ rest: { opacity: 1 }, hover: { opacity: 0 } }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="text-white text-lg md:text-2xl font-semibold drop-shadow-lg leading-tight">
+                        {t("home.cases.card1_specialty")}
+                      </p>
+                      <p className="text-white/80 text-base md:text-xl drop-shadow-lg">
+                        {t("home.cases.card1_experience")}
+                      </p>
+                    </motion.div>
+                  </>
+                )}
+
+                {/* CARD 2 STATIC TEXT */}
+                {i === 2 && (
+                  <>
+                    <motion.div
+                      className="absolute top-5 left-5 z-20"
+                      variants={{ rest: { opacity: 1 }, hover: { opacity: 0 } }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <span className="text-white text-2xl md:text-4xl font-bold drop-shadow-lg">
+                        {t("home.cases.card2_before_after")}
+                      </span>
+                    </motion.div>
+                    <motion.div
+                      className="absolute bottom-15 right-4 z-20"
+                      variants={{ rest: { opacity: 1 }, hover: { opacity: 0 } }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="text-white text-lg md:text-2xl font-semibold drop-shadow-lg leading-tight">
+                        {t("home.cases.card2_patient")}
+                      </p>
+                    </motion.div>
+                  </>
+                )}
               </motion.div>
             </Link>
           );

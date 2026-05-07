@@ -22,7 +22,6 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
-const SINUSITIS_HERO_VIDEO = "/testimonial.webm";
 const SINUSITIS_HERO_POSTER = "/testimoniales/testimonial.webp";
 
 // Resultados de rinoplastias - 15 pacientes
@@ -664,7 +663,7 @@ export default function TestimonialsPage() {
 
       {/* Hero con video */}
       <StickyVideoHero
-        src={SINUSITIS_HERO_VIDEO}
+        src={currentLang === "en" ? "/testimonial-english.webm" : "/testimonial.webm"}
         poster={SINUSITIS_HERO_POSTER}
         ariaLabel={t("testimonials.hero_aria_label")}
         title={t("testimonials.hero_title")}
@@ -673,6 +672,7 @@ export default function TestimonialsPage() {
         titleClassName="text-5xl sm:text-4xl md:text-6xl"
         subtitleClassName="text-2lg sm:text-xl md:text-2xl -mt-2"
         mediaClassName="-mt-8 md:mt-28"
+        startTime={0}
       />
 
       <div className="max-w-6xl mx-auto px-6 py-16 space-y-16">
@@ -768,7 +768,7 @@ export default function TestimonialsPage() {
                     </span>
                   </div>
                 </div>
-               <figcaption className="mt-2 text-sm text-gray-500 text-center">
+                <figcaption className="mt-2 text-sm text-gray-500 text-center">
                   {t(result.label)}
                 </figcaption>
               </motion.figure>
@@ -840,9 +840,9 @@ export default function TestimonialsPage() {
                   transition={{ duration: 0.25, ease: "easeOut" }}
                 />
               </AnimatePresence>
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
-                  {t(RHINOPLASTY_RESULTS[selectedImageIndex].label)}
-                </div>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+                {t(RHINOPLASTY_RESULTS[selectedImageIndex].label)}
+              </div>
               {RHINOPLASTY_RESULTS.length > 1 && (
                 <>
                   <button

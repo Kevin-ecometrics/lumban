@@ -59,7 +59,11 @@
 "case1": "Cosmetic Rhinoplasty",
 "case2": "Learn more about Dr. Lumbán",
 "case3": "Testimonials from patients",
-"case4": "A Complete Guide to Your First Visit with Dr. Lumbán"
+"case4": "A Complete Guide to Your First Visit with Dr. Lumbán",
+"card1_specialty": "Otolaryngologist",
+"card1_experience": "Over 33 years of experience",
+"card2_before_after": "8 months later:",
+"card2_patient": "Alondra's new facial harmony"
         },
                 "scroll": {
 
@@ -141,8 +145,8 @@
     "close": "Close"
 },
 "ear": {
-    "hero_title": "Ear Conditions",
-    "hero_subtitle": "Learn about conditions related to the ear",
+    "hero_title": "Vertigo & Dizziness",
+    "hero_subtitle": "Specialized diagnosis and treatment of the vestibular system",
     "hero_alt": "Vertigo and Dizziness",
     "title_h1": "Balance Disorders: Vertigo and Dizziness - Why Do They Occur and When to See a Specialist?",
     "intro_text": "Feeling like everything is spinning around you or losing stability is one of the most common reasons for consultation with Dr. Lumbán. Understanding how the balance system works helps identify symptoms and seek medical attention.",
@@ -268,8 +272,8 @@
     "hearing_loss": "Hearing Loss"
 },
 "hearing-loss": {
-    "hero_title": "Ear Conditions",
-    "hero_subtitle": "Learn about conditions related to the ear",
+    "hero_title": "Hearing Loss",
+    "hero_subtitle": "Specialized diagnosis and treatment of hearing",
     "hero_alt": "Hearing Loss",
     "title_h1": "Hearing Loss: Everything You Need to Know About Your Ears with an Otolaryngologist",
     "intro_text": "Hearing loss is considered disabling when it exceeds 35 decibels (dB) in the ear with better hearing ability. This condition can range from mild to profound, affecting one or both ears, making it difficult to understand conversations or detect loud sounds.",
@@ -1371,6 +1375,8 @@
     "about_doctor_text_prefix": "Dr. Lumbán has ",
     "about_doctor_text_suffix": "years of experience in otolaryngology, specialized in Aesthetic Nasal Surgery.",
     "seo_h1": "Aesthetic Nose Surgery: Perfect Balance Between Aesthetics and Nasal Function",
+    "page_subtitle_prefix": "With over ",
+    "page_subtitle_suffix": "years of experience, Dr. Jaime Lumbán has dedicated himself to perfecting aesthetic and functional nose surgery. Although it may seem like a simple structure, nasal anatomy is extremely complex and demands absolute precision. Factors such as cartilage resistance and skin type vary in each patient; therefore, what works for one person is not always ideal for another. The approach of an otolaryngologist is to seek results that harmonize with the face and enhance natural beauty, always maintaining respiratory function as the fundamental pillar of each intervention.",
     "seo_intro_prefix": "With over ",
     "seo_intro_suffix": "years of experience, Dr. Jaime Lumbán has dedicated himself to perfecting aesthetic and functional nose surgery. Although it may seem like a simple structure, nasal anatomy is extremely complex and demands absolute precision. Factors such as cartilage resistance and skin type vary in each patient; therefore, what works for one person is not always ideal for another. The approach of an otolaryngologist is to seek results that harmonize with the face and enhance natural beauty, always maintaining respiratory function as the fundamental pillar of each intervention.",
     

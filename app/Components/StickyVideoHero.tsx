@@ -17,6 +17,7 @@ interface StickyVideoHeroProps {
   /** Clases del contenedor del video (mismo rol que imageClassName en StickyImageHero) */
   mediaClassName?: string;
   poster?: string;
+  startTime?: number;
 }
 
 export default function StickyVideoHero({
@@ -29,6 +30,7 @@ export default function StickyVideoHero({
   subtitleClassName,
   mediaClassName,
   poster,
+  startTime = 0,
 }: StickyVideoHeroProps) {
   const resolvedLabel = ariaLabel ?? title;
   const [progress, setProgress] = useState(0);
@@ -59,12 +61,13 @@ export default function StickyVideoHero({
     if (!el) return;
 
     if (progress >= PROGRESS_AT_MAX) {
+      el.currentTime = startTime;
       el.play().catch(() => {
         /* políticas del navegador; muted suele permitir play */
       });
     } else {
       el.pause();
-      el.currentTime = 0;
+      el.currentTime = startTime;
     }
   }, [progress]);
 

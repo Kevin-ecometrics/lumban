@@ -14,12 +14,10 @@ export default function ApneaSuenoPage() {
     <main className="bg-white text-gray-900">
       {/* HERO */}
       <Hero
-        title={t("Acerca de la Apnea del Sueño")}
-        subtitle={t(
-          "Conozca acerca de los padecimientos relacionados con la garganta",
-        )}
+        title={t("sleep-apnea.hero_title")}
+        subtitle={t("sleep-apnea.hero_subtitle")}
         src="/apnea del sueno/La apnea sueno es un trastono comun y serio de respiracion que requiere atencion especializada de un otorrino experimentado como el Dr Lumban.webp"
-        alt={t("Acerca de la Apnea del Sueño")}
+        alt={t("sleep-apnea.hero_title")}
       />
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">

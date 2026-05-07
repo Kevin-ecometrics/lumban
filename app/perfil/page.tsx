@@ -1,7 +1,6 @@
 // app/about/page.tsx
 "use client";
 
-import Hero from "@/app/Components/StickyImageHero";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import StickyVideoHero from "@/app/Components/StickyVideoHero";
@@ -29,6 +28,7 @@ export default function AboutPage() {
       <StickyVideoHero
         src={SINUSITIS_HERO_VIDEO}
         poster={SINUSITIS_HERO_POSTER}
+        startTime={0.2}
         ariaLabel={t("sinusitis-surgery.hero_aria_label")}
         title={t("profile.hero_title")}
         subtitle={t("profile.hero_subtitle")}

@@ -14,12 +14,10 @@ export default function RonquidosPage() {
     <main className="bg-white text-gray-900">
       {/* HERO */}
       <Hero
-        title={t("Acerca de los Ronquidos")}
-        subtitle={t(
-          "Conozca acerca de los padecimientos relacionados con la garganta",
-        )}
+        title={t("snoring.hero_title")}
+        subtitle={t("snoring.hero_subtitle")}
         src="/ronquidos/Los ronquidos frecuentes y falta de descanso es una senal para acudir con el Dr Lumban experto en garganta y ronquidos.webp"
-        alt={t("Acerca de los Ronquidos")}
+        alt={t("snoring.hero_title")}
       />
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">

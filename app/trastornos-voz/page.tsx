@@ -14,12 +14,10 @@ export default function TrastornosVozPage() {
     <main className="bg-white text-gray-900">
       {/* HERO */}
       <Hero
-        title={t("Acerca de los Trastornos de la Voz")}
-        subtitle={t(
-          "Conozca acerca de los padecimientos relacionados con la garganta",
-        )}
+        title={t("voice-disorders.hero_title")}
+        subtitle={t("voice-disorders.hero_subtitle")}
         src="/trastornos de voz/Los trastornos de la voz, garganta y laringe requieren un tratamiento personalizado   Acuden con tu otorrino Jaime Lumban.webp"
-        alt={t("Acerca de los Trastornos de la Voz")}
+        alt={t("voice-disorders.hero_title")}
       />
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">

@@ -14,12 +14,10 @@ export default function PadecimientosGargantaPage() {
   return (
     <main className="bg-white text-gray-900">
       <Hero
-        title={t("Padecimientos de la Garganta")}
-        subtitle={t(
-          "Conozca acerca de los padecimientos relacionados con la garganta",
-        )}
+        title={t("throat.hero_title")}
+        subtitle={t("throat.hero_subtitle")}
         src="/dolor de garganta/Obten un diagnostico y tratamiento preciso para dolor e infecciones de garganta con el Dr Lumban otorrino en Tijuana.webp"
-        alt={t("Padecimientos de la Garganta")}
+        alt={t("throat.hero_title")}
       />
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-20 space-y-16">

@@ -47,7 +47,11 @@
             "case1": "Rinoplastia Estética",
             "case2": "Conoce más sobre el Dr. Lumbán",
             "case3": "Testimoniales de pacientes",
-            "case4": "Guía Completa para tu Primera Visita con el Dr. Lumbán"
+            "case4": "Guía Completa para tu Primera Visita con el Dr. Lumbán",
+            "card1_specialty": "Otorrinolaringólogo",
+            "card1_experience": "Más de 33 años de experiencia",
+            "card2_before_after": "8 meses después:",
+            "card2_patient": "La nueva armonía facial de Alondra"
         },
         "scroll": {
             "text1": "Seguridad y Acreditación",
@@ -129,8 +133,8 @@
     "close": "Cerrar"
 },
 "ear": {
-    "hero_title": "Padecimientos del Oído",
-    "hero_subtitle": "Conozca acerca de los padecimientos relacionados con el oído",
+    "hero_title": "Vértigo y Mareo",
+    "hero_subtitle": "Diagnóstico y tratamiento especializado del sistema vestibular",
     "hero_alt": "Vértigo y Mareo",
     "title_h1": "Trastornos del equilibrio: vértigo y mareo ¿Por qué ocurren y cuándo acudir al especialista?",
     "intro_text": "Sentir que se mueve todo a tu alrededor o que perdemos la estabilidad es una de las causas más frecuentes de consulta médica con el Dr. Lumbán. Comprender cómo funciona el sistema del equilibrio ayuda a identificar síntomas y acudir a consulta",
@@ -256,8 +260,8 @@
     "hearing_loss": "Pérdida de Audición"
 },
 "hearing-loss": {
-    "hero_title": "Padecimientos del Oído",
-    "hero_subtitle": "Conozca acerca de los padecimientos relacionados con el oído",
+    "hero_title": "Pérdida de Audición",
+    "hero_subtitle": "Diagnóstico y tratamiento especializado de la audición",
     "hero_alt": "Pérdida de Audición",
     "title_h1": "Pérdida de Audición: Todo lo que debes saber sobre tus oídos con un otorrinolaringólogo",
     "intro_text": "La pérdida de audición se considera discapacitante cuando supera los 35 decibelios (dB) en el oído con mejor capacidad auditiva. Esta condición puede variar desde un grado leve hasta uno profundo, afectando a uno o ambos oídos, lo que dificulta la comprensión de conversaciones o la detección de sonidos intensos.",
