@@ -2,7 +2,7 @@
     "navbar": {
     "home": "Inicio",
     "about": "Acerca de",
-    "profile": "Perfil del Dr. Lumban",
+    "profile": "Perfil del Dr. Lumbán",
     "certifications": "Certificaciones",
     "facilities": "Instalaciones",
     "conditions": "Padecimientos",
@@ -26,7 +26,7 @@
     "anti_snoring_surgery": "Cirugía Antirronquido",
     "microscopic_surgery": "Cirugía Microscópica de Laringe",
     "sinusitis_surgery": "Cirugía de Sinusitis",
-    "rhinoplasty": "Rinoplastia",
+    "rhinoplasty": "Rinoplastía",
     "contact": "Contacto",
     "testimonials": "Testimoniales",
     "blog": "Blog",
@@ -44,7 +44,7 @@
     "home": {
         "cases": {
             "title": "Casos Destacados",
-            "case1": "Rinoplastia Estética",
+            "case1": "Rinoplastía Estética",
             "case2": "Conoce más sobre el Dr. Lumbán",
             "case3": "Testimoniales de pacientes",
             "case4": "Guía Completa para tu Primera Visita con el Dr. Lumbán",
@@ -59,7 +59,7 @@
             "text3": "Compromiso con la Excelencia"
         },
         "about": {
-            "title": "Otorrinolaringologia y rinoplastia de excelencia",
+            "title": "Otorrinolaringología y Rinoplastía de excelencia",
                         "more_than": "Más de",
 
             "experience_years": "años dedicados al cuidado integral de tu salud respiratoria y estética facial.",
@@ -70,16 +70,16 @@
             "pilars_item1": "Seguridad y Acreditación: preparación continua y atención al detalle aseguran la máxima integridad y los más altos estándares de excelencia",
             "pilars_item2": "Atención de Élite: Las técnicas más avanzadas con una instrumentación de vanguardia para asegurar un proceso satisfactorio, abordando detalladamente sus metas y preocupaciones",
             "pilars_item3": "Compromiso con la Excelencia: El tiempo invertido en la evaluación y el procedimiento es la clave para alcanzar resultados armoniosos y funcionales",
-            "alt_image": "Dr. Jaime Lumban - Especialista en Otorrinolaringología",
+            "alt_image": "Dr. Jaime Lumbán - Especialista en Otorrinolaringología",
             "about_link": "Acerca de"
         },
         "faq": {
-    "title": "Preguntas Frecuentes Otorrinolaringología y Rinoplastia",
+    "title": "Preguntas Frecuentes Otorrinolaringología y Rinoplastía",
     "question1": "¿Cuándo debo acudir con un otorrinolaringólogo?",
     "answer1": "Es recomendable acudir cuando presentas:\n\nObstrucción nasal persistente\nRonquidos o apnea del sueño\nSinusitis frecuente\nDolor o infecciones recurrentes de garganta\nCambios en la voz\nMareos o pérdida auditiva\nInflamación o bolitas en cuello",
     "question2": "¿Cómo es una consulta otorrinolaringológica?",
     "answer2": "La consulta inicia con una entrevista clínica detallada, donde se evalúan:\n\nSíntomas actuales\nAntecedentes médicos y quirúrgicos\nAlergias\nHábitos (tabaquismo, uso de medicamentos etc.)\nHistoria de infecciones recurrentes o problemas respiratorios\n\nPosteriormente, se realiza una exploración física especializada de oídos, nariz y garganta.\n\nDependiendo del caso, pueden solicitarse estudios complementarios como:\n\nEstudios de imagen (radiografías o tomografía)\nPruebas de alergia\nEstudios auditivos\nCultivos o análisis específicos",
-    "question3": "¿Cómo se lleva a cabo una valoración para rinoplastia?",
+    "question3": "¿Cómo se lleva a cabo una valoración para rinoplastía?",
     "answer3": "La valoración incluye:\n\nAnálisis facial integral (proporciones, simetría y armonía del rostro)\nEvaluación funcional de la respiración nasal\nEstudio del tabique y estructuras internas\nFotografías clínicas\nExplicación detallada de expectativas reales y resultados posibles",
     "question4": "¿A partir de cuándo se ven los resultados?",
     "answer4": "El cambio es visible desde que se retira la férula (aproximadamente a los 7–10 días).\n\nSin embargo:\n\nLa inflamación disminuye progresivamente durante los primeros 3 meses.\nEl resultado más refinado puede apreciarse entre los 6 y 12 meses.\nLa paciencia es clave, ya que la nariz es una estructura que desinflama de manera gradual",
@@ -108,7 +108,7 @@
     "mission_subtitle": "En consulta, nuestra misión es:",
     "mission_item1": "Estar presente para el paciente, reconociendo su tiempo y comprendiendo sus preocupaciones y metas, para asegurar una experiencia agradable y satisfactoria.",
     "mission_item2": "Brindar bienestar de alto nivel a través de un servicio excepcional y una escucha activa, guiando a cada paciente hacia su mejor versión para recuperar su salud en padecimientos de oídos, nariz y garganta, así como mediante cirugía estética y funcional de nariz.",
-    "mission_item3": "Proporcionar lo último en tecnología e innovaciones en otorrinolaringología y rinoplastia."
+    "mission_item3": "Proporcionar lo último en tecnología e innovaciones en otorrinolaringología y rinoplastía."
 },
 "certifications": {
     "hero_title": "Certificaciones",
@@ -116,7 +116,7 @@
     "title": "Certificaciones y Reconocimientos: El Respaldo de una Trayectoria de Excelencia",
     "description1": "Para el Dr. Lumbán, la mejora continua es el estándar, no la excepción. Sus certificaciones y reconocimientos internacionales son el reflejo de",
     "description1_suffix": "años de compromiso con la excelencia.",
-    "description2": "En un campo que evoluciona constantemente, su actualización en las técnicas más avanzadas de rinoplastia y otorrinolaringología asegura resultados precisos con un solo propósito: brindar al paciente la atención de alto nivel que merecen.",
+    "description2": "En un campo que evoluciona constantemente, su actualización en las técnicas más avanzadas de rinoplastía y otorrinolaringología asegura resultados precisos con un solo propósito: brindar al paciente la atención de alto nivel que merecen.",
     "subtitle": "Trayectoria y preparación avalan el trabajo del mejor otorrinolaringólogo en Tijuana",
     "certification_label": "Certificación",
     "expanded_image": "Imagen ampliada"
@@ -382,7 +382,7 @@
     "symptom4": "Alteraciones en la mucosidad.",
     "symptom5": "Sangrados nasales frecuentes.",
     "surgery_title": "Cirugía: ¿En qué consiste una septoplastia?",
-    "surgery_text": "La Septoplastia tiene como objetivo corregir la deformidad del tabique o reconstruirlo. Dependiendo de las necesidades del paciente, puede realizarse de forma aislada o combinarse con una rinoplastia (estética), una cirugía de cornetes o de la válvula nasal.",
+    "surgery_text": "La Septoplastia tiene como objetivo corregir la deformidad del tabique o reconstruirlo. Dependiendo de las necesidades del paciente, puede realizarse de forma aislada o combinarse con una rinoplastía (estética), una cirugía de cornetes o de la válvula nasal.",
     "surgery_detail": "Durante la septoplastía, se reposiciona el tabique volviéndolo a colocar en el centro de la nariz. Para esto, el Dr. Lumbán primero remodela, quita o reinserta partes del cartílago y hueso en la posición correcta para liberar las vías respiratorias.",
     "procedure_title": "Detalles del Procedimiento",
     "incision_title": "1-Incisión Mínima",
@@ -398,9 +398,9 @@
     "benefit2": "Tratamiento para la Apnea: Se utiliza como tratamiento auxiliar en pacientes con apnea del sueño, mejorando la calidad del descanso.",
     "benefit3": "Rendimiento deportivo: Beneficioso para atletas que necesitan un flujo de aire adecuado durante la actividad física.",
     "benefit4": "Sueño Mejorado: Pacientes que antes respiraban por la boca al dormir ahora disfrutan de una respiración nasal natural.",
-    "differences_title": "Diferencias principales entre septoplastia y rinoplastia",
-    "differences_text": "Es esencial distinguir entre septoplastia y rinoplastia, ya que ambas son intervenciones quirúrgicas de la nariz, pero con objetivos diferentes.",
-    "differences_note": "La septoplastia se centra en el funcionamiento del tabique nasal, mientras que la rinoplastia se ocupa de la estética de la nariz.",
+    "differences_title": "Diferencias principales entre septoplastia y rinoplastía",
+    "differences_text": "Es esencial distinguir entre septoplastia y rinoplastía, ya que ambas son intervenciones quirúrgicas de la nariz, pero con objetivos diferentes.",
+    "differences_note": "La septoplastia se centra en el funcionamiento del tabique nasal, mientras que la rinoplastía se ocupa de la estética de la nariz.",
     "differences_combined": "En ocasiones, ambos procedimientos pueden hacerse de forma combinada para abordar tanto problemas funcionales como estéticos",
     "recovery_evolution_title": "Evolución y resultados finales de una septoplastia: ¿Qué esperar?",
     "recovery_text": "La recuperación es un proceso gradual:",
@@ -995,7 +995,7 @@
     "cta_button": "SOLICITA TU CONSULTA",
     "view_full_profile": "VER PERFIL COMPLETO",
     "seo_h1": "Trastornos de la Voz: Diagnóstico y Tratamiento Especializado",
-    "seo_intro": "La voz es una herramienta fundamental para nuestra comunicación y expresión personal. Se produce cuando el aire proveniente de los pulmones pasa a través de la laringe, haciendo que las cuerdas vocales vibren para generar sonido. Sin embargo, cuando este delicado mecanismo se altera, surgen los trastornos de la voz. El Dr. Jaime Lumban se especializa en la recuperación de la salud vocal, utilizando tecnología de vanguardia para tratar diversas afecciones.",
+    "seo_intro": "La voz es una herramienta fundamental para nuestra comunicación y expresión personal. Se produce cuando el aire proveniente de los pulmones pasa a través de la laringe, haciendo que las cuerdas vocales vibren para generar sonido. Sin embargo, cuando este delicado mecanismo se altera, surgen los trastornos de la voz. El Dr. Jaime Lumbán se especializa en la recuperación de la salud vocal, utilizando tecnología de vanguardia para tratar diversas afecciones.",
     
     "classification_title": "¿Cómo se clasifican los trastornos de la voz?",
     "classification_text": "Los problemas vocales no son todos iguales. Se dividen principalmente en tres categorías:",
@@ -1025,7 +1025,7 @@
     "cause8": "Lesiones o cirugías en el cuello",
     "cause9": "Problemas de tiroides",
     
-    "when_to_see_title": "¿Cuándo acudir con el Dr. Jaime Lumban?",
+    "when_to_see_title": "¿Cuándo acudir con el Dr. Jaime Lumbán?",
     "when_to_see_text": "Si nota cambios en su voz que persisten por más de dos semanas, es importante realizar una valoración. Los síntomas de alerta incluyen:",
     "alert1": "Voz rasposa, ronca o con aire.",
     "alert2": "Cambios en el tono (muy aguda o muy grave)",
@@ -1036,7 +1036,7 @@
     "alert7": "Interrupciones o quiebres repentinos en el sonido.",
     
     "diagnosis_title": "Diagnóstico de los trastornos de la voz",
-    "diagnosis_text": "Para identificar la causa exacta, el Dr. Lumban analizará los síntomas, antecedentes médicos y realizará una exploración detallada de la cabeza, cuello y garganta. empleará tecnología avanzada:",
+    "diagnosis_text": "Para identificar la causa exacta, el Dr. Lumbán analizará los síntomas, antecedentes médicos y realizará una exploración detallada de la cabeza, cuello y garganta. empleará tecnología avanzada:",
     "laryngoscopy": "Laringoscopia: Evaluación con un endoscopio flexible de alta resolución.",
     "videostroboscopy": "Videostroboscopia: Un estudio especializado que permite observar la vibración de las cuerdas vocales en cámara lenta, esencial para un diagnóstico preciso.",
     "imaging": "Estudios de Imagen: En casos específicos, se pueden solicitar tomografías o resonancias.",
@@ -1251,7 +1251,7 @@
     
     "septoplasty_title": "Septoplastia y reducción de cornetes",
     "septoplasty_text": "Septoplastia: Endereza el tabique (la pared que divide las fosas nasales) cuando está desviado. También se utiliza para eliminar crecimientos óseos llamados espolones septales. Leer mas sobre esto en https://drlumban.com/septoplastia/",
-    "turbinate_reduction_text": "Reducción de cornetes: Elimina el exceso de tejido alrededor de los huesos cornetes para facilitar el paso del aire. Puede realizarse de forma independiente o combinada con una septoplastia o rinoplastia.",
+    "turbinate_reduction_text": "Reducción de cornetes: Elimina el exceso de tejido alrededor de los huesos cornetes para facilitar el paso del aire. Puede realizarse de forma independiente o combinada con una septoplastia o rinoplastía.",
     
     "diagnosis_title": "Diagnóstico y Evaluación de ronquidos",
     "diagnosis_text": "El Dr. Lumbán realiza una evaluación integral de la vía aérea superior que incluye historia clínica, examen físico y estudios especializados como la nasofibroscopía. Este último es un estudio por fibra óptica que permite revisar las estructuras profundas de nariz, garganta y laringe.",
@@ -1367,10 +1367,10 @@
     "seo_intro_prefix": "Con más de ",
     "seo_intro_suffix": "años de trayectoria, el Dr. Jaime Lumbán se ha dedicado a perfeccionar la cirugía estética y funcional de la nariz. Aunque pueda parecer una estructura sencilla, la anatomía nasal es sumamente compleja y exige una precisión absoluta. Factores como la resistencia del cartílago y el tipo de piel varían en cada paciente; por ello, lo que funciona para una persona no siempre es lo ideal para otra. El enfoque de un otorrinolaringólogo es buscar resultados que armonicen con el rostro y realcen la belleza natural, manteniendo siempre la función respiratoria como el pilar fundamental de cada intervención.",
     
-    "what_is_title": "¿Qué es la Rinoplastia?",
+    "what_is_title": "¿Qué es la Rinoplastía?",
     "what_is_text": "Es la cirugía diseñada para dar una nueva forma a la nariz. A través de este procedimiento, es posible aumentar o reducir su tamaño, cambiar el ángulo nasal, refinar la punta o corregir bultos y desviaciones.",
     
-    "common_changes_title": "Cambios comunes en la rinoplastia",
+    "common_changes_title": "Cambios comunes en la rinoplastía",
     
     "dorsal_hump_title": "Reducción de la joroba o dorso nasal",
     "dorsal_hump_text": "El dorso nasal es el hueso que recorre la nariz desde la zona entre las cejas hasta la punta. Cuando existe una protuberancia o \"joroba\", puede reducirse y suavizarse para crear un perfil más armónico y recto. En algunos tipos de nariz —como las narices asiáticas o africanas— puede ser necesario realizar injertos de cartílago para mejorar la proyección del dorso nasal.",
@@ -1379,29 +1379,29 @@
     "tip_refinement_text": "La punta de la nariz es una de las áreas que más influyen en la armonía del rostro. El refinamiento se realiza modificando los cartílagos nasales y el ángulo nasolabial, lo que permite: proyectar la punta hacia adelante, mejorar la definición, lograr un perfil más equilibrado y refinado.",
     
     "base_reduction_title": "Reducción de la base nasal",
-    "base_reduction_text": "La cirugía también puede enfocarse en reducir la anchura de las aletas nasales, corrigiendo desproporciones y mejorando el equilibrio facial. Una rinoplastia anterior y tienen problemas posteriores con su respiración o que desean cambios adicionales en el aspecto de la nariz. Estos casos suelen ser considerablemente más difícil y ver a un especialista en rinoplastia es una necesidad.",
+    "base_reduction_text": "La cirugía también puede enfocarse en reducir la anchura de las aletas nasales, corrigiendo desproporciones y mejorando el equilibrio facial. Una rinoplastía anterior y tienen problemas posteriores con su respiración o que desean cambios adicionales en el aspecto de la nariz. Estos casos suelen ser considerablemente más difícil y ver a un especialista en rinoplastía es una necesidad.",
     
     "surgery_types_title": "Tipos de cirugía de nariz",
     
-    "functional_title": "Rinoplastia Funcional",
+    "functional_title": "Rinoplastía Funcional",
     "functional_text": "Se realiza en pacientes que presentan problemas respiratorios, generalmente debido a: desviación del tabique nasal (septum), deformaciones de los huesos nasales, obstrucción nasal crónica. Indicada para pacientes con dificultades respiratorias causadas por desviación del tabique (septum), deformidades óseas o hipertrofia por alergias. La corrección funcional suele traer consigo una mejora notable en la apariencia externa.",
     
-    "aesthetic_title": "Rinoplastia Estética",
+    "aesthetic_title": "Rinoplastía Estética",
     "aesthetic_text": "Enfocada en pacientes que desean mejorar exclusivamente la forma de su nariz. El Dr. Lumbán asegura que el cambio estético nunca sacrifique la capacidad de respirar correctamente.",
     
-    "revision_title": "Rinoplastia de Revisión (Secundaria)",
+    "revision_title": "Rinoplastía de Revisión (Secundaria)",
     "revision_text": "Para quienes ya se sometieron a una cirugía previa y presentan problemas respiratorios o insatisfacción con los resultados visuales. Estos casos son de alta complejidad y requieren la experiencia de un especialista.",
     
-    "approaches_title": "Tipos de abordaje en rinoplastia",
+    "approaches_title": "Tipos de abordaje en rinoplastía",
     "approaches_text": "Dependiendo de cada caso, se selecciona el método que garantice mejores resultados y una recuperación más cómoda:",
     
-    "closed_title": "Rinoplastia Cerrada (Incisiones Internas)",
+    "closed_title": "Rinoplastía Cerrada (Incisiones Internas)",
     "closed_text": "Se realiza exclusivamente a través de las fosas nasales, sin dejar cicatrices externas. Es ideal para modificaciones menos invasivas, ya que permite acceder a la estructura interna con un menor impacto en los tejidos circundantes.",
     
-    "open_title": "Rinoplastia Abierta",
+    "open_title": "Rinoplastía Abierta",
     "open_text": "Se realiza una mínima incisión en la columela (la base que separa las fosas nasales). Esta técnica ofrece una visión directa y completa de la estructura nasal, siendo la opción preferida para casos complejos o de revisión donde la precisión extrema es vital. La cicatriz resultante es prácticamente invisible con el tiempo.",
     
-    "ultrasonic_title": "Rinoplastia Ultrasónica (sin tapones)",
+    "ultrasonic_title": "Rinoplastía Ultrasónica (sin tapones)",
     "ultrasonic_text": "Gracias a la tecnología ultrasónica, es posible realizar cortes precisos en el hueso nasal, lo que permite: reducir el trauma en los tejidos, disminuir el sangrado, evitar fracturas agresivas, mejorar la recuperación postoperatoria. Este tipo de técnica también puede permitir cirugías sin el uso de tapones nasales, lo que hace el proceso de recuperación más cómodo para el paciente.",
     
     "gallery_title": "Casos Reales",
@@ -1412,7 +1412,7 @@
     "gallery_previous": "Anterior",
     "gallery_next": "Siguiente",
     
-    "final_cta_title": "¿Qué tipo de rinoplastia es mejor para ti?",
+    "final_cta_title": "¿Qué tipo de rinoplastía es mejor para ti?",
     "final_cta_text": "Cada nariz es única, por lo que la mejor técnica depende de tu anatomía, tus objetivos estéticos y tu función respiratoria. Te invitamos al consultorio con el Dr. Lumbán en Rio Medica a realizar una valoración personalizada, donde podremos analizar tu caso a detalle, resolver todas tus dudas y diseñar un plan quirúrgico adaptado específicamente a ti."
   },
   "contact": {
@@ -1443,7 +1443,7 @@
     "condition_congestion": "Congestión nasal",
     "condition_vertigo": "Vértigo y mareo",
     "condition_audicion": "Pérdida de audición",
-    "condition_rinoplastia": "Rinoplastia",
+    "condition_rinoplastía": "Rinoplastía",
     "label_message": "Mensaje",
     "placeholder_name": "Escribe tu nombre completo",
     "placeholder_email": "Ingresa tu correo electrónico",
@@ -1581,7 +1581,7 @@
     "h1_subtitle": "Conoce sus historias y resultados espectaculares",
     "title": "Lo que dicen nuestros pacientes",
     "subtitle": "Opiniones reales de pacientes que han confiado en el Dr. Lumbán en Google y Doctoralia",
-    "results_title": "Resultados de Rinoplastias con el Dr. Jaime Lumbán",
+    "results_title": "Resultados de Rinoplastías con el Dr. Jaime Lumbán",
     "results_subtitle": "Transformaciones reales que hablan por sí mismas",
     "view_result": "Ver resultado",
     "gallery_case": "Caso",
@@ -1603,7 +1603,7 @@
     "case_13": "Caso 13",
     "case_14": "Caso 14",
     "case_15": "Caso 15",
-    "cta_title": "¿Te gustaría hacerte una rinoplastia?",
+    "cta_title": "¿Te gustaría hacerte una rinoplastía?",
     "cta_subtitle": "Solicita una consulta con el Dr. Lumbán para una valoración detallada",
     "cta_button": "SOLICITA TU CONSULTA",
     
@@ -1657,7 +1657,7 @@
     "tags": {
       "surgery": "cirugía",
       "natural_results": "resultados naturales",
-      "rhinoplasty": "rinoplastia",
+      "rhinoplasty": "rinoplastía",
       "international_experience": "experiencia internacional",
       "attention": "atención",
       "experience": "experiencia",
@@ -1668,7 +1668,7 @@
     "reviews": {
       "ahs": {
         "name": "AHS Bienes Raíces",
-        "text": "Experiencia con el Dr Jaime Lumban 10/10 desde la primera consulta hasta el postoperatorio. Quede muy satisfecha con mis resultados - que son tan naturales. La atención fue súper - siempre muy profesional, amable, explica todo con detalle y gentileza, se toma su tiempo para contestar todas las preguntas y dudas. Cuando marcas por WhatsApp a hacer alguna pregunta siempre te contestan inmediatamente. El personal siempre muy amable, profesionales y atentos. No sufrí de dolor y la inflamación fue mínima. También quede encantada con el hospital y su personal. Sin duda lo recomiendo con los ojos cerrados para cirugía plástica de nariz. Mi operación fue en Nov 20, 2025 y estamos a Feb 11, 2026. Estoy muy agradecía con el Dr. Lumban y su equipo 🙏🏼💗"
+        "text": "Experiencia con el Dr Jaime Lumbán 10/10 desde la primera consulta hasta el postoperatorio. Quede muy satisfecha con mis resultados - que son tan naturales. La atención fue súper - siempre muy profesional, amable, explica todo con detalle y gentileza, se toma su tiempo para contestar todas las preguntas y dudas. Cuando marcas por WhatsApp a hacer alguna pregunta siempre te contestan inmediatamente. El personal siempre muy amable, profesionales y atentos. No sufrí de dolor y la inflamación fue mínima. También quede encantada con el hospital y su personal. Sin duda lo recomiendo con los ojos cerrados para cirugía plástica de nariz. Mi operación fue en Nov 20, 2025 y estamos a Feb 11, 2026. Estoy muy agradecía con el Dr. Lumbán y su equipo 🙏🏼💗"
       },
       "jasmine": {
         "name": "Jasmine Perez",
@@ -1676,11 +1676,11 @@
       },
       "nydia": {
         "name": "Nydia Mendoza",
-        "text": "La atención es excelente; desde la recepción hasta la estancia con el doctor. El Dr. Lumban es un médico de una amplia experiencia quedamos muy satisfechos y agradecidos con su servicio!!"
+        "text": "La atención es excelente; desde la recepción hasta la estancia con el doctor. El Dr. Lumbán es un médico de una amplia experiencia quedamos muy satisfechos y agradecidos con su servicio!!"
       },
       "mendez": {
         "name": "Mr Mendez",
-        "text": "El Dr. Lumban es un médico muy profesional. Me realizó dos cirugías por distintos procedimientos me dio una explicación muy clara de todo proceso, resolviendo todas mis dudas. Siempre estuvo al pendiente de mi evolución. Lo recomiendo ampliamente."
+        "text": "El Dr. Lumbán es un médico muy profesional. Me realizó dos cirugías por distintos procedimientos me dio una explicación muy clara de todo proceso, resolviendo todas mis dudas. Siempre estuvo al pendiente de mi evolución. Lo recomiendo ampliamente."
       },
       "jpm": {
         "name": "JPM",
@@ -1769,7 +1769,7 @@
     "consultation_duration_content": "El tiempo de la consulta o de los estudios puede variar según cada caso y de la complejidad del problema a evaluar. Algunas valoraciones son rápidas y otras requieren un análisis más detallado, pero siempre procuramos brindarte el tiempo necesario para resolver tus dudas y orientarte correctamente.",
     "personalized_care_title": "Atención médica personalizada y cercana en Tijuana",
     "personalized_care_content_1": "Con más de tres décadas de experiencia en otorrinolaringología, mi enfoque siempre ha sido escuchar al paciente con atención y ofrecer una valoración humana, precisa y personalizada. Cada consulta está diseñada para que te sientas validado y acompañado en todo momento.",
-    "personalized_care_content_2": "Ya sea que busques atención general en otorrinolaringología o una valoración relacionada con rinoplastia, el objetivo es encontrar juntos la solución más adecuada para tu caso. El tratamiento puede ir desde recomendaciones sencillas y cambios de hábitos, hasta medicamentos o procedimientos mínimamente invasivos, según lo que realmente necesites.",
+    "personalized_care_content_2": "Ya sea que busques atención general en otorrinolaringología o una valoración relacionada con rinoplastía, el objetivo es encontrar juntos la solución más adecuada para tu caso. El tratamiento puede ir desde recomendaciones sencillas y cambios de hábitos, hasta medicamentos o procedimientos mínimamente invasivos, según lo que realmente necesites.",
     "personalized_care_location": "Nuestro consultorio se encuentra a tan solo 10 minutos del cruce fronterizo, en una zona segura y de fácil acceso, con diversas opciones de estacionamiento en los alrededores para mayor comodidad.",
     "personalized_care_access": "Pensando en tu experiencia desde el primer momento, contamos con instalaciones accesibles, con acceso tanto por escaleras como por elevador.",
     "personalized_care_waiting_area": "Además, hemos acondicionado un espacio de espera cómodo y agradable, con área de café y jugos, así como aire acondicionado, para que tu visita sea lo más tranquila y confortable posible mientras eres atendido.",

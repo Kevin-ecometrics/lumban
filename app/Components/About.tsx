@@ -80,7 +80,7 @@ const YourwareStory: React.FC = () => {
               className="px-4 py-2 text-white hover:opacity-90 rounded-md transition-colors duration-300 inline-block mt-2"
               href={getRouteByKey("profile", currentLang)}
             >
-              {t("home.about.about_link")} Lumban
+              {t("home.about.about_link")} Lumbán
             </Link>
           </div>
         </div>
