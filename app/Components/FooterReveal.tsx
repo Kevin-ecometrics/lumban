@@ -158,7 +158,7 @@ export default function FooterBase() {
       label: t("navbar.procedures"),
       href: getRouteByKey("endoscopic-surgery", currentLang),
     },
-    { label: t("navbar.conditions"), href: getRouteByKey("nose", currentLang) },
+    { label: t("navbar.conditions"), href: getRouteByKey("sinusitis", currentLang) },
   ] as const;
 
   const CONTACT_ITEMS = [
