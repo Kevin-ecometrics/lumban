@@ -121,7 +121,7 @@ export default function ScrollRevealText() {
   });
 
   return (
-    <section className="py-16 flex items-center justify-center px-6">
+    <section id="scroll-next" className="py-16 flex items-center justify-center px-6">
       <p
         ref={ref}
         className="max-w-6xl text-4xl md:text-6xl leading-tight flex flex-wrap gap-x-3 gap-y-2"

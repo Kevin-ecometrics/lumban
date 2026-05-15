@@ -83,14 +83,14 @@ const Navbar: React.FC = () => {
             title: t("navbar.profile"),
             href: getRouteByKey("profile", currentLang),
           },
-          {
-            title: t("navbar.certifications"),
-            href: getRouteByKey("certifications", currentLang),
-          },
-          {
-            title: t("navbar.facilities"),
-            href: getRouteByKey("facilities", currentLang),
-          },
+          // {
+          //   title: t("navbar.certifications"),
+          //   href: getRouteByKey("certifications", currentLang),
+          // },
+          // {
+          //   title: t("navbar.facilities"),
+          //   href: getRouteByKey("facilities", currentLang),
+          // },
         ]),
       },
       {
@@ -279,9 +279,52 @@ const Navbar: React.FC = () => {
             onClick={() =>
               handleLanguageChange(currentLang === "es" ? "en" : "es")
             }
-            className="w-10 h-10 rounded-full text-xs font-medium bg-gray-500 text-white hover:bg-gray-600 transition flex items-center justify-center"
+            aria-label={currentLang === "es" ? "Switch to English" : "Cambiar a Español"}
+            className="w-10 h-10 rounded-full overflow-hidden hover:scale-110 transition-transform shadow-md border-2 border-white/30"
           >
-            {currentLang === "es" ? "EN" : "ES"}
+            {currentLang === "es" ? (
+              /* US Flag - shown when in Spanish to switch to English */
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" className="w-full h-full">
+                <circle cx="30" cy="30" r="30" fill="#B22234"/>
+                <rect y="6.92" width="60" height="4.62" fill="#FFFFFF"/>
+                <rect y="16.15" width="60" height="4.62" fill="#FFFFFF"/>
+                <rect y="25.38" width="60" height="4.62" fill="#FFFFFF"/>
+                <rect y="34.62" width="60" height="4.62" fill="#FFFFFF"/>
+                <rect y="43.85" width="60" height="4.62" fill="#FFFFFF"/>
+                <clipPath id="circle-clip-us">
+                  <circle cx="30" cy="30" r="30"/>
+                </clipPath>
+                <rect x="0" y="0" width="30" height="32.31" fill="#3C3B6E" clipPath="url(#circle-clip-us)"/>
+                {[0,1,2,3,4,5,6,7,8].map((col) =>
+                  [0,1,2,3,4].map((row) => (
+                    <text
+                      key={`${col}-${row}`}
+                      x={3 + col * 3.2}
+                      y={5 + row * 6}
+                      fontSize="4"
+                      fill="white"
+                      clipPath="url(#circle-clip-us)"
+                    >★</text>
+                  ))
+                )}
+              </svg>
+            ) : (
+              /* Mexico Flag - shown when in English to switch to Spanish */
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" className="w-full h-full">
+                <circle cx="30" cy="30" r="30" fill="#006847"/>
+                <rect x="20" y="0" width="20" height="60" fill="#FFFFFF"/>
+                <rect x="40" y="0" width="20" height="60" fill="#CE1126"/>
+                <clipPath id="circle-clip-mx">
+                  <circle cx="30" cy="30" r="30"/>
+                </clipPath>
+                <g clipPath="url(#circle-clip-mx)">
+                  <rect x="0" y="0" width="20" height="60" fill="#006847"/>
+                  <rect x="20" y="0" width="20" height="60" fill="#FFFFFF"/>
+                  <rect x="40" y="0" width="20" height="60" fill="#CE1126"/>
+                  <ellipse cx="30" cy="30" rx="5" ry="6" fill="#8B4513" opacity="0.7"/>
+                </g>
+              </svg>
+            )}
           </button>
 
           <button

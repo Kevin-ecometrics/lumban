@@ -209,6 +209,59 @@ export default function OurWaveHero() {
           Dr. Lumbán
         </h1>
       </div>
+
+      {/* ---------------- SCROLL CTA ARROW ---------------- */}
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 pointer-events-auto"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+      >
+        <motion.button
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          onClick={() =>
+            document
+              .getElementById("scroll-next")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+          aria-label="Ir a la siguiente sección"
+          style={{
+            backgroundColor:
+              theme === "morado"
+                ? "rgba(160, 173, 217, 0.85)"
+                : theme === "azul"
+                  ? "rgba(69, 136, 200, 0.85)"
+                  : "rgba(162, 204, 128, 0.85)",
+            borderColor:
+              theme === "morado"
+                ? "rgba(160, 173, 217, 1)"
+                : theme === "azul"
+                  ? "rgba(69, 136, 200, 1)"
+                  : "rgba(162, 204, 128, 1)",
+          }}
+          className="w-14 h-14 rounded-full border-2 flex items-center justify-center backdrop-blur-sm hover:scale-110 transition-transform cursor-pointer shadow-lg"
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ color: "#ffffff" }}
+          >
+            <path
+              d="M6 12L16 22L26 12"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.button>
+      </motion.div>
     </section>
   );
 }
