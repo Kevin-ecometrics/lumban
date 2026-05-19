@@ -502,6 +502,24 @@ export default function ContactPage() {
           </div>
         </div>
 
+        {/* MAPAS CROQUIS */}
+        <div className="grid md:grid-cols-2 gap-6 mt-10">
+          <div className="rounded-3xl overflow-hidden shadow-md border border-gray-100 bg-white">
+            <img
+              src="/Mapa Dr Lumban-01.png"
+              alt="Croquis de cómo llegar al consultorio Dr. Lumbán - vista general"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-md border border-gray-100 bg-white">
+            <img
+              src="/Mapa Dr Lumban-02.png"
+              alt="Croquis de cómo llegar al consultorio Dr. Lumbán - detalle"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </div>
+
         <Toaster position="top-right" />
       </div>
 

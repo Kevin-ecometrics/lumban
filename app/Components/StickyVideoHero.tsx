@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTheme } from "./ThemeContext";
 
 /** Consideramos la animación en su máximo cuando progress ≥ este valor */
 const PROGRESS_AT_MAX = 0.799;
@@ -20,6 +21,12 @@ interface StickyVideoHeroProps {
   startTime?: number;
 }
 
+const themeColorMap: Record<string, string> = {
+  morado: "var(--color-morado)",
+  azul: "var(--color-azul)",
+  verde: "var(--color-verde)",
+};
+
 export default function StickyVideoHero({
   src,
   ariaLabel,
@@ -32,6 +39,8 @@ export default function StickyVideoHero({
   poster,
   startTime = 0,
 }: StickyVideoHeroProps) {
+  const { theme } = useTheme();
+  const titleColor = themeColorMap[theme] ?? themeColorMap.azul;
   const resolvedLabel = ariaLabel ?? title;
   const [progress, setProgress] = useState(0);
   /** Empieza en silencio (autoplay al hacer scroll); el usuario puede activar sonido con los controles */
@@ -95,15 +104,16 @@ export default function StickyVideoHero({
             }}
           >
             <h1
-              className={`text-black text-3xl md:text-8xl font-bold tracking-wide mb-6 ${
+              className={`text-3xl md:text-8xl font-bold tracking-wide mb-6 uppercase ${
                 titleClassName ?? ""
               }`}
+              style={{ color: titleColor }}
             >
               {title}
             </h1>
             {subtitle && (
               <h2
-                className={`text-blue-500 text-2xl md:text-4xl font-medium ${
+                className={`text-black text-2xl md:text-4xl font-medium ${
                   subtitleClassName ?? ""
                 }`}
               >

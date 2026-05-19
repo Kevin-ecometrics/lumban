@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTheme } from "./ThemeContext";
 
 interface StickyImageHeroProps {
   src?: string;
@@ -14,6 +15,12 @@ interface StickyImageHeroProps {
   imageClassName?: string;
 }
 
+const themeColorMap: Record<string, string> = {
+  morado: "var(--color-morado)",
+  azul: "var(--color-azul)",
+  verde: "var(--color-verde)",
+};
+
 export default function StickyImageHero({
   src,
   alt,
@@ -24,6 +31,8 @@ export default function StickyImageHero({
   subtitleClassName,
   imageClassName,
 }: StickyImageHeroProps) {
+  const { theme } = useTheme();
+  const titleColor = themeColorMap[theme] ?? themeColorMap.azul;
   const fallbackSrc =
     "/pose%20de%20Doctor%20Jaime%20lumban%20otorrino%20con%20brazos%20cruzados%20y%20traje%20azul.png";
   const resolvedSrc = src ?? fallbackSrc;
@@ -82,15 +91,16 @@ export default function StickyImageHero({
             }}
           >
             <h1
-              className={`text-black text-3xl md:text-[60px] font-bold tracking-wide mb-6 ${
+              className={`text-3xl md:text-[60px] font-bold tracking-wide mb-6 uppercase ${
                 titleClassName ?? ""
               }`}
+              style={{ color: titleColor }}
             >
               {title}
             </h1>
             {subtitle && (
               <h2
-                className={`text-blue-500 text-2xl md:text-4xl font-medium ${
+                className={`text-black text-2xl md:text-4xl font-medium ${
                   subtitleClassName ?? ""
                 }`}
               >

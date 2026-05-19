@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"require\\('sharp'\\); console.log\\('sharp ok'\\)\")",
+      "PowerShell(node -e \"require\\('sharp'\\); console.log\\('sharp ok'\\)\" 2>&1)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(bun *)"
+    ]
+  }
+}

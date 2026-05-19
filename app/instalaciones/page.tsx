@@ -33,7 +33,17 @@ const itemVariants: Variants = {
 export default function InstalacionesPage() {
   const { t } = useTranslation();
   const installations = [
+    // Las 4 últimas del array original → primeras visibles
+    "/instalaciones/Dr. Jaime Lumban-instalaciones.webp",
+    "/instalaciones/dr lumban recepcion.webp",
+    "/instalaciones/El consultorio cuenta con todo el equipo para realizar endoscopias y procedimientos no invasivos.webp",
+    "/instalaciones/Interior del consultorio donde la calidad y comodiad destacan.webp",
+    // Nuevas: Lumb-0074 y Lumb-0227
+    "/instalaciones/Lumb-0074.webp",
+    "/instalaciones/Lumb-0227.webp",
+    // img01 → luego Bienvenido en el centro (índice 7 de 15) → img02-img08
     "/instalaciones/img01-consultorio_rio_medica_dr_lumban.jpg",
+    "/instalaciones/Bienvenido a tu consultorio con el experto en rinoplastia Jaime Lumban.webp",
     "/instalaciones/img02-consultorio_rio_medica_dr_lumban.jpg",
     "/instalaciones/img03-consultorio_rio_medica_dr_lumban.jpg",
     "/instalaciones/img04-consultorio_rio_medica_dr_lumban.jpg",
@@ -41,10 +51,6 @@ export default function InstalacionesPage() {
     "/instalaciones/img06-consultorio_rio_medica_dr_lumban.jpg",
     "/instalaciones/img07-consultorio_rio_medica_dr_lumban.jpg",
     "/instalaciones/img08-consultorio_rio_medica_dr_lumban.jpg",
-    "/instalaciones/Dr. Jaime Lumban-instalaciones.webp",
-    "/instalaciones/dr lumban recepcion.webp",
-    "/instalaciones/El consultorio cuenta con todo el equipo para realizar endoscopias y procedimientos no invasivos.webp",
-    "/instalaciones/Interior del consultorio donde la calidad y comodiad destacan.webp",
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -114,11 +120,6 @@ export default function InstalacionesPage() {
                   transition={{ duration: 0.6 }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              </div>
-              <div className="p-4 bg-white">
-                <p className="text-sm text-gray-500 text-center">
-                  {t("facilities.facility_label")} {index + 1}
-                </p>
               </div>
             </motion.figure>
           ))}

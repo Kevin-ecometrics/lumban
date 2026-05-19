@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import { getRouteByKey } from "../i18n/routeMap";
+import { useTheme } from "./ThemeContext";
 
 interface FAQItem {
   id: number;
@@ -13,8 +14,16 @@ interface FAQItem {
   answerKey: string;
 }
 
+const themeColorMap: Record<string, string> = {
+  morado: "var(--color-morado)",
+  azul: "var(--color-azul)",
+  verde: "var(--color-verde)",
+};
+
 const FAQSection: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const { theme } = useTheme();
+  const themeColor = themeColorMap[theme] ?? themeColorMap.azul;
   const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
   const [openId, setOpenId] = useState<number | null>(null);
 
@@ -73,28 +82,35 @@ const FAQSection: React.FC = () => {
                 <div
                   className={`border-t ${
                     index === faqs.length - 1 ? "border-b" : ""
-                  } border-gray-200 py-6 md:py-8`}
+                  } border-gray-200 py-6 md:py-8 px-4 rounded-xl transition-colors duration-300`}
+                  style={{ backgroundColor: isOpen ? themeColor : undefined }}
                 >
                   {/* Encabezado de la FAQ */}
                   <button
                     onClick={() => toggleFAQ(faq.id)}
-                    className="w-full flex justify-between items-start text-left group hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-300 focus:rounded"
+                    className="w-full flex justify-between items-start text-left group hover:cursor-pointer focus:outline-none"
                   >
                     {/* Número y pregunta */}
                     <div className="flex items-start space-x-4 md:space-x-6">
-                      <span className="text-gray-400 font-mono text-sm md:text-base tracking-tight mt-1">
+                      <span
+                        className="font-mono text-sm md:text-base tracking-tight mt-1 transition-colors duration-300"
+                        style={{ color: isOpen ? "rgba(255,255,255,0.7)" : undefined }}
+                      >
                         {faq.id < 10 ? `0${faq.id}` : faq.id}.
                       </span>
-                      <h3 className="text-xl md:text-2xl font-serif font-normal text-gray-900 group-hover:text-gray-700 transition-colors duration-200">
+                      <h3
+                        className="text-xl md:text-2xl font-serif font-normal transition-colors duration-300"
+                        style={{ color: isOpen ? "#ffffff" : undefined }}
+                      >
                         {t(faq.questionKey)}
                       </h3>
                     </div>
 
                     {/* Icono + o - */}
                     <motion.div
-                      animate={{ rotate: isOpen ? 0 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="text-gray-900 ml-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
+                      className="ml-4 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
+                      style={{ color: isOpen ? "#ffffff" : undefined }}
                     >
                       {isOpen ? (
                         <FiMinus className="w-6 h-6 md:w-7 md:h-7" />
@@ -115,7 +131,7 @@ const FAQSection: React.FC = () => {
                         className="overflow-hidden"
                       >
                         <div className="mt-4 md:mt-6 ml-10 md:ml-14 pr-4">
-                          <p className="text-gray-700 text-lg md:text-xl leading-relaxed font-light whitespace-pre-line">
+                          <p className="text-lg md:text-xl leading-relaxed font-light whitespace-pre-line text-white/90">
                             {t(faq.answerKey)}
                           </p>
                         </div>

@@ -83,14 +83,14 @@ const Navbar: React.FC = () => {
             title: t("navbar.profile"),
             href: getRouteByKey("profile", currentLang),
           },
-          // {
-          //   title: t("navbar.certifications"),
-          //   href: getRouteByKey("certifications", currentLang),
-          // },
-          // {
-          //   title: t("navbar.facilities"),
-          //   href: getRouteByKey("facilities", currentLang),
-          // },
+          {
+            title: t("navbar.certifications"),
+            href: getRouteByKey("certifications", currentLang),
+          },
+          {
+            title: t("navbar.facilities"),
+            href: getRouteByKey("facilities", currentLang),
+          },
         ]),
       },
       {
@@ -218,6 +218,12 @@ const Navbar: React.FC = () => {
     if (nextPath && nextPath !== pathname) {
       router.push(nextPath);
     }
+  };
+
+  const themeBg: Record<string, string> = {
+    morado: "bg-morado",
+    azul: "bg-azul",
+    verde: "bg-verde",
   };
 
   return (
@@ -356,17 +362,17 @@ const Navbar: React.FC = () => {
               animate={{ x: 0, opacity: 1, scale: 1 }}
               exit={{ x: 80, opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed top-6 right-6 z-[100] w-[320px] bg-[#eaeaea] rounded-[28px] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
+              className={`fixed top-6 right-6 z-[100] w-[320px] ${themeBg[theme]} rounded-[28px] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.25)]`}
             >
               {/* HEADER */}
               <div className="flex justify-between items-center mb-6">
-                <span className="text-xs tracking-[0.2em] text-gray-500">
+                <span className="text-xs tracking-[0.2em] text-white/70">
                   MENU
                 </span>
 
                 <button
                   onClick={() => setOpen(false)}
-                  className="text-xl text-gray-700 hover:rotate-90 transition"
+                  className="text-xl text-white hover:rotate-90 transition"
                   aria-label="Cerrar menú"
                 >
                   ✕
@@ -390,7 +396,7 @@ const Navbar: React.FC = () => {
                               activeMenu === item.title ? null : item.title,
                             )
                           }
-                          className="text-3xl font-medium text-gray-800 flex justify-between w-full"
+                          className="text-3xl font-medium text-white flex justify-between w-full"
                         >
                           {item.title}
                           <FaChevronDown
@@ -421,7 +427,7 @@ const Navbar: React.FC = () => {
                                               : sub.title,
                                           )
                                         }
-                                        className="text-lg text-gray-600 flex justify-between w-full"
+                                        className="text-lg text-white/90 flex justify-between w-full"
                                       >
                                         {sub.title}
                                         <FaChevronRight />
@@ -440,7 +446,7 @@ const Navbar: React.FC = () => {
                                                 key={s.title}
                                                 href={s.href}
                                                 onClick={() => setOpen(false)}
-                                                className="block text-sm text-gray-500"
+                                                className="block text-sm text-white/75"
                                               >
                                                 {s.title}
                                               </Link>
@@ -453,7 +459,7 @@ const Navbar: React.FC = () => {
                                     <Link
                                       href={sub.href!}
                                       onClick={() => setOpen(false)}
-                                      className="block text-lg text-gray-600"
+                                      className="block text-lg text-white/90"
                                     >
                                       {sub.title}
                                     </Link>
@@ -468,7 +474,7 @@ const Navbar: React.FC = () => {
                       <Link
                         href={item.href!}
                         onClick={() => setOpen(false)}
-                        className="text-3xl font-medium text-gray-800"
+                        className="text-3xl font-medium text-white"
                       >
                         {item.title}
                       </Link>

@@ -27,8 +27,28 @@ const SINUSITIS_HERO_POSTER = "/testimoniales/testimonial.webp";
 // Resultados de rinoplastias - 15 pacientes
 const RHINOPLASTY_RESULTS = [
   {
-    src: `/rinoplastia/Cirugia de nariz estetica y funcional para hombres en Tijuana.webp`,
+    src: `/rinoplastia/paciente 1.1.webp`,
     label: `testimonials.case_1`,
+  },
+  {
+    src: `/rinoplastia/paciente 1.2.webp`,
+    label: `testimonials.case_2`,
+  },
+  {
+    src: `/rinoplastia/paciente 1.4.webp`,
+    label: `testimonials.case_3`,
+  },
+  {
+    src: `/rinoplastia/paciente 1.5.webp`,
+    label: `testimonials.case_4`,
+  },
+  {
+    src: `/rinoplastia/paciente 1.6.webp`,
+    label: `testimonials.case_5`,
+  },
+  {
+    src: `/rinoplastia/Cirugia de nariz estetica y funcional para hombres en Tijuana.webp`,
+    label: `testimonials.case_6`,
   },
   {
     src: `/rinoplastia/Perfil armonico y respingado con hecho por un otorrino especializado en rinoplastia.webp`,
@@ -768,9 +788,6 @@ export default function TestimonialsPage() {
                     </span>
                   </div>
                 </div>
-                <figcaption className="mt-2 text-sm text-gray-500 text-center">
-                  {t(result.label)}
-                </figcaption>
               </motion.figure>
             ))}
           </div>
@@ -840,9 +857,6 @@ export default function TestimonialsPage() {
                   transition={{ duration: 0.25, ease: "easeOut" }}
                 />
               </AnimatePresence>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
-                {t(RHINOPLASTY_RESULTS[selectedImageIndex].label)}
-              </div>
               {RHINOPLASTY_RESULTS.length > 1 && (
                 <>
                   <button

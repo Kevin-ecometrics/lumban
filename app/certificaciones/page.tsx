@@ -34,10 +34,22 @@ export default function CertificacionesPage() {
   const { t } = useTranslation();
   const experienceYears = new Date().getFullYear() - 1993;
   const certifications = [
-    "/certificados/certificado1.png",
-    "/certificados/certificado2.jpg",
-    "/certificados/certificado3.jpg",
-    "/certificados/certificado4.png",
+    "/certificados/certificado_01.png",  // UABC - Médico General (~1986)
+    "/certificados/certificado_02.png",  // UNAM - Especialidad ORL (1992)
+    "/certificados/certificado_03.jpg",  // AAO - Corresponding Member (1997)
+    "/certificados/certificado_04.png",  // Focus on Rhinoplasty & Face
+    "/certificados/certificado_05.png",  // CORPFACE - Rinoplastia
+    "/certificados/certificado_06.png",  // MEDIPOL University Hospital
+    "/certificados/certificado_07.png",  // CONACEM 2021-2025 (Ene 2021)
+    "/certificados/certificado_08.png",  // Mérida 70° Congreso Digital (May 2021)
+    "/certificados/certificado_09.png",  // AAO-HNSF Virtual Meeting (Oct 2021)
+    "/certificados/certificado_10.png",  // U.S. Medical Tourism Member
+    "/certificados/certificado_11.png",  // Multispecialty Aesthetic Conf. (Ago 2022)
+    "/certificados/certificado_12.png",  // FURLONG Rinoplastia Ultrasónica (Ago 2023)
+    "/certificados/certificado_13.png",  // FESORIMEX Chihuahua (Oct 2023)
+    "/certificados/certificado_14.png",  // LXXII Congreso Cancún (2023)
+    "/certificados/certificado_15.png",  // CMORL y CCC (Ene 2024)
+    "/certificados/certificado_16.png",  // XIX Curso Rinología (Jul 2025)
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -104,11 +116,6 @@ export default function CertificacionesPage() {
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.4 }}
                 />
-              </div>
-              <div className="p-4 bg-white border-t border-gray-100">
-                <p className="text-sm text-gray-500 text-center">
-                  {t("certifications.certification_label")} {index + 1}
-                </p>
               </div>
             </motion.figure>
           ))}
