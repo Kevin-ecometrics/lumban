@@ -37,17 +37,17 @@ export default function CertificacionesPage() {
     "/certificados/certificado_01.png",  // UABC - Médico General (~1986)
     "/certificados/certificado_02.png",  // UNAM - Especialidad ORL (1992)
     "/certificados/certificado_03.jpg",  // AAO - Corresponding Member (1997)
-    "/certificados/certificado_04.png",  // Focus on Rhinoplasty & Face
-    "/certificados/certificado_05.png",  // CORPFACE - Rinoplastia
-    "/certificados/certificado_06.png",  // MEDIPOL University Hospital
-    "/certificados/certificado_07.png",  // CONACEM 2021-2025 (Ene 2021)
-    "/certificados/certificado_08.png",  // Mérida 70° Congreso Digital (May 2021)
-    "/certificados/certificado_09.png",  // AAO-HNSF Virtual Meeting (Oct 2021)
-    "/certificados/certificado_10.png",  // U.S. Medical Tourism Member
-    "/certificados/certificado_11.png",  // Multispecialty Aesthetic Conf. (Ago 2022)
+    "/certificados/certificado_04.png",  // CONACEM 2021-2025 (Ene 2021)
+    "/certificados/certificado_05.png",  // Mérida 70° Congreso Digital (May 2021)
+    "/certificados/certificado_06.png",  // AAO-HNSF Virtual Meeting (Oct 2021)
+    "/certificados/certificado_07.png",  // U.S. Medical Tourism Member
+    "/certificados/certificado_08.png",  // MEDIPOL University Hospital (Jul 2022)
+    "/certificados/certificado_09.png",  // Multispecialty Aesthetic Conf. (Ago 2022)
+    "/certificados/certificado_10.png",  // Focus on Rhinoplasty & Face (Dic 2022)
+    "/certificados/certificado_11.png",  // CORPFACE - Rinoplastia (Jun 2023)
     "/certificados/certificado_12.png",  // FURLONG Rinoplastia Ultrasónica (Ago 2023)
-    "/certificados/certificado_13.png",  // FESORIMEX Chihuahua (Oct 2023)
-    "/certificados/certificado_14.png",  // LXXII Congreso Cancún (2023)
+    "/certificados/certificado_13.png",  // LXXII Congreso Cancún (2023)
+    "/certificados/certificado_14.png",  // FESORIMEX Chihuahua (Oct 2023)
     "/certificados/certificado_15.png",  // CMORL y CCC (Ene 2024)
     "/certificados/certificado_16.png",  // XIX Curso Rinología (Jul 2025)
   ];
