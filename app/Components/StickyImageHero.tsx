@@ -91,8 +91,8 @@ export default function StickyImageHero({
             }}
           >
             <h1
-              className={`text-3xl md:text-[60px] font-bold tracking-wide mb-6 uppercase ${
-                titleClassName ?? ""
+              className={`font-bold tracking-wide mb-6 uppercase leading-tight ${
+                titleClassName ?? "text-2xl md:text-7xl"
               }`}
               style={{ color: titleColor }}
             >

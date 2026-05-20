@@ -33,7 +33,7 @@ export default function AboutPage() {
         title={t("profile.hero_title")}
         subtitle={t("profile.hero_subtitle")}
         textClassName="max-w-3xl mx-auto px-4 -mt-8 md:-mt-4"
-        titleClassName="text-5xl sm:text-4xl md:text-6xl"
+        titleClassName="text-3xl sm:text-4xl md:text-7xl"
         subtitleClassName="text-2lg sm:text-xl md:text-2xl -mt-2"
         mediaClassName="-mt-8 md:mt-28"
       />

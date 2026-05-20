@@ -27,6 +27,18 @@ const SINUSITIS_HERO_POSTER = "/testimoniales/testimonial.webp";
 // Resultados de rinoplastias - 15 pacientes
 const RHINOPLASTY_RESULTS = [
   {
+    src: `/rinoplastia/paciente 1.7.webp`,
+    label: `testimonials.case_16`,
+  },
+  {
+    src: `/rinoplastia/paciente 1.8.webp`,
+    label: `testimonials.case_17`,
+  },
+  {
+    src: `/rinoplastia/paciente 1.9.webp`,
+    label: `testimonials.case_18`,
+  },
+  {
     src: `/rinoplastia/paciente 1.1.webp`,
     label: `testimonials.case_1`,
   },
@@ -689,7 +701,7 @@ export default function TestimonialsPage() {
         title={t("testimonials.hero_title")}
         subtitle={t("testimonials.hero_subtitle")}
         textClassName="max-w-3xl mx-auto px-4 -mt-8 md:-mt-4"
-        titleClassName="text-5xl sm:text-4xl md:text-6xl"
+        titleClassName="text-3xl sm:text-4xl md:text-7xl"
         subtitleClassName="text-2lg sm:text-xl md:text-2xl -mt-2"
         mediaClassName="-mt-8 md:mt-28"
         startTime={0}
