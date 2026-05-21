@@ -13,6 +13,8 @@ interface StickyImageHeroProps {
   titleClassName?: string;
   subtitleClassName?: string;
   imageClassName?: string;
+  imgClassName?: string;
+  noBorderRadius?: boolean;
 }
 
 const themeColorMap: Record<string, string> = {
@@ -30,6 +32,8 @@ export default function StickyImageHero({
   titleClassName,
   subtitleClassName,
   imageClassName,
+  imgClassName,
+  noBorderRadius = false,
 }: StickyImageHeroProps) {
   const { theme } = useTheme();
   const titleColor = themeColorMap[theme] ?? themeColorMap.azul;
@@ -111,19 +115,19 @@ export default function StickyImageHero({
 
           {/* ---------------- IMAGEN ---------------- */}
           <div
-            className={`relative mx-auto mt-24 overflow-hidden shadow-2xl z-10 ${
+            className={`relative mx-auto mt-24 overflow-hidden z-10 ${noBorderRadius ? "" : "shadow-2xl"} ${
               imageClassName ?? ""
             }`}
             style={{
               transform: `translateY(${translateY}px) scale(${scale})`,
-              borderRadius: `${borderRadius}px`,
+              borderRadius: noBorderRadius ? "0px" : `${borderRadius}px`,
               transition: "transform 0.12s linear, border-radius 0.12s linear",
             }}
           >
             <img
               src={imageSrc}
               alt={resolvedAlt}
-              className="w-full h-[70vh] object-cover"
+              className={`w-full ${imgClassName ?? "h-[70vh] object-cover"}`}
               onError={() => {
                 if (imageSrc !== fallbackSrc) {
                   setImageSrc(fallbackSrc);

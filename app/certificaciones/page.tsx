@@ -50,6 +50,7 @@ export default function CertificacionesPage() {
     "/certificados/certificado_14.png",  // FESORIMEX Chihuahua (Oct 2023)
     "/certificados/certificado_15.png",  // CMORL y CCC (Ene 2024)
     "/certificados/certificado_16.png",  // XIX Curso Rinología (Jul 2025)
+    "/certificados/certificado_17.png",
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -57,9 +58,11 @@ export default function CertificacionesPage() {
   return (
     <main className="bg-white">
       <StickyImageHero
-        src="/certificados/El doctor Jaime Lumban es un otorrino certificado por el consejo mexicano de otorrinolaringologia.webp"
+        src="/certificados/El doctor Jaime Lumban es un otorrino certificado por el consejo mexicano de otorrinolaringologia.jpg"
         title={t("certifications.hero_title")}
         subtitle={t("certifications.hero_subtitle")}
+        imgClassName="h-[85vh] object-contain"
+        noBorderRadius
       />
 
       <section className="max-w-7xl mx-auto px-6 py-20">
