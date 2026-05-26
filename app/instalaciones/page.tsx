@@ -39,8 +39,8 @@ export default function InstalacionesPage() {
     "/instalaciones/El consultorio cuenta con todo el equipo para realizar endoscopias y procedimientos no invasivos.webp",
     "/instalaciones/Interior del consultorio donde la calidad y comodiad destacan.webp",
     // Nuevas: Lumb-0074 y Lumb-0227
-    "/instalaciones/Lumb-0074.webp",
-    "/instalaciones/Lumb-0227.webp",
+    "/instalaciones/consultorio interior equipamiento endoscopia dr lumban Rio Medica Tijuana.webp",
+    "/instalaciones/sala espera consultorio dr lumban otorrinolaringologia Rio Medica Tijuana.webp",
     // img01 → luego Bienvenido en el centro (índice 7 de 15) → img02-img08
     "/instalaciones/img01-consultorio_rio_medica_dr_lumban.jpg",
     "/instalaciones/Bienvenido a tu consultorio con el experto en rinoplastia Jaime Lumban.webp",

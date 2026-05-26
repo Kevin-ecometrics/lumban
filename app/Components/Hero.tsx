@@ -13,20 +13,20 @@ const REMOVE_DELAY = 5000;
 const MAX_IMAGES = 12;
 
 const IMAGES = [
-  // "/paciente 1.1.webp",
-  "/lumban nariz.webp",
+  // "/resultado rinoplastia antes despues paciente 1 dr lumban Tijuana.webp",
+  "/Dr Jaime Lumban revision nariz otorrinolaringologia Tijuana.webp",
   "/Dr. jaime lumban en su consultorio.webp",
-  "/paciente 3.1.webp",
+  "/resultado rinoplastia antes despues paciente 3 dr lumban Tijuana.webp",
 
-  // "/lumban paciente 3.webp",
-  "/lumban oido.webp",
-  "/paciente 4.1.webp",
+  // "/Dr Jaime Lumban tratamiento especializado paciente otorrino Tijuana.webp",
+  "/Dr Jaime Lumban revision oido otorrinolaringologia Tijuana.webp",
+  "/resultado rinoplastia antes despues paciente 4 dr lumban Tijuana.webp",
 
-  "/lumban paciente.webp",
-  "/lumban cara.webp",
-  "/paciente 2.1.webp",
+  "/Dr Jaime Lumban atencion paciente consultorio Tijuana.webp",
+  "/Dr Jaime Lumban rostro consulta otorrinolaringologia Tijuana.webp",
+  "/resultado rinoplastia antes despues paciente 2 dr lumban Tijuana.webp",
 
-  // "/lumban paciente 2.webp",
+  // "/Dr Jaime Lumban consulta paciente oido nariz garganta Tijuana.webp",
 ];
 
 interface TrailImage {
@@ -145,7 +145,7 @@ export default function OurWaveHero() {
       className="relative isolate h-screen overflow-hidden bg-white"
     >
       {/* HIDDEN PRELOAD IMAGES */}
-      <div className="hidden">
+      <div className="hidden" aria-hidden="true">
         {IMAGES.map((src) => (
           <img key={src} src={src} alt="" />
         ))}
@@ -184,6 +184,7 @@ export default function OurWaveHero() {
                     className="object-cover rounded-2xl"
                     style={{ mixBlendMode: "normal" }}
                     alt=""
+                    aria-hidden="true"
                     loading="eager"
                   />
                 </div>

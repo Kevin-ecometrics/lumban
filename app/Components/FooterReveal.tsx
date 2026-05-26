@@ -196,7 +196,7 @@ export default function FooterBase() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div>
-            <img src="/logo.png" alt="Dr Lumban" className="h-48" />
+            <img src="/logo Dr Jaime Lumban otorrinolaringologo Tijuana.webp" alt="Dr. Jaime Lumbán — Otorrinolaringólogo en Tijuana" width="384" height="192" className="h-48 w-auto" />
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

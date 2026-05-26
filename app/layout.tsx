@@ -12,7 +12,13 @@ const jsonLd = {
   "@type": "Physician",
   name: "Dr. Jaime Lumbán",
   url: "https://drlumban.com",
-  image: "https://drlumban.com/og-image.png",
+  image: {
+    "@type": "ImageObject",
+    url: "https://drlumban.com/opengraph-image.png",
+    width: 1200,
+    height: 630,
+    name: "Dr. Jaime Lumbán — Otorrinolaringólogo certificado en Tijuana",
+  },
   description:
     "Otorrinolaringólogo certificado en Tijuana con más de 23 años de experiencia. Especialista en oído, nariz y garganta, rinoplastia, cirugía endoscopic y tratamientos para sinusitis.",
   address: {
@@ -106,6 +112,32 @@ export const metadata: Metadata = {
       es: "https://drlumban.com/",
       en: "https://drlumban.com/en",
     },
+  },
+
+  openGraph: {
+    type: "website",
+    url: "https://drlumban.com/",
+    siteName: "Dr. Jaime Lumbán — Otorrinolaringólogo en Tijuana",
+    title: "Dr. Jaime Lumbán — Otorrinolaringólogo en Tijuana",
+    description:
+      "El Dr. Jaime Lumbán, otorrinolaringólogo certificado en Tijuana con más de 23 años de experiencia. Especialista en oído, nariz y garganta.",
+    images: [
+      {
+        url: "https://drlumban.com/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Jaime Lumbán — Otorrinolaringólogo certificado en Tijuana",
+      },
+    ],
+    locale: "es_MX",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Jaime Lumbán — Otorrinolaringólogo en Tijuana",
+    description:
+      "Otorrinolaringólogo certificado en Tijuana con más de 23 años de experiencia. Especialista en oído, nariz y garganta.",
+    images: ["https://drlumban.com/opengraph-image.png"],
   },
 
   metadataBase: new URL("https://drlumban.com"),

@@ -7,7 +7,11 @@
       "PowerShell(bun *)",
       "Bash(Remove-Item \"C:\\\\Users\\\\kevin\\\\e-commetrics\\\\lumban\\\\public\\\\certificados\\\\El doctor Jaime Lumban es un otorrino certificado por el consejo mexicano de otorrinolaringologia.webp\")",
       "Bash(Rename-Item \"C:\\\\Users\\\\kevin\\\\e-commetrics\\\\lumban\\\\public\\\\certificados\\\\d2a57547-1a7b-4dc3-ae73-bb896badfb0f.jpg\" \"El doctor Jaime Lumban es un otorrino certificado por el consejo mexicano de otorrinolaringologia.jpg\")",
-      "PowerShell(Remove-Item *)"
+      "PowerShell(Remove-Item *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\kevin\\\\e-commetrics\\\\lumban\" -Recurse -Directory)",
+      "Bash(Select-Object -First 20)",
+      "Bash(Format-Table FullName)",
+      "Bash(bun *)"
     ]
   }
 }

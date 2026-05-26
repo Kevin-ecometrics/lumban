@@ -10,7 +10,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 const carouselImages = [
-  "/lumban realizando una cirugia.jpg",
+  "/Dr Jaime Lumban realizando cirugia endoscopica senos paranasales Tijuana.webp",
   "/Dr. Jaime Lumban revisa un paciente.webp",
 ];
 

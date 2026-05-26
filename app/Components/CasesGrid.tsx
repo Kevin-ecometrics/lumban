@@ -27,7 +27,7 @@ export default function CasesGrid() {
     {
       title: t("home.cases.case1"),
       routeKey: "aesthetic-nose",
-      image: "/nariz.png",
+      image: "/rinoplastia estetica funcional nariz dr lumban Tijuana.webp",
       type: "image",
       objectFit: "contain",
       objectPosition: "center",
@@ -35,7 +35,7 @@ export default function CasesGrid() {
     {
       title: t("home.cases.case2"),
       routeKey: "profile",
-      image: "/cover-lumban-video.webp",
+      image: "/portada video Dr Jaime Lumban otorrinolaringologo Tijuana.webp",
       type: "image",
       objectFit: "cover",
       objectPosition: "center",
@@ -43,7 +43,7 @@ export default function CasesGrid() {
     {
       title: t("home.cases.case3"),
       routeKey: "testimonials",
-      image: "/cover-testimonials-video.webp",
+      image: "/portada video testimonios pacientes rinoplastia dr lumban Tijuana.webp",
       type: "image",
       objectFit: "cover",
       objectPosition: "center",
@@ -125,7 +125,7 @@ export default function CasesGrid() {
                 ) : (
                   <motion.img
                     src={
-                      i === 0 && firstHovered ? "/nariz-hover.png" : item.image
+                      i === 0 && firstHovered ? "/rinoplastia resultado antes despues nariz dr lumban Tijuana.webp" : item.image
                     }
                     alt={item.title}
                     className={`absolute inset-0 w-full h-full max-w-full max-h-full ${

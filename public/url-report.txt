@@ -1,7 +1,7 @@
 ============================================================
 REPORTE DE URLs - DR LUMBÁN
 ============================================================
-Fecha de generación: 2026-05-20
+Fecha de generación: 2026-05-26
 Total de URLs: 51
 
 Alta prioridad (>=0.9): 14 URLs

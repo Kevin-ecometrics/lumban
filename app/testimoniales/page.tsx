@@ -22,40 +22,40 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
-const SINUSITIS_HERO_POSTER = "/testimoniales/testimonial.webp";
+const SINUSITIS_HERO_POSTER = "/testimoniales/portada testimonios pacientes rinoplastia dr lumban Tijuana.webp";
 
 // Resultados de rinoplastias - 15 pacientes
 const RHINOPLASTY_RESULTS = [
   {
-    src: `/rinoplastia/paciente 1.7.webp`,
+    src: `/rinoplastia/resultado rinoplastia estetica funcional caso 7 dr lumban Tijuana.webp`,
     label: `testimonials.case_16`,
   },
   {
-    src: `/rinoplastia/paciente 1.8.webp`,
+    src: `/rinoplastia/resultado rinoplastia estetica funcional caso 8 dr lumban Tijuana.webp`,
     label: `testimonials.case_17`,
   },
   {
-    src: `/rinoplastia/paciente 1.9.webp`,
+    src: `/rinoplastia/resultado rinoplastia estetica funcional caso 9 dr lumban Tijuana.webp`,
     label: `testimonials.case_18`,
   },
   {
-    src: `/rinoplastia/paciente 1.1.webp`,
+    src: `/rinoplastia/resultado rinoplastia estetica funcional caso 1 dr lumban Tijuana.webp`,
     label: `testimonials.case_1`,
   },
   {
-    src: `/rinoplastia/paciente 1.2.webp`,
+    src: `/rinoplastia/resultado rinoplastia estetica funcional caso 2 dr lumban Tijuana.webp`,
     label: `testimonials.case_2`,
   },
   {
-    src: `/rinoplastia/paciente 1.4.webp`,
+    src: `/rinoplastia/resultado rinoplastia estetica funcional caso 4 dr lumban Tijuana.webp`,
     label: `testimonials.case_3`,
   },
   {
-    src: `/rinoplastia/paciente 1.5.webp`,
+    src: `/rinoplastia/resultado rinoplastia estetica funcional caso 5 dr lumban Tijuana.webp`,
     label: `testimonials.case_4`,
   },
   {
-    src: `/rinoplastia/paciente 1.6.webp`,
+    src: `/rinoplastia/resultado rinoplastia estetica funcional caso 6 dr lumban Tijuana.webp`,
     label: `testimonials.case_5`,
   },
   {

@@ -246,18 +246,20 @@ const Navbar: React.FC = () => {
           {isHomepage ? (
             <div className="flex gap-2 pointer-events-auto">
               {[
-                { src: "/lumban 1.4.jpg", color: "morado" as ThemeColor },
-                { src: "/lumban 1.3.jpg", color: "verde" as ThemeColor },
-                { src: "/lumban 1.2.jpg", color: "azul" as ThemeColor },
+                { src: "/Dr Jaime Lumban otorrinolaringologo certificado Tijuana.webp", color: "morado" as ThemeColor, label: "Tema morado — Dr. Jaime Lumbán" },
+                { src: "/Dr Jaime Lumban especialista oido nariz garganta Tijuana.webp", color: "verde" as ThemeColor, label: "Tema verde — Dr. Jaime Lumbán" },
+                { src: "/Dr Jaime Lumban cirujano rinoplastia otorrino Tijuana.webp", color: "azul" as ThemeColor, label: "Tema azul — Dr. Jaime Lumbán" },
               ].map((img) => (
                 <button
                   key={img.color}
                   onClick={() => setTheme(img.color)}
+                  aria-label={img.label}
                   className="w-auto h-12 md:h-16 overflow-hidden hover:scale-105 transition-transform border-2 border-transparent hover:border-white"
                 >
                   <img
                     src={img.src}
                     alt=""
+                    aria-hidden="true"
                     className="h-full w-full object-cover"
                   />
                 </button>
@@ -270,8 +272,10 @@ const Navbar: React.FC = () => {
               aria-label="Ir a página principal - Dr. Lumbán"
             >
               <img
-                src="/logo-secondary.png"
-                alt="Dr. Jaime Lumbán - Otorrinolaringólogo"
+                src="/logo secundario Dr Jaime Lumban otorrinolaringologia Tijuana.webp"
+                alt="Dr. Jaime Lumbán - Otorrinolaringólogo en Tijuana"
+                width="640"
+                height="294"
                 className="h-32 w-auto md:block hidden"
               />
             </Link>

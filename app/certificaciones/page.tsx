@@ -34,23 +34,23 @@ export default function CertificacionesPage() {
   const { t } = useTranslation();
   const experienceYears = new Date().getFullYear() - 1993;
   const certifications = [
-    "/certificados/certificado_01.png",  // UABC - Médico General (~1986)
-    "/certificados/certificado_02.png",  // UNAM - Especialidad ORL (1992)
-    "/certificados/certificado_03.jpg",  // AAO - Corresponding Member (1997)
-    "/certificados/certificado_04.png",  // CONACEM 2021-2025 (Ene 2021)
-    "/certificados/certificado_05.png",  // Mérida 70° Congreso Digital (May 2021)
-    "/certificados/certificado_06.png",  // AAO-HNSF Virtual Meeting (Oct 2021)
-    "/certificados/certificado_07.png",  // U.S. Medical Tourism Member
-    "/certificados/certificado_08.png",  // MEDIPOL University Hospital (Jul 2022)
-    "/certificados/certificado_09.png",  // Multispecialty Aesthetic Conf. (Ago 2022)
-    "/certificados/certificado_10.png",  // Focus on Rhinoplasty & Face (Dic 2022)
-    "/certificados/certificado_11.png",  // CORPFACE - Rinoplastia (Jun 2023)
-    "/certificados/certificado_12.png",  // FURLONG Rinoplastia Ultrasónica (Ago 2023)
-    "/certificados/certificado_13.png",  // LXXII Congreso Cancún (2023)
-    "/certificados/certificado_14.png",  // FESORIMEX Chihuahua (Oct 2023)
-    "/certificados/certificado_15.png",  // CMORL y CCC (Ene 2024)
-    "/certificados/certificado_16.png",  // XIX Curso Rinología (Jul 2025)
-    "/certificados/certificado_17.png",
+    "/certificados/certificado medicina general UABC dr Jaime Lumban otorrinolaringologo.png",
+    "/certificados/certificado especialidad otorrinolaringologia UNAM dr Jaime Lumban.png",
+    "/certificados/certificado AAO miembro correspondiente dr Jaime Lumban 1997.jpg",
+    "/certificados/certificado CONACEM otorrinolaringologia dr Jaime Lumban 2021.png",
+    "/certificados/certificado congreso merida otorrinolaringologia dr Jaime Lumban 2021.png",
+    "/certificados/certificado AAO-HNSF otorrinolaringologia dr Jaime Lumban 2021.png",
+    "/certificados/certificado US medical tourism member dr Jaime Lumban.png",
+    "/certificados/certificado MEDIPOL rinoplastia dr Jaime Lumban 2022.png",
+    "/certificados/certificado conferencia estetica multispecialty dr Jaime Lumban 2022.png",
+    "/certificados/certificado focus rhinoplasty rinoplastia dr Jaime Lumban 2022.png",
+    "/certificados/certificado CORPFACE rinoplastia dr Jaime Lumban 2023.png",
+    "/certificados/certificado FURLONG rinoplastia ultrasonica dr Jaime Lumban 2023.png",
+    "/certificados/certificado LXXII congreso otorrinolaringologia cancun dr Jaime Lumban 2023.png",
+    "/certificados/certificado FESORIMEX otorrinolaringologia chihuahua dr Jaime Lumban 2023.png",
+    "/certificados/certificado CMORL otorrinolaringologia dr Jaime Lumban 2024.png",
+    "/certificados/certificado XIX curso rinologia dr Jaime Lumban 2025.png",
+    "/certificados/certificado formacion continua otorrinolaringologia dr Jaime Lumban.png",
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
