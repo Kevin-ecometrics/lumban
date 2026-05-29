@@ -7,9 +7,10 @@ import StickyVideoHero from "@/app/Components/StickyVideoHero";
 import JsonLdFaq from "@components/JsonLdFaq";
 
 export default function AboutPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const SINUSITIS_HERO_VIDEO = "/dr lumban about.webm";
+  const currentLang = i18n.language?.startsWith("en") ? "en" : "es";
+  const SINUSITIS_HERO_VIDEO = currentLang === "en" ? "/dr lumban about english.webm" : "/dr lumban about.webm";
   const SINUSITIS_HERO_POSTER = "/dr lumban about poster.webp";
 
   return (
